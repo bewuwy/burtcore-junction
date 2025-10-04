@@ -52,7 +52,7 @@
 <hgroup>
 
   <h4>Audio/Video file to check for extremist speech:</h4>
-  <p>You can upload or a file or input its URL</p>
+  <p>You can upload a file or input its URL</p>
 </hgroup>
 
   <fieldset class="grid">
@@ -78,15 +78,15 @@
   <p aria-busy="true">Processing... Please wait.</p>
 {/if}
 
-{#if error}
-  <article style="background-color: var(--pico-form-element-invalid-border-color); padding: 1rem;">
+{#if error && !form?.success}
+  <article style="border-style: solid; border-color: var(--pico-form-element-invalid-border-color); padding: 1rem;">
     <h2>Error</h2>
     <p>{error}</p>
   </article>
 {/if}
 
-{#if form?.error}
-  <article style="background-color: var(--pico-form-element-invalid-border-color); padding: 1rem;">
+{#if !error && form?.error && !form?.success}
+  <article style="border-style: solid; border-color: var(--pico-form-element-invalid-border-color); padding: 1rem;">
     <h2>Server Error</h2>
     <p>{form.error}</p>
   </article>

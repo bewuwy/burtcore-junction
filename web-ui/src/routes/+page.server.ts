@@ -24,15 +24,6 @@ export const actions = {
 			classifierFormData.append('file_url', fileUrl as string);
 		}
 
-
-		// TESTING
-		return {
-			success: true,
-			result: {
-				"hate": true
-			}
-		};
-
 		try {
 			// Send to classifier server
 			const response = await fetch(`${CLASSIFIER_SERVER}/evaluate`, {
