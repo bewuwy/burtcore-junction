@@ -31,7 +31,7 @@
   action="?/submit"
   enctype="multipart/form-data"
   use:enhance={({ formData }) => {
-    const fileUrl = formData.get('file_url') as string;
+    const fileUrl = formData.get('fileURL') as string;
     const file = formData.get('file') as File;
     
     const hasFile = file && file.size > 0;
@@ -74,7 +74,7 @@
       File URL
       <input
         type="text"
-        name="file_url"
+        name="fileURL"
         placeholder="https://hate.com/speech.mp4"
       />
     </label>
