@@ -115,7 +115,7 @@
       {#each form?.segments as segment, i (i)}
         <span 
           data-tooltip={timestampToString(segment.startTime)+"-"+timestampToString(segment.endTime)+": "+segment.extreme*100+"%"}
-          style={segment.extreme > 0.5 ? `background-color: rgba(255, 0, 0, ${segment.extreme * 0.5})` : ''}
+          style={(segment.extreme > 0.5 ? `background-color: rgba(255, 0, 0, ${segment.extreme * 0.5})` : '') + "; border-bottom: 0px;"}
         >{segment.text}</span>{' '}
       {/each}
       {#if form?.segments.length === 0}

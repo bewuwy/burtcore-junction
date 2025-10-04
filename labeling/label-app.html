@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Labeling Tool</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            max-width: 800px;
+            width: 100%;
+            padding: 40px;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .instructions {
+            background: #f0f0f0;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .instructions p {
+            margin: 5px 0;
+            color: #555;
+        }
+
+        .instructions strong {
+            color: #667eea;
+        }
+
+        .progress {
+            background: #e0e0e0;
+            height: 10px;
+            border-radius: 5px;
+            margin-bottom: 30px;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+            height: 100%;
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .stat {
+            flex: 1;
+        }
+
+        .stat-value {
+            font-size: 28px;
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            color: #666;
+            margin-top: 5px;
+        }
+
+        .text-display {
+            background: #f9f9f9;
+            border: 2px solid #e0e0e0;
+            border-radius: 15px;
+            padding: 30px;
+            min-height: 200px;
+            margin-bottom: 30px;
+            font-size: 18px;
+            line-height: 1.6;
+            color: #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .text-display.loading {
+            color: #999;
+            font-style: italic;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            flex: 1;
+            padding: 20px;
+            border: none;
+            border-radius: 15px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: white;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn:active {
+            transform: translateY(0);
+        }
+
+        .btn-extremist {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+
+        .btn-not-extremist {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        }
+
+        .btn-skip {
+            background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+        }
+
+        .keyboard-hint {
+            text-align: center;
+            color: #666;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+
+        .keyboard-hint kbd {
+            background: #f0f0f0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 3px 8px;
+            font-family: monospace;
+            font-weight: bold;
+        }
+
+        .file-input-section {
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .file-input-section input[type="file"] {
+            display: none;
+        }
+
+        .file-input-label {
+            display: inline-block;
+            padding: 15px 30px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: bold;
+        }
+
+        .file-input-label:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .file-name {
+            margin-top: 10px;
+            color: #666;
+            font-size: 14px;
+        }
+
+        .save-message {
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+            border-radius: 10px;
+            font-weight: bold;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .save-message.show {
+            opacity: 1;
+        }
+
+        .save-message.success {
+            background: #d4edda;
+            color: #155724;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🏷️ Text Labeling Tool</h1>
+        
+        <div class="instructions">
+            <p><strong>Instructions:</strong> Read the text and classify it as extremist or not.</p>
+            <p>Use keyboard shortcuts for faster labeling!</p>
+        </div>
+
+        <div class="file-input-section">
+            <label for="csvFile" class="file-input-label">
+                📁 Load CSV File
+            </label>
+            <input type="file" id="csvFile" accept=".csv">
+            <div class="file-name" id="fileName"></div>
+        </div>
+
+        <div class="stats">
+            <div class="stat">
+                <div class="stat-value" id="labeledCount">0</div>
+                <div class="stat-label">Labeled</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value" id="extremistCount">0</div>
+                <div class="stat-label">Extremist</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value" id="notExtremistCount">0</div>
+                <div class="stat-label">Not Extremist</div>
+            </div>
+        </div>
+
+        <div class="progress">
+            <div class="progress-bar" id="progressBar"></div>
+        </div>
+
+        <div class="text-display loading" id="textDisplay">
+            Please load a CSV file to begin labeling
+        </div>
+
+        <div class="buttons">
+            <button class="btn btn-extremist" id="btnExtremist" disabled>
+                ⚠️ Extremist
+            </button>
+            <button class="btn btn-not-extremist" id="btnNotExtremist" disabled>
+                ✓ Not Extremist
+            </button>
+            <button class="btn btn-skip" id="btnSkip" disabled>
+                ⏭️ Skip
+            </button>
+        </div>
+
+        <div class="keyboard-hint">
+            Keyboard shortcuts: <kbd>E</kbd> Extremist | <kbd>N</kbd> Not Extremist | <kbd>S</kbd> Skip
+        </div>
+
+        <div class="save-message" id="saveMessage"></div>
+    </div>
+
+    <script>
+        // State management
+        let data = [];
+        let currentIndex = 0;
+        let labeledData = [];
+        let stats = {
+            labeled: 0,
+            extremist: 0,
+            notExtremist: 0
+        };
+        const SAVE_INTERVAL = 5; // Save every 5 labels
+
+        // DOM elements
+        const elements = {
+            csvFile: document.getElementById('csvFile'),
+            fileName: document.getElementById('fileName'),
+            textDisplay: document.getElementById('textDisplay'),
+            btnExtremist: document.getElementById('btnExtremist'),
+            btnNotExtremist: document.getElementById('btnNotExtremist'),
+            btnSkip: document.getElementById('btnSkip'),
+            labeledCount: document.getElementById('labeledCount'),
+            extremistCount: document.getElementById('extremistCount'),
+            notExtremistCount: document.getElementById('notExtremistCount'),
+            progressBar: document.getElementById('progressBar'),
+            saveMessage: document.getElementById('saveMessage')
+        };
+
+        // Parse CSV
+        function parseCSV(text) {
+            const lines = text.split('\n');
+            const headers = lines[0].split(',');
+            const textIndex = headers.findIndex(h => h.trim().toLowerCase() === 'text');
+            
+            if (textIndex === -1) {
+                alert('Could not find "text" column in CSV');
+                return [];
+            }
+
+            const rows = [];
+            for (let i = 1; i < lines.length; i++) {
+                if (lines[i].trim() === '') continue;
+                
+                // Handle CSV with quoted fields
+                const row = parseCSVLine(lines[i]);
+                if (row.length > textIndex && row[textIndex].trim()) {
+                    rows.push({
+                        originalLine: lines[i],
+                        text: row[textIndex].trim(),
+                        lineNumber: i
+                    });
+                }
+            }
+            return rows;
+        }
+
+        // Parse a single CSV line handling quoted fields
+        function parseCSVLine(line) {
+            const result = [];
+            let current = '';
+            let inQuotes = false;
+            
+            for (let i = 0; i < line.length; i++) {
+                const char = line[i];
+                
+                if (char === '"') {
+                    inQuotes = !inQuotes;
+                } else if (char === ',' && !inQuotes) {
+                    result.push(current);
+                    current = '';
+                } else {
+                    current += char;
+                }
+            }
+            result.push(current);
+            return result;
+        }
+
+        // Load CSV file
+        elements.csvFile.addEventListener('change', (e) => {
+            const file = e.target.files[0];
+            if (!file) return;
+
+            elements.fileName.textContent = `Loaded: ${file.name}`;
+            
+            const reader = new FileReader();
+            reader.onload = (e) => {
+                data = parseCSV(e.target.result);
+                if (data.length > 0) {
+                    currentIndex = 0;
+                    labeledData = [];
+                    stats = { labeled: 0, extremist: 0, notExtremist: 0 };
+                    updateStats();
+                    displayCurrentText();
+                    enableButtons();
+                }
+            };
+            reader.readAsText(file);
+        });
+
+        // Display current text
+        function displayCurrentText() {
+            if (currentIndex >= data.length) {
+                elements.textDisplay.innerHTML = '🎉 All texts labeled! Download your results below.';
+                elements.textDisplay.classList.add('loading');
+                disableButtons();
+                downloadResults();
+                return;
+            }
+
+            elements.textDisplay.textContent = data[currentIndex].text;
+            elements.textDisplay.classList.remove('loading');
+            updateProgress();
+        }
+
+        // Update statistics
+        function updateStats() {
+            elements.labeledCount.textContent = stats.labeled;
+            elements.extremistCount.textContent = stats.extremist;
+            elements.notExtremistCount.textContent = stats.notExtremist;
+        }
+
+        // Update progress bar
+        function updateProgress() {
+            const progress = (currentIndex / data.length) * 100;
+            elements.progressBar.style.width = `${progress}%`;
+        }
+
+        // Label as extremist
+        function labelExtremist() {
+            if (currentIndex >= data.length) return;
+            
+            labeledData.push({
+                text: data[currentIndex].text,
+                label: 'extremist',
+                lineNumber: data[currentIndex].lineNumber,
+                timestamp: new Date().toISOString()
+            });
+            
+            stats.labeled++;
+            stats.extremist++;
+            updateStats();
+            
+            currentIndex++;
+            checkSave();
+            displayCurrentText();
+        }
+
+        // Label as not extremist
+        function labelNotExtremist() {
+            if (currentIndex >= data.length) return;
+            
+            labeledData.push({
+                text: data[currentIndex].text,
+                label: 'not_extremist',
+                lineNumber: data[currentIndex].lineNumber,
+                timestamp: new Date().toISOString()
+            });
+            
+            stats.labeled++;
+            stats.notExtremist++;
+            updateStats();
+            
+            currentIndex++;
+            checkSave();
+            displayCurrentText();
+        }
+
+        // Skip current text
+        function skip() {
+            if (currentIndex >= data.length) return;
+            
+            labeledData.push({
+                text: data[currentIndex].text,
+                label: 'skipped',
+                lineNumber: data[currentIndex].lineNumber,
+                timestamp: new Date().toISOString()
+            });
+            
+            stats.labeled++;
+            updateStats();
+            
+            currentIndex++;
+            checkSave();
+            displayCurrentText();
+        }
+
+        // Check if should save
+        function checkSave() {
+            if (labeledData.length > 0 && labeledData.length % SAVE_INTERVAL === 0) {
+                saveResults();
+            }
+        }
+
+        // Save results to CSV
+        function saveResults() {
+            const csv = convertToCSV(labeledData);
+            const blob = new Blob([csv], { type: 'text/csv' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `labeled_data_${new Date().getTime()}.csv`;
+            a.click();
+            URL.revokeObjectURL(url);
+            
+            showSaveMessage('Results saved!');
+        }
+
+        // Download final results
+        function downloadResults() {
+            if (labeledData.length > 0) {
+                saveResults();
+            }
+        }
+
+        // Convert data to CSV
+        function convertToCSV(data) {
+            const headers = ['text', 'label', 'lineNumber', 'timestamp'];
+            const rows = data.map(row => {
+                return [
+                    `"${row.text.replace(/"/g, '""')}"`,
+                    row.label,
+                    row.lineNumber,
+                    row.timestamp
+                ].join(',');
+            });
+            return [headers.join(','), ...rows].join('\n');
+        }
+
+        // Show save message
+        function showSaveMessage(message) {
+            elements.saveMessage.textContent = message;
+            elements.saveMessage.classList.add('show', 'success');
+            setTimeout(() => {
+                elements.saveMessage.classList.remove('show');
+            }, 3000);
+        }
+
+        // Enable buttons
+        function enableButtons() {
+            elements.btnExtremist.disabled = false;
+            elements.btnNotExtremist.disabled = false;
+            elements.btnSkip.disabled = false;
+        }
+
+        // Disable buttons
+        function disableButtons() {
+            elements.btnExtremist.disabled = true;
+            elements.btnNotExtremist.disabled = true;
+            elements.btnSkip.disabled = true;
+        }
+
+        // Button event listeners
+        elements.btnExtremist.addEventListener('click', labelExtremist);
+        elements.btnNotExtremist.addEventListener('click', labelNotExtremist);
+        elements.btnSkip.addEventListener('click', skip);
+
+        // Keyboard shortcuts
+        document.addEventListener('keydown', (e) => {
+            if (currentIndex >= data.length) return;
+            
+            const key = e.key.toLowerCase();
+            if (key === 'e') {
+                labelExtremist();
+            } else if (key === 'n') {
+                labelNotExtremist();
+            } else if (key === 's') {
+                skip();
+            }
+        });
+    </script>
+</body>
+</html>
