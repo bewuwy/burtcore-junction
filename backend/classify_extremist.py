@@ -440,7 +440,7 @@ class ExtremistClassifier:
             'non_extremist_segments': total_segments - extremist_count,
             'extremist_ratio': extremist_ratio,
             'avg_extremist_probability': avg_probability,
-            'is_extremist_content': extremist_ratio > 0.3,  # Overall classification threshold
+            'is_extremist_content': extremist_ratio > Config.EXTREMIST_RATIO_THRESHOLD,  # Overall classification threshold
             'predictions': predictions
         }
 

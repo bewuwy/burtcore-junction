@@ -78,15 +78,13 @@ async def evaluate_video(
         
         # Check if heuristic was used
         segments = result.get("segments", [])
-        heuristic_used = any(seg.get("heuristicUsed", False) for seg in segments)
-        heuristic_note = " (heuristic-based)" if heuristic_used else ""
-        
+
         if is_extremist_content is not None:
             # Extremist classifier is available (or heuristic was used)
             if is_extremist_content:
-                summary = f"EXTREMIST CONTENT DETECTED{heuristic_note}: {extremist_count}/{total_count} segments ({extremist_ratio*100:.1f}%). Avg probability: {stats.get('avg_extremist_probability', 0)*100:.1f}%"
+                summary = f"EXTREMIST CONTENT DETECTED: {extremist_count}/{total_count} segments ({extremist_ratio*100:.1f}%). Avg probability: {stats.get('avg_extremist_probability', 0)*100:.1f}%"
             else:
-                summary = f"Non-extremist content{heuristic_note}. {extremist_count}/{total_count} extremist segments detected ({extremist_ratio*100:.1f}%)."
+                summary = f"Non-extremist content. {extremist_count}/{total_count} extremist segments detected ({extremist_ratio*100:.1f}%)."
         else:
             # Fallback to toxicity-based summary
             if toxic_count == 0:
