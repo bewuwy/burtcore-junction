@@ -12,11 +12,11 @@ def evaluate(file_path: str):
         segments_response.append({
             "text": segment["text"],
             "startTime": {
-                "minute": segment["start"] / 60,
+                "minute": int(segment["start"] / 60),
                 "second": segment["start"] % 60
             },
             "endTime": {
-                "minute": segment["end"] / 60,
+                "minute": int(segment["end"] / 60),
                 "second": segment["end"] % 60
             },
             "extreme": 0.5

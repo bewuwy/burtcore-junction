@@ -7,7 +7,7 @@ export const actions = {
 		// Get the form data
 		const formData = await request.formData();
 
-		const fileUrl = formData.get('file_url');
+		const fileUrl = formData.get('fileURL');
 		const file = formData.get('file');
 
 		console.log('File URL:', fileUrl);
@@ -40,7 +40,7 @@ export const actions = {
 			}
 
 			const result = await response.json();
-			console.log('Classifier result:', result);
+// 			console.log('Classifier result:', result);
 
 			return result;
 		} catch (err) {
