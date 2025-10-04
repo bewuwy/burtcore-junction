@@ -1,3 +1,6 @@
 transformers
 torch
 whisper
+fastapi
+uvicorn
+multipart
