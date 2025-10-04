@@ -1,2 +1,134 @@
+# Virtual environment directories
+venv/
+.venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# Python bytecode
+__pycache__/
+*.py[cod]
+$py.class
+
+# Distribution / packaging
+build/
+dist/
+eggs/
+*.egg-info/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+.pytest_cache/
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# PyInstaller
+#  Usually these files are written by a python script from a template
+#  before PyInstaller builds the exe, so as to inject date/other infos into it.
+*.manifest
+*.spec
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# IPython
+profile_default/
+ipython_config.py
+
+# pyenv
+.python-version
+
+# pipenv
+Pipfile.lock
+
+# poetry
+poetry.lock
+
+# celery beat schedule file
+celerybeat-schedule
+
+# dotenv
+.env
+.env.*
+
+# VS Code settings
+.vscode/
+
+# JetBrains IDEs
+.idea/
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
+
+# Data, checkpoints, model artifacts (common ML patterns)
+# Folders often used to store downloads, datasets, checkpoints, or outputs
+/data/
+/datasets/
+/outputs/
+/models/
+/checkpoints/
+/runs/
+mlruns/
+
+# PyTorch / TensorFlow model files and safetensors
+*.pt
+*.pth
+*.ckpt
+*.h5
+*.pb
+*.safetensors
+*.bin
+
+# Hugging Face caches and transformers large files
+# (the HF cache is usually in the user home, so not in repo; keep these if you store models in-tree)
+.hf/*
+transformers_cache/
+
+# Large binary assets
+*.tar.gz
+*.zip
+*.tgz
+
+# Backup files
+*.bak
+*~
+
+# lock files from editors or package managers
+package-lock.json
+yarn.lock
+
+# Optional: ignore dataset and model artifacts with specific patterns
+# Uncomment if you store large datasets or model weights in versioned folders
+## /data/**
+## /models/**
+
+# End of .gitignore
+
 venv
 .idea
