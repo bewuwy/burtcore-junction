@@ -91,7 +91,6 @@ desktop.ini
 /data/
 /datasets/
 /outputs/
-/models/
 /checkpoints/
 /runs/
 mlruns/
