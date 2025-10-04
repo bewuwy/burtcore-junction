@@ -98,7 +98,6 @@ async def evaluate_video(
             "success": True,
             "result": summary,
             "isExtremist": is_extremist_content,
-            "heuristicUsed": heuristic_used,
             "segments": result["segments"],
             "full_text_classification": result.get("full_text_classification"),
             "statistics": result.get("statistics"),

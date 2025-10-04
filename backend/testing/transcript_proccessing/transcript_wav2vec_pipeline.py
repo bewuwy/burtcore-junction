@@ -54,13 +54,9 @@ def transcribe_single_file(input_file, output_file=None, model=whisper.load_mode
     # Transcribe using Whisper with parameters for shorter, more precise segments
     result = model.transcribe(
         audio,
-        word_timestamps=True,          # Enable word-level timestamps
+        word_timestamps=False,
         prepend_punctuations="\"'([{-",
         append_punctuations="\"'.。,!?:)]}、",
-        # These parameters help create natural, shorter segments:
-        # - word_timestamps: Enables precise word-level timing
-        # - condition_on_previous_text: Uses context from previous segments
-        # - temperature: Lower temperature for more consistent output
         temperature=0.0,               # Deterministic output
         compression_ratio_threshold=2.4,  # Reject segments with low compression
         logprob_threshold=-1.0,        # Reject low probability segments
