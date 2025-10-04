@@ -4,7 +4,9 @@ def evaluate(file_path: str):
 
     print("evaluating file", file_path)
 
-    res = transcribe_single_file(file_path, "test.json")
+    res_tuple = transcribe_single_file(file_path, "test.json")
+    res = res_tuple[0]
+    audio = res_tuple[1]
 
 
     segments_response = []
@@ -24,7 +26,7 @@ def evaluate(file_path: str):
 
     return {
         "segments": segments_response,
-    }
+    }, audio
 
     # TODO: DO SOME PROCESSING HERE
 

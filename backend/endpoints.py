@@ -7,6 +7,7 @@ import uuid
 import httpx
 from typing import Optional
 from backend.extreme import evaluate
+import traceback
 
 app = FastAPI()
 
@@ -62,16 +63,35 @@ async def evaluate_video(
             raise HTTPException(status_code=400, detail="Either file or fileURL must be provided")
         
         # Evaluate the file
-        res = evaluate(file_path)
+        res_tuple = evaluate(file_path)
+        res = res_tuple[0]  # whisper result (dict with 'segments')
+        audio = res_tuple[1]  # path to normalized audio
+
+        # Load audio as mono 16kHz
+        import librosa
+        y_all, sr = librosa.load(audio, sr=16000, mono=True)
+
+        # Get segments from whisper result
+        segments = res["segments"]
+
+        # Import the intonation module
+        from backend.testing.transcript_proccessing.intonation_wav2vec2_module import process_segments
+
+        # Run intonation/emotion extraction
+        results = process_segments(y_all, sr, segments)
+
+        print(results)
 
         return JSONResponse(content={
             "success": True,
             "result": "success",
-            "segments": res["segments"],
+            "segments": segments,
+            "intonation_results": results,
         })
     
     except httpx.HTTPError as e:
         raise HTTPException(status_code=400, detail=f"Failed to download file from URL: {str(e)}")
     except Exception as e:
         print("Error: " + str(e))
+        traceback.print_exc()
         raise HTTPException(status_code=500, detail=f"An error occurred: {str(e)}")

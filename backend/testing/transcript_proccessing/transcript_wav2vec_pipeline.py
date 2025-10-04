@@ -63,7 +63,7 @@ def transcribe_single_file(input_file, output_file, model=whisper.load_model("ti
 
     print(f"✓ Saved to {output_file}")
 
-    return result
+    return result, audio
 
 
 def transcribe_directory(input_dir, output_dir, model, device="cuda"):
