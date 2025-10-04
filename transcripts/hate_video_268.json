@@ -1,0 +1,45 @@
+{
+  "text": " Okay, do city in word. Yeah, yes, yes, yes, let's hear it. Let's hear it",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 6.38,
+      "text": " Okay, do city in word. Yeah, yes, yes, yes, let's hear it. Let's hear it",
+      "tokens": [
+        50364,
+        1033,
+        11,
+        360,
+        2307,
+        294,
+        1349,
+        13,
+        865,
+        11,
+        2086,
+        11,
+        2086,
+        11,
+        2086,
+        11,
+        718,
+        311,
+        1568,
+        309,
+        13,
+        961,
+        311,
+        1568,
+        309,
+        50683
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.6985151502821181,
+      "compression_ratio": 1.2203389830508475,
+      "no_speech_prob": 0.13053040206432343
+    }
+  ],
+  "language": "en"
+}
