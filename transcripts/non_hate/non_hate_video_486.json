@@ -1,0 +1,645 @@
+{
+  "text": " Right now, yeah, right now. Okay, okay. Oh, shit. Oh, shit. You're gonna be a playboy, you're gonna be a playboy. So, uh, here's your A. Here's your A. You're a playboy. You're a playboy. You're a playboy. Hey, bus stop. You're a W. You're a W. You're a playboy. What a W. Me. Oh, I'm right. I'm a playboy. Oh, God. I'm a playboy. Yeah, boy, boy, boy, come on. Come on. Come on. Go, go, go. Oh, fuck, bitch, dude. Oh, go, bitch. Yeah, bitch. Oh, man. Oh, man. Yeah, come on. Come on.",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 3.04,
+      "text": " Right now, yeah, right now.",
+      "tokens": [
+        50364,
+        1779,
+        586,
+        11,
+        1338,
+        11,
+        558,
+        586,
+        13,
+        50516
+      ],
+      "temperature": 0.2,
+      "avg_logprob": -0.7740472452530008,
+      "compression_ratio": 2.1283783783783785,
+      "no_speech_prob": 0.31997227668762207
+    },
+    {
+      "id": 1,
+      "seek": 0,
+      "start": 3.84,
+      "end": 5.64,
+      "text": " Okay, okay.",
+      "tokens": [
+        50556,
+        1033,
+        11,
+        1392,
+        13,
+        50646
+      ],
+      "temperature": 0.2,
+      "avg_logprob": -0.7740472452530008,
+      "compression_ratio": 2.1283783783783785,
+      "no_speech_prob": 0.31997227668762207
+    },
+    {
+      "id": 2,
+      "seek": 0,
+      "start": 6.16,
+      "end": 7.76,
+      "text": " Oh, shit.",
+      "tokens": [
+        50672,
+        876,
+        11,
+        4611,
+        13,
+        50752
+      ],
+      "temperature": 0.2,
+      "avg_logprob": -0.7740472452530008,
+      "compression_ratio": 2.1283783783783785,
+      "no_speech_prob": 0.31997227668762207
+    },
+    {
+      "id": 3,
+      "seek": 0,
+      "start": 8.16,
+      "end": 9.44,
+      "text": " Oh, shit.",
+      "tokens": [
+        50772,
+        876,
+        11,
+        4611,
+        13,
+        50836
+      ],
+      "temperature": 0.2,
+      "avg_logprob": -0.7740472452530008,
+      "compression_ratio": 2.1283783783783785,
+      "no_speech_prob": 0.31997227668762207
+    },
+    {
+      "id": 4,
+      "seek": 0,
+      "start": 9.44,
+      "end": 12.0,
+      "text": " You're gonna be a playboy, you're gonna be a playboy.",
+      "tokens": [
+        50836,
+        509,
+        434,
+        799,
+        312,
+        257,
+        862,
+        12795,
+        11,
+        291,
+        434,
+        799,
+        312,
+        257,
+        862,
+        12795,
+        13,
+        50964
+      ],
+      "temperature": 0.2,
+      "avg_logprob": -0.7740472452530008,
+      "compression_ratio": 2.1283783783783785,
+      "no_speech_prob": 0.31997227668762207
+    },
+    {
+      "id": 5,
+      "seek": 0,
+      "start": 12.0,
+      "end": 14.48,
+      "text": " So, uh, here's your A.",
+      "tokens": [
+        50964,
+        407,
+        11,
+        2232,
+        11,
+        510,
+        311,
+        428,
+        316,
+        13,
+        51088
+      ],
+      "temperature": 0.2,
+      "avg_logprob": -0.7740472452530008,
+      "compression_ratio": 2.1283783783783785,
+      "no_speech_prob": 0.31997227668762207
+    },
+    {
+      "id": 6,
+      "seek": 0,
+      "start": 14.48,
+      "end": 16.080000000000002,
+      "text": " Here's your A.",
+      "tokens": [
+        51088,
+        1692,
+        311,
+        428,
+        316,
+        13,
+        51168
+      ],
+      "temperature": 0.2,
+      "avg_logprob": -0.7740472452530008,
+      "compression_ratio": 2.1283783783783785,
+      "no_speech_prob": 0.31997227668762207
+    },
+    {
+      "id": 7,
+      "seek": 0,
+      "start": 16.080000000000002,
+      "end": 17.36,
+      "text": " You're a playboy.",
+      "tokens": [
+        51168,
+        509,
+        434,
+        257,
+        862,
+        12795,
+        13,
+        51232
+      ],
+      "temperature": 0.2,
+      "avg_logprob": -0.7740472452530008,
+      "compression_ratio": 2.1283783783783785,
+      "no_speech_prob": 0.31997227668762207
+    },
+    {
+      "id": 8,
+      "seek": 0,
+      "start": 17.36,
+      "end": 18.72,
+      "text": " You're a playboy.",
+      "tokens": [
+        51232,
+        509,
+        434,
+        257,
+        862,
+        12795,
+        13,
+        51300
+      ],
+      "temperature": 0.2,
+      "avg_logprob": -0.7740472452530008,
+      "compression_ratio": 2.1283783783783785,
+      "no_speech_prob": 0.31997227668762207
+    },
+    {
+      "id": 9,
+      "seek": 0,
+      "start": 18.72,
+      "end": 19.76,
+      "text": " You're a playboy.",
+      "tokens": [
+        51300,
+        509,
+        434,
+        257,
+        862,
+        12795,
+        13,
+        51352
+      ],
+      "temperature": 0.2,
+      "avg_logprob": -0.7740472452530008,
+      "compression_ratio": 2.1283783783783785,
+      "no_speech_prob": 0.31997227668762207
+    },
+    {
+      "id": 10,
+      "seek": 0,
+      "start": 19.76,
+      "end": 20.72,
+      "text": " Hey, bus stop.",
+      "tokens": [
+        51352,
+        1911,
+        11,
+        1255,
+        1590,
+        13,
+        51400
+      ],
+      "temperature": 0.2,
+      "avg_logprob": -0.7740472452530008,
+      "compression_ratio": 2.1283783783783785,
+      "no_speech_prob": 0.31997227668762207
+    },
+    {
+      "id": 11,
+      "seek": 0,
+      "start": 20.72,
+      "end": 21.76,
+      "text": " You're a W.",
+      "tokens": [
+        51400,
+        509,
+        434,
+        257,
+        343,
+        13,
+        51452
+      ],
+      "temperature": 0.2,
+      "avg_logprob": -0.7740472452530008,
+      "compression_ratio": 2.1283783783783785,
+      "no_speech_prob": 0.31997227668762207
+    },
+    {
+      "id": 12,
+      "seek": 0,
+      "start": 21.76,
+      "end": 22.72,
+      "text": " You're a W.",
+      "tokens": [
+        51452,
+        509,
+        434,
+        257,
+        343,
+        13,
+        51500
+      ],
+      "temperature": 0.2,
+      "avg_logprob": -0.7740472452530008,
+      "compression_ratio": 2.1283783783783785,
+      "no_speech_prob": 0.31997227668762207
+    },
+    {
+      "id": 13,
+      "seek": 0,
+      "start": 22.72,
+      "end": 24.080000000000002,
+      "text": " You're a playboy.",
+      "tokens": [
+        51500,
+        509,
+        434,
+        257,
+        862,
+        12795,
+        13,
+        51568
+      ],
+      "temperature": 0.2,
+      "avg_logprob": -0.7740472452530008,
+      "compression_ratio": 2.1283783783783785,
+      "no_speech_prob": 0.31997227668762207
+    },
+    {
+      "id": 14,
+      "seek": 0,
+      "start": 24.080000000000002,
+      "end": 25.52,
+      "text": " What a W.",
+      "tokens": [
+        51568,
+        708,
+        257,
+        343,
+        13,
+        51640
+      ],
+      "temperature": 0.2,
+      "avg_logprob": -0.7740472452530008,
+      "compression_ratio": 2.1283783783783785,
+      "no_speech_prob": 0.31997227668762207
+    },
+    {
+      "id": 15,
+      "seek": 0,
+      "start": 25.52,
+      "end": 26.560000000000002,
+      "text": " Me.",
+      "tokens": [
+        51640,
+        1923,
+        13,
+        51692
+      ],
+      "temperature": 0.2,
+      "avg_logprob": -0.7740472452530008,
+      "compression_ratio": 2.1283783783783785,
+      "no_speech_prob": 0.31997227668762207
+    },
+    {
+      "id": 16,
+      "seek": 0,
+      "start": 26.560000000000002,
+      "end": 27.36,
+      "text": " Oh, I'm right.",
+      "tokens": [
+        51692,
+        876,
+        11,
+        286,
+        478,
+        558,
+        13,
+        51732
+      ],
+      "temperature": 0.2,
+      "avg_logprob": -0.7740472452530008,
+      "compression_ratio": 2.1283783783783785,
+      "no_speech_prob": 0.31997227668762207
+    },
+    {
+      "id": 17,
+      "seek": 0,
+      "start": 27.36,
+      "end": 28.32,
+      "text": " I'm a playboy.",
+      "tokens": [
+        51732,
+        286,
+        478,
+        257,
+        862,
+        12795,
+        13,
+        51780
+      ],
+      "temperature": 0.2,
+      "avg_logprob": -0.7740472452530008,
+      "compression_ratio": 2.1283783783783785,
+      "no_speech_prob": 0.31997227668762207
+    },
+    {
+      "id": 18,
+      "seek": 0,
+      "start": 28.32,
+      "end": 29.36,
+      "text": " Oh, God.",
+      "tokens": [
+        51780,
+        876,
+        11,
+        1265,
+        13,
+        51832
+      ],
+      "temperature": 0.2,
+      "avg_logprob": -0.7740472452530008,
+      "compression_ratio": 2.1283783783783785,
+      "no_speech_prob": 0.31997227668762207
+    },
+    {
+      "id": 19,
+      "seek": 2936,
+      "start": 29.36,
+      "end": 30.4,
+      "text": " I'm a playboy.",
+      "tokens": [
+        50364,
+        286,
+        478,
+        257,
+        862,
+        12795,
+        13,
+        50416
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.728906284679066,
+      "compression_ratio": 1.835164835164835,
+      "no_speech_prob": 0.012145660817623138
+    },
+    {
+      "id": 20,
+      "seek": 2936,
+      "start": 30.4,
+      "end": 32.4,
+      "text": " Yeah, boy, boy, boy, come on.",
+      "tokens": [
+        50416,
+        865,
+        11,
+        3237,
+        11,
+        3237,
+        11,
+        3237,
+        11,
+        808,
+        322,
+        13,
+        50516
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.728906284679066,
+      "compression_ratio": 1.835164835164835,
+      "no_speech_prob": 0.012145660817623138
+    },
+    {
+      "id": 21,
+      "seek": 2936,
+      "start": 32.4,
+      "end": 33.2,
+      "text": " Come on.",
+      "tokens": [
+        50516,
+        2492,
+        322,
+        13,
+        50556
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.728906284679066,
+      "compression_ratio": 1.835164835164835,
+      "no_speech_prob": 0.012145660817623138
+    },
+    {
+      "id": 22,
+      "seek": 2936,
+      "start": 33.2,
+      "end": 34.24,
+      "text": " Come on.",
+      "tokens": [
+        50556,
+        2492,
+        322,
+        13,
+        50608
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.728906284679066,
+      "compression_ratio": 1.835164835164835,
+      "no_speech_prob": 0.012145660817623138
+    },
+    {
+      "id": 23,
+      "seek": 2936,
+      "start": 34.24,
+      "end": 36.24,
+      "text": " Go, go, go.",
+      "tokens": [
+        50608,
+        1037,
+        11,
+        352,
+        11,
+        352,
+        13,
+        50708
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.728906284679066,
+      "compression_ratio": 1.835164835164835,
+      "no_speech_prob": 0.012145660817623138
+    },
+    {
+      "id": 24,
+      "seek": 2936,
+      "start": 36.24,
+      "end": 38.4,
+      "text": " Oh, fuck, bitch, dude.",
+      "tokens": [
+        50708,
+        876,
+        11,
+        3275,
+        11,
+        11960,
+        11,
+        6449,
+        13,
+        50816
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.728906284679066,
+      "compression_ratio": 1.835164835164835,
+      "no_speech_prob": 0.012145660817623138
+    },
+    {
+      "id": 25,
+      "seek": 2936,
+      "start": 38.4,
+      "end": 40.4,
+      "text": " Oh, go, bitch.",
+      "tokens": [
+        50816,
+        876,
+        11,
+        352,
+        11,
+        11960,
+        13,
+        50916
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.728906284679066,
+      "compression_ratio": 1.835164835164835,
+      "no_speech_prob": 0.012145660817623138
+    },
+    {
+      "id": 26,
+      "seek": 2936,
+      "start": 40.4,
+      "end": 41.6,
+      "text": " Yeah, bitch.",
+      "tokens": [
+        50916,
+        865,
+        11,
+        11960,
+        13,
+        50976
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.728906284679066,
+      "compression_ratio": 1.835164835164835,
+      "no_speech_prob": 0.012145660817623138
+    },
+    {
+      "id": 27,
+      "seek": 2936,
+      "start": 41.6,
+      "end": 42.64,
+      "text": " Oh, man.",
+      "tokens": [
+        50976,
+        876,
+        11,
+        587,
+        13,
+        51028
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.728906284679066,
+      "compression_ratio": 1.835164835164835,
+      "no_speech_prob": 0.012145660817623138
+    },
+    {
+      "id": 28,
+      "seek": 2936,
+      "start": 42.64,
+      "end": 43.6,
+      "text": " Oh, man.",
+      "tokens": [
+        51028,
+        876,
+        11,
+        587,
+        13,
+        51076
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.728906284679066,
+      "compression_ratio": 1.835164835164835,
+      "no_speech_prob": 0.012145660817623138
+    },
+    {
+      "id": 29,
+      "seek": 2936,
+      "start": 43.6,
+      "end": 44.4,
+      "text": " Yeah, come on.",
+      "tokens": [
+        51076,
+        865,
+        11,
+        808,
+        322,
+        13,
+        51116
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.728906284679066,
+      "compression_ratio": 1.835164835164835,
+      "no_speech_prob": 0.012145660817623138
+    },
+    {
+      "id": 30,
+      "seek": 2936,
+      "start": 44.4,
+      "end": 45.2,
+      "text": " Come on.",
+      "tokens": [
+        51116,
+        2492,
+        322,
+        13,
+        51156
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.728906284679066,
+      "compression_ratio": 1.835164835164835,
+      "no_speech_prob": 0.012145660817623138
+    }
+  ],
+  "language": "en"
+}

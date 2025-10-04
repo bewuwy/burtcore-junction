@@ -1,0 +1,233 @@
+{
+  "text": " packages that No, no, no! G how great! No, no! Hey, where's thenhin loved go! reality, no! Go, give it to me! Get up. He had someone overhead with that steak. He had someone overhead with him. He had someone overhead with him.",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 27.04,
+      "text": " packages that",
+      "tokens": [
+        50364,
+        17401,
+        300,
+        51716
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -5.513861974080403,
+      "compression_ratio": 0.6190476190476191,
+      "no_speech_prob": 0.3051154315471649
+    },
+    {
+      "id": 1,
+      "seek": 2704,
+      "start": 27.04,
+      "end": 33.04,
+      "text": " No, no, no!",
+      "tokens": [
+        50364,
+        883,
+        11,
+        572,
+        11,
+        572,
+        0,
+        50664
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -2.459571694428066,
+      "compression_ratio": 1.1573033707865168,
+      "no_speech_prob": 0.3558789789676666
+    },
+    {
+      "id": 2,
+      "seek": 2704,
+      "start": 33.04,
+      "end": 35.04,
+      "text": " G how great!",
+      "tokens": [
+        50664,
+        460,
+        577,
+        869,
+        0,
+        50764
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -2.459571694428066,
+      "compression_ratio": 1.1573033707865168,
+      "no_speech_prob": 0.3558789789676666
+    },
+    {
+      "id": 3,
+      "seek": 2704,
+      "start": 35.04,
+      "end": 36.04,
+      "text": " No, no!",
+      "tokens": [
+        50764,
+        883,
+        11,
+        572,
+        0,
+        50814
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -2.459571694428066,
+      "compression_ratio": 1.1573033707865168,
+      "no_speech_prob": 0.3558789789676666
+    },
+    {
+      "id": 4,
+      "seek": 2704,
+      "start": 36.04,
+      "end": 38.04,
+      "text": " Hey, where's thenhin loved go!",
+      "tokens": [
+        50814,
+        1911,
+        11,
+        689,
+        311,
+        264,
+        5728,
+        259,
+        4333,
+        352,
+        0,
+        50914
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -2.459571694428066,
+      "compression_ratio": 1.1573033707865168,
+      "no_speech_prob": 0.3558789789676666
+    },
+    {
+      "id": 5,
+      "seek": 2704,
+      "start": 38.04,
+      "end": 40.04,
+      "text": " reality, no!",
+      "tokens": [
+        50914,
+        4103,
+        11,
+        572,
+        0,
+        51014
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -2.459571694428066,
+      "compression_ratio": 1.1573033707865168,
+      "no_speech_prob": 0.3558789789676666
+    },
+    {
+      "id": 6,
+      "seek": 2704,
+      "start": 40.04,
+      "end": 41.04,
+      "text": " Go, give it to me!",
+      "tokens": [
+        51014,
+        1037,
+        11,
+        976,
+        309,
+        281,
+        385,
+        0,
+        51064
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -2.459571694428066,
+      "compression_ratio": 1.1573033707865168,
+      "no_speech_prob": 0.3558789789676666
+    },
+    {
+      "id": 7,
+      "seek": 2704,
+      "start": 41.04,
+      "end": 43.04,
+      "text": " Get up.",
+      "tokens": [
+        51064,
+        3240,
+        493,
+        13,
+        51164
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -2.459571694428066,
+      "compression_ratio": 1.1573033707865168,
+      "no_speech_prob": 0.3558789789676666
+    },
+    {
+      "id": 8,
+      "seek": 5704,
+      "start": 57.04,
+      "end": 67.03999999999999,
+      "text": " He had someone overhead with that steak.",
+      "tokens": [
+        50364,
+        634,
+        632,
+        1580,
+        19922,
+        365,
+        300,
+        17009,
+        13,
+        50864
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.6203353487212082,
+      "compression_ratio": 1.9285714285714286,
+      "no_speech_prob": 0.3688940107822418
+    },
+    {
+      "id": 9,
+      "seek": 5704,
+      "start": 67.03999999999999,
+      "end": 69.03999999999999,
+      "text": " He had someone overhead with him.",
+      "tokens": [
+        50864,
+        634,
+        632,
+        1580,
+        19922,
+        365,
+        796,
+        13,
+        50964
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.6203353487212082,
+      "compression_ratio": 1.9285714285714286,
+      "no_speech_prob": 0.3688940107822418
+    },
+    {
+      "id": 10,
+      "seek": 5704,
+      "start": 69.03999999999999,
+      "end": 70.03999999999999,
+      "text": " He had someone overhead with him.",
+      "tokens": [
+        50964,
+        634,
+        632,
+        1580,
+        19922,
+        365,
+        796,
+        13,
+        51014
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.6203353487212082,
+      "compression_ratio": 1.9285714285714286,
+      "no_speech_prob": 0.3688940107822418
+    }
+  ],
+  "language": "en"
+}

@@ -1,0 +1,183 @@
+{
+  "text": " Look at these guys, it's another one. We got a safety insecurity. Monitor by LoveView Technologies. Oh yeah. Safety insecurities with your nice camera system right there. You know it's got a solar panel. It's just everything you need. Yep. 5G.",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 3.0,
+      "text": " Look at these guys, it's another one.",
+      "tokens": [
+        50364,
+        2053,
+        412,
+        613,
+        1074,
+        11,
+        309,
+        311,
+        1071,
+        472,
+        13,
+        50514
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.339172643773696,
+      "compression_ratio": 1.401197604790419,
+      "no_speech_prob": 0.04178740829229355
+    },
+    {
+      "id": 1,
+      "seek": 0,
+      "start": 3.0,
+      "end": 7.0,
+      "text": " We got a safety insecurity.",
+      "tokens": [
+        50514,
+        492,
+        658,
+        257,
+        4514,
+        35058,
+        13,
+        50714
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.339172643773696,
+      "compression_ratio": 1.401197604790419,
+      "no_speech_prob": 0.04178740829229355
+    },
+    {
+      "id": 2,
+      "seek": 0,
+      "start": 7.0,
+      "end": 11.0,
+      "text": " Monitor by LoveView Technologies.",
+      "tokens": [
+        50714,
+        33799,
+        538,
+        5956,
+        30203,
+        46993,
+        13,
+        50914
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.339172643773696,
+      "compression_ratio": 1.401197604790419,
+      "no_speech_prob": 0.04178740829229355
+    },
+    {
+      "id": 3,
+      "seek": 0,
+      "start": 11.0,
+      "end": 13.0,
+      "text": " Oh yeah.",
+      "tokens": [
+        50914,
+        876,
+        1338,
+        13,
+        51014
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.339172643773696,
+      "compression_ratio": 1.401197604790419,
+      "no_speech_prob": 0.04178740829229355
+    },
+    {
+      "id": 4,
+      "seek": 0,
+      "start": 13.0,
+      "end": 21.0,
+      "text": " Safety insecurities with your nice camera system right there.",
+      "tokens": [
+        51014,
+        21340,
+        18851,
+        21973,
+        365,
+        428,
+        1481,
+        2799,
+        1185,
+        558,
+        456,
+        13,
+        51414
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.339172643773696,
+      "compression_ratio": 1.401197604790419,
+      "no_speech_prob": 0.04178740829229355
+    },
+    {
+      "id": 5,
+      "seek": 0,
+      "start": 21.0,
+      "end": 23.0,
+      "text": " You know it's got a solar panel.",
+      "tokens": [
+        51414,
+        509,
+        458,
+        309,
+        311,
+        658,
+        257,
+        7936,
+        4831,
+        13,
+        51514
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.339172643773696,
+      "compression_ratio": 1.401197604790419,
+      "no_speech_prob": 0.04178740829229355
+    },
+    {
+      "id": 6,
+      "seek": 0,
+      "start": 23.0,
+      "end": 26.0,
+      "text": " It's just everything you need.",
+      "tokens": [
+        51514,
+        467,
+        311,
+        445,
+        1203,
+        291,
+        643,
+        13,
+        51664
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.339172643773696,
+      "compression_ratio": 1.401197604790419,
+      "no_speech_prob": 0.04178740829229355
+    },
+    {
+      "id": 7,
+      "seek": 2600,
+      "start": 26.0,
+      "end": 29.0,
+      "text": " Yep. 5G.",
+      "tokens": [
+        50364,
+        7010,
+        13,
+        1025,
+        38,
+        13,
+        50514
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.5096365809440613,
+      "compression_ratio": 0.5,
+      "no_speech_prob": 0.07995831966400146
+    }
+  ],
+  "language": "en"
+}

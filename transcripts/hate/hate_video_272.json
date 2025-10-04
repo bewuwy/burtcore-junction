@@ -1,0 +1,26 @@
+{
+  "text": " I'm a nigger",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 2.0,
+      "text": " I'm a nigger",
+      "tokens": [
+        50364,
+        286,
+        478,
+        257,
+        297,
+        6812,
+        50464
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.6574657559394836,
+      "compression_ratio": 0.6,
+      "no_speech_prob": 0.276665061712265
+    }
+  ],
+  "language": "en"
+}

@@ -1,0 +1,75 @@
+{
+  "text": " Here's guys, I'll eat. God, this is all I need. Be good, be good, job.",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 2.0,
+      "text": " Here's guys, I'll eat.",
+      "tokens": [
+        50364,
+        1692,
+        311,
+        1074,
+        11,
+        286,
+        603,
+        1862,
+        13,
+        50464
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.9781689182404549,
+      "compression_ratio": 1.044776119402985,
+      "no_speech_prob": 0.40676239132881165
+    },
+    {
+      "id": 1,
+      "seek": 0,
+      "start": 2.0,
+      "end": 4.0,
+      "text": " God, this is all I need.",
+      "tokens": [
+        50464,
+        1265,
+        11,
+        341,
+        307,
+        439,
+        286,
+        643,
+        13,
+        50564
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.9781689182404549,
+      "compression_ratio": 1.044776119402985,
+      "no_speech_prob": 0.40676239132881165
+    },
+    {
+      "id": 2,
+      "seek": 0,
+      "start": 4.0,
+      "end": 6.0,
+      "text": " Be good, be good, job.",
+      "tokens": [
+        50564,
+        879,
+        665,
+        11,
+        312,
+        665,
+        11,
+        1691,
+        13,
+        50664
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.9781689182404549,
+      "compression_ratio": 1.044776119402985,
+      "no_speech_prob": 0.40676239132881165
+    }
+  ],
+  "language": "en"
+}

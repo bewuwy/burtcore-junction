@@ -1,0 +1,81 @@
+{
+  "text": " Banan comet Fal홍 Banan muita ni Banan Bananอ",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.36,
+      "end": 4.96,
+      "text": " Banan comet Fal홍",
+      "tokens": [
+        50382,
+        13850,
+        282,
+        33696,
+        15202,
+        6048,
+        235,
+        50612
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -5.3225892384847,
+      "compression_ratio": 1.0666666666666667,
+      "no_speech_prob": 0.4661065936088562
+    },
+    {
+      "id": 1,
+      "seek": 0,
+      "start": 5.24,
+      "end": 13.38,
+      "text": " Banan muita ni",
+      "tokens": [
+        50626,
+        13850,
+        282,
+        21025,
+        3867,
+        51033
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -5.3225892384847,
+      "compression_ratio": 1.0666666666666667,
+      "no_speech_prob": 0.4661065936088562
+    },
+    {
+      "id": 2,
+      "seek": 0,
+      "start": 14.64,
+      "end": 19.740000000000002,
+      "text": " Banan",
+      "tokens": [
+        51096,
+        13850,
+        282,
+        51351
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -5.3225892384847,
+      "compression_ratio": 1.0666666666666667,
+      "no_speech_prob": 0.4661065936088562
+    },
+    {
+      "id": 3,
+      "seek": 0,
+      "start": 20.38,
+      "end": 25.12,
+      "text": " Bananอ",
+      "tokens": [
+        51383,
+        13850,
+        282,
+        5104,
+        51620
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -5.3225892384847,
+      "compression_ratio": 1.0666666666666667,
+      "no_speech_prob": 0.4661065936088562
+    }
+  ],
+  "language": "ht"
+}

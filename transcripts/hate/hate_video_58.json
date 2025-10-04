@@ -1,0 +1,1205 @@
+{
+  "text": " Round and roll to Ageer Moon Round and roll to Ageer Moon Take your block and make the NIGGERS face their eye Round and roll to Ageer Moon Commence their shooting of the Coolance Head to D Trojan May The plans love B with you Round and roll to Ageer Moon You really make the news And you really park the attention of the Jews Mr. Sheckle's time is about to blow a fuse This is Ageer Moon To ground control I'm loading my A K And I'm laughing As I pull the trigger And spray I'll cover the streets In NIGGER blood TODAY FOR HERE I am doing all that I can In A TOW Going to MOW DOWN Everyone Whose skin Is brown Now I have killed 100,000 Spooks It's time to drop the nukes Slotter every single person With a hook nose Tell the clan I love them very much They know a lot Round and roll to Ageer Moon The Jews are dead You real soon Congratulations, Ageer Moon Congratulations, Ageer Moon Congratulations, Ageer Moon Congratulations, Ageer Moon Here I am doing all that I can The middle of town Going to MOW DOWN Everyone Whose skin Is brown The middle of town Going to MOW",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 3000,
+      "start": 30.0,
+      "end": 32.64,
+      "text": " Round and roll to",
+      "tokens": [
+        50364,
+        18525,
+        293,
+        3373,
+        281,
+        50496
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.6964355615469126,
+      "compression_ratio": 1.6626506024096386,
+      "no_speech_prob": 0.571986734867096
+    },
+    {
+      "id": 1,
+      "seek": 3000,
+      "start": 32.64,
+      "end": 37.0,
+      "text": " Ageer Moon",
+      "tokens": [
+        50496,
+        16280,
+        260,
+        10714,
+        50714
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.6964355615469126,
+      "compression_ratio": 1.6626506024096386,
+      "no_speech_prob": 0.571986734867096
+    },
+    {
+      "id": 2,
+      "seek": 3000,
+      "start": 37.0,
+      "end": 39.8,
+      "text": " Round and roll to",
+      "tokens": [
+        50714,
+        18525,
+        293,
+        3373,
+        281,
+        50854
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.6964355615469126,
+      "compression_ratio": 1.6626506024096386,
+      "no_speech_prob": 0.571986734867096
+    },
+    {
+      "id": 3,
+      "seek": 3000,
+      "start": 39.8,
+      "end": 45.0,
+      "text": " Ageer Moon",
+      "tokens": [
+        50854,
+        16280,
+        260,
+        10714,
+        51114
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.6964355615469126,
+      "compression_ratio": 1.6626506024096386,
+      "no_speech_prob": 0.571986734867096
+    },
+    {
+      "id": 4,
+      "seek": 3000,
+      "start": 45.0,
+      "end": 47.96,
+      "text": " Take your block and make the",
+      "tokens": [
+        51114,
+        3664,
+        428,
+        3461,
+        293,
+        652,
+        264,
+        51262
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.6964355615469126,
+      "compression_ratio": 1.6626506024096386,
+      "no_speech_prob": 0.571986734867096
+    },
+    {
+      "id": 5,
+      "seek": 3000,
+      "start": 47.96,
+      "end": 52.0,
+      "text": " NIGGERS face their eye",
+      "tokens": [
+        51262,
+        426,
+        10489,
+        38,
+        14451,
+        1851,
+        641,
+        3313,
+        51464
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.6964355615469126,
+      "compression_ratio": 1.6626506024096386,
+      "no_speech_prob": 0.571986734867096
+    },
+    {
+      "id": 6,
+      "seek": 3000,
+      "start": 52.0,
+      "end": 54.120000000000005,
+      "text": " Round and roll to",
+      "tokens": [
+        51464,
+        18525,
+        293,
+        3373,
+        281,
+        51570
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.6964355615469126,
+      "compression_ratio": 1.6626506024096386,
+      "no_speech_prob": 0.571986734867096
+    },
+    {
+      "id": 7,
+      "seek": 3000,
+      "start": 54.120000000000005,
+      "end": 59.0,
+      "text": " Ageer Moon",
+      "tokens": [
+        51570,
+        16280,
+        260,
+        10714,
+        51814
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.6964355615469126,
+      "compression_ratio": 1.6626506024096386,
+      "no_speech_prob": 0.571986734867096
+    },
+    {
+      "id": 8,
+      "seek": 5900,
+      "start": 59.0,
+      "end": 61.84,
+      "text": " Commence their shooting of the",
+      "tokens": [
+        50364,
+        3046,
+        655,
+        641,
+        5942,
+        295,
+        264,
+        50506
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.9397211074829102,
+      "compression_ratio": 1.118279569892473,
+      "no_speech_prob": 0.0022970803547650576
+    },
+    {
+      "id": 9,
+      "seek": 5900,
+      "start": 61.84,
+      "end": 66.84,
+      "text": " Coolance",
+      "tokens": [
+        50506,
+        8561,
+        719,
+        50756
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.9397211074829102,
+      "compression_ratio": 1.118279569892473,
+      "no_speech_prob": 0.0022970803547650576
+    },
+    {
+      "id": 10,
+      "seek": 5900,
+      "start": 66.84,
+      "end": 69.0,
+      "text": " Head to D Trojan May",
+      "tokens": [
+        50756,
+        11398,
+        281,
+        413,
+        19406,
+        14763,
+        1891,
+        50864
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.9397211074829102,
+      "compression_ratio": 1.118279569892473,
+      "no_speech_prob": 0.0022970803547650576
+    },
+    {
+      "id": 11,
+      "seek": 5900,
+      "start": 69.0,
+      "end": 75.0,
+      "text": " The plans love B with you",
+      "tokens": [
+        50864,
+        440,
+        5482,
+        959,
+        363,
+        365,
+        291,
+        51164
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.9397211074829102,
+      "compression_ratio": 1.118279569892473,
+      "no_speech_prob": 0.0022970803547650576
+    },
+    {
+      "id": 12,
+      "seek": 5900,
+      "start": 75.0,
+      "end": 86.48,
+      "text": " Round and roll to",
+      "tokens": [
+        51164,
+        18525,
+        293,
+        3373,
+        281,
+        51738
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.9397211074829102,
+      "compression_ratio": 1.118279569892473,
+      "no_speech_prob": 0.0022970803547650576
+    },
+    {
+      "id": 13,
+      "seek": 8648,
+      "start": 86.48,
+      "end": 88.48,
+      "text": " Ageer Moon",
+      "tokens": [
+        50364,
+        16280,
+        260,
+        10714,
+        50464
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.34810543060302734,
+      "compression_ratio": 1.3233082706766917,
+      "no_speech_prob": 0.01978735625743866
+    },
+    {
+      "id": 14,
+      "seek": 8648,
+      "start": 88.48,
+      "end": 93.48,
+      "text": " You really make the news",
+      "tokens": [
+        50464,
+        509,
+        534,
+        652,
+        264,
+        2583,
+        50714
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.34810543060302734,
+      "compression_ratio": 1.3233082706766917,
+      "no_speech_prob": 0.01978735625743866
+    },
+    {
+      "id": 15,
+      "seek": 8648,
+      "start": 93.48,
+      "end": 95.48,
+      "text": " And you really",
+      "tokens": [
+        50714,
+        400,
+        291,
+        534,
+        50814
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.34810543060302734,
+      "compression_ratio": 1.3233082706766917,
+      "no_speech_prob": 0.01978735625743866
+    },
+    {
+      "id": 16,
+      "seek": 8648,
+      "start": 95.48,
+      "end": 100.48,
+      "text": " park the attention of the Jews",
+      "tokens": [
+        50814,
+        3884,
+        264,
+        3202,
+        295,
+        264,
+        11041,
+        51064
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.34810543060302734,
+      "compression_ratio": 1.3233082706766917,
+      "no_speech_prob": 0.01978735625743866
+    },
+    {
+      "id": 17,
+      "seek": 8648,
+      "start": 100.48,
+      "end": 104.48,
+      "text": " Mr. Sheckle's time is about to",
+      "tokens": [
+        51064,
+        2221,
+        13,
+        1240,
+        547,
+        306,
+        311,
+        565,
+        307,
+        466,
+        281,
+        51264
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.34810543060302734,
+      "compression_ratio": 1.3233082706766917,
+      "no_speech_prob": 0.01978735625743866
+    },
+    {
+      "id": 18,
+      "seek": 8648,
+      "start": 104.48,
+      "end": 108.48,
+      "text": " blow a fuse",
+      "tokens": [
+        51264,
+        6327,
+        257,
+        31328,
+        51464
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.34810543060302734,
+      "compression_ratio": 1.3233082706766917,
+      "no_speech_prob": 0.01978735625743866
+    },
+    {
+      "id": 19,
+      "seek": 8648,
+      "start": 108.48,
+      "end": 111.48,
+      "text": " This is Ageer Moon",
+      "tokens": [
+        51464,
+        639,
+        307,
+        16280,
+        260,
+        10714,
+        51614
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.34810543060302734,
+      "compression_ratio": 1.3233082706766917,
+      "no_speech_prob": 0.01978735625743866
+    },
+    {
+      "id": 20,
+      "seek": 8648,
+      "start": 111.48,
+      "end": 113.48,
+      "text": " To ground control",
+      "tokens": [
+        51614,
+        1407,
+        2727,
+        1969,
+        51714
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.34810543060302734,
+      "compression_ratio": 1.3233082706766917,
+      "no_speech_prob": 0.01978735625743866
+    },
+    {
+      "id": 21,
+      "seek": 8648,
+      "start": 113.48,
+      "end": 115.48,
+      "text": " I'm loading my",
+      "tokens": [
+        51714,
+        286,
+        478,
+        15114,
+        452,
+        51814
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.34810543060302734,
+      "compression_ratio": 1.3233082706766917,
+      "no_speech_prob": 0.01978735625743866
+    },
+    {
+      "id": 22,
+      "seek": 11548,
+      "start": 115.48,
+      "end": 118.48,
+      "text": " A K",
+      "tokens": [
+        50364,
+        316,
+        591,
+        50514
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.3293510305470434,
+      "compression_ratio": 1.1538461538461537,
+      "no_speech_prob": 0.014680029824376106
+    },
+    {
+      "id": 23,
+      "seek": 11548,
+      "start": 118.48,
+      "end": 120.48,
+      "text": " And I'm laughing",
+      "tokens": [
+        50514,
+        400,
+        286,
+        478,
+        5059,
+        50614
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.3293510305470434,
+      "compression_ratio": 1.1538461538461537,
+      "no_speech_prob": 0.014680029824376106
+    },
+    {
+      "id": 24,
+      "seek": 11548,
+      "start": 120.48,
+      "end": 122.48,
+      "text": " As I pull the trigger",
+      "tokens": [
+        50614,
+        1018,
+        286,
+        2235,
+        264,
+        7875,
+        50714
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.3293510305470434,
+      "compression_ratio": 1.1538461538461537,
+      "no_speech_prob": 0.014680029824376106
+    },
+    {
+      "id": 25,
+      "seek": 11548,
+      "start": 122.48,
+      "end": 125.48,
+      "text": " And spray",
+      "tokens": [
+        50714,
+        400,
+        8519,
+        50864
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.3293510305470434,
+      "compression_ratio": 1.1538461538461537,
+      "no_speech_prob": 0.014680029824376106
+    },
+    {
+      "id": 26,
+      "seek": 11548,
+      "start": 125.48,
+      "end": 127.48,
+      "text": " I'll cover the streets",
+      "tokens": [
+        50864,
+        286,
+        603,
+        2060,
+        264,
+        8481,
+        50964
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.3293510305470434,
+      "compression_ratio": 1.1538461538461537,
+      "no_speech_prob": 0.014680029824376106
+    },
+    {
+      "id": 27,
+      "seek": 11548,
+      "start": 127.48,
+      "end": 129.48000000000002,
+      "text": " In NIGGER blood",
+      "tokens": [
+        50964,
+        682,
+        426,
+        10489,
+        38,
+        1598,
+        3390,
+        51064
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.3293510305470434,
+      "compression_ratio": 1.1538461538461537,
+      "no_speech_prob": 0.014680029824376106
+    },
+    {
+      "id": 28,
+      "seek": 11548,
+      "start": 129.48000000000002,
+      "end": 132.48000000000002,
+      "text": " TODAY",
+      "tokens": [
+        51064,
+        8232,
+        38391,
+        51214
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.3293510305470434,
+      "compression_ratio": 1.1538461538461537,
+      "no_speech_prob": 0.014680029824376106
+    },
+    {
+      "id": 29,
+      "seek": 11548,
+      "start": 132.48000000000002,
+      "end": 136.48000000000002,
+      "text": " FOR HERE",
+      "tokens": [
+        51214,
+        15174,
+        37438,
+        51414
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.3293510305470434,
+      "compression_ratio": 1.1538461538461537,
+      "no_speech_prob": 0.014680029824376106
+    },
+    {
+      "id": 30,
+      "seek": 11548,
+      "start": 136.48000000000002,
+      "end": 140.48000000000002,
+      "text": " I am doing all that I can",
+      "tokens": [
+        51414,
+        286,
+        669,
+        884,
+        439,
+        300,
+        286,
+        393,
+        51614
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.3293510305470434,
+      "compression_ratio": 1.1538461538461537,
+      "no_speech_prob": 0.014680029824376106
+    },
+    {
+      "id": 31,
+      "seek": 11548,
+      "start": 140.48000000000002,
+      "end": 143.48000000000002,
+      "text": " In",
+      "tokens": [
+        51614,
+        682,
+        51764
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.3293510305470434,
+      "compression_ratio": 1.1538461538461537,
+      "no_speech_prob": 0.014680029824376106
+    },
+    {
+      "id": 32,
+      "seek": 14348,
+      "start": 143.48,
+      "end": 147.48,
+      "text": " A TOW",
+      "tokens": [
+        50364,
+        316,
+        314,
+        5769,
+        50564
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.5686141527616061,
+      "compression_ratio": 0.896551724137931,
+      "no_speech_prob": 0.05585470795631409
+    },
+    {
+      "id": 33,
+      "seek": 14348,
+      "start": 147.48,
+      "end": 149.48,
+      "text": " Going to",
+      "tokens": [
+        50564,
+        10963,
+        281,
+        50664
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.5686141527616061,
+      "compression_ratio": 0.896551724137931,
+      "no_speech_prob": 0.05585470795631409
+    },
+    {
+      "id": 34,
+      "seek": 14348,
+      "start": 149.48,
+      "end": 150.48,
+      "text": " MOW DOWN",
+      "tokens": [
+        50664,
+        376,
+        5769,
+        48897,
+        50714
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.5686141527616061,
+      "compression_ratio": 0.896551724137931,
+      "no_speech_prob": 0.05585470795631409
+    },
+    {
+      "id": 35,
+      "seek": 14348,
+      "start": 150.48,
+      "end": 151.48,
+      "text": " Everyone",
+      "tokens": [
+        50714,
+        5198,
+        50764
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.5686141527616061,
+      "compression_ratio": 0.896551724137931,
+      "no_speech_prob": 0.05585470795631409
+    },
+    {
+      "id": 36,
+      "seek": 14348,
+      "start": 151.48,
+      "end": 152.48,
+      "text": " Whose skin",
+      "tokens": [
+        50764,
+        28463,
+        3178,
+        50814
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.5686141527616061,
+      "compression_ratio": 0.896551724137931,
+      "no_speech_prob": 0.05585470795631409
+    },
+    {
+      "id": 37,
+      "seek": 14348,
+      "start": 152.48,
+      "end": 155.48,
+      "text": " Is brown",
+      "tokens": [
+        50814,
+        1119,
+        6292,
+        50964
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.5686141527616061,
+      "compression_ratio": 0.896551724137931,
+      "no_speech_prob": 0.05585470795631409
+    },
+    {
+      "id": 38,
+      "seek": 17348,
+      "start": 173.48,
+      "end": 180.48,
+      "text": " Now I have killed 100,000",
+      "tokens": [
+        50364,
+        823,
+        286,
+        362,
+        4652,
+        2319,
+        11,
+        1360,
+        50714
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.39162988482781175,
+      "compression_ratio": 1.205128205128205,
+      "no_speech_prob": 0.4560402035713196
+    },
+    {
+      "id": 39,
+      "seek": 17348,
+      "start": 180.48,
+      "end": 182.48,
+      "text": " Spooks",
+      "tokens": [
+        50714,
+        1738,
+        1212,
+        82,
+        50814
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.39162988482781175,
+      "compression_ratio": 1.205128205128205,
+      "no_speech_prob": 0.4560402035713196
+    },
+    {
+      "id": 40,
+      "seek": 17348,
+      "start": 182.48,
+      "end": 185.48,
+      "text": " It's time to drop the nukes",
+      "tokens": [
+        50814,
+        467,
+        311,
+        565,
+        281,
+        3270,
+        264,
+        297,
+        2034,
+        279,
+        50964
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.39162988482781175,
+      "compression_ratio": 1.205128205128205,
+      "no_speech_prob": 0.4560402035713196
+    },
+    {
+      "id": 41,
+      "seek": 17348,
+      "start": 185.48,
+      "end": 189.48,
+      "text": " Slotter every single person",
+      "tokens": [
+        50964,
+        6187,
+        310,
+        391,
+        633,
+        2167,
+        954,
+        51164
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.39162988482781175,
+      "compression_ratio": 1.205128205128205,
+      "no_speech_prob": 0.4560402035713196
+    },
+    {
+      "id": 42,
+      "seek": 17348,
+      "start": 189.48,
+      "end": 192.48,
+      "text": " With a hook nose",
+      "tokens": [
+        51164,
+        2022,
+        257,
+        6328,
+        6690,
+        51314
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.39162988482781175,
+      "compression_ratio": 1.205128205128205,
+      "no_speech_prob": 0.4560402035713196
+    },
+    {
+      "id": 43,
+      "seek": 17348,
+      "start": 192.48,
+      "end": 194.48,
+      "text": " Tell the clan",
+      "tokens": [
+        51314,
+        5115,
+        264,
+        25887,
+        51414
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.39162988482781175,
+      "compression_ratio": 1.205128205128205,
+      "no_speech_prob": 0.4560402035713196
+    },
+    {
+      "id": 44,
+      "seek": 17348,
+      "start": 194.48,
+      "end": 198.48,
+      "text": " I love them very much",
+      "tokens": [
+        51414,
+        286,
+        959,
+        552,
+        588,
+        709,
+        51614
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.39162988482781175,
+      "compression_ratio": 1.205128205128205,
+      "no_speech_prob": 0.4560402035713196
+    },
+    {
+      "id": 45,
+      "seek": 19848,
+      "start": 199.48,
+      "end": 201.48,
+      "text": " They know a lot",
+      "tokens": [
+        50414,
+        814,
+        458,
+        257,
+        688,
+        50514
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.38395578353131404,
+      "compression_ratio": 1.93,
+      "no_speech_prob": 0.03340012952685356
+    },
+    {
+      "id": 46,
+      "seek": 19848,
+      "start": 201.48,
+      "end": 204.48,
+      "text": " Round and roll to",
+      "tokens": [
+        50514,
+        18525,
+        293,
+        3373,
+        281,
+        50664
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.38395578353131404,
+      "compression_ratio": 1.93,
+      "no_speech_prob": 0.03340012952685356
+    },
+    {
+      "id": 47,
+      "seek": 19848,
+      "start": 204.48,
+      "end": 205.48,
+      "text": " Ageer Moon",
+      "tokens": [
+        50664,
+        16280,
+        260,
+        10714,
+        50714
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.38395578353131404,
+      "compression_ratio": 1.93,
+      "no_speech_prob": 0.03340012952685356
+    },
+    {
+      "id": 48,
+      "seek": 19848,
+      "start": 205.48,
+      "end": 208.48,
+      "text": " The Jews are dead",
+      "tokens": [
+        50714,
+        440,
+        11041,
+        366,
+        3116,
+        50864
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.38395578353131404,
+      "compression_ratio": 1.93,
+      "no_speech_prob": 0.03340012952685356
+    },
+    {
+      "id": 49,
+      "seek": 19848,
+      "start": 208.48,
+      "end": 209.48,
+      "text": " You real soon",
+      "tokens": [
+        50864,
+        509,
+        957,
+        2321,
+        50914
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.38395578353131404,
+      "compression_ratio": 1.93,
+      "no_speech_prob": 0.03340012952685356
+    },
+    {
+      "id": 50,
+      "seek": 19848,
+      "start": 209.48,
+      "end": 212.48,
+      "text": " Congratulations, Ageer Moon",
+      "tokens": [
+        50914,
+        9694,
+        11,
+        16280,
+        260,
+        10714,
+        51064
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.38395578353131404,
+      "compression_ratio": 1.93,
+      "no_speech_prob": 0.03340012952685356
+    },
+    {
+      "id": 51,
+      "seek": 19848,
+      "start": 212.48,
+      "end": 215.48,
+      "text": " Congratulations, Ageer Moon",
+      "tokens": [
+        51064,
+        9694,
+        11,
+        16280,
+        260,
+        10714,
+        51214
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.38395578353131404,
+      "compression_ratio": 1.93,
+      "no_speech_prob": 0.03340012952685356
+    },
+    {
+      "id": 52,
+      "seek": 19848,
+      "start": 215.48,
+      "end": 219.48,
+      "text": " Congratulations, Ageer Moon",
+      "tokens": [
+        51214,
+        9694,
+        11,
+        16280,
+        260,
+        10714,
+        51414
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.38395578353131404,
+      "compression_ratio": 1.93,
+      "no_speech_prob": 0.03340012952685356
+    },
+    {
+      "id": 53,
+      "seek": 19848,
+      "start": 219.48,
+      "end": 222.48,
+      "text": " Congratulations, Ageer Moon",
+      "tokens": [
+        51414,
+        9694,
+        11,
+        16280,
+        260,
+        10714,
+        51564
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.38395578353131404,
+      "compression_ratio": 1.93,
+      "no_speech_prob": 0.03340012952685356
+    },
+    {
+      "id": 54,
+      "seek": 19848,
+      "start": 222.48,
+      "end": 223.48,
+      "text": " Here",
+      "tokens": [
+        51564,
+        1692,
+        51614
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.38395578353131404,
+      "compression_ratio": 1.93,
+      "no_speech_prob": 0.03340012952685356
+    },
+    {
+      "id": 55,
+      "seek": 22348,
+      "start": 223.48,
+      "end": 226.48,
+      "text": " I am doing all that I can",
+      "tokens": [
+        50364,
+        286,
+        669,
+        884,
+        439,
+        300,
+        286,
+        393,
+        50514
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.33965856888714957,
+      "compression_ratio": 1.0459770114942528,
+      "no_speech_prob": 0.05043213814496994
+    },
+    {
+      "id": 56,
+      "seek": 22348,
+      "start": 226.48,
+      "end": 230.48,
+      "text": " The middle of town",
+      "tokens": [
+        50514,
+        440,
+        2808,
+        295,
+        3954,
+        50714
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.33965856888714957,
+      "compression_ratio": 1.0459770114942528,
+      "no_speech_prob": 0.05043213814496994
+    },
+    {
+      "id": 57,
+      "seek": 22348,
+      "start": 230.48,
+      "end": 235.48,
+      "text": " Going to MOW DOWN",
+      "tokens": [
+        50714,
+        10963,
+        281,
+        376,
+        5769,
+        48897,
+        50964
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.33965856888714957,
+      "compression_ratio": 1.0459770114942528,
+      "no_speech_prob": 0.05043213814496994
+    },
+    {
+      "id": 58,
+      "seek": 22348,
+      "start": 235.48,
+      "end": 243.48,
+      "text": " Everyone",
+      "tokens": [
+        50964,
+        5198,
+        51364
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.33965856888714957,
+      "compression_ratio": 1.0459770114942528,
+      "no_speech_prob": 0.05043213814496994
+    },
+    {
+      "id": 59,
+      "seek": 22348,
+      "start": 243.48,
+      "end": 244.48,
+      "text": " Whose skin",
+      "tokens": [
+        51364,
+        28463,
+        3178,
+        51414
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.33965856888714957,
+      "compression_ratio": 1.0459770114942528,
+      "no_speech_prob": 0.05043213814496994
+    },
+    {
+      "id": 60,
+      "seek": 22348,
+      "start": 244.48,
+      "end": 246.48,
+      "text": " Is brown",
+      "tokens": [
+        51414,
+        1119,
+        6292,
+        51514
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.33965856888714957,
+      "compression_ratio": 1.0459770114942528,
+      "no_speech_prob": 0.05043213814496994
+    },
+    {
+      "id": 61,
+      "seek": 25348,
+      "start": 253.48,
+      "end": 260.48,
+      "text": " The middle of town",
+      "tokens": [
+        50364,
+        440,
+        2808,
+        295,
+        3954,
+        50714
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.6730025364802434,
+      "compression_ratio": 0.8378378378378378,
+      "no_speech_prob": 0.7602576017379761
+    },
+    {
+      "id": 62,
+      "seek": 25348,
+      "start": 260.48,
+      "end": 266.48,
+      "text": " Going to MOW",
+      "tokens": [
+        50714,
+        10963,
+        281,
+        376,
+        5769,
+        51014
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.6730025364802434,
+      "compression_ratio": 0.8378378378378378,
+      "no_speech_prob": 0.7602576017379761
+    }
+  ],
+  "language": "en"
+}

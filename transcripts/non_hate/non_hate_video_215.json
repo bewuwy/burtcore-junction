@@ -1,0 +1,22 @@
+{
+  "text": " Sergey",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 1.8800000000000001,
+      "text": " Sergey",
+      "tokens": [
+        50364,
+        49238,
+        50458
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -4.277945518493652,
+      "compression_ratio": 0.42857142857142855,
+      "no_speech_prob": 0.49569347500801086
+    }
+  ],
+  "language": "en"
+}

@@ -1,0 +1,27 @@
+{
+  "text": " No justice, no peace!",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 7.0,
+      "text": " No justice, no peace!",
+      "tokens": [
+        50364,
+        883,
+        6118,
+        11,
+        572,
+        4336,
+        0,
+        50714
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.7723826302422417,
+      "compression_ratio": 0.7241379310344828,
+      "no_speech_prob": 0.39017921686172485
+    }
+  ],
+  "language": "en"
+}

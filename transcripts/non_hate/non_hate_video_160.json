@@ -1,0 +1,54 @@
+{
+  "text": " Music Music Music",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 6.58,
+      "text": " Music",
+      "tokens": [
+        50364,
+        7609,
+        50693
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -2.41781928322532,
+      "compression_ratio": 1.0625,
+      "no_speech_prob": 0.36819303035736084
+    },
+    {
+      "id": 1,
+      "seek": 0,
+      "start": 6.58,
+      "end": 15.6,
+      "text": " Music",
+      "tokens": [
+        50693,
+        7609,
+        51144
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -2.41781928322532,
+      "compression_ratio": 1.0625,
+      "no_speech_prob": 0.36819303035736084
+    },
+    {
+      "id": 2,
+      "seek": 0,
+      "start": 15.6,
+      "end": 27.22,
+      "text": " Music",
+      "tokens": [
+        51144,
+        7609,
+        51725
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -2.41781928322532,
+      "compression_ratio": 1.0625,
+      "no_speech_prob": 0.36819303035736084
+    }
+  ],
+  "language": "en"
+}

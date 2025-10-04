@@ -1,0 +1,414 @@
+{
+  "text": " Digger Digger Digger Digger Digger Digger Digger Digger Digger Digger Digger Digger Digger Digger Digger Digger Digger Digger Digger Digger Digger Digger Digger Digger",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 7.0,
+      "text": " Digger",
+      "tokens": [
+        50364,
+        413,
+        6812,
+        50714
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.9398236274719238,
+      "compression_ratio": 1.1764705882352942,
+      "no_speech_prob": 0.3208322823047638
+    },
+    {
+      "id": 1,
+      "seek": 0,
+      "start": 12.0,
+      "end": 19.0,
+      "text": " Digger",
+      "tokens": [
+        50964,
+        413,
+        6812,
+        51314
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.9398236274719238,
+      "compression_ratio": 1.1764705882352942,
+      "no_speech_prob": 0.3208322823047638
+    },
+    {
+      "id": 2,
+      "seek": 0,
+      "start": 20.0,
+      "end": 27.0,
+      "text": " Digger",
+      "tokens": [
+        51364,
+        413,
+        6812,
+        51714
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.9398236274719238,
+      "compression_ratio": 1.1764705882352942,
+      "no_speech_prob": 0.3208322823047638
+    },
+    {
+      "id": 3,
+      "seek": 2700,
+      "start": 28.0,
+      "end": 34.0,
+      "text": " Digger",
+      "tokens": [
+        50414,
+        413,
+        6812,
+        50714
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.29107845530790444,
+      "compression_ratio": 1.5,
+      "no_speech_prob": 0.05865838751196861
+    },
+    {
+      "id": 4,
+      "seek": 2700,
+      "start": 36.0,
+      "end": 42.0,
+      "text": " Digger",
+      "tokens": [
+        50814,
+        413,
+        6812,
+        51114
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.29107845530790444,
+      "compression_ratio": 1.5,
+      "no_speech_prob": 0.05865838751196861
+    },
+    {
+      "id": 5,
+      "seek": 2700,
+      "start": 44.0,
+      "end": 51.0,
+      "text": " Digger",
+      "tokens": [
+        51214,
+        413,
+        6812,
+        51564
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.29107845530790444,
+      "compression_ratio": 1.5,
+      "no_speech_prob": 0.05865838751196861
+    },
+    {
+      "id": 6,
+      "seek": 2700,
+      "start": 52.0,
+      "end": 56.0,
+      "text": " Digger",
+      "tokens": [
+        51614,
+        413,
+        6812,
+        51814
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.29107845530790444,
+      "compression_ratio": 1.5,
+      "no_speech_prob": 0.05865838751196861
+    },
+    {
+      "id": 7,
+      "seek": 5700,
+      "start": 58.0,
+      "end": 64.0,
+      "text": " Digger",
+      "tokens": [
+        50414,
+        413,
+        6812,
+        50714
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.41590532889732945,
+      "compression_ratio": 1.1764705882352942,
+      "no_speech_prob": 0.03720099478960037
+    },
+    {
+      "id": 8,
+      "seek": 5700,
+      "start": 68.0,
+      "end": 72.0,
+      "text": " Digger",
+      "tokens": [
+        50914,
+        413,
+        6812,
+        51114
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.41590532889732945,
+      "compression_ratio": 1.1764705882352942,
+      "no_speech_prob": 0.03720099478960037
+    },
+    {
+      "id": 9,
+      "seek": 5700,
+      "start": 76.0,
+      "end": 80.0,
+      "text": " Digger",
+      "tokens": [
+        51314,
+        413,
+        6812,
+        51514
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.41590532889732945,
+      "compression_ratio": 1.1764705882352942,
+      "no_speech_prob": 0.03720099478960037
+    },
+    {
+      "id": 10,
+      "seek": 8700,
+      "start": 87.0,
+      "end": 94.0,
+      "text": " Digger",
+      "tokens": [
+        50364,
+        413,
+        6812,
+        50714
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.3187176500047956,
+      "compression_ratio": 1.1764705882352942,
+      "no_speech_prob": 0.13575084507465363
+    },
+    {
+      "id": 11,
+      "seek": 8700,
+      "start": 100.0,
+      "end": 105.0,
+      "text": " Digger",
+      "tokens": [
+        51014,
+        413,
+        6812,
+        51264
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.3187176500047956,
+      "compression_ratio": 1.1764705882352942,
+      "no_speech_prob": 0.13575084507465363
+    },
+    {
+      "id": 12,
+      "seek": 8700,
+      "start": 108.0,
+      "end": 113.0,
+      "text": " Digger",
+      "tokens": [
+        51414,
+        413,
+        6812,
+        51664
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.3187176500047956,
+      "compression_ratio": 1.1764705882352942,
+      "no_speech_prob": 0.13575084507465363
+    },
+    {
+      "id": 13,
+      "seek": 11300,
+      "start": 113.0,
+      "end": 120.0,
+      "text": " Digger",
+      "tokens": [
+        50364,
+        413,
+        6812,
+        50714
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.5809039388384137,
+      "compression_ratio": 1.1764705882352942,
+      "no_speech_prob": 0.044798631221055984
+    },
+    {
+      "id": 14,
+      "seek": 11300,
+      "start": 121.0,
+      "end": 126.0,
+      "text": " Digger",
+      "tokens": [
+        50764,
+        413,
+        6812,
+        51014
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.5809039388384137,
+      "compression_ratio": 1.1764705882352942,
+      "no_speech_prob": 0.044798631221055984
+    },
+    {
+      "id": 15,
+      "seek": 11300,
+      "start": 132.0,
+      "end": 137.0,
+      "text": " Digger",
+      "tokens": [
+        51314,
+        413,
+        6812,
+        51564
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.5809039388384137,
+      "compression_ratio": 1.1764705882352942,
+      "no_speech_prob": 0.044798631221055984
+    },
+    {
+      "id": 16,
+      "seek": 13700,
+      "start": 137.0,
+      "end": 144.0,
+      "text": " Digger",
+      "tokens": [
+        50364,
+        413,
+        6812,
+        50714
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.45155838557652067,
+      "compression_ratio": 1.1764705882352942,
+      "no_speech_prob": 0.05411435291171074
+    },
+    {
+      "id": 17,
+      "seek": 13700,
+      "start": 145.0,
+      "end": 150.0,
+      "text": " Digger",
+      "tokens": [
+        50764,
+        413,
+        6812,
+        51014
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.45155838557652067,
+      "compression_ratio": 1.1764705882352942,
+      "no_speech_prob": 0.05411435291171074
+    },
+    {
+      "id": 18,
+      "seek": 13700,
+      "start": 155.0,
+      "end": 160.0,
+      "text": " Digger",
+      "tokens": [
+        51264,
+        413,
+        6812,
+        51514
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.45155838557652067,
+      "compression_ratio": 1.1764705882352942,
+      "no_speech_prob": 0.05411435291171074
+    },
+    {
+      "id": 19,
+      "seek": 16000,
+      "start": 160.0,
+      "end": 167.0,
+      "text": " Digger",
+      "tokens": [
+        50364,
+        413,
+        6812,
+        50714
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.3810809188418918,
+      "compression_ratio": 1.5,
+      "no_speech_prob": 0.03903334587812424
+    },
+    {
+      "id": 20,
+      "seek": 16000,
+      "start": 167.0,
+      "end": 172.0,
+      "text": " Digger",
+      "tokens": [
+        50714,
+        413,
+        6812,
+        50964
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.3810809188418918,
+      "compression_ratio": 1.5,
+      "no_speech_prob": 0.03903334587812424
+    },
+    {
+      "id": 21,
+      "seek": 16000,
+      "start": 172.0,
+      "end": 179.0,
+      "text": " Digger",
+      "tokens": [
+        50964,
+        413,
+        6812,
+        51314
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.3810809188418918,
+      "compression_ratio": 1.5,
+      "no_speech_prob": 0.03903334587812424
+    },
+    {
+      "id": 22,
+      "seek": 16000,
+      "start": 179.0,
+      "end": 184.0,
+      "text": " Digger",
+      "tokens": [
+        51314,
+        413,
+        6812,
+        51564
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.3810809188418918,
+      "compression_ratio": 1.5,
+      "no_speech_prob": 0.03903334587812424
+    },
+    {
+      "id": 23,
+      "seek": 18400,
+      "start": 184.0,
+      "end": 191.0,
+      "text": " Digger",
+      "tokens": [
+        50364,
+        413,
+        6812,
+        50714
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.1916121006011963,
+      "compression_ratio": 0.42857142857142855,
+      "no_speech_prob": 0.07198002189397812
+    }
+  ],
+  "language": "en"
+}

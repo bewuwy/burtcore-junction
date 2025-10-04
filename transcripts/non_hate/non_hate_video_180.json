@@ -1,0 +1,76 @@
+{
+  "text": " You're very loud, crowd. Let me thank all of you for coming out tonight. Let me thank you, Red.",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 3.0,
+      "text": " You're very loud, crowd.",
+      "tokens": [
+        50364,
+        509,
+        434,
+        588,
+        6588,
+        11,
+        6919,
+        13,
+        50514
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.4258863925933838,
+      "compression_ratio": 1.144578313253012,
+      "no_speech_prob": 0.1857627034187317
+    },
+    {
+      "id": 1,
+      "seek": 0,
+      "start": 10.0,
+      "end": 14.0,
+      "text": " Let me thank all of you for coming out tonight.",
+      "tokens": [
+        50864,
+        961,
+        385,
+        1309,
+        439,
+        295,
+        291,
+        337,
+        1348,
+        484,
+        4440,
+        13,
+        51064
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.4258863925933838,
+      "compression_ratio": 1.144578313253012,
+      "no_speech_prob": 0.1857627034187317
+    },
+    {
+      "id": 2,
+      "seek": 0,
+      "start": 14.0,
+      "end": 17.0,
+      "text": " Let me thank you, Red.",
+      "tokens": [
+        51064,
+        961,
+        385,
+        1309,
+        291,
+        11,
+        4477,
+        13,
+        51214
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.4258863925933838,
+      "compression_ratio": 1.144578313253012,
+      "no_speech_prob": 0.1857627034187317
+    }
+  ],
+  "language": "en"
+}

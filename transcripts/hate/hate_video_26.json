@@ -1,0 +1,306 @@
+{
+  "text": " Manidee must have a long way to start. You tell him that? It has a long way to go on reserve. Yeah! Can he have some zum restore? I think he has some. No, he hasn't. So that is what you're talking about? Why, hasn't he lost more? Can he park for me?پ h lol głos at",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 3.34,
+      "text": " Manidee must have a long way to start.",
+      "tokens": [
+        50364,
+        2458,
+        482,
+        68,
+        1633,
+        362,
+        257,
+        938,
+        636,
+        281,
+        722,
+        13,
+        50531
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -3.433238817297894,
+      "compression_ratio": 1.4821428571428572,
+      "no_speech_prob": 0.45555585622787476
+    },
+    {
+      "id": 1,
+      "seek": 0,
+      "start": 4.3,
+      "end": 4.98,
+      "text": " You tell him that?",
+      "tokens": [
+        50579,
+        509,
+        980,
+        796,
+        300,
+        30,
+        50613
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -3.433238817297894,
+      "compression_ratio": 1.4821428571428572,
+      "no_speech_prob": 0.45555585622787476
+    },
+    {
+      "id": 2,
+      "seek": 0,
+      "start": 5.32,
+      "end": 7.5,
+      "text": " It has a long way to go on reserve.",
+      "tokens": [
+        50630,
+        467,
+        575,
+        257,
+        938,
+        636,
+        281,
+        352,
+        322,
+        17824,
+        13,
+        50739
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -3.433238817297894,
+      "compression_ratio": 1.4821428571428572,
+      "no_speech_prob": 0.45555585622787476
+    },
+    {
+      "id": 3,
+      "seek": 0,
+      "start": 16.02,
+      "end": 16.52,
+      "text": " Yeah!",
+      "tokens": [
+        51165,
+        865,
+        0,
+        51190
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -3.433238817297894,
+      "compression_ratio": 1.4821428571428572,
+      "no_speech_prob": 0.45555585622787476
+    },
+    {
+      "id": 4,
+      "seek": 0,
+      "start": 17.54,
+      "end": 19.740000000000002,
+      "text": " Can he have some zum restore?",
+      "tokens": [
+        51241,
+        1664,
+        415,
+        362,
+        512,
+        5919,
+        15227,
+        30,
+        51351
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -3.433238817297894,
+      "compression_ratio": 1.4821428571428572,
+      "no_speech_prob": 0.45555585622787476
+    },
+    {
+      "id": 5,
+      "seek": 0,
+      "start": 21.2,
+      "end": 22.6,
+      "text": " I think he has some.",
+      "tokens": [
+        51424,
+        286,
+        519,
+        415,
+        575,
+        512,
+        13,
+        51494
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -3.433238817297894,
+      "compression_ratio": 1.4821428571428572,
+      "no_speech_prob": 0.45555585622787476
+    },
+    {
+      "id": 6,
+      "seek": 0,
+      "start": 23.54,
+      "end": 24.1,
+      "text": " No, he hasn't.",
+      "tokens": [
+        51541,
+        883,
+        11,
+        415,
+        6132,
+        380,
+        13,
+        51569
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -3.433238817297894,
+      "compression_ratio": 1.4821428571428572,
+      "no_speech_prob": 0.45555585622787476
+    },
+    {
+      "id": 7,
+      "seek": 0,
+      "start": 24.1,
+      "end": 25.900000000000002,
+      "text": " So that is what you're talking about?",
+      "tokens": [
+        51569,
+        407,
+        300,
+        307,
+        437,
+        291,
+        434,
+        1417,
+        466,
+        30,
+        51659
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -3.433238817297894,
+      "compression_ratio": 1.4821428571428572,
+      "no_speech_prob": 0.45555585622787476
+    },
+    {
+      "id": 8,
+      "seek": 0,
+      "start": 26.900000000000002,
+      "end": 27.6,
+      "text": " Why, hasn't he lost more?",
+      "tokens": [
+        51709,
+        1545,
+        11,
+        6132,
+        380,
+        415,
+        2731,
+        544,
+        30,
+        51744
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -3.433238817297894,
+      "compression_ratio": 1.4821428571428572,
+      "no_speech_prob": 0.45555585622787476
+    },
+    {
+      "id": 9,
+      "seek": 0,
+      "start": 28.84,
+      "end": 29.76,
+      "text": " Can he park for me?",
+      "tokens": [
+        51806,
+        1664,
+        415,
+        3884,
+        337,
+        385,
+        30,
+        51852
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -3.433238817297894,
+      "compression_ratio": 1.4821428571428572,
+      "no_speech_prob": 0.45555585622787476
+    },
+    {
+      "id": 10,
+      "seek": 2976,
+      "start": 29.76,
+      "end": 33.78,
+      "text": "پ",
+      "tokens": [
+        50364,
+        27779,
+        50565
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -4.446203751997515,
+      "compression_ratio": 0.5,
+      "no_speech_prob": 0.39495667815208435
+    },
+    {
+      "id": 11,
+      "seek": 2976,
+      "start": 33.78,
+      "end": 43.300000000000004,
+      "text": " h",
+      "tokens": [
+        50565,
+        276,
+        51041
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -4.446203751997515,
+      "compression_ratio": 0.5,
+      "no_speech_prob": 0.39495667815208435
+    },
+    {
+      "id": 12,
+      "seek": 2976,
+      "start": 43.300000000000004,
+      "end": 45.28,
+      "text": " lol",
+      "tokens": [
+        51041,
+        10065,
+        51140
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -4.446203751997515,
+      "compression_ratio": 0.5,
+      "no_speech_prob": 0.39495667815208435
+    },
+    {
+      "id": 13,
+      "seek": 4528,
+      "start": 45.28,
+      "end": 54.760000000000005,
+      "text": " głos",
+      "tokens": [
+        50364,
+        43767,
+        50838
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -4.459794044494629,
+      "compression_ratio": 0.5,
+      "no_speech_prob": 0.29511120915412903
+    },
+    {
+      "id": 14,
+      "seek": 4528,
+      "start": 54.760000000000005,
+      "end": 64.94,
+      "text": " at",
+      "tokens": [
+        50838,
+        412,
+        51347
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -4.459794044494629,
+      "compression_ratio": 0.5,
+      "no_speech_prob": 0.29511120915412903
+    }
+  ],
+  "language": "en"
+}

@@ -1,0 +1,42 @@
+{
+  "text": " Fuck jeans. We lose cash. We lose the real jeans and the real Egyptians man. Bang bang.",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 7.0,
+      "text": " Fuck jeans. We lose cash. We lose the real jeans and the real Egyptians man. Bang bang.",
+      "tokens": [
+        50364,
+        10965,
+        18880,
+        13,
+        492,
+        3624,
+        6388,
+        13,
+        492,
+        3624,
+        264,
+        957,
+        18880,
+        293,
+        264,
+        957,
+        44119,
+        587,
+        13,
+        11538,
+        8550,
+        13,
+        50714
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.6221439441045126,
+      "compression_ratio": 1.2253521126760563,
+      "no_speech_prob": 0.22093698382377625
+    }
+  ],
+  "language": "en"
+}

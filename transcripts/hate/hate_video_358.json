@@ -1,0 +1,26 @@
+{
+  "text": " Freeze, nigger!",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 2.0,
+      "text": " Freeze, nigger!",
+      "tokens": [
+        50364,
+        48096,
+        11,
+        297,
+        6812,
+        0,
+        50464
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.6227198243141174,
+      "compression_ratio": 0.6521739130434783,
+      "no_speech_prob": 0.032084837555885315
+    }
+  ],
+  "language": "en"
+}

@@ -1,0 +1,146 @@
+{
+  "text": " PJW really here. I know PJW watches to keep posting chat. Oh, good, good, good, good. Yeah, I think that is actually Paul. Mmm. Mikey. Do a monkey dance. Do a monkey dance.",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 6.0,
+      "text": " PJW really here. I know PJW watches to keep posting chat.",
+      "tokens": [
+        50364,
+        430,
+        41,
+        54,
+        534,
+        510,
+        13,
+        286,
+        458,
+        430,
+        41,
+        54,
+        17062,
+        281,
+        1066,
+        15978,
+        5081,
+        13,
+        50664
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.7040016825606183,
+      "compression_ratio": 1.2448979591836735,
+      "no_speech_prob": 0.26742610335350037
+    },
+    {
+      "id": 1,
+      "seek": 0,
+      "start": 6.0,
+      "end": 14.0,
+      "text": " Oh, good, good, good, good. Yeah, I think that is actually Paul.",
+      "tokens": [
+        50664,
+        876,
+        11,
+        665,
+        11,
+        665,
+        11,
+        665,
+        11,
+        665,
+        13,
+        865,
+        11,
+        286,
+        519,
+        300,
+        307,
+        767,
+        4552,
+        13,
+        51064
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.7040016825606183,
+      "compression_ratio": 1.2448979591836735,
+      "no_speech_prob": 0.26742610335350037
+    },
+    {
+      "id": 2,
+      "seek": 3000,
+      "start": 30.0,
+      "end": 32.0,
+      "text": " Mmm.",
+      "tokens": [
+        50364,
+        12146,
+        13,
+        50464
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.5994796752929688,
+      "compression_ratio": 1.2894736842105263,
+      "no_speech_prob": 0.33478018641471863
+    },
+    {
+      "id": 3,
+      "seek": 3000,
+      "start": 38.0,
+      "end": 40.0,
+      "text": " Mikey.",
+      "tokens": [
+        50764,
+        42344,
+        13,
+        50864
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.5994796752929688,
+      "compression_ratio": 1.2894736842105263,
+      "no_speech_prob": 0.33478018641471863
+    },
+    {
+      "id": 4,
+      "seek": 3000,
+      "start": 42.0,
+      "end": 44.0,
+      "text": " Do a monkey dance.",
+      "tokens": [
+        50964,
+        1144,
+        257,
+        17847,
+        4489,
+        13,
+        51064
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.5994796752929688,
+      "compression_ratio": 1.2894736842105263,
+      "no_speech_prob": 0.33478018641471863
+    },
+    {
+      "id": 5,
+      "seek": 3000,
+      "start": 45.0,
+      "end": 47.0,
+      "text": " Do a monkey dance.",
+      "tokens": [
+        51114,
+        1144,
+        257,
+        17847,
+        4489,
+        13,
+        51214
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.5994796752929688,
+      "compression_ratio": 1.2894736842105263,
+      "no_speech_prob": 0.33478018641471863
+    }
+  ],
+  "language": "en"
+}

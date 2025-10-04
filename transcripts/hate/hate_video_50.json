@@ -1,0 +1,24 @@
+{
+  "text": " Geneleun",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 26.6,
+      "text": " Geneleun",
+      "tokens": [
+        50386,
+        18083,
+        306,
+        409,
+        51694
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -5.330893516540527,
+      "compression_ratio": 0.5,
+      "no_speech_prob": 0.4487438201904297
+    }
+  ],
+  "language": "en"
+}

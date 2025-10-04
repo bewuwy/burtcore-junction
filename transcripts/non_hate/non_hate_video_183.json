@@ -1,0 +1,212 @@
+{
+  "text": " Where's that? Get up there, stop rocks, stop rocks. 이쪽 knucky me up, boys. Stay back!age your dick hear me up, shoot that!fjackson! Judge chестно bacterias. Shut the crap back. Where is the whorerible",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 1.22,
+      "text": " Where's that?",
+      "tokens": [
+        50364,
+        2305,
+        311,
+        300,
+        30,
+        50425
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -4.0697946121443564,
+      "compression_ratio": 1.1935483870967742,
+      "no_speech_prob": 0.39257726073265076
+    },
+    {
+      "id": 1,
+      "seek": 0,
+      "start": 1.22,
+      "end": 3.7,
+      "text": " Get up there, stop rocks, stop rocks.",
+      "tokens": [
+        50425,
+        3240,
+        493,
+        456,
+        11,
+        1590,
+        10989,
+        11,
+        1590,
+        10989,
+        13,
+        50549
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -4.0697946121443564,
+      "compression_ratio": 1.1935483870967742,
+      "no_speech_prob": 0.39257726073265076
+    },
+    {
+      "id": 2,
+      "seek": 0,
+      "start": 4.0600000000000005,
+      "end": 5.42,
+      "text": " 이쪽 knucky me up, boys.",
+      "tokens": [
+        50567,
+        40325,
+        444,
+        10616,
+        385,
+        493,
+        11,
+        6347,
+        13,
+        50635
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -4.0697946121443564,
+      "compression_ratio": 1.1935483870967742,
+      "no_speech_prob": 0.39257726073265076
+    },
+    {
+      "id": 3,
+      "seek": 0,
+      "start": 5.46,
+      "end": 6.26,
+      "text": " Stay back!",
+      "tokens": [
+        50637,
+        8691,
+        646,
+        0,
+        50677
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -4.0697946121443564,
+      "compression_ratio": 1.1935483870967742,
+      "no_speech_prob": 0.39257726073265076
+    },
+    {
+      "id": 4,
+      "seek": 0,
+      "start": 6.34,
+      "end": 8.18,
+      "text": "age your dick hear me up, shoot that!",
+      "tokens": [
+        50681,
+        609,
+        428,
+        18659,
+        1568,
+        385,
+        493,
+        11,
+        3076,
+        300,
+        0,
+        50773
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -4.0697946121443564,
+      "compression_ratio": 1.1935483870967742,
+      "no_speech_prob": 0.39257726073265076
+    },
+    {
+      "id": 5,
+      "seek": 0,
+      "start": 16.98,
+      "end": 18.240000000000002,
+      "text": "fjackson!",
+      "tokens": [
+        51213,
+        69,
+        33614,
+        3015,
+        0,
+        51276
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -4.0697946121443564,
+      "compression_ratio": 1.1935483870967742,
+      "no_speech_prob": 0.39257726073265076
+    },
+    {
+      "id": 6,
+      "seek": 0,
+      "start": 21.240000000000002,
+      "end": 23.1,
+      "text": " Judge chестно bacterias.",
+      "tokens": [
+        51426,
+        19476,
+        417,
+        28779,
+        9755,
+        4609,
+        13,
+        51519
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -4.0697946121443564,
+      "compression_ratio": 1.1935483870967742,
+      "no_speech_prob": 0.39257726073265076
+    },
+    {
+      "id": 7,
+      "seek": 0,
+      "start": 26.580000000000002,
+      "end": 27.6,
+      "text": " Shut the crap back.",
+      "tokens": [
+        51693,
+        13870,
+        264,
+        12426,
+        646,
+        13,
+        51744
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -4.0697946121443564,
+      "compression_ratio": 1.1935483870967742,
+      "no_speech_prob": 0.39257726073265076
+    },
+    {
+      "id": 8,
+      "seek": 3000,
+      "start": 30.0,
+      "end": 32.82,
+      "text": " Where is the",
+      "tokens": [
+        50364,
+        2305,
+        307,
+        264,
+        50505
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -4.334324229847301,
+      "compression_ratio": 0.7419354838709677,
+      "no_speech_prob": 0.56238853931427
+    },
+    {
+      "id": 9,
+      "seek": 3000,
+      "start": 38.5,
+      "end": 40.46,
+      "text": " whorerible",
+      "tokens": [
+        50789,
+        315,
+        418,
+        4457,
+        50887
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -4.334324229847301,
+      "compression_ratio": 0.7419354838709677,
+      "no_speech_prob": 0.56238853931427
+    }
+  ],
+  "language": "en"
+}

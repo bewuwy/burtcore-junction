@@ -1,0 +1,22 @@
+{
+  "text": " The",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 14.22,
+      "text": " The",
+      "tokens": [
+        50364,
+        440,
+        51075
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -4.430632400512695,
+      "compression_ratio": 0.2727272727272727,
+      "no_speech_prob": 0.4487438201904297
+    }
+  ],
+  "language": "en"
+}

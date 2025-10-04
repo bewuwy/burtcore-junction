@@ -1,0 +1,522 @@
+{
+  "text": " 3 vur makeup K волU teşekkürler venir Buyurраст yanlış şöyle apron ziyaret Halk, Game field güzellik destroyed toka eat Cenab-ı H马czı kö Okey Potter' deben Euchkule H development Honda No. JGTジャイ sawud celuirow Venk HOF CFDI através Hetiz AVL ve GE Pork ve lifted ve o Müllerin beyinde de bitti lütfen' kerakan verdi hunted",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 2.12,
+      "text": " 3 vur makeup",
+      "tokens": [
+        50364,
+        805,
+        40797,
+        6567,
+        50470
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -5.901856994628906,
+      "compression_ratio": 0.8877551020408163,
+      "no_speech_prob": 0.4006856679916382
+    },
+    {
+      "id": 1,
+      "seek": 0,
+      "start": 2.7800000000000002,
+      "end": 3.66,
+      "text": " K волU",
+      "tokens": [
+        50503,
+        591,
+        22211,
+        52,
+        50547
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -5.901856994628906,
+      "compression_ratio": 0.8877551020408163,
+      "no_speech_prob": 0.4006856679916382
+    },
+    {
+      "id": 2,
+      "seek": 0,
+      "start": 4.18,
+      "end": 5.82,
+      "text": " teşekkürler",
+      "tokens": [
+        50573,
+        44002,
+        1918,
+        50655
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -5.901856994628906,
+      "compression_ratio": 0.8877551020408163,
+      "no_speech_prob": 0.4006856679916382
+    },
+    {
+      "id": 3,
+      "seek": 0,
+      "start": 6.72,
+      "end": 9.540000000000001,
+      "text": " venir",
+      "tokens": [
+        50700,
+        20817,
+        50841
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -5.901856994628906,
+      "compression_ratio": 0.8877551020408163,
+      "no_speech_prob": 0.4006856679916382
+    },
+    {
+      "id": 4,
+      "seek": 0,
+      "start": 11.28,
+      "end": 13.26,
+      "text": " Buyur",
+      "tokens": [
+        50928,
+        19146,
+        374,
+        51027
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -5.901856994628906,
+      "compression_ratio": 0.8877551020408163,
+      "no_speech_prob": 0.4006856679916382
+    },
+    {
+      "id": 5,
+      "seek": 0,
+      "start": 15.68,
+      "end": 18.02,
+      "text": "раст",
+      "tokens": [
+        51148,
+        46300,
+        51265
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -5.901856994628906,
+      "compression_ratio": 0.8877551020408163,
+      "no_speech_prob": 0.4006856679916382
+    },
+    {
+      "id": 6,
+      "seek": 0,
+      "start": 18.32,
+      "end": 19.48,
+      "text": " yanlış",
+      "tokens": [
+        51280,
+        46763,
+        51338
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -5.901856994628906,
+      "compression_ratio": 0.8877551020408163,
+      "no_speech_prob": 0.4006856679916382
+    },
+    {
+      "id": 7,
+      "seek": 0,
+      "start": 21.2,
+      "end": 21.5,
+      "text": " şöyle",
+      "tokens": [
+        51424,
+        26712,
+        51439
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -5.901856994628906,
+      "compression_ratio": 0.8877551020408163,
+      "no_speech_prob": 0.4006856679916382
+    },
+    {
+      "id": 8,
+      "seek": 0,
+      "start": 23.48,
+      "end": 24.46,
+      "text": " apron",
+      "tokens": [
+        51538,
+        46742,
+        51587
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -5.901856994628906,
+      "compression_ratio": 0.8877551020408163,
+      "no_speech_prob": 0.4006856679916382
+    },
+    {
+      "id": 9,
+      "seek": 0,
+      "start": 24.96,
+      "end": 25.54,
+      "text": " ziyaret",
+      "tokens": [
+        51612,
+        710,
+        4727,
+        11298,
+        51641
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -5.901856994628906,
+      "compression_ratio": 0.8877551020408163,
+      "no_speech_prob": 0.4006856679916382
+    },
+    {
+      "id": 10,
+      "seek": 2554,
+      "start": 25.54,
+      "end": 48.099999999999994,
+      "text": " Halk, Game field güzellik destroyed toka eat Cenab-ı",
+      "tokens": [
+        50364,
+        389,
+        667,
+        11,
+        7522,
+        2519,
+        290,
+        4934,
+        898,
+        1035,
+        8937,
+        281,
+        2330,
+        1862,
+        38065,
+        455,
+        12,
+        699,
+        51492
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -4.005866277785528,
+      "compression_ratio": 0.8709677419354839,
+      "no_speech_prob": 0.48294857144355774
+    },
+    {
+      "id": 11,
+      "seek": 4810,
+      "start": 48.82,
+      "end": 60.300000000000004,
+      "text": " H马czı kö Okey Potter' deben",
+      "tokens": [
+        50400,
+        389,
+        49970,
+        3689,
+        699,
+        15881,
+        38544,
+        18115,
+        6,
+        49187,
+        50974
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -5.644750741811899,
+      "compression_ratio": 0.8955223880597015,
+      "no_speech_prob": 0.5389542579650879
+    },
+    {
+      "id": 12,
+      "seek": 4810,
+      "start": 60.34,
+      "end": 70.38,
+      "text": " Euchkule",
+      "tokens": [
+        50976,
+        46668,
+        74,
+        2271,
+        51478
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -5.644750741811899,
+      "compression_ratio": 0.8955223880597015,
+      "no_speech_prob": 0.5389542579650879
+    },
+    {
+      "id": 13,
+      "seek": 4810,
+      "start": 70.42,
+      "end": 72.88,
+      "text": " H development",
+      "tokens": [
+        51480,
+        389,
+        3250,
+        51603
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -5.644750741811899,
+      "compression_ratio": 0.8955223880597015,
+      "no_speech_prob": 0.5389542579650879
+    },
+    {
+      "id": 14,
+      "seek": 4810,
+      "start": 72.92,
+      "end": 77.7,
+      "text": " Honda",
+      "tokens": [
+        51605,
+        389,
+        12233,
+        51844
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -5.644750741811899,
+      "compression_ratio": 0.8955223880597015,
+      "no_speech_prob": 0.5389542579650879
+    },
+    {
+      "id": 15,
+      "seek": 10770,
+      "start": 107.7,
+      "end": 109.14,
+      "text": " No.",
+      "tokens": [
+        50364,
+        883,
+        13,
+        50436
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -5.075692230800413,
+      "compression_ratio": 0.946236559139785,
+      "no_speech_prob": 0.5953285694122314
+    },
+    {
+      "id": 16,
+      "seek": 10770,
+      "start": 117.36,
+      "end": 121.36,
+      "text": " JGTジャイ sawud celuirow",
+      "tokens": [
+        50847,
+        508,
+        38,
+        51,
+        48405,
+        8040,
+        1866,
+        532,
+        22829,
+        1892,
+        51047
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -5.075692230800413,
+      "compression_ratio": 0.946236559139785,
+      "no_speech_prob": 0.5953285694122314
+    },
+    {
+      "id": 17,
+      "seek": 10770,
+      "start": 124.68,
+      "end": 125.92,
+      "text": " Venk HOF",
+      "tokens": [
+        51213,
+        11182,
+        74,
+        23097,
+        37,
+        51275
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -5.075692230800413,
+      "compression_ratio": 0.946236559139785,
+      "no_speech_prob": 0.5953285694122314
+    },
+    {
+      "id": 18,
+      "seek": 10770,
+      "start": 125.92,
+      "end": 126.36,
+      "text": " CFDI através",
+      "tokens": [
+        51275,
+        383,
+        37,
+        3085,
+        39941,
+        51297
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -5.075692230800413,
+      "compression_ratio": 0.946236559139785,
+      "no_speech_prob": 0.5953285694122314
+    },
+    {
+      "id": 19,
+      "seek": 10770,
+      "start": 126.36,
+      "end": 127.14,
+      "text": " Hetiz",
+      "tokens": [
+        51297,
+        12045,
+        590,
+        51336
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -5.075692230800413,
+      "compression_ratio": 0.946236559139785,
+      "no_speech_prob": 0.5953285694122314
+    },
+    {
+      "id": 20,
+      "seek": 10770,
+      "start": 127.14,
+      "end": 129.92000000000002,
+      "text": " AVL",
+      "tokens": [
+        51336,
+        30198,
+        43,
+        51475
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -5.075692230800413,
+      "compression_ratio": 0.946236559139785,
+      "no_speech_prob": 0.5953285694122314
+    },
+    {
+      "id": 21,
+      "seek": 10770,
+      "start": 129.92000000000002,
+      "end": 131.58,
+      "text": " ve",
+      "tokens": [
+        51475,
+        1241,
+        51558
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -5.075692230800413,
+      "compression_ratio": 0.946236559139785,
+      "no_speech_prob": 0.5953285694122314
+    },
+    {
+      "id": 22,
+      "seek": 10770,
+      "start": 131.58,
+      "end": 132.76,
+      "text": " GE Pork",
+      "tokens": [
+        51558,
+        18003,
+        33159,
+        51617
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -5.075692230800413,
+      "compression_ratio": 0.946236559139785,
+      "no_speech_prob": 0.5953285694122314
+    },
+    {
+      "id": 23,
+      "seek": 10770,
+      "start": 133.08,
+      "end": 134.2,
+      "text": " ve",
+      "tokens": [
+        51633,
+        1241,
+        51689
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -5.075692230800413,
+      "compression_ratio": 0.946236559139785,
+      "no_speech_prob": 0.5953285694122314
+    },
+    {
+      "id": 24,
+      "seek": 10770,
+      "start": 134.2,
+      "end": 135.16,
+      "text": " lifted",
+      "tokens": [
+        51689,
+        17854,
+        51737
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -5.075692230800413,
+      "compression_ratio": 0.946236559139785,
+      "no_speech_prob": 0.5953285694122314
+    },
+    {
+      "id": 25,
+      "seek": 10770,
+      "start": 135.36,
+      "end": 136.62,
+      "text": " ve",
+      "tokens": [
+        51747,
+        1241,
+        51810
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -5.075692230800413,
+      "compression_ratio": 0.946236559139785,
+      "no_speech_prob": 0.5953285694122314
+    },
+    {
+      "id": 26,
+      "seek": 13662,
+      "start": 136.62,
+      "end": 139.32,
+      "text": " o Müllerin beyinde de bitti lütfen'",
+      "tokens": [
+        50364,
+        277,
+        21295,
+        4658,
+        259,
+        39977,
+        8274,
+        368,
+        272,
+        21558,
+        287,
+        38655,
+        6,
+        50499
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -5.179129464285714,
+      "compression_ratio": 0.8923076923076924,
+      "no_speech_prob": 0.48339834809303284
+    },
+    {
+      "id": 27,
+      "seek": 13662,
+      "start": 139.32,
+      "end": 149.04,
+      "text": " kerakan verdi hunted",
+      "tokens": [
+        50499,
+        19377,
+        14910,
+        40243,
+        44943,
+        50985
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -5.179129464285714,
+      "compression_ratio": 0.8923076923076924,
+      "no_speech_prob": 0.48339834809303284
+    }
+  ],
+  "language": "tr"
+}

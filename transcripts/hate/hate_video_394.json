@@ -1,0 +1,92 @@
+{
+  "text": " A cock is the most dangerous, machine is yet invented by even Yankee Engineer, a T out of a Jew a few, dead dollars and some twisted laws. It comes both pricked and counted.",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 6.4,
+      "text": " A cock is the most dangerous, machine is yet invented by even Yankee Engineer, a T out",
+      "tokens": [
+        50364,
+        316,
+        11241,
+        307,
+        264,
+        881,
+        5795,
+        11,
+        3479,
+        307,
+        1939,
+        14479,
+        538,
+        754,
+        13633,
+        21687,
+        15808,
+        11,
+        257,
+        314,
+        484,
+        50684
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.40053947766621906,
+      "compression_ratio": 1.2627737226277371,
+      "no_speech_prob": 0.029996629804372787
+    },
+    {
+      "id": 1,
+      "seek": 0,
+      "start": 6.4,
+      "end": 9.9,
+      "text": " of a Jew a few, dead dollars and some twisted laws.",
+      "tokens": [
+        50684,
+        295,
+        257,
+        5679,
+        257,
+        1326,
+        11,
+        3116,
+        3808,
+        293,
+        512,
+        23057,
+        6064,
+        13,
+        50859
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.40053947766621906,
+      "compression_ratio": 1.2627737226277371,
+      "no_speech_prob": 0.029996629804372787
+    },
+    {
+      "id": 2,
+      "seek": 0,
+      "start": 9.9,
+      "end": 12.0,
+      "text": " It comes both pricked and counted.",
+      "tokens": [
+        50859,
+        467,
+        1487,
+        1293,
+        582,
+        12598,
+        293,
+        20150,
+        13,
+        50964
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.40053947766621906,
+      "compression_ratio": 1.2627737226277371,
+      "no_speech_prob": 0.029996629804372787
+    }
+  ],
+  "language": "en"
+}

@@ -1,0 +1,161 @@
+{
+  "text": " I will not subscribe to your only fancy Faggots. Look look look look first of all your lives don't matter. You ain't gonna do nothing. and nothing, oh I see! Oh Go eat bananas go get your martesque",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 3.12,
+      "text": " I will not subscribe to your only fancy",
+      "tokens": [
+        50364,
+        286,
+        486,
+        406,
+        3022,
+        281,
+        428,
+        787,
+        10247,
+        50520
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.7035120143446811,
+      "compression_ratio": 1.2293577981651376,
+      "no_speech_prob": 0.49066516757011414
+    },
+    {
+      "id": 1,
+      "seek": 0,
+      "start": 3.12,
+      "end": 7.6000000000000005,
+      "text": " Faggots. Look look look look first of all",
+      "tokens": [
+        50520,
+        479,
+        559,
+        70,
+        1971,
+        13,
+        2053,
+        574,
+        574,
+        574,
+        700,
+        295,
+        439,
+        50744
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.7035120143446811,
+      "compression_ratio": 1.2293577981651376,
+      "no_speech_prob": 0.49066516757011414
+    },
+    {
+      "id": 2,
+      "seek": 0,
+      "start": 7.6000000000000005,
+      "end": 8.84,
+      "text": " your lives don't matter.",
+      "tokens": [
+        50744,
+        428,
+        2909,
+        500,
+        380,
+        1871,
+        13,
+        50806
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.7035120143446811,
+      "compression_ratio": 1.2293577981651376,
+      "no_speech_prob": 0.49066516757011414
+    },
+    {
+      "id": 3,
+      "seek": 0,
+      "start": 8.84,
+      "end": 15.84,
+      "text": " You ain't gonna do nothing.",
+      "tokens": [
+        50806,
+        509,
+        7862,
+        380,
+        799,
+        360,
+        1825,
+        13,
+        51156
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.7035120143446811,
+      "compression_ratio": 1.2293577981651376,
+      "no_speech_prob": 0.49066516757011414
+    },
+    {
+      "id": 4,
+      "seek": 1584,
+      "start": 16.08,
+      "end": 21.12,
+      "text": " and nothing, oh I see!",
+      "tokens": [
+        50376,
+        293,
+        1825,
+        11,
+        1954,
+        286,
+        536,
+        0,
+        50628
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -4.471691478382457,
+      "compression_ratio": 0.7333333333333333,
+      "no_speech_prob": 0.3395741879940033
+    },
+    {
+      "id": 5,
+      "seek": 2112,
+      "start": 21.12,
+      "end": 23.12,
+      "text": " Oh",
+      "tokens": [
+        50364,
+        876,
+        50464
+      ],
+      "temperature": 0.2,
+      "avg_logprob": -0.9691535949707031,
+      "compression_ratio": 0.8666666666666667,
+      "no_speech_prob": 0.23508238792419434
+    },
+    {
+      "id": 6,
+      "seek": 2112,
+      "start": 42.64,
+      "end": 45.6,
+      "text": " Go eat bananas go get your martesque",
+      "tokens": [
+        51440,
+        1037,
+        1862,
+        22742,
+        352,
+        483,
+        428,
+        12396,
+        279,
+        1077,
+        51588
+      ],
+      "temperature": 0.2,
+      "avg_logprob": -0.9691535949707031,
+      "compression_ratio": 0.8666666666666667,
+      "no_speech_prob": 0.23508238792419434
+    }
+  ],
+  "language": "en"
+}

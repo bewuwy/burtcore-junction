@@ -1,0 +1,62 @@
+{
+  "text": " Killertill the brothers Maggie Timbretti monter story",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 7.12,
+      "text": " Killertill the brothers",
+      "tokens": [
+        50368,
+        39846,
+        47189,
+        264,
+        8452,
+        50720
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -6.515678405761719,
+      "compression_ratio": 0.8214285714285714,
+      "no_speech_prob": 0.43406131863594055
+    },
+    {
+      "id": 1,
+      "seek": 3000,
+      "start": 30.0,
+      "end": 32.44,
+      "text": " Maggie Timbretti",
+      "tokens": [
+        50364,
+        29107,
+        7172,
+        2672,
+        6319,
+        72,
+        50486
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -6.378761291503906,
+      "compression_ratio": 0.7837837837837838,
+      "no_speech_prob": 0.22901038825511932
+    },
+    {
+      "id": 2,
+      "seek": 3000,
+      "start": 35.72,
+      "end": 39.42,
+      "text": " monter story",
+      "tokens": [
+        50650,
+        47945,
+        1657,
+        50835
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -6.378761291503906,
+      "compression_ratio": 0.7837837837837838,
+      "no_speech_prob": 0.22901038825511932
+    }
+  ],
+  "language": "en"
+}

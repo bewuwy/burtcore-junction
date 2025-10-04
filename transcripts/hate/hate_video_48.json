@@ -1,0 +1,229 @@
+{
+  "text": " What do you think of white power? You get that, you're horrible. Yeah? Nothing else is there. Don't move. No, you're horrible. Don't move. Alright, I've got you right where I want you. Alright? What's up? Thank you.",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 2.0,
+      "text": " What do you think of white power?",
+      "tokens": [
+        50364,
+        708,
+        360,
+        291,
+        519,
+        295,
+        2418,
+        1347,
+        30,
+        50464
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.4144665322652677,
+      "compression_ratio": 1.4527027027027026,
+      "no_speech_prob": 0.08898080140352249
+    },
+    {
+      "id": 1,
+      "seek": 0,
+      "start": 2.0,
+      "end": 4.0,
+      "text": " You get that, you're horrible.",
+      "tokens": [
+        50464,
+        509,
+        483,
+        300,
+        11,
+        291,
+        434,
+        9263,
+        13,
+        50564
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.4144665322652677,
+      "compression_ratio": 1.4527027027027026,
+      "no_speech_prob": 0.08898080140352249
+    },
+    {
+      "id": 2,
+      "seek": 0,
+      "start": 4.0,
+      "end": 5.0,
+      "text": " Yeah?",
+      "tokens": [
+        50564,
+        865,
+        30,
+        50614
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.4144665322652677,
+      "compression_ratio": 1.4527027027027026,
+      "no_speech_prob": 0.08898080140352249
+    },
+    {
+      "id": 3,
+      "seek": 0,
+      "start": 5.0,
+      "end": 7.0,
+      "text": " Nothing else is there.",
+      "tokens": [
+        50614,
+        6693,
+        1646,
+        307,
+        456,
+        13,
+        50714
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.4144665322652677,
+      "compression_ratio": 1.4527027027027026,
+      "no_speech_prob": 0.08898080140352249
+    },
+    {
+      "id": 4,
+      "seek": 0,
+      "start": 7.0,
+      "end": 8.0,
+      "text": " Don't move.",
+      "tokens": [
+        50714,
+        1468,
+        380,
+        1286,
+        13,
+        50764
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.4144665322652677,
+      "compression_ratio": 1.4527027027027026,
+      "no_speech_prob": 0.08898080140352249
+    },
+    {
+      "id": 5,
+      "seek": 0,
+      "start": 8.0,
+      "end": 10.0,
+      "text": " No, you're horrible.",
+      "tokens": [
+        50764,
+        883,
+        11,
+        291,
+        434,
+        9263,
+        13,
+        50864
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.4144665322652677,
+      "compression_ratio": 1.4527027027027026,
+      "no_speech_prob": 0.08898080140352249
+    },
+    {
+      "id": 6,
+      "seek": 0,
+      "start": 10.0,
+      "end": 12.0,
+      "text": " Don't move.",
+      "tokens": [
+        50864,
+        1468,
+        380,
+        1286,
+        13,
+        50964
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.4144665322652677,
+      "compression_ratio": 1.4527027027027026,
+      "no_speech_prob": 0.08898080140352249
+    },
+    {
+      "id": 7,
+      "seek": 0,
+      "start": 12.0,
+      "end": 16.0,
+      "text": " Alright, I've got you right where I want you.",
+      "tokens": [
+        50964,
+        2798,
+        11,
+        286,
+        600,
+        658,
+        291,
+        558,
+        689,
+        286,
+        528,
+        291,
+        13,
+        51164
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.4144665322652677,
+      "compression_ratio": 1.4527027027027026,
+      "no_speech_prob": 0.08898080140352249
+    },
+    {
+      "id": 8,
+      "seek": 0,
+      "start": 16.0,
+      "end": 18.0,
+      "text": " Alright?",
+      "tokens": [
+        51164,
+        2798,
+        30,
+        51264
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.4144665322652677,
+      "compression_ratio": 1.4527027027027026,
+      "no_speech_prob": 0.08898080140352249
+    },
+    {
+      "id": 9,
+      "seek": 0,
+      "start": 18.0,
+      "end": 20.0,
+      "text": " What's up?",
+      "tokens": [
+        51264,
+        708,
+        311,
+        493,
+        30,
+        51364
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.4144665322652677,
+      "compression_ratio": 1.4527027027027026,
+      "no_speech_prob": 0.08898080140352249
+    },
+    {
+      "id": 10,
+      "seek": 0,
+      "start": 20.0,
+      "end": 23.0,
+      "text": " Thank you.",
+      "tokens": [
+        51364,
+        1044,
+        291,
+        13,
+        51514
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.4144665322652677,
+      "compression_ratio": 1.4527027027027026,
+      "no_speech_prob": 0.08898080140352249
+    }
+  ],
+  "language": "en"
+}

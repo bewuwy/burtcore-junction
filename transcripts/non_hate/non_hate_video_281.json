@@ -1,0 +1,50 @@
+{
+  "text": " Oh non sérieusement sérieusement sérieusement sérieusement sérieusement sérieusement",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 20.0,
+      "text": " Oh non sérieusement sérieusement sérieusement",
+      "tokens": [
+        50364,
+        876,
+        2107,
+        18416,
+        21359,
+        18416,
+        21359,
+        18416,
+        21359,
+        51364
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.8728282451629639,
+      "compression_ratio": 1.6,
+      "no_speech_prob": 0.313660204410553
+    },
+    {
+      "id": 1,
+      "seek": 2000,
+      "start": 20.0,
+      "end": 28.0,
+      "text": " sérieusement sérieusement sérieusement",
+      "tokens": [
+        50364,
+        18416,
+        21359,
+        18416,
+        21359,
+        18416,
+        21359,
+        50764
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.5416965484619141,
+      "compression_ratio": 1.64,
+      "no_speech_prob": 0.4299350082874298
+    }
+  ],
+  "language": "fr"
+}

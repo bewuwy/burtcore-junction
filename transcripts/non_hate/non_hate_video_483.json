@@ -1,0 +1,173 @@
+{
+  "text": "팬ante elders опass令30 Eu characterized um trabalho para ser spoil, rapar, tuned com pra soothing ser delightful. Acho que vocês estavamzigando mesmo, solchenias, mas a gente lacked os siposhini pèreom. Eu já fiquei com Mama, Karen, e Swanseabar United.",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 6.08,
+      "text": "팬ante",
+      "tokens": [
+        50364,
+        7827,
+        105,
+        2879,
+        50668
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -6.030540042453342,
+      "compression_ratio": 0.75,
+      "no_speech_prob": 0.3764626681804657
+    },
+    {
+      "id": 1,
+      "seek": 0,
+      "start": 9.14,
+      "end": 13.02,
+      "text": " elders",
+      "tokens": [
+        50821,
+        22737,
+        51015
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -6.030540042453342,
+      "compression_ratio": 0.75,
+      "no_speech_prob": 0.3764626681804657
+    },
+    {
+      "id": 2,
+      "seek": 0,
+      "start": 15.84,
+      "end": 19.36,
+      "text": " опass令",
+      "tokens": [
+        51156,
+        7683,
+        640,
+        49061,
+        51332
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -6.030540042453342,
+      "compression_ratio": 0.75,
+      "no_speech_prob": 0.3764626681804657
+    },
+    {
+      "id": 3,
+      "seek": 0,
+      "start": 25.12,
+      "end": 27.560000000000002,
+      "text": "30",
+      "tokens": [
+        51620,
+        3446,
+        51742
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -6.030540042453342,
+      "compression_ratio": 0.75,
+      "no_speech_prob": 0.3764626681804657
+    },
+    {
+      "id": 4,
+      "seek": 2756,
+      "start": 27.56,
+      "end": 41.379999999999995,
+      "text": " Eu characterized um trabalho para ser spoil, rapar, tuned com pra soothing ser delightful.",
+      "tokens": [
+        50364,
+        2186,
+        29361,
+        1105,
+        20834,
+        1690,
+        816,
+        18630,
+        11,
+        5099,
+        289,
+        11,
+        10870,
+        395,
+        3206,
+        40704,
+        816,
+        35194,
+        13,
+        51055
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -5.4393020137663814,
+      "compression_ratio": 1.3016759776536313,
+      "no_speech_prob": 0.20960785448551178
+    },
+    {
+      "id": 5,
+      "seek": 2756,
+      "start": 41.379999999999995,
+      "end": 54.26,
+      "text": " Acho que vocês estavamzigando mesmo, solchenias, mas a gente lacked os siposhini pèreom.",
+      "tokens": [
+        51055,
+        40731,
+        631,
+        10522,
+        43711,
+        36168,
+        1806,
+        9082,
+        11,
+        46281,
+        4609,
+        11,
+        2300,
+        257,
+        3788,
+        41481,
+        3003,
+        29668,
+        329,
+        45600,
+        37653,
+        298,
+        13,
+        51699
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -5.4393020137663814,
+      "compression_ratio": 1.3016759776536313,
+      "no_speech_prob": 0.20960785448551178
+    },
+    {
+      "id": 6,
+      "seek": 2756,
+      "start": 54.26,
+      "end": 56.9,
+      "text": " Eu já fiquei com Mama, Karen, e Swanseabar United.",
+      "tokens": [
+        51699,
+        2186,
+        6242,
+        49647,
+        395,
+        17775,
+        11,
+        14834,
+        11,
+        308,
+        40884,
+        17531,
+        5356,
+        2824,
+        13,
+        51831
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -5.4393020137663814,
+      "compression_ratio": 1.3016759776536313,
+      "no_speech_prob": 0.20960785448551178
+    }
+  ],
+  "language": "pt"
+}
