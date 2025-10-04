@@ -1,0 +1,965 @@
+{
+  "text": " Yeah, maybe it's like you say, but they seem scared of us of our white skin. If we were gonna do something to them. Yeah, yeah. Ha! The Z Zar Ar O Neantly L R T Zar Th Zar R Z Zar Br Zar Your demons Fl Private Ul Z Zar You You Lie Try and get scared, take my victory, boy and stop Can you hear me, I'm like a yes-yes Hey, no, you're the last one The mama never left me There's nothing The mama never left me There's nothing The mama never left me There's nothing The mama never left me There's nothing The mama never left me Yeah, I'm coming in I'm not falling in I'm just in the way right Breathe, I'm rooted I'm in the sun I'm in the dark right I'm in the dark right I'm in the dark right",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 7.0,
+      "text": " Yeah, maybe it's like you say, but they seem scared of us of our white skin.",
+      "tokens": [
+        50364,
+        865,
+        11,
+        1310,
+        309,
+        311,
+        411,
+        291,
+        584,
+        11,
+        457,
+        436,
+        1643,
+        5338,
+        295,
+        505,
+        295,
+        527,
+        2418,
+        3178,
+        13,
+        50714
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.3224026736091165,
+      "compression_ratio": 1.1734693877551021,
+      "no_speech_prob": 0.1105557531118393
+    },
+    {
+      "id": 1,
+      "seek": 0,
+      "start": 7.0,
+      "end": 10.0,
+      "text": " If we were gonna do something to them.",
+      "tokens": [
+        50714,
+        759,
+        321,
+        645,
+        799,
+        360,
+        746,
+        281,
+        552,
+        13,
+        50864
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.3224026736091165,
+      "compression_ratio": 1.1734693877551021,
+      "no_speech_prob": 0.1105557531118393
+    },
+    {
+      "id": 2,
+      "seek": 3000,
+      "start": 30.46,
+      "end": 32.7,
+      "text": " Yeah, yeah.",
+      "tokens": [
+        50387,
+        865,
+        11,
+        1338,
+        13,
+        50499
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -3.435065746307373,
+      "compression_ratio": 0.6470588235294118,
+      "no_speech_prob": 0.321123868227005
+    },
+    {
+      "id": 3,
+      "seek": 3270,
+      "start": 32.7,
+      "end": 36.96,
+      "text": " Ha!",
+      "tokens": [
+        50364,
+        4064,
+        0,
+        50577
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -3.1473124186197916,
+      "compression_ratio": 1.2,
+      "no_speech_prob": 0.5887302756309509
+    },
+    {
+      "id": 4,
+      "seek": 3270,
+      "start": 36.96,
+      "end": 38.2,
+      "text": " The",
+      "tokens": [
+        50577,
+        440,
+        50639
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -3.1473124186197916,
+      "compression_ratio": 1.2,
+      "no_speech_prob": 0.5887302756309509
+    },
+    {
+      "id": 5,
+      "seek": 3270,
+      "start": 38.2,
+      "end": 41.260000000000005,
+      "text": " Z",
+      "tokens": [
+        50639,
+        1176,
+        50792
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -3.1473124186197916,
+      "compression_ratio": 1.2,
+      "no_speech_prob": 0.5887302756309509
+    },
+    {
+      "id": 6,
+      "seek": 3270,
+      "start": 41.260000000000005,
+      "end": 41.96,
+      "text": " Zar",
+      "tokens": [
+        50792,
+        41580,
+        50827
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -3.1473124186197916,
+      "compression_ratio": 1.2,
+      "no_speech_prob": 0.5887302756309509
+    },
+    {
+      "id": 7,
+      "seek": 3270,
+      "start": 41.96,
+      "end": 42.22,
+      "text": " Ar",
+      "tokens": [
+        50827,
+        1587,
+        50840
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -3.1473124186197916,
+      "compression_ratio": 1.2,
+      "no_speech_prob": 0.5887302756309509
+    },
+    {
+      "id": 8,
+      "seek": 3270,
+      "start": 42.22,
+      "end": 42.82000000000001,
+      "text": " O",
+      "tokens": [
+        50840,
+        422,
+        50870
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -3.1473124186197916,
+      "compression_ratio": 1.2,
+      "no_speech_prob": 0.5887302756309509
+    },
+    {
+      "id": 9,
+      "seek": 3270,
+      "start": 42.82000000000001,
+      "end": 42.940000000000005,
+      "text": " Ne",
+      "tokens": [
+        50870,
+        1734,
+        50876
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -3.1473124186197916,
+      "compression_ratio": 1.2,
+      "no_speech_prob": 0.5887302756309509
+    },
+    {
+      "id": 10,
+      "seek": 3270,
+      "start": 42.940000000000005,
+      "end": 46.28,
+      "text": "antly",
+      "tokens": [
+        50876,
+        3627,
+        51043
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -3.1473124186197916,
+      "compression_ratio": 1.2,
+      "no_speech_prob": 0.5887302756309509
+    },
+    {
+      "id": 11,
+      "seek": 3270,
+      "start": 46.28,
+      "end": 47.260000000000005,
+      "text": " L",
+      "tokens": [
+        51043,
+        441,
+        51092
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -3.1473124186197916,
+      "compression_ratio": 1.2,
+      "no_speech_prob": 0.5887302756309509
+    },
+    {
+      "id": 12,
+      "seek": 3270,
+      "start": 47.260000000000005,
+      "end": 48.06,
+      "text": " R",
+      "tokens": [
+        51092,
+        497,
+        51132
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -3.1473124186197916,
+      "compression_ratio": 1.2,
+      "no_speech_prob": 0.5887302756309509
+    },
+    {
+      "id": 13,
+      "seek": 3270,
+      "start": 48.06,
+      "end": 48.260000000000005,
+      "text": " T",
+      "tokens": [
+        51132,
+        314,
+        51142
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -3.1473124186197916,
+      "compression_ratio": 1.2,
+      "no_speech_prob": 0.5887302756309509
+    },
+    {
+      "id": 14,
+      "seek": 3270,
+      "start": 48.260000000000005,
+      "end": 48.56,
+      "text": " Zar",
+      "tokens": [
+        51142,
+        41580,
+        51157
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -3.1473124186197916,
+      "compression_ratio": 1.2,
+      "no_speech_prob": 0.5887302756309509
+    },
+    {
+      "id": 15,
+      "seek": 3270,
+      "start": 48.56,
+      "end": 49.160000000000004,
+      "text": " Th",
+      "tokens": [
+        51157,
+        334,
+        51187
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -3.1473124186197916,
+      "compression_ratio": 1.2,
+      "no_speech_prob": 0.5887302756309509
+    },
+    {
+      "id": 16,
+      "seek": 3270,
+      "start": 49.160000000000004,
+      "end": 50.08,
+      "text": " Zar",
+      "tokens": [
+        51187,
+        41580,
+        51233
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -3.1473124186197916,
+      "compression_ratio": 1.2,
+      "no_speech_prob": 0.5887302756309509
+    },
+    {
+      "id": 17,
+      "seek": 3270,
+      "start": 50.08,
+      "end": 51.22,
+      "text": " R",
+      "tokens": [
+        51233,
+        497,
+        51290
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -3.1473124186197916,
+      "compression_ratio": 1.2,
+      "no_speech_prob": 0.5887302756309509
+    },
+    {
+      "id": 18,
+      "seek": 3270,
+      "start": 51.22,
+      "end": 52.260000000000005,
+      "text": " Z",
+      "tokens": [
+        51290,
+        1176,
+        51342
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -3.1473124186197916,
+      "compression_ratio": 1.2,
+      "no_speech_prob": 0.5887302756309509
+    },
+    {
+      "id": 19,
+      "seek": 3270,
+      "start": 52.260000000000005,
+      "end": 52.86,
+      "text": " Zar",
+      "tokens": [
+        51342,
+        41580,
+        51372
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -3.1473124186197916,
+      "compression_ratio": 1.2,
+      "no_speech_prob": 0.5887302756309509
+    },
+    {
+      "id": 20,
+      "seek": 3270,
+      "start": 52.86,
+      "end": 53.38,
+      "text": " Br",
+      "tokens": [
+        51372,
+        1603,
+        51398
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -3.1473124186197916,
+      "compression_ratio": 1.2,
+      "no_speech_prob": 0.5887302756309509
+    },
+    {
+      "id": 21,
+      "seek": 3270,
+      "start": 53.38,
+      "end": 54.18000000000001,
+      "text": " Zar",
+      "tokens": [
+        51398,
+        41580,
+        51438
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -3.1473124186197916,
+      "compression_ratio": 1.2,
+      "no_speech_prob": 0.5887302756309509
+    },
+    {
+      "id": 22,
+      "seek": 3270,
+      "start": 54.18000000000001,
+      "end": 55.120000000000005,
+      "text": " Your",
+      "tokens": [
+        51438,
+        2260,
+        51485
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -3.1473124186197916,
+      "compression_ratio": 1.2,
+      "no_speech_prob": 0.5887302756309509
+    },
+    {
+      "id": 23,
+      "seek": 3270,
+      "start": 55.120000000000005,
+      "end": 56.120000000000005,
+      "text": " demons",
+      "tokens": [
+        51485,
+        19733,
+        51535
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -3.1473124186197916,
+      "compression_ratio": 1.2,
+      "no_speech_prob": 0.5887302756309509
+    },
+    {
+      "id": 24,
+      "seek": 3270,
+      "start": 56.120000000000005,
+      "end": 57.02,
+      "text": " Fl",
+      "tokens": [
+        51535,
+        3235,
+        51580
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -3.1473124186197916,
+      "compression_ratio": 1.2,
+      "no_speech_prob": 0.5887302756309509
+    },
+    {
+      "id": 25,
+      "seek": 3270,
+      "start": 57.02,
+      "end": 58.34,
+      "text": " Private",
+      "tokens": [
+        51580,
+        30386,
+        51646
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -3.1473124186197916,
+      "compression_ratio": 1.2,
+      "no_speech_prob": 0.5887302756309509
+    },
+    {
+      "id": 26,
+      "seek": 3270,
+      "start": 58.34,
+      "end": 58.74,
+      "text": " Ul",
+      "tokens": [
+        51646,
+        24853,
+        51666
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -3.1473124186197916,
+      "compression_ratio": 1.2,
+      "no_speech_prob": 0.5887302756309509
+    },
+    {
+      "id": 27,
+      "seek": 3270,
+      "start": 58.74,
+      "end": 59.2,
+      "text": " Z",
+      "tokens": [
+        51666,
+        1176,
+        51689
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -3.1473124186197916,
+      "compression_ratio": 1.2,
+      "no_speech_prob": 0.5887302756309509
+    },
+    {
+      "id": 28,
+      "seek": 3270,
+      "start": 59.2,
+      "end": 60.980000000000004,
+      "text": " Zar",
+      "tokens": [
+        51689,
+        41580,
+        51778
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -3.1473124186197916,
+      "compression_ratio": 1.2,
+      "no_speech_prob": 0.5887302756309509
+    },
+    {
+      "id": 29,
+      "seek": 3270,
+      "start": 60.980000000000004,
+      "end": 61.78,
+      "text": " You",
+      "tokens": [
+        51778,
+        509,
+        51818
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -3.1473124186197916,
+      "compression_ratio": 1.2,
+      "no_speech_prob": 0.5887302756309509
+    },
+    {
+      "id": 30,
+      "seek": 3270,
+      "start": 61.78,
+      "end": 62.28,
+      "text": " You",
+      "tokens": [
+        51818,
+        509,
+        51843
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -3.1473124186197916,
+      "compression_ratio": 1.2,
+      "no_speech_prob": 0.5887302756309509
+    },
+    {
+      "id": 31,
+      "seek": 3270,
+      "start": 62.28,
+      "end": 62.38,
+      "text": " Lie",
+      "tokens": [
+        51843,
+        11197,
+        51848
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -3.1473124186197916,
+      "compression_ratio": 1.2,
+      "no_speech_prob": 0.5887302756309509
+    },
+    {
+      "id": 32,
+      "seek": 9238,
+      "start": 92.38,
+      "end": 98.78,
+      "text": " Try and get scared, take my victory, boy and stop",
+      "tokens": [
+        50364,
+        6526,
+        293,
+        483,
+        5338,
+        11,
+        747,
+        452,
+        9812,
+        11,
+        3237,
+        293,
+        1590,
+        50684
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.9914742787679036,
+      "compression_ratio": 1.408,
+      "no_speech_prob": 0.3152008354663849
+    },
+    {
+      "id": 33,
+      "seek": 9238,
+      "start": 98.78,
+      "end": 102.38,
+      "text": " Can you hear me, I'm like a yes-yes",
+      "tokens": [
+        50684,
+        1664,
+        291,
+        1568,
+        385,
+        11,
+        286,
+        478,
+        411,
+        257,
+        2086,
+        12,
+        2346,
+        50864
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.9914742787679036,
+      "compression_ratio": 1.408,
+      "no_speech_prob": 0.3152008354663849
+    },
+    {
+      "id": 34,
+      "seek": 9238,
+      "start": 107.38,
+      "end": 111.88,
+      "text": " Hey, no, you're the last one",
+      "tokens": [
+        51114,
+        1911,
+        11,
+        572,
+        11,
+        291,
+        434,
+        264,
+        1036,
+        472,
+        51339
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.9914742787679036,
+      "compression_ratio": 1.408,
+      "no_speech_prob": 0.3152008354663849
+    },
+    {
+      "id": 35,
+      "seek": 9238,
+      "start": 111.88,
+      "end": 114.38,
+      "text": " The mama never left me",
+      "tokens": [
+        51339,
+        440,
+        18775,
+        1128,
+        1411,
+        385,
+        51464
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.9914742787679036,
+      "compression_ratio": 1.408,
+      "no_speech_prob": 0.3152008354663849
+    },
+    {
+      "id": 36,
+      "seek": 9238,
+      "start": 115.38,
+      "end": 117.38,
+      "text": " There's nothing",
+      "tokens": [
+        51514,
+        821,
+        311,
+        1825,
+        51614
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.9914742787679036,
+      "compression_ratio": 1.408,
+      "no_speech_prob": 0.3152008354663849
+    },
+    {
+      "id": 37,
+      "seek": 9238,
+      "start": 117.38,
+      "end": 119.38,
+      "text": " The mama never left me",
+      "tokens": [
+        51614,
+        440,
+        18775,
+        1128,
+        1411,
+        385,
+        51714
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.9914742787679036,
+      "compression_ratio": 1.408,
+      "no_speech_prob": 0.3152008354663849
+    },
+    {
+      "id": 38,
+      "seek": 11938,
+      "start": 119.38,
+      "end": 120.38,
+      "text": " There's nothing",
+      "tokens": [
+        50364,
+        821,
+        311,
+        1825,
+        50414
+      ],
+      "temperature": 0.4,
+      "avg_logprob": -0.6350825351217518,
+      "compression_ratio": 2.1666666666666665,
+      "no_speech_prob": 0.05648907274007797
+    },
+    {
+      "id": 39,
+      "seek": 11938,
+      "start": 120.38,
+      "end": 123.38,
+      "text": " The mama never left me",
+      "tokens": [
+        50414,
+        440,
+        18775,
+        1128,
+        1411,
+        385,
+        50564
+      ],
+      "temperature": 0.4,
+      "avg_logprob": -0.6350825351217518,
+      "compression_ratio": 2.1666666666666665,
+      "no_speech_prob": 0.05648907274007797
+    },
+    {
+      "id": 40,
+      "seek": 11938,
+      "start": 123.38,
+      "end": 125.38,
+      "text": " There's nothing",
+      "tokens": [
+        50564,
+        821,
+        311,
+        1825,
+        50664
+      ],
+      "temperature": 0.4,
+      "avg_logprob": -0.6350825351217518,
+      "compression_ratio": 2.1666666666666665,
+      "no_speech_prob": 0.05648907274007797
+    },
+    {
+      "id": 41,
+      "seek": 11938,
+      "start": 125.38,
+      "end": 127.38,
+      "text": " The mama never left me",
+      "tokens": [
+        50664,
+        440,
+        18775,
+        1128,
+        1411,
+        385,
+        50764
+      ],
+      "temperature": 0.4,
+      "avg_logprob": -0.6350825351217518,
+      "compression_ratio": 2.1666666666666665,
+      "no_speech_prob": 0.05648907274007797
+    },
+    {
+      "id": 42,
+      "seek": 11938,
+      "start": 127.38,
+      "end": 129.38,
+      "text": " There's nothing",
+      "tokens": [
+        50764,
+        821,
+        311,
+        1825,
+        50864
+      ],
+      "temperature": 0.4,
+      "avg_logprob": -0.6350825351217518,
+      "compression_ratio": 2.1666666666666665,
+      "no_speech_prob": 0.05648907274007797
+    },
+    {
+      "id": 43,
+      "seek": 11938,
+      "start": 129.38,
+      "end": 131.38,
+      "text": " The mama never left me",
+      "tokens": [
+        50864,
+        440,
+        18775,
+        1128,
+        1411,
+        385,
+        50964
+      ],
+      "temperature": 0.4,
+      "avg_logprob": -0.6350825351217518,
+      "compression_ratio": 2.1666666666666665,
+      "no_speech_prob": 0.05648907274007797
+    },
+    {
+      "id": 44,
+      "seek": 11938,
+      "start": 131.38,
+      "end": 133.38,
+      "text": " Yeah, I'm coming in",
+      "tokens": [
+        50964,
+        865,
+        11,
+        286,
+        478,
+        1348,
+        294,
+        51064
+      ],
+      "temperature": 0.4,
+      "avg_logprob": -0.6350825351217518,
+      "compression_ratio": 2.1666666666666665,
+      "no_speech_prob": 0.05648907274007797
+    },
+    {
+      "id": 45,
+      "seek": 11938,
+      "start": 133.38,
+      "end": 135.38,
+      "text": " I'm not falling in",
+      "tokens": [
+        51064,
+        286,
+        478,
+        406,
+        7440,
+        294,
+        51164
+      ],
+      "temperature": 0.4,
+      "avg_logprob": -0.6350825351217518,
+      "compression_ratio": 2.1666666666666665,
+      "no_speech_prob": 0.05648907274007797
+    },
+    {
+      "id": 46,
+      "seek": 11938,
+      "start": 135.38,
+      "end": 138.38,
+      "text": " I'm just in the way right",
+      "tokens": [
+        51164,
+        286,
+        478,
+        445,
+        294,
+        264,
+        636,
+        558,
+        51314
+      ],
+      "temperature": 0.4,
+      "avg_logprob": -0.6350825351217518,
+      "compression_ratio": 2.1666666666666665,
+      "no_speech_prob": 0.05648907274007797
+    },
+    {
+      "id": 47,
+      "seek": 11938,
+      "start": 138.38,
+      "end": 140.38,
+      "text": " Breathe, I'm rooted",
+      "tokens": [
+        51314,
+        36323,
+        11,
+        286,
+        478,
+        25277,
+        51414
+      ],
+      "temperature": 0.4,
+      "avg_logprob": -0.6350825351217518,
+      "compression_ratio": 2.1666666666666665,
+      "no_speech_prob": 0.05648907274007797
+    },
+    {
+      "id": 48,
+      "seek": 11938,
+      "start": 140.38,
+      "end": 142.38,
+      "text": " I'm in the sun",
+      "tokens": [
+        51414,
+        286,
+        478,
+        294,
+        264,
+        3295,
+        51514
+      ],
+      "temperature": 0.4,
+      "avg_logprob": -0.6350825351217518,
+      "compression_ratio": 2.1666666666666665,
+      "no_speech_prob": 0.05648907274007797
+    },
+    {
+      "id": 49,
+      "seek": 11938,
+      "start": 142.38,
+      "end": 145.38,
+      "text": " I'm in the dark right",
+      "tokens": [
+        51514,
+        286,
+        478,
+        294,
+        264,
+        2877,
+        558,
+        51664
+      ],
+      "temperature": 0.4,
+      "avg_logprob": -0.6350825351217518,
+      "compression_ratio": 2.1666666666666665,
+      "no_speech_prob": 0.05648907274007797
+    },
+    {
+      "id": 50,
+      "seek": 11938,
+      "start": 145.38,
+      "end": 147.38,
+      "text": " I'm in the dark right",
+      "tokens": [
+        51664,
+        286,
+        478,
+        294,
+        264,
+        2877,
+        558,
+        51764
+      ],
+      "temperature": 0.4,
+      "avg_logprob": -0.6350825351217518,
+      "compression_ratio": 2.1666666666666665,
+      "no_speech_prob": 0.05648907274007797
+    },
+    {
+      "id": 51,
+      "seek": 14738,
+      "start": 147.38,
+      "end": 150.38,
+      "text": " I'm in the dark right",
+      "tokens": [
+        50414,
+        286,
+        478,
+        294,
+        264,
+        2877,
+        558,
+        50514
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.1925328572591146,
+      "compression_ratio": 0.7241379310344828,
+      "no_speech_prob": 0.1546238660812378
+    }
+  ],
+  "language": "en"
+}

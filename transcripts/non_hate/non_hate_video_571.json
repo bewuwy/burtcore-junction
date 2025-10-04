@@ -1,0 +1,24 @@
+{
+  "text": " Hurry 2018!!",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 5.98,
+      "text": " Hurry 2018!!",
+      "tokens": [
+        50364,
+        12944,
+        6096,
+        1432,
+        50663
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -4.461312611897786,
+      "compression_ratio": 0.6,
+      "no_speech_prob": 0.44242164492607117
+    }
+  ],
+  "language": "en"
+}

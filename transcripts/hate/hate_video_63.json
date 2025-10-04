@@ -1,0 +1,141 @@
+{
+  "text": " Thank you for watching, please subscribe to the channel watch the book at www.tl.com I'm a man. I'm a man. I'm a man. I'm a man. I'm a man.",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 24.0,
+      "text": " Thank you for watching, please subscribe to the channel watch the book at www.tl.com",
+      "tokens": [
+        50364,
+        1044,
+        291,
+        337,
+        1976,
+        11,
+        1767,
+        3022,
+        281,
+        264,
+        2269,
+        1159,
+        264,
+        1446,
+        412,
+        12520,
+        13,
+        83,
+        75,
+        13,
+        1112,
+        51564
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -2.7420568051545517,
+      "compression_ratio": 1.0769230769230769,
+      "no_speech_prob": 0.4487438201904297
+    },
+    {
+      "id": 1,
+      "seek": 6000,
+      "start": 60.0,
+      "end": 67.0,
+      "text": " I'm a man.",
+      "tokens": [
+        50364,
+        286,
+        478,
+        257,
+        587,
+        13,
+        50714
+      ],
+      "temperature": 0.2,
+      "avg_logprob": -0.7828715642293295,
+      "compression_ratio": 1.9545454545454546,
+      "no_speech_prob": 0.8342240452766418
+    },
+    {
+      "id": 2,
+      "seek": 6000,
+      "start": 67.0,
+      "end": 74.0,
+      "text": " I'm a man.",
+      "tokens": [
+        50714,
+        286,
+        478,
+        257,
+        587,
+        13,
+        51064
+      ],
+      "temperature": 0.2,
+      "avg_logprob": -0.7828715642293295,
+      "compression_ratio": 1.9545454545454546,
+      "no_speech_prob": 0.8342240452766418
+    },
+    {
+      "id": 3,
+      "seek": 6000,
+      "start": 74.0,
+      "end": 81.0,
+      "text": " I'm a man.",
+      "tokens": [
+        51064,
+        286,
+        478,
+        257,
+        587,
+        13,
+        51414
+      ],
+      "temperature": 0.2,
+      "avg_logprob": -0.7828715642293295,
+      "compression_ratio": 1.9545454545454546,
+      "no_speech_prob": 0.8342240452766418
+    },
+    {
+      "id": 4,
+      "seek": 6000,
+      "start": 81.0,
+      "end": 88.0,
+      "text": " I'm a man.",
+      "tokens": [
+        51414,
+        286,
+        478,
+        257,
+        587,
+        13,
+        51764
+      ],
+      "temperature": 0.2,
+      "avg_logprob": -0.7828715642293295,
+      "compression_ratio": 1.9545454545454546,
+      "no_speech_prob": 0.8342240452766418
+    },
+    {
+      "id": 5,
+      "seek": 8800,
+      "start": 88.0,
+      "end": 95.0,
+      "text": " I'm a man.",
+      "tokens": [
+        50364,
+        286,
+        478,
+        257,
+        587,
+        13,
+        50714
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.34822288155555725,
+      "compression_ratio": 0.5555555555555556,
+      "no_speech_prob": 0.3193005919456482
+    }
+  ],
+  "language": "en"
+}

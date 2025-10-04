@@ -1,0 +1,28 @@
+{
+  "text": " Make like make like make my car",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 18.1,
+      "text": " Make like make like make my car",
+      "tokens": [
+        50364,
+        4387,
+        411,
+        652,
+        411,
+        652,
+        452,
+        1032,
+        51269
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -2.514236831665039,
+      "compression_ratio": 1.24,
+      "no_speech_prob": 0.3261352777481079
+    }
+  ],
+  "language": "en"
+}

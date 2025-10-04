@@ -1,0 +1,40 @@
+{
+  "text": " Why what the fuck what is this nigglet doing on here look at this nigglet",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 6.88,
+      "text": " Why what the fuck what is this nigglet doing on here look at this nigglet",
+      "tokens": [
+        50364,
+        1545,
+        437,
+        264,
+        3275,
+        437,
+        307,
+        341,
+        297,
+        6249,
+        2631,
+        884,
+        322,
+        510,
+        574,
+        412,
+        341,
+        297,
+        6249,
+        2631,
+        50708
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.3979345234957608,
+      "compression_ratio": 1.1587301587301588,
+      "no_speech_prob": 0.13545194268226624
+    }
+  ],
+  "language": "en"
+}

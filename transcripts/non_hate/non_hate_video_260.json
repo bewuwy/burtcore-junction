@@ -1,0 +1,678 @@
+{
+  "text": " US 6 8 8 yere 5 7 8 6 7 7 8 6 8 8 9 7 9 8 6 7 7 8 8 8 7 8 8 8 9 9 9 9 9 9 9 10 10 19 9 10 11",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 1.04,
+      "text": " US",
+      "tokens": [
+        50364,
+        2546,
+        50416
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -2.071228504180908,
+      "compression_ratio": 1.8775510204081634,
+      "no_speech_prob": 0.5643727779388428
+    },
+    {
+      "id": 1,
+      "seek": 0,
+      "start": 1.04,
+      "end": 1.28,
+      "text": " 6",
+      "tokens": [
+        50416,
+        1386,
+        50428
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -2.071228504180908,
+      "compression_ratio": 1.8775510204081634,
+      "no_speech_prob": 0.5643727779388428
+    },
+    {
+      "id": 2,
+      "seek": 0,
+      "start": 1.28,
+      "end": 1.68,
+      "text": " 8",
+      "tokens": [
+        50428,
+        1649,
+        50448
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -2.071228504180908,
+      "compression_ratio": 1.8775510204081634,
+      "no_speech_prob": 0.5643727779388428
+    },
+    {
+      "id": 3,
+      "seek": 0,
+      "start": 1.68,
+      "end": 2.04,
+      "text": " 8",
+      "tokens": [
+        50448,
+        1649,
+        50466
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -2.071228504180908,
+      "compression_ratio": 1.8775510204081634,
+      "no_speech_prob": 0.5643727779388428
+    },
+    {
+      "id": 4,
+      "seek": 0,
+      "start": 2.04,
+      "end": 2.84,
+      "text": " yere",
+      "tokens": [
+        50466,
+        42044,
+        50506
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -2.071228504180908,
+      "compression_ratio": 1.8775510204081634,
+      "no_speech_prob": 0.5643727779388428
+    },
+    {
+      "id": 5,
+      "seek": 0,
+      "start": 2.84,
+      "end": 3.68,
+      "text": " 5",
+      "tokens": [
+        50506,
+        1025,
+        50548
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -2.071228504180908,
+      "compression_ratio": 1.8775510204081634,
+      "no_speech_prob": 0.5643727779388428
+    },
+    {
+      "id": 6,
+      "seek": 0,
+      "start": 3.68,
+      "end": 4.36,
+      "text": " 7",
+      "tokens": [
+        50548,
+        1614,
+        50582
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -2.071228504180908,
+      "compression_ratio": 1.8775510204081634,
+      "no_speech_prob": 0.5643727779388428
+    },
+    {
+      "id": 7,
+      "seek": 0,
+      "start": 4.36,
+      "end": 4.86,
+      "text": " 8",
+      "tokens": [
+        50582,
+        1649,
+        50607
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -2.071228504180908,
+      "compression_ratio": 1.8775510204081634,
+      "no_speech_prob": 0.5643727779388428
+    },
+    {
+      "id": 8,
+      "seek": 0,
+      "start": 4.86,
+      "end": 5.5200000000000005,
+      "text": " 6",
+      "tokens": [
+        50607,
+        1386,
+        50640
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -2.071228504180908,
+      "compression_ratio": 1.8775510204081634,
+      "no_speech_prob": 0.5643727779388428
+    },
+    {
+      "id": 9,
+      "seek": 0,
+      "start": 5.5200000000000005,
+      "end": 6.0200000000000005,
+      "text": " 7",
+      "tokens": [
+        50640,
+        1614,
+        50665
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -2.071228504180908,
+      "compression_ratio": 1.8775510204081634,
+      "no_speech_prob": 0.5643727779388428
+    },
+    {
+      "id": 10,
+      "seek": 0,
+      "start": 6.0200000000000005,
+      "end": 6.82,
+      "text": " 7",
+      "tokens": [
+        50665,
+        1614,
+        50705
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -2.071228504180908,
+      "compression_ratio": 1.8775510204081634,
+      "no_speech_prob": 0.5643727779388428
+    },
+    {
+      "id": 11,
+      "seek": 0,
+      "start": 6.82,
+      "end": 7.68,
+      "text": " 8",
+      "tokens": [
+        50705,
+        1649,
+        50748
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -2.071228504180908,
+      "compression_ratio": 1.8775510204081634,
+      "no_speech_prob": 0.5643727779388428
+    },
+    {
+      "id": 12,
+      "seek": 0,
+      "start": 7.68,
+      "end": 8.28,
+      "text": " 6",
+      "tokens": [
+        50748,
+        1386,
+        50778
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -2.071228504180908,
+      "compression_ratio": 1.8775510204081634,
+      "no_speech_prob": 0.5643727779388428
+    },
+    {
+      "id": 13,
+      "seek": 0,
+      "start": 8.28,
+      "end": 9.120000000000001,
+      "text": " 8",
+      "tokens": [
+        50778,
+        1649,
+        50820
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -2.071228504180908,
+      "compression_ratio": 1.8775510204081634,
+      "no_speech_prob": 0.5643727779388428
+    },
+    {
+      "id": 14,
+      "seek": 0,
+      "start": 9.120000000000001,
+      "end": 9.82,
+      "text": " 8",
+      "tokens": [
+        50820,
+        1649,
+        50855
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -2.071228504180908,
+      "compression_ratio": 1.8775510204081634,
+      "no_speech_prob": 0.5643727779388428
+    },
+    {
+      "id": 15,
+      "seek": 0,
+      "start": 9.82,
+      "end": 10.620000000000001,
+      "text": " 9",
+      "tokens": [
+        50855,
+        1722,
+        50895
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -2.071228504180908,
+      "compression_ratio": 1.8775510204081634,
+      "no_speech_prob": 0.5643727779388428
+    },
+    {
+      "id": 16,
+      "seek": 0,
+      "start": 10.620000000000001,
+      "end": 11.3,
+      "text": " 7",
+      "tokens": [
+        50895,
+        1614,
+        50929
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -2.071228504180908,
+      "compression_ratio": 1.8775510204081634,
+      "no_speech_prob": 0.5643727779388428
+    },
+    {
+      "id": 17,
+      "seek": 0,
+      "start": 11.3,
+      "end": 12.32,
+      "text": " 9",
+      "tokens": [
+        50929,
+        1722,
+        50980
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -2.071228504180908,
+      "compression_ratio": 1.8775510204081634,
+      "no_speech_prob": 0.5643727779388428
+    },
+    {
+      "id": 18,
+      "seek": 0,
+      "start": 12.56,
+      "end": 13.32,
+      "text": " 8",
+      "tokens": [
+        50992,
+        1649,
+        51030
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -2.071228504180908,
+      "compression_ratio": 1.8775510204081634,
+      "no_speech_prob": 0.5643727779388428
+    },
+    {
+      "id": 19,
+      "seek": 0,
+      "start": 13.32,
+      "end": 14.08,
+      "text": " 6",
+      "tokens": [
+        51030,
+        1386,
+        51068
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -2.071228504180908,
+      "compression_ratio": 1.8775510204081634,
+      "no_speech_prob": 0.5643727779388428
+    },
+    {
+      "id": 20,
+      "seek": 0,
+      "start": 14.24,
+      "end": 14.84,
+      "text": " 7",
+      "tokens": [
+        51076,
+        1614,
+        51106
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -2.071228504180908,
+      "compression_ratio": 1.8775510204081634,
+      "no_speech_prob": 0.5643727779388428
+    },
+    {
+      "id": 21,
+      "seek": 0,
+      "start": 14.84,
+      "end": 15.5,
+      "text": " 7",
+      "tokens": [
+        51106,
+        1614,
+        51139
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -2.071228504180908,
+      "compression_ratio": 1.8775510204081634,
+      "no_speech_prob": 0.5643727779388428
+    },
+    {
+      "id": 22,
+      "seek": 0,
+      "start": 15.5,
+      "end": 16.36,
+      "text": " 8",
+      "tokens": [
+        51139,
+        1649,
+        51182
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -2.071228504180908,
+      "compression_ratio": 1.8775510204081634,
+      "no_speech_prob": 0.5643727779388428
+    },
+    {
+      "id": 23,
+      "seek": 0,
+      "start": 16.36,
+      "end": 17.2,
+      "text": " 8",
+      "tokens": [
+        51182,
+        1649,
+        51224
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -2.071228504180908,
+      "compression_ratio": 1.8775510204081634,
+      "no_speech_prob": 0.5643727779388428
+    },
+    {
+      "id": 24,
+      "seek": 0,
+      "start": 17.2,
+      "end": 17.7,
+      "text": " 8",
+      "tokens": [
+        51224,
+        1649,
+        51249
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -2.071228504180908,
+      "compression_ratio": 1.8775510204081634,
+      "no_speech_prob": 0.5643727779388428
+    },
+    {
+      "id": 25,
+      "seek": 0,
+      "start": 17.7,
+      "end": 18.54,
+      "text": " 7",
+      "tokens": [
+        51249,
+        1614,
+        51291
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -2.071228504180908,
+      "compression_ratio": 1.8775510204081634,
+      "no_speech_prob": 0.5643727779388428
+    },
+    {
+      "id": 26,
+      "seek": 0,
+      "start": 18.54,
+      "end": 18.78,
+      "text": " 8",
+      "tokens": [
+        51291,
+        1649,
+        51303
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -2.071228504180908,
+      "compression_ratio": 1.8775510204081634,
+      "no_speech_prob": 0.5643727779388428
+    },
+    {
+      "id": 27,
+      "seek": 0,
+      "start": 18.78,
+      "end": 19.26,
+      "text": " 8",
+      "tokens": [
+        51303,
+        1649,
+        51327
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -2.071228504180908,
+      "compression_ratio": 1.8775510204081634,
+      "no_speech_prob": 0.5643727779388428
+    },
+    {
+      "id": 28,
+      "seek": 0,
+      "start": 19.26,
+      "end": 20.06,
+      "text": " 8",
+      "tokens": [
+        51327,
+        1649,
+        51367
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -2.071228504180908,
+      "compression_ratio": 1.8775510204081634,
+      "no_speech_prob": 0.5643727779388428
+    },
+    {
+      "id": 29,
+      "seek": 0,
+      "start": 20.06,
+      "end": 20.7,
+      "text": " 9",
+      "tokens": [
+        51367,
+        1722,
+        51399
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -2.071228504180908,
+      "compression_ratio": 1.8775510204081634,
+      "no_speech_prob": 0.5643727779388428
+    },
+    {
+      "id": 30,
+      "seek": 0,
+      "start": 20.7,
+      "end": 21.38,
+      "text": " 9",
+      "tokens": [
+        51399,
+        1722,
+        51433
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -2.071228504180908,
+      "compression_ratio": 1.8775510204081634,
+      "no_speech_prob": 0.5643727779388428
+    },
+    {
+      "id": 31,
+      "seek": 0,
+      "start": 21.38,
+      "end": 21.48,
+      "text": " 9",
+      "tokens": [
+        51433,
+        1722,
+        51438
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -2.071228504180908,
+      "compression_ratio": 1.8775510204081634,
+      "no_speech_prob": 0.5643727779388428
+    },
+    {
+      "id": 32,
+      "seek": 0,
+      "start": 21.48,
+      "end": 22.48,
+      "text": " 9",
+      "tokens": [
+        51438,
+        1722,
+        51488
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -2.071228504180908,
+      "compression_ratio": 1.8775510204081634,
+      "no_speech_prob": 0.5643727779388428
+    },
+    {
+      "id": 33,
+      "seek": 0,
+      "start": 22.48,
+      "end": 23.12,
+      "text": " 9",
+      "tokens": [
+        51488,
+        1722,
+        51520
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -2.071228504180908,
+      "compression_ratio": 1.8775510204081634,
+      "no_speech_prob": 0.5643727779388428
+    },
+    {
+      "id": 34,
+      "seek": 0,
+      "start": 23.12,
+      "end": 23.8,
+      "text": " 9",
+      "tokens": [
+        51520,
+        1722,
+        51554
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -2.071228504180908,
+      "compression_ratio": 1.8775510204081634,
+      "no_speech_prob": 0.5643727779388428
+    },
+    {
+      "id": 35,
+      "seek": 0,
+      "start": 23.8,
+      "end": 24.82,
+      "text": " 9",
+      "tokens": [
+        51554,
+        1722,
+        51605
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -2.071228504180908,
+      "compression_ratio": 1.8775510204081634,
+      "no_speech_prob": 0.5643727779388428
+    },
+    {
+      "id": 36,
+      "seek": 0,
+      "start": 24.82,
+      "end": 25.28,
+      "text": " 10",
+      "tokens": [
+        51605,
+        1266,
+        51628
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -2.071228504180908,
+      "compression_ratio": 1.8775510204081634,
+      "no_speech_prob": 0.5643727779388428
+    },
+    {
+      "id": 37,
+      "seek": 0,
+      "start": 25.28,
+      "end": 26.14,
+      "text": " 10",
+      "tokens": [
+        51628,
+        1266,
+        51671
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -2.071228504180908,
+      "compression_ratio": 1.8775510204081634,
+      "no_speech_prob": 0.5643727779388428
+    },
+    {
+      "id": 38,
+      "seek": 0,
+      "start": 26.14,
+      "end": 27.28,
+      "text": " 19",
+      "tokens": [
+        51671,
+        1294,
+        51728
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -2.071228504180908,
+      "compression_ratio": 1.8775510204081634,
+      "no_speech_prob": 0.5643727779388428
+    },
+    {
+      "id": 39,
+      "seek": 0,
+      "start": 27.28,
+      "end": 28.1,
+      "text": " 9",
+      "tokens": [
+        51728,
+        1722,
+        51769
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -2.071228504180908,
+      "compression_ratio": 1.8775510204081634,
+      "no_speech_prob": 0.5643727779388428
+    },
+    {
+      "id": 40,
+      "seek": 0,
+      "start": 28.1,
+      "end": 29.36,
+      "text": " 10",
+      "tokens": [
+        51769,
+        1266,
+        51832
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -2.071228504180908,
+      "compression_ratio": 1.8775510204081634,
+      "no_speech_prob": 0.5643727779388428
+    },
+    {
+      "id": 41,
+      "seek": 0,
+      "start": 29.36,
+      "end": 29.96,
+      "text": " 11",
+      "tokens": [
+        51832,
+        2975,
+        51862
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -2.071228504180908,
+      "compression_ratio": 1.8775510204081634,
+      "no_speech_prob": 0.5643727779388428
+    }
+  ],
+  "language": "haw"
+}

@@ -1,0 +1,41 @@
+{
+  "text": " 며석을 max",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 11.92,
+      "text": " 며석을",
+      "tokens": [
+        50364,
+        8514,
+        108,
+        17075,
+        1638,
+        50960
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -5.6282905578613285,
+      "compression_ratio": 0.5909090909090909,
+      "no_speech_prob": 0.3091345429420471
+    },
+    {
+      "id": 1,
+      "seek": 0,
+      "start": 16.8,
+      "end": 23.28,
+      "text": " max",
+      "tokens": [
+        51204,
+        11469,
+        51528
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -5.6282905578613285,
+      "compression_ratio": 0.5909090909090909,
+      "no_speech_prob": 0.3091345429420471
+    }
+  ],
+  "language": "ko"
+}

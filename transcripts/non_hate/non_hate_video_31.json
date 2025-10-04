@@ -1,0 +1,109 @@
+{
+  "text": " Oh my god! I can't see you! You can't see me! I can't see you! I can't see you!",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 2.0,
+      "text": " Oh my god!",
+      "tokens": [
+        50364,
+        876,
+        452,
+        3044,
+        0,
+        50464
+      ],
+      "temperature": 0.2,
+      "avg_logprob": -0.8076346470759466,
+      "compression_ratio": 1.6808510638297873,
+      "no_speech_prob": 0.472549706697464
+    },
+    {
+      "id": 1,
+      "seek": 0,
+      "start": 2.0,
+      "end": 4.0,
+      "text": " I can't see you!",
+      "tokens": [
+        50464,
+        286,
+        393,
+        380,
+        536,
+        291,
+        0,
+        50564
+      ],
+      "temperature": 0.2,
+      "avg_logprob": -0.8076346470759466,
+      "compression_ratio": 1.6808510638297873,
+      "no_speech_prob": 0.472549706697464
+    },
+    {
+      "id": 2,
+      "seek": 0,
+      "start": 4.0,
+      "end": 6.0,
+      "text": " You can't see me!",
+      "tokens": [
+        50564,
+        509,
+        393,
+        380,
+        536,
+        385,
+        0,
+        50664
+      ],
+      "temperature": 0.2,
+      "avg_logprob": -0.8076346470759466,
+      "compression_ratio": 1.6808510638297873,
+      "no_speech_prob": 0.472549706697464
+    },
+    {
+      "id": 3,
+      "seek": 0,
+      "start": 6.0,
+      "end": 8.0,
+      "text": " I can't see you!",
+      "tokens": [
+        50664,
+        286,
+        393,
+        380,
+        536,
+        291,
+        0,
+        50764
+      ],
+      "temperature": 0.2,
+      "avg_logprob": -0.8076346470759466,
+      "compression_ratio": 1.6808510638297873,
+      "no_speech_prob": 0.472549706697464
+    },
+    {
+      "id": 4,
+      "seek": 0,
+      "start": 8.0,
+      "end": 10.0,
+      "text": " I can't see you!",
+      "tokens": [
+        50764,
+        286,
+        393,
+        380,
+        536,
+        291,
+        0,
+        50864
+      ],
+      "temperature": 0.2,
+      "avg_logprob": -0.8076346470759466,
+      "compression_ratio": 1.6808510638297873,
+      "no_speech_prob": 0.472549706697464
+    }
+  ],
+  "language": "en"
+}

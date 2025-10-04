@@ -1,0 +1,43 @@
+{
+  "text": " bamboo vamos cachати a br Like",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.56,
+      "end": 6.3,
+      "text": " bamboo",
+      "tokens": [
+        50392,
+        26156,
+        50679
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -5.8956724802653,
+      "compression_ratio": 0.8048780487804879,
+      "no_speech_prob": 0.11277531087398529
+    },
+    {
+      "id": 1,
+      "seek": 0,
+      "start": 12.780000000000001,
+      "end": 14.86,
+      "text": " vamos cachати a br Like",
+      "tokens": [
+        51003,
+        5295,
+        32773,
+        9585,
+        257,
+        738,
+        1743,
+        51107
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -5.8956724802653,
+      "compression_ratio": 0.8048780487804879,
+      "no_speech_prob": 0.11277531087398529
+    }
+  ],
+  "language": "es"
+}

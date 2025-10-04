@@ -1,0 +1,89 @@
+{
+  "text": " Lungs Korean ceremonial 2015 Andy 2019",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 2.86,
+      "text": " Lungs Korean",
+      "tokens": [
+        50364,
+        441,
+        5846,
+        6933,
+        50507
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -6.154443359375,
+      "compression_ratio": 0.8837209302325582,
+      "no_speech_prob": 0.3338959813117981
+    },
+    {
+      "id": 1,
+      "seek": 0,
+      "start": 3.24,
+      "end": 6.58,
+      "text": " ceremonial",
+      "tokens": [
+        50526,
+        25920,
+        831,
+        50693
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -6.154443359375,
+      "compression_ratio": 0.8837209302325582,
+      "no_speech_prob": 0.3338959813117981
+    },
+    {
+      "id": 2,
+      "seek": 0,
+      "start": 9.96,
+      "end": 13.74,
+      "text": " 2015",
+      "tokens": [
+        50862,
+        7546,
+        51051
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -6.154443359375,
+      "compression_ratio": 0.8837209302325582,
+      "no_speech_prob": 0.3338959813117981
+    },
+    {
+      "id": 3,
+      "seek": 0,
+      "start": 14.94,
+      "end": 18.12,
+      "text": " Andy",
+      "tokens": [
+        51111,
+        13285,
+        51270
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -6.154443359375,
+      "compression_ratio": 0.8837209302325582,
+      "no_speech_prob": 0.3338959813117981
+    },
+    {
+      "id": 4,
+      "seek": 0,
+      "start": 24.44,
+      "end": 27.14,
+      "text": " 2019",
+      "tokens": [
+        51586,
+        6071,
+        51721
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -6.154443359375,
+      "compression_ratio": 0.8837209302325582,
+      "no_speech_prob": 0.3338959813117981
+    }
+  ],
+  "language": "en"
+}

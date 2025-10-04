@@ -1,0 +1,54 @@
+{
+  "text": " I Oh Oh",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 2.0,
+      "text": " I",
+      "tokens": [
+        50364,
+        286,
+        50464
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.9896318912506104,
+      "compression_ratio": 0.1111111111111111,
+      "no_speech_prob": 0.4876623749732971
+    },
+    {
+      "id": 1,
+      "seek": 3000,
+      "start": 30.0,
+      "end": 32.0,
+      "text": " Oh",
+      "tokens": [
+        50364,
+        876,
+        50464
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.8899455070495605,
+      "compression_ratio": 0.2,
+      "no_speech_prob": 0.7561013102531433
+    },
+    {
+      "id": 2,
+      "seek": 6000,
+      "start": 60.0,
+      "end": 62.0,
+      "text": " Oh",
+      "tokens": [
+        50364,
+        876,
+        50464
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.8616749048233032,
+      "compression_ratio": 0.2,
+      "no_speech_prob": 0.5863325595855713
+    }
+  ],
+  "language": "en"
+}

@@ -1,0 +1,307 @@
+{
+  "text": " Hey, hey, nigger. Nigger. Sleeping nigger. Wake up. Wake up, monkey. Hey, I know you can hear me. You black nigger. Wake up. Oh, good. I've gotten your attention. How come you're not at writing? I'm queer, you're racist, asshole. No shit. No shit. White power.",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 12.68,
+      "text": " Hey, hey, nigger.",
+      "tokens": [
+        50364,
+        1911,
+        11,
+        4177,
+        11,
+        297,
+        6812,
+        13,
+        50998
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.5472992750314566,
+      "compression_ratio": 1.2637362637362637,
+      "no_speech_prob": 0.22842445969581604
+    },
+    {
+      "id": 1,
+      "seek": 0,
+      "start": 12.68,
+      "end": 15.72,
+      "text": " Nigger.",
+      "tokens": [
+        50998,
+        426,
+        6812,
+        13,
+        51150
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.5472992750314566,
+      "compression_ratio": 1.2637362637362637,
+      "no_speech_prob": 0.22842445969581604
+    },
+    {
+      "id": 2,
+      "seek": 0,
+      "start": 15.72,
+      "end": 19.92,
+      "text": " Sleeping nigger.",
+      "tokens": [
+        51150,
+        49618,
+        297,
+        6812,
+        13,
+        51360
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.5472992750314566,
+      "compression_ratio": 1.2637362637362637,
+      "no_speech_prob": 0.22842445969581604
+    },
+    {
+      "id": 3,
+      "seek": 0,
+      "start": 19.92,
+      "end": 23.16,
+      "text": " Wake up.",
+      "tokens": [
+        51360,
+        21062,
+        493,
+        13,
+        51522
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.5472992750314566,
+      "compression_ratio": 1.2637362637362637,
+      "no_speech_prob": 0.22842445969581604
+    },
+    {
+      "id": 4,
+      "seek": 0,
+      "start": 23.16,
+      "end": 26.32,
+      "text": " Wake up, monkey.",
+      "tokens": [
+        51522,
+        21062,
+        493,
+        11,
+        17847,
+        13,
+        51680
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.5472992750314566,
+      "compression_ratio": 1.2637362637362637,
+      "no_speech_prob": 0.22842445969581604
+    },
+    {
+      "id": 5,
+      "seek": 0,
+      "start": 26.32,
+      "end": 28.52,
+      "text": " Hey, I know you can hear me.",
+      "tokens": [
+        51680,
+        1911,
+        11,
+        286,
+        458,
+        291,
+        393,
+        1568,
+        385,
+        13,
+        51790
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.5472992750314566,
+      "compression_ratio": 1.2637362637362637,
+      "no_speech_prob": 0.22842445969581604
+    },
+    {
+      "id": 6,
+      "seek": 0,
+      "start": 28.52,
+      "end": 29.52,
+      "text": " You black nigger.",
+      "tokens": [
+        51790,
+        509,
+        2211,
+        297,
+        6812,
+        13,
+        51840
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.5472992750314566,
+      "compression_ratio": 1.2637362637362637,
+      "no_speech_prob": 0.22842445969581604
+    },
+    {
+      "id": 7,
+      "seek": 2952,
+      "start": 29.52,
+      "end": 30.52,
+      "text": " Wake up.",
+      "tokens": [
+        50364,
+        21062,
+        493,
+        13,
+        50414
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.5166261936056202,
+      "compression_ratio": 1.2521739130434784,
+      "no_speech_prob": 0.007740701083093882
+    },
+    {
+      "id": 8,
+      "seek": 2952,
+      "start": 30.52,
+      "end": 31.52,
+      "text": " Oh, good.",
+      "tokens": [
+        50414,
+        876,
+        11,
+        665,
+        13,
+        50464
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.5166261936056202,
+      "compression_ratio": 1.2521739130434784,
+      "no_speech_prob": 0.007740701083093882
+    },
+    {
+      "id": 9,
+      "seek": 2952,
+      "start": 31.52,
+      "end": 34.68,
+      "text": " I've gotten your attention.",
+      "tokens": [
+        50464,
+        286,
+        600,
+        5768,
+        428,
+        3202,
+        13,
+        50622
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.5166261936056202,
+      "compression_ratio": 1.2521739130434784,
+      "no_speech_prob": 0.007740701083093882
+    },
+    {
+      "id": 10,
+      "seek": 2952,
+      "start": 34.68,
+      "end": 37.68,
+      "text": " How come you're not at writing?",
+      "tokens": [
+        50622,
+        1012,
+        808,
+        291,
+        434,
+        406,
+        412,
+        3579,
+        30,
+        50772
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.5166261936056202,
+      "compression_ratio": 1.2521739130434784,
+      "no_speech_prob": 0.007740701083093882
+    },
+    {
+      "id": 11,
+      "seek": 2952,
+      "start": 37.68,
+      "end": 39.480000000000004,
+      "text": " I'm queer, you're racist, asshole.",
+      "tokens": [
+        50772,
+        286,
+        478,
+        20323,
+        11,
+        291,
+        434,
+        16419,
+        11,
+        28599,
+        13,
+        50862
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.5166261936056202,
+      "compression_ratio": 1.2521739130434784,
+      "no_speech_prob": 0.007740701083093882
+    },
+    {
+      "id": 12,
+      "seek": 2952,
+      "start": 39.480000000000004,
+      "end": 40.480000000000004,
+      "text": " No shit.",
+      "tokens": [
+        50862,
+        883,
+        4611,
+        13,
+        50912
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.5166261936056202,
+      "compression_ratio": 1.2521739130434784,
+      "no_speech_prob": 0.007740701083093882
+    },
+    {
+      "id": 13,
+      "seek": 2952,
+      "start": 40.480000000000004,
+      "end": 41.480000000000004,
+      "text": " No shit.",
+      "tokens": [
+        50912,
+        883,
+        4611,
+        13,
+        50962
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.5166261936056202,
+      "compression_ratio": 1.2521739130434784,
+      "no_speech_prob": 0.007740701083093882
+    },
+    {
+      "id": 14,
+      "seek": 2952,
+      "start": 41.480000000000004,
+      "end": 42.480000000000004,
+      "text": " White power.",
+      "tokens": [
+        50962,
+        5552,
+        1347,
+        13,
+        51012
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.5166261936056202,
+      "compression_ratio": 1.2521739130434784,
+      "no_speech_prob": 0.007740701083093882
+    }
+  ],
+  "language": "en"
+}

@@ -1,0 +1,45 @@
+{
+  "text": " Fuck you, Gringo. ...again.",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 2.0,
+      "text": " Fuck you, Gringo.",
+      "tokens": [
+        50364,
+        10965,
+        291,
+        11,
+        2606,
+        18459,
+        13,
+        50464
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.5623113844129775,
+      "compression_ratio": 0.68,
+      "no_speech_prob": 0.051101915538311005
+    },
+    {
+      "id": 1,
+      "seek": 3000,
+      "start": 30.0,
+      "end": 31.46,
+      "text": " ...again.",
+      "tokens": [
+        50396,
+        1097,
+        39372,
+        13,
+        50437
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -2.3835600217183432,
+      "compression_ratio": 0.5294117647058824,
+      "no_speech_prob": 0.4182238280773163
+    }
+  ],
+  "language": "en"
+}

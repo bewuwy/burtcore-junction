@@ -1,0 +1,22 @@
+{
+  "text": " Dear",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 1.86,
+      "text": " Dear",
+      "tokens": [
+        50364,
+        14383,
+        50457
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -3.2687604427337646,
+      "compression_ratio": 0.3333333333333333,
+      "no_speech_prob": 0.45050549507141113
+    }
+  ],
+  "language": "en"
+}

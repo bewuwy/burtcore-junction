@@ -1,0 +1,68 @@
+{
+  "text": " Black lives matter detour. Look at that shit. Black lives matter detour.",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 2.48,
+      "text": " Black lives matter detour.",
+      "tokens": [
+        50364,
+        4076,
+        2909,
+        1871,
+        1141,
+        396,
+        13,
+        50488
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.752833366394043,
+      "compression_ratio": 1.2857142857142858,
+      "no_speech_prob": 0.17019066214561462
+    },
+    {
+      "id": 1,
+      "seek": 0,
+      "start": 2.48,
+      "end": 4.24,
+      "text": " Look at that shit.",
+      "tokens": [
+        50488,
+        2053,
+        412,
+        300,
+        4611,
+        13,
+        50576
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.752833366394043,
+      "compression_ratio": 1.2857142857142858,
+      "no_speech_prob": 0.17019066214561462
+    },
+    {
+      "id": 2,
+      "seek": 0,
+      "start": 4.24,
+      "end": 6.24,
+      "text": " Black lives matter detour.",
+      "tokens": [
+        50576,
+        4076,
+        2909,
+        1871,
+        1141,
+        396,
+        13,
+        50676
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.752833366394043,
+      "compression_ratio": 1.2857142857142858,
+      "no_speech_prob": 0.17019066214561462
+    }
+  ],
+  "language": "en"
+}

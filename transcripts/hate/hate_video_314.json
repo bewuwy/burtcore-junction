@@ -1,0 +1,392 @@
+{
+  "text": " I'm a man who cannot say that fucking moon man. I'm thin and cold and double A. Say P on me. He'll call an N double A. Who would have thought that it ever would be? Who would have thought that it ever would be? Oh yeah. Oh yeah. Oh yeah. Oh yeah. Oh yeah. Oh yeah. Oh yeah. Oh no, it's going up. Get out. One, two, three. Get that. Oh yeah. Oh yeah.",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 17.76,
+      "text": " I'm a man who cannot say that fucking moon man.",
+      "tokens": [
+        50364,
+        286,
+        478,
+        257,
+        587,
+        567,
+        2644,
+        584,
+        300,
+        5546,
+        7135,
+        587,
+        13,
+        51252
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.8302127293178013,
+      "compression_ratio": 1.2913385826771653,
+      "no_speech_prob": 0.4821179211139679
+    },
+    {
+      "id": 1,
+      "seek": 0,
+      "start": 17.76,
+      "end": 19.76,
+      "text": " I'm thin and cold and double A.",
+      "tokens": [
+        51252,
+        286,
+        478,
+        5862,
+        293,
+        3554,
+        293,
+        3834,
+        316,
+        13,
+        51352
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.8302127293178013,
+      "compression_ratio": 1.2913385826771653,
+      "no_speech_prob": 0.4821179211139679
+    },
+    {
+      "id": 2,
+      "seek": 0,
+      "start": 19.76,
+      "end": 20.76,
+      "text": " Say P on me.",
+      "tokens": [
+        51352,
+        6463,
+        430,
+        322,
+        385,
+        13,
+        51402
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.8302127293178013,
+      "compression_ratio": 1.2913385826771653,
+      "no_speech_prob": 0.4821179211139679
+    },
+    {
+      "id": 3,
+      "seek": 0,
+      "start": 20.76,
+      "end": 22.76,
+      "text": " He'll call an N double A.",
+      "tokens": [
+        51402,
+        634,
+        603,
+        818,
+        364,
+        426,
+        3834,
+        316,
+        13,
+        51502
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.8302127293178013,
+      "compression_ratio": 1.2913385826771653,
+      "no_speech_prob": 0.4821179211139679
+    },
+    {
+      "id": 4,
+      "seek": 0,
+      "start": 22.76,
+      "end": 27.240000000000002,
+      "text": " Who would have thought that it ever would be?",
+      "tokens": [
+        51502,
+        2102,
+        576,
+        362,
+        1194,
+        300,
+        309,
+        1562,
+        576,
+        312,
+        30,
+        51726
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.8302127293178013,
+      "compression_ratio": 1.2913385826771653,
+      "no_speech_prob": 0.4821179211139679
+    },
+    {
+      "id": 5,
+      "seek": 2724,
+      "start": 27.24,
+      "end": 31.159999999999997,
+      "text": " Who would have thought that it ever would be?",
+      "tokens": [
+        50364,
+        2102,
+        576,
+        362,
+        1194,
+        300,
+        309,
+        1562,
+        576,
+        312,
+        30,
+        50560
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.3692399263381958,
+      "compression_ratio": 1.894736842105263,
+      "no_speech_prob": 0.1244358941912651
+    },
+    {
+      "id": 6,
+      "seek": 2724,
+      "start": 31.159999999999997,
+      "end": 32.16,
+      "text": " Oh yeah.",
+      "tokens": [
+        50560,
+        876,
+        1338,
+        13,
+        50610
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.3692399263381958,
+      "compression_ratio": 1.894736842105263,
+      "no_speech_prob": 0.1244358941912651
+    },
+    {
+      "id": 7,
+      "seek": 2724,
+      "start": 32.16,
+      "end": 33.16,
+      "text": " Oh yeah.",
+      "tokens": [
+        50610,
+        876,
+        1338,
+        13,
+        50660
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.3692399263381958,
+      "compression_ratio": 1.894736842105263,
+      "no_speech_prob": 0.1244358941912651
+    },
+    {
+      "id": 8,
+      "seek": 2724,
+      "start": 33.16,
+      "end": 34.16,
+      "text": " Oh yeah.",
+      "tokens": [
+        50660,
+        876,
+        1338,
+        13,
+        50710
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.3692399263381958,
+      "compression_ratio": 1.894736842105263,
+      "no_speech_prob": 0.1244358941912651
+    },
+    {
+      "id": 9,
+      "seek": 2724,
+      "start": 34.16,
+      "end": 35.16,
+      "text": " Oh yeah.",
+      "tokens": [
+        50710,
+        876,
+        1338,
+        13,
+        50760
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.3692399263381958,
+      "compression_ratio": 1.894736842105263,
+      "no_speech_prob": 0.1244358941912651
+    },
+    {
+      "id": 10,
+      "seek": 2724,
+      "start": 35.16,
+      "end": 36.16,
+      "text": " Oh yeah.",
+      "tokens": [
+        50760,
+        876,
+        1338,
+        13,
+        50810
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.3692399263381958,
+      "compression_ratio": 1.894736842105263,
+      "no_speech_prob": 0.1244358941912651
+    },
+    {
+      "id": 11,
+      "seek": 2724,
+      "start": 36.16,
+      "end": 37.16,
+      "text": " Oh yeah.",
+      "tokens": [
+        50810,
+        876,
+        1338,
+        13,
+        50860
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.3692399263381958,
+      "compression_ratio": 1.894736842105263,
+      "no_speech_prob": 0.1244358941912651
+    },
+    {
+      "id": 12,
+      "seek": 2724,
+      "start": 37.16,
+      "end": 38.16,
+      "text": " Oh yeah.",
+      "tokens": [
+        50860,
+        876,
+        1338,
+        13,
+        50910
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.3692399263381958,
+      "compression_ratio": 1.894736842105263,
+      "no_speech_prob": 0.1244358941912651
+    },
+    {
+      "id": 13,
+      "seek": 5724,
+      "start": 57.24,
+      "end": 64.24000000000001,
+      "text": " Oh no, it's going up.",
+      "tokens": [
+        50364,
+        876,
+        572,
+        11,
+        309,
+        311,
+        516,
+        493,
+        13,
+        50714
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.8006052477606411,
+      "compression_ratio": 0.95,
+      "no_speech_prob": 0.5447139739990234
+    },
+    {
+      "id": 14,
+      "seek": 5724,
+      "start": 64.24000000000001,
+      "end": 66.24000000000001,
+      "text": " Get out.",
+      "tokens": [
+        50714,
+        3240,
+        484,
+        13,
+        50814
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.8006052477606411,
+      "compression_ratio": 0.95,
+      "no_speech_prob": 0.5447139739990234
+    },
+    {
+      "id": 15,
+      "seek": 5724,
+      "start": 66.24000000000001,
+      "end": 67.24000000000001,
+      "text": " One, two, three.",
+      "tokens": [
+        50814,
+        1485,
+        11,
+        732,
+        11,
+        1045,
+        13,
+        50864
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.8006052477606411,
+      "compression_ratio": 0.95,
+      "no_speech_prob": 0.5447139739990234
+    },
+    {
+      "id": 16,
+      "seek": 5724,
+      "start": 67.24000000000001,
+      "end": 68.24000000000001,
+      "text": " Get that.",
+      "tokens": [
+        50864,
+        3240,
+        300,
+        13,
+        50914
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.8006052477606411,
+      "compression_ratio": 0.95,
+      "no_speech_prob": 0.5447139739990234
+    },
+    {
+      "id": 17,
+      "seek": 14724,
+      "start": 147.24,
+      "end": 148.24,
+      "text": " Oh yeah.",
+      "tokens": [
+        50364,
+        876,
+        1338,
+        13,
+        50414
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.9865165190263228,
+      "compression_ratio": 0.8947368421052632,
+      "no_speech_prob": 0.7828894257545471
+    },
+    {
+      "id": 18,
+      "seek": 14724,
+      "start": 148.24,
+      "end": 149.24,
+      "text": " Oh yeah.",
+      "tokens": [
+        50414,
+        876,
+        1338,
+        13,
+        50464
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.9865165190263228,
+      "compression_ratio": 0.8947368421052632,
+      "no_speech_prob": 0.7828894257545471
+    }
+  ],
+  "language": "en"
+}

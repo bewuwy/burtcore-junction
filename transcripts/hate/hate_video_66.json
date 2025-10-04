@@ -1,0 +1,809 @@
+{
+  "text": "essential music All white people's name man we is our own world Brooklyn we are the white women All white people's name man Chad 12 13 14 12 13 13 13 14 13 14 14 14 14 14 14 14 14 zw empieza 12 14 14 15 15 17 start 14 14 14 14 I don't want to celebrate. Come play this club. What about black or black? Come play this club. Where the white women act. Come play this club. Come play this club. I don't like people playing bad. Come play this club. We just got home.",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 23.6,
+      "text": "essential music",
+      "tokens": [
+        50384,
+        48143,
+        1318,
+        51544
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -5.185198974609375,
+      "compression_ratio": 0.6521739130434783,
+      "no_speech_prob": 0.29577791690826416
+    },
+    {
+      "id": 1,
+      "seek": 3000,
+      "start": 30.0,
+      "end": 32.1,
+      "text": " All white people's name man",
+      "tokens": [
+        50364,
+        1057,
+        2418,
+        561,
+        311,
+        1315,
+        587,
+        50469
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -2.7969723751670434,
+      "compression_ratio": 1.4,
+      "no_speech_prob": 0.42304497957229614
+    },
+    {
+      "id": 2,
+      "seek": 3000,
+      "start": 33.6,
+      "end": 37.480000000000004,
+      "text": " we is our own world",
+      "tokens": [
+        50544,
+        321,
+        307,
+        527,
+        1065,
+        1002,
+        50738
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -2.7969723751670434,
+      "compression_ratio": 1.4,
+      "no_speech_prob": 0.42304497957229614
+    },
+    {
+      "id": 3,
+      "seek": 3000,
+      "start": 39.5,
+      "end": 41.8,
+      "text": " Brooklyn",
+      "tokens": [
+        50839,
+        21872,
+        50954
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -2.7969723751670434,
+      "compression_ratio": 1.4,
+      "no_speech_prob": 0.42304497957229614
+    },
+    {
+      "id": 4,
+      "seek": 3000,
+      "start": 42.9,
+      "end": 46.78,
+      "text": " we are the white women",
+      "tokens": [
+        51009,
+        321,
+        366,
+        264,
+        2418,
+        2266,
+        51203
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -2.7969723751670434,
+      "compression_ratio": 1.4,
+      "no_speech_prob": 0.42304497957229614
+    },
+    {
+      "id": 5,
+      "seek": 3000,
+      "start": 46.94,
+      "end": 50.58,
+      "text": " All white people's name man",
+      "tokens": [
+        51211,
+        1057,
+        2418,
+        561,
+        311,
+        1315,
+        587,
+        51393
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -2.7969723751670434,
+      "compression_ratio": 1.4,
+      "no_speech_prob": 0.42304497957229614
+    },
+    {
+      "id": 6,
+      "seek": 3000,
+      "start": 55.480000000000004,
+      "end": 57.260000000000005,
+      "text": " Chad",
+      "tokens": [
+        51638,
+        22268,
+        51727
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -2.7969723751670434,
+      "compression_ratio": 1.4,
+      "no_speech_prob": 0.42304497957229614
+    },
+    {
+      "id": 7,
+      "seek": 5726,
+      "start": 57.26,
+      "end": 58.1,
+      "text": " 12",
+      "tokens": [
+        50364,
+        2272,
+        50406
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -1.1728857252332898,
+      "compression_ratio": 1.9019607843137254,
+      "no_speech_prob": 0.5448476672172546
+    },
+    {
+      "id": 8,
+      "seek": 5726,
+      "start": 58.1,
+      "end": 59.26,
+      "text": " 13",
+      "tokens": [
+        50406,
+        3705,
+        50464
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -1.1728857252332898,
+      "compression_ratio": 1.9019607843137254,
+      "no_speech_prob": 0.5448476672172546
+    },
+    {
+      "id": 9,
+      "seek": 5726,
+      "start": 59.26,
+      "end": 60.26,
+      "text": " 14",
+      "tokens": [
+        50464,
+        3499,
+        50514
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -1.1728857252332898,
+      "compression_ratio": 1.9019607843137254,
+      "no_speech_prob": 0.5448476672172546
+    },
+    {
+      "id": 10,
+      "seek": 5726,
+      "start": 60.26,
+      "end": 61.26,
+      "text": " 12",
+      "tokens": [
+        50514,
+        2272,
+        50564
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -1.1728857252332898,
+      "compression_ratio": 1.9019607843137254,
+      "no_speech_prob": 0.5448476672172546
+    },
+    {
+      "id": 11,
+      "seek": 5726,
+      "start": 61.26,
+      "end": 62.26,
+      "text": " 13",
+      "tokens": [
+        50564,
+        3705,
+        50614
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -1.1728857252332898,
+      "compression_ratio": 1.9019607843137254,
+      "no_speech_prob": 0.5448476672172546
+    },
+    {
+      "id": 12,
+      "seek": 5726,
+      "start": 62.26,
+      "end": 63.26,
+      "text": " 13",
+      "tokens": [
+        50614,
+        3705,
+        50664
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -1.1728857252332898,
+      "compression_ratio": 1.9019607843137254,
+      "no_speech_prob": 0.5448476672172546
+    },
+    {
+      "id": 13,
+      "seek": 5726,
+      "start": 63.26,
+      "end": 64.25999999999999,
+      "text": " 13",
+      "tokens": [
+        50664,
+        3705,
+        50714
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -1.1728857252332898,
+      "compression_ratio": 1.9019607843137254,
+      "no_speech_prob": 0.5448476672172546
+    },
+    {
+      "id": 14,
+      "seek": 5726,
+      "start": 64.25999999999999,
+      "end": 65.25999999999999,
+      "text": " 14",
+      "tokens": [
+        50714,
+        3499,
+        50764
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -1.1728857252332898,
+      "compression_ratio": 1.9019607843137254,
+      "no_speech_prob": 0.5448476672172546
+    },
+    {
+      "id": 15,
+      "seek": 5726,
+      "start": 65.25999999999999,
+      "end": 66.25999999999999,
+      "text": " 13",
+      "tokens": [
+        50764,
+        3705,
+        50814
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -1.1728857252332898,
+      "compression_ratio": 1.9019607843137254,
+      "no_speech_prob": 0.5448476672172546
+    },
+    {
+      "id": 16,
+      "seek": 5726,
+      "start": 66.25999999999999,
+      "end": 67.25999999999999,
+      "text": " 14",
+      "tokens": [
+        50814,
+        3499,
+        50864
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -1.1728857252332898,
+      "compression_ratio": 1.9019607843137254,
+      "no_speech_prob": 0.5448476672172546
+    },
+    {
+      "id": 17,
+      "seek": 5726,
+      "start": 67.25999999999999,
+      "end": 68.25999999999999,
+      "text": " 14",
+      "tokens": [
+        50864,
+        3499,
+        50914
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -1.1728857252332898,
+      "compression_ratio": 1.9019607843137254,
+      "no_speech_prob": 0.5448476672172546
+    },
+    {
+      "id": 18,
+      "seek": 5726,
+      "start": 68.25999999999999,
+      "end": 69.25999999999999,
+      "text": " 14",
+      "tokens": [
+        50914,
+        3499,
+        50964
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -1.1728857252332898,
+      "compression_ratio": 1.9019607843137254,
+      "no_speech_prob": 0.5448476672172546
+    },
+    {
+      "id": 19,
+      "seek": 5726,
+      "start": 69.25999999999999,
+      "end": 70.25999999999999,
+      "text": " 14",
+      "tokens": [
+        50964,
+        3499,
+        51014
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -1.1728857252332898,
+      "compression_ratio": 1.9019607843137254,
+      "no_speech_prob": 0.5448476672172546
+    },
+    {
+      "id": 20,
+      "seek": 5726,
+      "start": 70.25999999999999,
+      "end": 71.25999999999999,
+      "text": " 14",
+      "tokens": [
+        51014,
+        3499,
+        51064
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -1.1728857252332898,
+      "compression_ratio": 1.9019607843137254,
+      "no_speech_prob": 0.5448476672172546
+    },
+    {
+      "id": 21,
+      "seek": 5726,
+      "start": 71.25999999999999,
+      "end": 72.25999999999999,
+      "text": " 14",
+      "tokens": [
+        51064,
+        3499,
+        51114
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -1.1728857252332898,
+      "compression_ratio": 1.9019607843137254,
+      "no_speech_prob": 0.5448476672172546
+    },
+    {
+      "id": 22,
+      "seek": 5726,
+      "start": 72.25999999999999,
+      "end": 73.25999999999999,
+      "text": " 14",
+      "tokens": [
+        51114,
+        3499,
+        51164
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -1.1728857252332898,
+      "compression_ratio": 1.9019607843137254,
+      "no_speech_prob": 0.5448476672172546
+    },
+    {
+      "id": 23,
+      "seek": 5726,
+      "start": 73.25999999999999,
+      "end": 74.25999999999999,
+      "text": " 14",
+      "tokens": [
+        51164,
+        3499,
+        51214
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -1.1728857252332898,
+      "compression_ratio": 1.9019607843137254,
+      "no_speech_prob": 0.5448476672172546
+    },
+    {
+      "id": 24,
+      "seek": 5726,
+      "start": 74.25999999999999,
+      "end": 75.25999999999999,
+      "text": " zw empieza",
+      "tokens": [
+        51214,
+        11873,
+        44577,
+        51264
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -1.1728857252332898,
+      "compression_ratio": 1.9019607843137254,
+      "no_speech_prob": 0.5448476672172546
+    },
+    {
+      "id": 25,
+      "seek": 5726,
+      "start": 75.25999999999999,
+      "end": 76.25999999999999,
+      "text": " 12",
+      "tokens": [
+        51264,
+        2272,
+        51314
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -1.1728857252332898,
+      "compression_ratio": 1.9019607843137254,
+      "no_speech_prob": 0.5448476672172546
+    },
+    {
+      "id": 26,
+      "seek": 5726,
+      "start": 76.25999999999999,
+      "end": 77.25999999999999,
+      "text": " 14",
+      "tokens": [
+        51314,
+        3499,
+        51364
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -1.1728857252332898,
+      "compression_ratio": 1.9019607843137254,
+      "no_speech_prob": 0.5448476672172546
+    },
+    {
+      "id": 27,
+      "seek": 5726,
+      "start": 77.25999999999999,
+      "end": 78.25999999999999,
+      "text": " 14",
+      "tokens": [
+        51364,
+        3499,
+        51414
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -1.1728857252332898,
+      "compression_ratio": 1.9019607843137254,
+      "no_speech_prob": 0.5448476672172546
+    },
+    {
+      "id": 28,
+      "seek": 5726,
+      "start": 78.25999999999999,
+      "end": 79.25999999999999,
+      "text": " 15",
+      "tokens": [
+        51414,
+        2119,
+        51464
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -1.1728857252332898,
+      "compression_ratio": 1.9019607843137254,
+      "no_speech_prob": 0.5448476672172546
+    },
+    {
+      "id": 29,
+      "seek": 5726,
+      "start": 79.25999999999999,
+      "end": 80.25999999999999,
+      "text": " 15",
+      "tokens": [
+        51464,
+        2119,
+        51514
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -1.1728857252332898,
+      "compression_ratio": 1.9019607843137254,
+      "no_speech_prob": 0.5448476672172546
+    },
+    {
+      "id": 30,
+      "seek": 5726,
+      "start": 80.25999999999999,
+      "end": 81.25999999999999,
+      "text": " 17",
+      "tokens": [
+        51514,
+        3282,
+        51564
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -1.1728857252332898,
+      "compression_ratio": 1.9019607843137254,
+      "no_speech_prob": 0.5448476672172546
+    },
+    {
+      "id": 31,
+      "seek": 5726,
+      "start": 81.25999999999999,
+      "end": 82.25999999999999,
+      "text": " start",
+      "tokens": [
+        51564,
+        722,
+        51614
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -1.1728857252332898,
+      "compression_ratio": 1.9019607843137254,
+      "no_speech_prob": 0.5448476672172546
+    },
+    {
+      "id": 32,
+      "seek": 5726,
+      "start": 82.86,
+      "end": 84.25999999999999,
+      "text": " 14",
+      "tokens": [
+        51644,
+        3499,
+        51714
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -1.1728857252332898,
+      "compression_ratio": 1.9019607843137254,
+      "no_speech_prob": 0.5448476672172546
+    },
+    {
+      "id": 33,
+      "seek": 5726,
+      "start": 84.25999999999999,
+      "end": 85.25999999999999,
+      "text": " 14",
+      "tokens": [
+        51714,
+        3499,
+        51764
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -1.1728857252332898,
+      "compression_ratio": 1.9019607843137254,
+      "no_speech_prob": 0.5448476672172546
+    },
+    {
+      "id": 34,
+      "seek": 5726,
+      "start": 85.25999999999999,
+      "end": 86.25999999999999,
+      "text": " 14",
+      "tokens": [
+        51764,
+        3499,
+        51814
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -1.1728857252332898,
+      "compression_ratio": 1.9019607843137254,
+      "no_speech_prob": 0.5448476672172546
+    },
+    {
+      "id": 35,
+      "seek": 5726,
+      "start": 86.25999999999999,
+      "end": 87.22,
+      "text": " 14",
+      "tokens": [
+        51814,
+        3499,
+        51862
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -1.1728857252332898,
+      "compression_ratio": 1.9019607843137254,
+      "no_speech_prob": 0.5448476672172546
+    },
+    {
+      "id": 36,
+      "seek": 8722,
+      "start": 87.22,
+      "end": 89.22,
+      "text": " I don't want to celebrate.",
+      "tokens": [
+        50364,
+        286,
+        500,
+        380,
+        528,
+        281,
+        8098,
+        13,
+        50464
+      ],
+      "temperature": 0.4,
+      "avg_logprob": -0.5348321963579227,
+      "compression_ratio": 1.873015873015873,
+      "no_speech_prob": 0.32335489988327026
+    },
+    {
+      "id": 37,
+      "seek": 8722,
+      "start": 89.22,
+      "end": 91.22,
+      "text": " Come play this club.",
+      "tokens": [
+        50464,
+        2492,
+        862,
+        341,
+        6482,
+        13,
+        50564
+      ],
+      "temperature": 0.4,
+      "avg_logprob": -0.5348321963579227,
+      "compression_ratio": 1.873015873015873,
+      "no_speech_prob": 0.32335489988327026
+    },
+    {
+      "id": 38,
+      "seek": 8722,
+      "start": 91.22,
+      "end": 93.22,
+      "text": " What about black or black?",
+      "tokens": [
+        50564,
+        708,
+        466,
+        2211,
+        420,
+        2211,
+        30,
+        50664
+      ],
+      "temperature": 0.4,
+      "avg_logprob": -0.5348321963579227,
+      "compression_ratio": 1.873015873015873,
+      "no_speech_prob": 0.32335489988327026
+    },
+    {
+      "id": 39,
+      "seek": 8722,
+      "start": 93.22,
+      "end": 95.22,
+      "text": " Come play this club.",
+      "tokens": [
+        50664,
+        2492,
+        862,
+        341,
+        6482,
+        13,
+        50764
+      ],
+      "temperature": 0.4,
+      "avg_logprob": -0.5348321963579227,
+      "compression_ratio": 1.873015873015873,
+      "no_speech_prob": 0.32335489988327026
+    },
+    {
+      "id": 40,
+      "seek": 8722,
+      "start": 95.22,
+      "end": 97.22,
+      "text": " Where the white women act.",
+      "tokens": [
+        50764,
+        2305,
+        264,
+        2418,
+        2266,
+        605,
+        13,
+        50864
+      ],
+      "temperature": 0.4,
+      "avg_logprob": -0.5348321963579227,
+      "compression_ratio": 1.873015873015873,
+      "no_speech_prob": 0.32335489988327026
+    },
+    {
+      "id": 41,
+      "seek": 8722,
+      "start": 97.22,
+      "end": 99.22,
+      "text": " Come play this club.",
+      "tokens": [
+        50864,
+        2492,
+        862,
+        341,
+        6482,
+        13,
+        50964
+      ],
+      "temperature": 0.4,
+      "avg_logprob": -0.5348321963579227,
+      "compression_ratio": 1.873015873015873,
+      "no_speech_prob": 0.32335489988327026
+    },
+    {
+      "id": 42,
+      "seek": 8722,
+      "start": 99.22,
+      "end": 101.22,
+      "text": " Come play this club.",
+      "tokens": [
+        50964,
+        2492,
+        862,
+        341,
+        6482,
+        13,
+        51064
+      ],
+      "temperature": 0.4,
+      "avg_logprob": -0.5348321963579227,
+      "compression_ratio": 1.873015873015873,
+      "no_speech_prob": 0.32335489988327026
+    },
+    {
+      "id": 43,
+      "seek": 8722,
+      "start": 101.22,
+      "end": 103.22,
+      "text": " I don't like people playing bad.",
+      "tokens": [
+        51064,
+        286,
+        500,
+        380,
+        411,
+        561,
+        2433,
+        1578,
+        13,
+        51164
+      ],
+      "temperature": 0.4,
+      "avg_logprob": -0.5348321963579227,
+      "compression_ratio": 1.873015873015873,
+      "no_speech_prob": 0.32335489988327026
+    },
+    {
+      "id": 44,
+      "seek": 8722,
+      "start": 103.22,
+      "end": 105.22,
+      "text": " Come play this club.",
+      "tokens": [
+        51164,
+        2492,
+        862,
+        341,
+        6482,
+        13,
+        51264
+      ],
+      "temperature": 0.4,
+      "avg_logprob": -0.5348321963579227,
+      "compression_ratio": 1.873015873015873,
+      "no_speech_prob": 0.32335489988327026
+    },
+    {
+      "id": 45,
+      "seek": 8722,
+      "start": 105.22,
+      "end": 107.22,
+      "text": " We just got home.",
+      "tokens": [
+        51264,
+        492,
+        445,
+        658,
+        1280,
+        13,
+        51364
+      ],
+      "temperature": 0.4,
+      "avg_logprob": -0.5348321963579227,
+      "compression_ratio": 1.873015873015873,
+      "no_speech_prob": 0.32335489988327026
+    }
+  ],
+  "language": "en"
+}

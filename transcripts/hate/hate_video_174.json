@@ -1,0 +1,182 @@
+{
+  "text": " O r 💨 ENכלou uma brola com bicho, respeto solovanica Ire', é booking tecnique Changeraginationexc ¡use Meleccion exclusivo Side-up",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 3.2800000000000002,
+      "text": " O r 💨",
+      "tokens": [
+        50364,
+        422,
+        367,
+        7385,
+        240,
+        101,
+        50528
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -3.7652909652046533,
+      "compression_ratio": 0.85,
+      "no_speech_prob": 0.29292547702789307
+    },
+    {
+      "id": 1,
+      "seek": 0,
+      "start": 6.28,
+      "end": 10.0,
+      "text": " ENכלou uma brola com bicho, respeto solo",
+      "tokens": [
+        50678,
+        15244,
+        37004,
+        263,
+        2772,
+        2006,
+        875,
+        395,
+        272,
+        33082,
+        11,
+        1597,
+        19515,
+        6944,
+        50864
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -3.7652909652046533,
+      "compression_ratio": 0.85,
+      "no_speech_prob": 0.29292547702789307
+    },
+    {
+      "id": 2,
+      "seek": 9000,
+      "start": 90.0,
+      "end": 97.4,
+      "text": "vanica Ire', é booking tecnique",
+      "tokens": [
+        50364,
+        9768,
+        2262,
+        13151,
+        6098,
+        1136,
+        34424,
+        20105,
+        1925,
+        50734
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -6.782670454545454,
+      "compression_ratio": 0.9397590361445783,
+      "no_speech_prob": 0.4891512989997864
+    },
+    {
+      "id": 3,
+      "seek": 9000,
+      "start": 99.5,
+      "end": 105.44,
+      "text": " Change",
+      "tokens": [
+        50839,
+        15060,
+        51136
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -6.782670454545454,
+      "compression_ratio": 0.9397590361445783,
+      "no_speech_prob": 0.4891512989997864
+    },
+    {
+      "id": 4,
+      "seek": 9000,
+      "start": 107.28,
+      "end": 107.5,
+      "text": "ragination",
+      "tokens": [
+        51228,
+        3731,
+        2486,
+        51239
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -6.782670454545454,
+      "compression_ratio": 0.9397590361445783,
+      "no_speech_prob": 0.4891512989997864
+    },
+    {
+      "id": 5,
+      "seek": 9000,
+      "start": 108.86,
+      "end": 111.16,
+      "text": "exc ¡use",
+      "tokens": [
+        51307,
+        27855,
+        6514,
+        438,
+        51422
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -6.782670454545454,
+      "compression_ratio": 0.9397590361445783,
+      "no_speech_prob": 0.4891512989997864
+    },
+    {
+      "id": 6,
+      "seek": 9000,
+      "start": 112.1,
+      "end": 115.86,
+      "text": " Meleccion",
+      "tokens": [
+        51469,
+        1923,
+        306,
+        1914,
+        313,
+        51657
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -6.782670454545454,
+      "compression_ratio": 0.9397590361445783,
+      "no_speech_prob": 0.4891512989997864
+    },
+    {
+      "id": 7,
+      "seek": 9000,
+      "start": 116.56,
+      "end": 119.88,
+      "text": " exclusivo",
+      "tokens": [
+        51692,
+        15085,
+        6340,
+        51858
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -6.782670454545454,
+      "compression_ratio": 0.9397590361445783,
+      "no_speech_prob": 0.4891512989997864
+    },
+    {
+      "id": 8,
+      "seek": 18000,
+      "start": 180.0,
+      "end": 182.8,
+      "text": " Side-up",
+      "tokens": [
+        50414,
+        19026,
+        12,
+        1010,
+        50504
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -4.243553479512532,
+      "compression_ratio": 0.4666666666666667,
+      "no_speech_prob": 0.5478124022483826
+    }
+  ],
+  "language": "pt"
+}

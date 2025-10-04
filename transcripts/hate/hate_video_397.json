@@ -1,0 +1,447 @@
+{
+  "text": " Music Music Music Sun is shining in the sky There ain't a cloud inside It's not raining There's a fire in the lake And don't you know It's a beautiful day Hey Where did now we have it? The house of sunshine Right in the city All the streets were once Was painted This little blue Tried to live in the lake Hey Mr. Blue Sky Mr. Blue Sky You had to pat away for so long Why did we come home? Mr. Blue Sky",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 4.0,
+      "text": " Music",
+      "tokens": [
+        50364,
+        7609,
+        50564
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.4894534935385494,
+      "compression_ratio": 1.3389830508474576,
+      "no_speech_prob": 0.3262082636356354
+    },
+    {
+      "id": 1,
+      "seek": 0,
+      "start": 4.0,
+      "end": 8.0,
+      "text": " Music",
+      "tokens": [
+        50564,
+        7609,
+        50764
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.4894534935385494,
+      "compression_ratio": 1.3389830508474576,
+      "no_speech_prob": 0.3262082636356354
+    },
+    {
+      "id": 2,
+      "seek": 0,
+      "start": 8.0,
+      "end": 11.0,
+      "text": " Music",
+      "tokens": [
+        50764,
+        7609,
+        50914
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.4894534935385494,
+      "compression_ratio": 1.3389830508474576,
+      "no_speech_prob": 0.3262082636356354
+    },
+    {
+      "id": 3,
+      "seek": 0,
+      "start": 11.0,
+      "end": 14.0,
+      "text": " Sun is shining in the sky",
+      "tokens": [
+        50914,
+        6163,
+        307,
+        18269,
+        294,
+        264,
+        5443,
+        51064
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.4894534935385494,
+      "compression_ratio": 1.3389830508474576,
+      "no_speech_prob": 0.3262082636356354
+    },
+    {
+      "id": 4,
+      "seek": 0,
+      "start": 14.0,
+      "end": 17.0,
+      "text": " There ain't a cloud inside",
+      "tokens": [
+        51064,
+        821,
+        7862,
+        380,
+        257,
+        4588,
+        1854,
+        51214
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.4894534935385494,
+      "compression_ratio": 1.3389830508474576,
+      "no_speech_prob": 0.3262082636356354
+    },
+    {
+      "id": 5,
+      "seek": 0,
+      "start": 17.0,
+      "end": 19.0,
+      "text": " It's not raining",
+      "tokens": [
+        51214,
+        467,
+        311,
+        406,
+        18441,
+        51314
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.4894534935385494,
+      "compression_ratio": 1.3389830508474576,
+      "no_speech_prob": 0.3262082636356354
+    },
+    {
+      "id": 6,
+      "seek": 0,
+      "start": 19.0,
+      "end": 21.0,
+      "text": " There's a fire in the lake",
+      "tokens": [
+        51314,
+        821,
+        311,
+        257,
+        2610,
+        294,
+        264,
+        11001,
+        51414
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.4894534935385494,
+      "compression_ratio": 1.3389830508474576,
+      "no_speech_prob": 0.3262082636356354
+    },
+    {
+      "id": 7,
+      "seek": 0,
+      "start": 21.0,
+      "end": 23.0,
+      "text": " And don't you know",
+      "tokens": [
+        51414,
+        400,
+        500,
+        380,
+        291,
+        458,
+        51514
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.4894534935385494,
+      "compression_ratio": 1.3389830508474576,
+      "no_speech_prob": 0.3262082636356354
+    },
+    {
+      "id": 8,
+      "seek": 0,
+      "start": 23.0,
+      "end": 25.0,
+      "text": " It's a beautiful day",
+      "tokens": [
+        51514,
+        467,
+        311,
+        257,
+        2238,
+        786,
+        51614
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.4894534935385494,
+      "compression_ratio": 1.3389830508474576,
+      "no_speech_prob": 0.3262082636356354
+    },
+    {
+      "id": 9,
+      "seek": 0,
+      "start": 25.0,
+      "end": 27.0,
+      "text": " Hey",
+      "tokens": [
+        51614,
+        1911,
+        51714
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.4894534935385494,
+      "compression_ratio": 1.3389830508474576,
+      "no_speech_prob": 0.3262082636356354
+    },
+    {
+      "id": 10,
+      "seek": 2700,
+      "start": 28.0,
+      "end": 30.0,
+      "text": " Where did now we have it?",
+      "tokens": [
+        50414,
+        2305,
+        630,
+        586,
+        321,
+        362,
+        309,
+        30,
+        50514
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.5557917371208285,
+      "compression_ratio": 1.4197530864197532,
+      "no_speech_prob": 0.04857263341546059
+    },
+    {
+      "id": 11,
+      "seek": 2700,
+      "start": 30.0,
+      "end": 33.0,
+      "text": " The house of sunshine",
+      "tokens": [
+        50514,
+        440,
+        1782,
+        295,
+        25219,
+        50664
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.5557917371208285,
+      "compression_ratio": 1.4197530864197532,
+      "no_speech_prob": 0.04857263341546059
+    },
+    {
+      "id": 12,
+      "seek": 2700,
+      "start": 33.0,
+      "end": 35.0,
+      "text": " Right in the city",
+      "tokens": [
+        50664,
+        1779,
+        294,
+        264,
+        2307,
+        50764
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.5557917371208285,
+      "compression_ratio": 1.4197530864197532,
+      "no_speech_prob": 0.04857263341546059
+    },
+    {
+      "id": 13,
+      "seek": 2700,
+      "start": 35.0,
+      "end": 37.0,
+      "text": " All the streets were once",
+      "tokens": [
+        50764,
+        1057,
+        264,
+        8481,
+        645,
+        1564,
+        50864
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.5557917371208285,
+      "compression_ratio": 1.4197530864197532,
+      "no_speech_prob": 0.04857263341546059
+    },
+    {
+      "id": 14,
+      "seek": 2700,
+      "start": 37.0,
+      "end": 38.0,
+      "text": " Was painted",
+      "tokens": [
+        50864,
+        3027,
+        11797,
+        50914
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.5557917371208285,
+      "compression_ratio": 1.4197530864197532,
+      "no_speech_prob": 0.04857263341546059
+    },
+    {
+      "id": 15,
+      "seek": 2700,
+      "start": 38.0,
+      "end": 39.0,
+      "text": " This little blue",
+      "tokens": [
+        50914,
+        639,
+        707,
+        3344,
+        50964
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.5557917371208285,
+      "compression_ratio": 1.4197530864197532,
+      "no_speech_prob": 0.04857263341546059
+    },
+    {
+      "id": 16,
+      "seek": 2700,
+      "start": 39.0,
+      "end": 42.0,
+      "text": " Tried to live in the lake",
+      "tokens": [
+        50964,
+        314,
+        2428,
+        281,
+        1621,
+        294,
+        264,
+        11001,
+        51114
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.5557917371208285,
+      "compression_ratio": 1.4197530864197532,
+      "no_speech_prob": 0.04857263341546059
+    },
+    {
+      "id": 17,
+      "seek": 2700,
+      "start": 42.0,
+      "end": 44.0,
+      "text": " Hey",
+      "tokens": [
+        51114,
+        1911,
+        51214
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.5557917371208285,
+      "compression_ratio": 1.4197530864197532,
+      "no_speech_prob": 0.04857263341546059
+    },
+    {
+      "id": 18,
+      "seek": 2700,
+      "start": 44.0,
+      "end": 46.0,
+      "text": " Mr. Blue Sky",
+      "tokens": [
+        51214,
+        2221,
+        13,
+        8510,
+        9879,
+        51314
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.5557917371208285,
+      "compression_ratio": 1.4197530864197532,
+      "no_speech_prob": 0.04857263341546059
+    },
+    {
+      "id": 19,
+      "seek": 2700,
+      "start": 46.0,
+      "end": 47.0,
+      "text": " Mr. Blue Sky",
+      "tokens": [
+        51314,
+        2221,
+        13,
+        8510,
+        9879,
+        51364
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.5557917371208285,
+      "compression_ratio": 1.4197530864197532,
+      "no_speech_prob": 0.04857263341546059
+    },
+    {
+      "id": 20,
+      "seek": 2700,
+      "start": 47.0,
+      "end": 51.0,
+      "text": " You had to pat away for so long",
+      "tokens": [
+        51364,
+        509,
+        632,
+        281,
+        1947,
+        1314,
+        337,
+        370,
+        938,
+        51564
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.5557917371208285,
+      "compression_ratio": 1.4197530864197532,
+      "no_speech_prob": 0.04857263341546059
+    },
+    {
+      "id": 21,
+      "seek": 2700,
+      "start": 51.0,
+      "end": 54.0,
+      "text": " Why did we come home?",
+      "tokens": [
+        51564,
+        1545,
+        630,
+        321,
+        808,
+        1280,
+        30,
+        51714
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.5557917371208285,
+      "compression_ratio": 1.4197530864197532,
+      "no_speech_prob": 0.04857263341546059
+    },
+    {
+      "id": 22,
+      "seek": 5400,
+      "start": 54.0,
+      "end": 57.0,
+      "text": " Mr. Blue Sky",
+      "tokens": [
+        50414,
+        2221,
+        13,
+        8510,
+        9879,
+        50514
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.07655225481305804,
+      "compression_ratio": 0.6,
+      "no_speech_prob": 0.06157111003994942
+    }
+  ],
+  "language": "en"
+}

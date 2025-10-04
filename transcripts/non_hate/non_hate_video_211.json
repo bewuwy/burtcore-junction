@@ -1,0 +1,34 @@
+{
+  "text": " And if you don't know, it's like a no record",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 9000,
+      "start": 90.0,
+      "end": 104.56,
+      "text": " And if you don't know, it's like a no record",
+      "tokens": [
+        50364,
+        400,
+        498,
+        291,
+        500,
+        380,
+        458,
+        11,
+        309,
+        311,
+        411,
+        257,
+        572,
+        2136,
+        51092
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.6682186126708984,
+      "compression_ratio": 0.8461538461538461,
+      "no_speech_prob": 0.6910426616668701
+    }
+  ],
+  "language": "en"
+}

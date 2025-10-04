@@ -1,0 +1,135 @@
+{
+  "text": " Look at the attorney general, he's a maker. Did you know that? Yeah, I knew he was African American. Huh? I knew he was African American. Unmiggered.",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 2.56,
+      "text": " Look at the attorney general, he's a maker.",
+      "tokens": [
+        50364,
+        2053,
+        412,
+        264,
+        13469,
+        2674,
+        11,
+        415,
+        311,
+        257,
+        17127,
+        13,
+        50492
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.5929664098299466,
+      "compression_ratio": 1.3423423423423424,
+      "no_speech_prob": 0.052348483353853226
+    },
+    {
+      "id": 1,
+      "seek": 0,
+      "start": 3.8000000000000003,
+      "end": 4.8,
+      "text": " Did you know that?",
+      "tokens": [
+        50554,
+        2589,
+        291,
+        458,
+        300,
+        30,
+        50604
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.5929664098299466,
+      "compression_ratio": 1.3423423423423424,
+      "no_speech_prob": 0.052348483353853226
+    },
+    {
+      "id": 2,
+      "seek": 0,
+      "start": 5.6000000000000005,
+      "end": 8.0,
+      "text": " Yeah, I knew he was African American.",
+      "tokens": [
+        50644,
+        865,
+        11,
+        286,
+        2586,
+        415,
+        390,
+        7312,
+        2665,
+        13,
+        50764
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.5929664098299466,
+      "compression_ratio": 1.3423423423423424,
+      "no_speech_prob": 0.052348483353853226
+    },
+    {
+      "id": 3,
+      "seek": 0,
+      "start": 8.2,
+      "end": 8.700000000000001,
+      "text": " Huh?",
+      "tokens": [
+        50774,
+        8063,
+        30,
+        50799
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.5929664098299466,
+      "compression_ratio": 1.3423423423423424,
+      "no_speech_prob": 0.052348483353853226
+    },
+    {
+      "id": 4,
+      "seek": 0,
+      "start": 9.4,
+      "end": 11.200000000000001,
+      "text": " I knew he was African American.",
+      "tokens": [
+        50834,
+        286,
+        2586,
+        415,
+        390,
+        7312,
+        2665,
+        13,
+        50924
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.5929664098299466,
+      "compression_ratio": 1.3423423423423424,
+      "no_speech_prob": 0.052348483353853226
+    },
+    {
+      "id": 5,
+      "seek": 0,
+      "start": 12.9,
+      "end": 13.6,
+      "text": " Unmiggered.",
+      "tokens": [
+        51009,
+        1156,
+        76,
+        6812,
+        292,
+        13,
+        51044
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.5929664098299466,
+      "compression_ratio": 1.3423423423423424,
+      "no_speech_prob": 0.052348483353853226
+    }
+  ],
+  "language": "en"
+}

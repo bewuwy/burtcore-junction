@@ -1,0 +1,36 @@
+{
+  "text": " Hold on a second, you four are let loose you phantom people!",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 15.780000000000001,
+      "text": " Hold on a second, you four are let loose you phantom people!",
+      "tokens": [
+        50364,
+        6962,
+        322,
+        257,
+        1150,
+        11,
+        291,
+        1451,
+        366,
+        718,
+        9612,
+        291,
+        903,
+        25796,
+        561,
+        0,
+        51153
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -3.9446591828998767,
+      "compression_ratio": 0.9523809523809523,
+      "no_speech_prob": 0.25751984119415283
+    }
+  ],
+  "language": "en"
+}

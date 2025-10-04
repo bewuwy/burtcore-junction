@@ -1,0 +1,85 @@
+{
+  "text": " Oh Go go go go go go go go go go Smash my face We're not in here",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 2.0,
+      "text": " Oh",
+      "tokens": [
+        50364,
+        876,
+        50464
+      ],
+      "temperature": 0.2,
+      "avg_logprob": -0.9730599267142159,
+      "compression_ratio": 1.3617021276595744,
+      "no_speech_prob": 0.3472495675086975
+    },
+    {
+      "id": 1,
+      "seek": 0,
+      "start": 12.0,
+      "end": 14.0,
+      "text": " Go go go go go go go go go go",
+      "tokens": [
+        50964,
+        1037,
+        352,
+        352,
+        352,
+        352,
+        352,
+        352,
+        352,
+        352,
+        352,
+        51064
+      ],
+      "temperature": 0.2,
+      "avg_logprob": -0.9730599267142159,
+      "compression_ratio": 1.3617021276595744,
+      "no_speech_prob": 0.3472495675086975
+    },
+    {
+      "id": 2,
+      "seek": 0,
+      "start": 16.0,
+      "end": 18.0,
+      "text": " Smash my face",
+      "tokens": [
+        51164,
+        25768,
+        452,
+        1851,
+        51264
+      ],
+      "temperature": 0.2,
+      "avg_logprob": -0.9730599267142159,
+      "compression_ratio": 1.3617021276595744,
+      "no_speech_prob": 0.3472495675086975
+    },
+    {
+      "id": 3,
+      "seek": 0,
+      "start": 20.0,
+      "end": 22.0,
+      "text": " We're not in here",
+      "tokens": [
+        51364,
+        492,
+        434,
+        406,
+        294,
+        510,
+        51464
+      ],
+      "temperature": 0.2,
+      "avg_logprob": -0.9730599267142159,
+      "compression_ratio": 1.3617021276595744,
+      "no_speech_prob": 0.3472495675086975
+    }
+  ],
+  "language": "en"
+}

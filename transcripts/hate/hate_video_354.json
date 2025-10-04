@@ -1,0 +1,99 @@
+{
+  "text": " I guess I'll see if they get banned here on BitShoot. If you want to like, share and subscribe. Bying. If not, later.",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 16.88,
+      "text": " I guess I'll see if they get banned here on BitShoot.",
+      "tokens": [
+        50364,
+        286,
+        2041,
+        286,
+        603,
+        536,
+        498,
+        436,
+        483,
+        19564,
+        510,
+        322,
+        9101,
+        50,
+        24467,
+        13,
+        51208
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.49975671266254623,
+      "compression_ratio": 0.8688524590163934,
+      "no_speech_prob": 0.2303936928510666
+    },
+    {
+      "id": 1,
+      "seek": 1688,
+      "start": 16.88,
+      "end": 18.38,
+      "text": " If you want to like, share and subscribe.",
+      "tokens": [
+        50364,
+        759,
+        291,
+        528,
+        281,
+        411,
+        11,
+        2073,
+        293,
+        3022,
+        13,
+        50439
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.47859634399414064,
+      "compression_ratio": 0.9130434782608695,
+      "no_speech_prob": 0.6421762108802795
+    },
+    {
+      "id": 2,
+      "seek": 1688,
+      "start": 18.38,
+      "end": 18.88,
+      "text": " Bying.",
+      "tokens": [
+        50439,
+        363,
+        1840,
+        13,
+        50464
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.47859634399414064,
+      "compression_ratio": 0.9130434782608695,
+      "no_speech_prob": 0.6421762108802795
+    },
+    {
+      "id": 3,
+      "seek": 1688,
+      "start": 18.88,
+      "end": 19.88,
+      "text": " If not, later.",
+      "tokens": [
+        50464,
+        759,
+        406,
+        11,
+        1780,
+        13,
+        50514
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.47859634399414064,
+      "compression_ratio": 0.9130434782608695,
+      "no_speech_prob": 0.6421762108802795
+    }
+  ],
+  "language": "en"
+}

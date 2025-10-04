@@ -1,0 +1,222 @@
+{
+  "text": " Oh He's living Oh, it's over It's over Yeah, he's been in space No, he's been in space He's been in space He's been in space He's been in space Fuck the stuff, nigga Fuck the stuff, nigga",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 2.0,
+      "text": " Oh",
+      "tokens": [
+        50364,
+        876,
+        50464
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.7736619472503662,
+      "compression_ratio": 1.34375,
+      "no_speech_prob": 0.5689002275466919
+    },
+    {
+      "id": 1,
+      "seek": 0,
+      "start": 12.0,
+      "end": 14.0,
+      "text": " He's living",
+      "tokens": [
+        50964,
+        634,
+        311,
+        2647,
+        51064
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.7736619472503662,
+      "compression_ratio": 1.34375,
+      "no_speech_prob": 0.5689002275466919
+    },
+    {
+      "id": 2,
+      "seek": 0,
+      "start": 14.0,
+      "end": 16.0,
+      "text": " Oh, it's over",
+      "tokens": [
+        51064,
+        876,
+        11,
+        309,
+        311,
+        670,
+        51164
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.7736619472503662,
+      "compression_ratio": 1.34375,
+      "no_speech_prob": 0.5689002275466919
+    },
+    {
+      "id": 3,
+      "seek": 0,
+      "start": 16.0,
+      "end": 18.0,
+      "text": " It's over",
+      "tokens": [
+        51164,
+        467,
+        311,
+        670,
+        51264
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.7736619472503662,
+      "compression_ratio": 1.34375,
+      "no_speech_prob": 0.5689002275466919
+    },
+    {
+      "id": 4,
+      "seek": 0,
+      "start": 20.0,
+      "end": 22.0,
+      "text": " Yeah, he's been in space",
+      "tokens": [
+        51364,
+        865,
+        11,
+        415,
+        311,
+        668,
+        294,
+        1901,
+        51464
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.7736619472503662,
+      "compression_ratio": 1.34375,
+      "no_speech_prob": 0.5689002275466919
+    },
+    {
+      "id": 5,
+      "seek": 0,
+      "start": 26.0,
+      "end": 28.0,
+      "text": " No, he's been in space",
+      "tokens": [
+        51664,
+        883,
+        11,
+        415,
+        311,
+        668,
+        294,
+        1901,
+        51764
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.7736619472503662,
+      "compression_ratio": 1.34375,
+      "no_speech_prob": 0.5689002275466919
+    },
+    {
+      "id": 6,
+      "seek": 2800,
+      "start": 28.0,
+      "end": 30.0,
+      "text": " He's been in space",
+      "tokens": [
+        50364,
+        634,
+        311,
+        668,
+        294,
+        1901,
+        50464
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.3465428617265489,
+      "compression_ratio": 1.8867924528301887,
+      "no_speech_prob": 0.030470408499240875
+    },
+    {
+      "id": 7,
+      "seek": 2800,
+      "start": 30.0,
+      "end": 32.0,
+      "text": " He's been in space",
+      "tokens": [
+        50464,
+        634,
+        311,
+        668,
+        294,
+        1901,
+        50564
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.3465428617265489,
+      "compression_ratio": 1.8867924528301887,
+      "no_speech_prob": 0.030470408499240875
+    },
+    {
+      "id": 8,
+      "seek": 2800,
+      "start": 32.0,
+      "end": 34.0,
+      "text": " He's been in space",
+      "tokens": [
+        50564,
+        634,
+        311,
+        668,
+        294,
+        1901,
+        50664
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.3465428617265489,
+      "compression_ratio": 1.8867924528301887,
+      "no_speech_prob": 0.030470408499240875
+    },
+    {
+      "id": 9,
+      "seek": 2800,
+      "start": 36.0,
+      "end": 38.0,
+      "text": " Fuck the stuff, nigga",
+      "tokens": [
+        50764,
+        10965,
+        264,
+        1507,
+        11,
+        41626,
+        50864
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.3465428617265489,
+      "compression_ratio": 1.8867924528301887,
+      "no_speech_prob": 0.030470408499240875
+    },
+    {
+      "id": 10,
+      "seek": 2800,
+      "start": 38.0,
+      "end": 40.0,
+      "text": " Fuck the stuff, nigga",
+      "tokens": [
+        50864,
+        10965,
+        264,
+        1507,
+        11,
+        41626,
+        50964
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.3465428617265489,
+      "compression_ratio": 1.8867924528301887,
+      "no_speech_prob": 0.030470408499240875
+    }
+  ],
+  "language": "en"
+}

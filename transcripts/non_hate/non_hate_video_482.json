@@ -1,0 +1,25 @@
+{
+  "text": " Good bye bushes!",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 2.08,
+      "text": " Good bye bushes!",
+      "tokens": [
+        50364,
+        2205,
+        6543,
+        34303,
+        0,
+        50468
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -4.150509425571987,
+      "compression_ratio": 0.6666666666666666,
+      "no_speech_prob": 0.5096027851104736
+    }
+  ],
+  "language": "en"
+}

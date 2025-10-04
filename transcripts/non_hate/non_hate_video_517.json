@@ -1,0 +1,484 @@
+{
+  "text": " I can't keep myself I can't keep myself I can't keep myself Allow me to flex I can't keep myself I can't keep myself I can't keep myself Hi, this is Rachel Doolagial sending congratulations to the 13% crew for hitting 55% this year That's amazing When 13% of the company does 55% of the work you deserve recognition But truth be told it's really more like 6% getting it done So you know who you are Congratulations on your success and this message is from your regional manager Thank you But 10% you church From me And you get the doughoria So you just fall up with your eyes okay Okay Oh Oh",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 2.0,
+      "text": " I can't keep myself",
+      "tokens": [
+        50364,
+        286,
+        393,
+        380,
+        1066,
+        2059,
+        50464
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.4915387971060617,
+      "compression_ratio": 1.6170212765957446,
+      "no_speech_prob": 0.5212035179138184
+    },
+    {
+      "id": 1,
+      "seek": 0,
+      "start": 2.0,
+      "end": 4.0,
+      "text": " I can't keep myself",
+      "tokens": [
+        50464,
+        286,
+        393,
+        380,
+        1066,
+        2059,
+        50564
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.4915387971060617,
+      "compression_ratio": 1.6170212765957446,
+      "no_speech_prob": 0.5212035179138184
+    },
+    {
+      "id": 2,
+      "seek": 0,
+      "start": 4.0,
+      "end": 6.0,
+      "text": " I can't keep myself",
+      "tokens": [
+        50564,
+        286,
+        393,
+        380,
+        1066,
+        2059,
+        50664
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.4915387971060617,
+      "compression_ratio": 1.6170212765957446,
+      "no_speech_prob": 0.5212035179138184
+    },
+    {
+      "id": 3,
+      "seek": 0,
+      "start": 6.0,
+      "end": 8.0,
+      "text": " Allow me to flex",
+      "tokens": [
+        50664,
+        32225,
+        385,
+        281,
+        5896,
+        50764
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.4915387971060617,
+      "compression_ratio": 1.6170212765957446,
+      "no_speech_prob": 0.5212035179138184
+    },
+    {
+      "id": 4,
+      "seek": 3000,
+      "start": 31.0,
+      "end": 32.0,
+      "text": " I can't keep myself",
+      "tokens": [
+        50414,
+        286,
+        393,
+        380,
+        1066,
+        2059,
+        50464
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.46684104746038263,
+      "compression_ratio": 1.903225806451613,
+      "no_speech_prob": 0.28176382184028625
+    },
+    {
+      "id": 5,
+      "seek": 3000,
+      "start": 32.0,
+      "end": 33.0,
+      "text": " I can't keep myself",
+      "tokens": [
+        50464,
+        286,
+        393,
+        380,
+        1066,
+        2059,
+        50514
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.46684104746038263,
+      "compression_ratio": 1.903225806451613,
+      "no_speech_prob": 0.28176382184028625
+    },
+    {
+      "id": 6,
+      "seek": 3000,
+      "start": 33.0,
+      "end": 34.0,
+      "text": " I can't keep myself",
+      "tokens": [
+        50514,
+        286,
+        393,
+        380,
+        1066,
+        2059,
+        50564
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.46684104746038263,
+      "compression_ratio": 1.903225806451613,
+      "no_speech_prob": 0.28176382184028625
+    },
+    {
+      "id": 7,
+      "seek": 6000,
+      "start": 61.0,
+      "end": 69.0,
+      "text": " Hi, this is Rachel Doolagial sending congratulations to the 13% crew for hitting 55% this year",
+      "tokens": [
+        50414,
+        2421,
+        11,
+        341,
+        307,
+        14246,
+        413,
+        1092,
+        559,
+        831,
+        7750,
+        13568,
+        281,
+        264,
+        3705,
+        4,
+        7260,
+        337,
+        8850,
+        12330,
+        4,
+        341,
+        1064,
+        50814
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.2069771037382238,
+      "compression_ratio": 1.5384615384615385,
+      "no_speech_prob": 0.1065121591091156
+    },
+    {
+      "id": 8,
+      "seek": 6000,
+      "start": 69.0,
+      "end": 71.0,
+      "text": " That's amazing",
+      "tokens": [
+        50814,
+        663,
+        311,
+        2243,
+        50914
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.2069771037382238,
+      "compression_ratio": 1.5384615384615385,
+      "no_speech_prob": 0.1065121591091156
+    },
+    {
+      "id": 9,
+      "seek": 6000,
+      "start": 71.0,
+      "end": 77.0,
+      "text": " When 13% of the company does 55% of the work you deserve recognition",
+      "tokens": [
+        50914,
+        1133,
+        3705,
+        4,
+        295,
+        264,
+        2237,
+        775,
+        12330,
+        4,
+        295,
+        264,
+        589,
+        291,
+        9948,
+        11150,
+        51214
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.2069771037382238,
+      "compression_ratio": 1.5384615384615385,
+      "no_speech_prob": 0.1065121591091156
+    },
+    {
+      "id": 10,
+      "seek": 6000,
+      "start": 77.0,
+      "end": 82.0,
+      "text": " But truth be told it's really more like 6% getting it done",
+      "tokens": [
+        51214,
+        583,
+        3494,
+        312,
+        1907,
+        309,
+        311,
+        534,
+        544,
+        411,
+        1386,
+        4,
+        1242,
+        309,
+        1096,
+        51464
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.2069771037382238,
+      "compression_ratio": 1.5384615384615385,
+      "no_speech_prob": 0.1065121591091156
+    },
+    {
+      "id": 11,
+      "seek": 6000,
+      "start": 82.0,
+      "end": 84.0,
+      "text": " So you know who you are",
+      "tokens": [
+        51464,
+        407,
+        291,
+        458,
+        567,
+        291,
+        366,
+        51564
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.2069771037382238,
+      "compression_ratio": 1.5384615384615385,
+      "no_speech_prob": 0.1065121591091156
+    },
+    {
+      "id": 12,
+      "seek": 6000,
+      "start": 84.0,
+      "end": 89.0,
+      "text": " Congratulations on your success and this message is from your regional manager",
+      "tokens": [
+        51564,
+        9694,
+        322,
+        428,
+        2245,
+        293,
+        341,
+        3636,
+        307,
+        490,
+        428,
+        10964,
+        6598,
+        51814
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.2069771037382238,
+      "compression_ratio": 1.5384615384615385,
+      "no_speech_prob": 0.1065121591091156
+    },
+    {
+      "id": 13,
+      "seek": 9000,
+      "start": 91.0,
+      "end": 93.02,
+      "text": " Thank you",
+      "tokens": [
+        50414,
+        1044,
+        291,
+        50515
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -2.7508872985839843,
+      "compression_ratio": 1.108695652173913,
+      "no_speech_prob": 0.06740561872720718
+    },
+    {
+      "id": 14,
+      "seek": 9000,
+      "start": 93.02,
+      "end": 94.0,
+      "text": " But 10%",
+      "tokens": [
+        50515,
+        583,
+        1266,
+        4,
+        50564
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -2.7508872985839843,
+      "compression_ratio": 1.108695652173913,
+      "no_speech_prob": 0.06740561872720718
+    },
+    {
+      "id": 15,
+      "seek": 9000,
+      "start": 94.0,
+      "end": 97.0,
+      "text": " you church",
+      "tokens": [
+        50564,
+        291,
+        4128,
+        50714
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -2.7508872985839843,
+      "compression_ratio": 1.108695652173913,
+      "no_speech_prob": 0.06740561872720718
+    },
+    {
+      "id": 16,
+      "seek": 9000,
+      "start": 97.0,
+      "end": 100.0,
+      "text": " From me",
+      "tokens": [
+        50714,
+        3358,
+        385,
+        50864
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -2.7508872985839843,
+      "compression_ratio": 1.108695652173913,
+      "no_speech_prob": 0.06740561872720718
+    },
+    {
+      "id": 17,
+      "seek": 9000,
+      "start": 100.0,
+      "end": 102.0,
+      "text": " And you get the dough",
+      "tokens": [
+        50864,
+        400,
+        291,
+        483,
+        264,
+        7984,
+        50964
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -2.7508872985839843,
+      "compression_ratio": 1.108695652173913,
+      "no_speech_prob": 0.06740561872720718
+    },
+    {
+      "id": 18,
+      "seek": 9000,
+      "start": 102.0,
+      "end": 105.0,
+      "text": "oria",
+      "tokens": [
+        50964,
+        8172,
+        51114
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -2.7508872985839843,
+      "compression_ratio": 1.108695652173913,
+      "no_speech_prob": 0.06740561872720718
+    },
+    {
+      "id": 19,
+      "seek": 9000,
+      "start": 109.5,
+      "end": 113.5,
+      "text": " So you just fall up with your eyes okay",
+      "tokens": [
+        51339,
+        407,
+        291,
+        445,
+        2100,
+        493,
+        365,
+        428,
+        2575,
+        1392,
+        51539
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -2.7508872985839843,
+      "compression_ratio": 1.108695652173913,
+      "no_speech_prob": 0.06740561872720718
+    },
+    {
+      "id": 20,
+      "seek": 11350,
+      "start": 113.5,
+      "end": 115.5,
+      "text": " Okay",
+      "tokens": [
+        50364,
+        1033,
+        50464
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.6155791282653809,
+      "compression_ratio": 0.3333333333333333,
+      "no_speech_prob": 0.527175784111023
+    },
+    {
+      "id": 21,
+      "seek": 14350,
+      "start": 143.5,
+      "end": 145.5,
+      "text": " Oh",
+      "tokens": [
+        50364,
+        876,
+        50464
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.9711498618125916,
+      "compression_ratio": 0.2,
+      "no_speech_prob": 0.32908445596694946
+    },
+    {
+      "id": 22,
+      "seek": 17350,
+      "start": 173.5,
+      "end": 175.5,
+      "text": " Oh",
+      "tokens": [
+        50364,
+        876,
+        50464
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.9004050493240356,
+      "compression_ratio": 0.2,
+      "no_speech_prob": 0.6395440101623535
+    }
+  ],
+  "language": "en"
+}

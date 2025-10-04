@@ -1,0 +1,70 @@
+{
+  "text": " Good morning, ma'am. And into the lovely morning. Up yours, digger.",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 2.0,
+      "text": " Good morning, ma'am.",
+      "tokens": [
+        50364,
+        2205,
+        2446,
+        11,
+        463,
+        6,
+        335,
+        13,
+        50464
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.570743230672983,
+      "compression_ratio": 0.9710144927536232,
+      "no_speech_prob": 0.03668740391731262
+    },
+    {
+      "id": 1,
+      "seek": 0,
+      "start": 2.0,
+      "end": 4.0,
+      "text": " And into the lovely morning.",
+      "tokens": [
+        50464,
+        400,
+        666,
+        264,
+        7496,
+        2446,
+        13,
+        50564
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.570743230672983,
+      "compression_ratio": 0.9710144927536232,
+      "no_speech_prob": 0.03668740391731262
+    },
+    {
+      "id": 2,
+      "seek": 0,
+      "start": 4.0,
+      "end": 6.0,
+      "text": " Up yours, digger.",
+      "tokens": [
+        50564,
+        5858,
+        6342,
+        11,
+        2528,
+        1321,
+        13,
+        50664
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.570743230672983,
+      "compression_ratio": 0.9710144927536232,
+      "no_speech_prob": 0.03668740391731262
+    }
+  ],
+  "language": "en"
+}

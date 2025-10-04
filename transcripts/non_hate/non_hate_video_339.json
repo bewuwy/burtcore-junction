@@ -1,0 +1,338 @@
+{
+  "text": " G-I-M-M-I-C-K That is incorrect! The correct plan is G-I-M-M-I-K Proclaims Rewind! Wow Beh No Boiler SPULT Bin and we'T MINE Fantastic and Harsh Kirst neitherstanding",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 4.0,
+      "text": " G-I-M-M-I-C-K",
+      "tokens": [
+        50364,
+        460,
+        12,
+        40,
+        12,
+        44,
+        12,
+        44,
+        12,
+        40,
+        12,
+        34,
+        12,
+        42,
+        50564
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.5510402754241345,
+      "compression_ratio": 1.1232876712328768,
+      "no_speech_prob": 0.31461983919143677
+    },
+    {
+      "id": 1,
+      "seek": 0,
+      "start": 4.0,
+      "end": 5.6000000000000005,
+      "text": " That is incorrect!",
+      "tokens": [
+        50564,
+        663,
+        307,
+        18424,
+        0,
+        50644
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.5510402754241345,
+      "compression_ratio": 1.1232876712328768,
+      "no_speech_prob": 0.31461983919143677
+    },
+    {
+      "id": 2,
+      "seek": 0,
+      "start": 5.6000000000000005,
+      "end": 10.0,
+      "text": " The correct plan is G-I-M-M-I-K",
+      "tokens": [
+        50644,
+        440,
+        3006,
+        1393,
+        307,
+        460,
+        12,
+        40,
+        12,
+        44,
+        12,
+        44,
+        12,
+        40,
+        12,
+        42,
+        50864
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.5510402754241345,
+      "compression_ratio": 1.1232876712328768,
+      "no_speech_prob": 0.31461983919143677
+    },
+    {
+      "id": 3,
+      "seek": 0,
+      "start": 10.0,
+      "end": 12.0,
+      "text": " Proclaims",
+      "tokens": [
+        50864,
+        1705,
+        66,
+        10970,
+        82,
+        50964
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.5510402754241345,
+      "compression_ratio": 1.1232876712328768,
+      "no_speech_prob": 0.31461983919143677
+    },
+    {
+      "id": 4,
+      "seek": 0,
+      "start": 12.0,
+      "end": 13.0,
+      "text": " Rewind!",
+      "tokens": [
+        50964,
+        497,
+        1023,
+        471,
+        0,
+        51014
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.5510402754241345,
+      "compression_ratio": 1.1232876712328768,
+      "no_speech_prob": 0.31461983919143677
+    },
+    {
+      "id": 5,
+      "seek": 3000,
+      "start": 30.5,
+      "end": 32.0,
+      "text": " Wow",
+      "tokens": [
+        50389,
+        3153,
+        50464
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -3.9578260338824727,
+      "compression_ratio": 0.7714285714285715,
+      "no_speech_prob": 0.19896802306175232
+    },
+    {
+      "id": 6,
+      "seek": 3000,
+      "start": 33.5,
+      "end": 35.0,
+      "text": " Beh",
+      "tokens": [
+        50539,
+        879,
+        71,
+        50614
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -3.9578260338824727,
+      "compression_ratio": 0.7714285714285715,
+      "no_speech_prob": 0.19896802306175232
+    },
+    {
+      "id": 7,
+      "seek": 3000,
+      "start": 42.0,
+      "end": 43.0,
+      "text": " No",
+      "tokens": [
+        50964,
+        883,
+        51014
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -3.9578260338824727,
+      "compression_ratio": 0.7714285714285715,
+      "no_speech_prob": 0.19896802306175232
+    },
+    {
+      "id": 8,
+      "seek": 3000,
+      "start": 43.0,
+      "end": 45.0,
+      "text": " Boiler",
+      "tokens": [
+        51014,
+        3286,
+        5441,
+        51114
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -3.9578260338824727,
+      "compression_ratio": 0.7714285714285715,
+      "no_speech_prob": 0.19896802306175232
+    },
+    {
+      "id": 9,
+      "seek": 3000,
+      "start": 49.0,
+      "end": 53.0,
+      "text": " SPULT",
+      "tokens": [
+        51314,
+        8420,
+        10253,
+        51,
+        51514
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -3.9578260338824727,
+      "compression_ratio": 0.7714285714285715,
+      "no_speech_prob": 0.19896802306175232
+    },
+    {
+      "id": 10,
+      "seek": 3000,
+      "start": 53.0,
+      "end": 57.2,
+      "text": " Bin",
+      "tokens": [
+        51514,
+        18983,
+        51724
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -3.9578260338824727,
+      "compression_ratio": 0.7714285714285715,
+      "no_speech_prob": 0.19896802306175232
+    },
+    {
+      "id": 11,
+      "seek": 9000,
+      "start": 90.0,
+      "end": 100.0,
+      "text": " and",
+      "tokens": [
+        50364,
+        293,
+        50864
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -2.8504796028137207,
+      "compression_ratio": 0.42857142857142855,
+      "no_speech_prob": 0.5630245208740234
+    },
+    {
+      "id": 12,
+      "seek": 9000,
+      "start": 100.0,
+      "end": 106.52,
+      "text": " we",
+      "tokens": [
+        50864,
+        321,
+        51190
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -2.8504796028137207,
+      "compression_ratio": 0.42857142857142855,
+      "no_speech_prob": 0.5630245208740234
+    },
+    {
+      "id": 13,
+      "seek": 13652,
+      "start": 136.52,
+      "end": 149.68,
+      "text": "'T",
+      "tokens": [
+        50364,
+        18010,
+        51022
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -4.707572089301215,
+      "compression_ratio": 0.4666666666666667,
+      "no_speech_prob": 0.5621122717857361
+    },
+    {
+      "id": 14,
+      "seek": 13652,
+      "start": 149.68,
+      "end": 159.88,
+      "text": " MINE",
+      "tokens": [
+        51022,
+        376,
+        16258,
+        51532
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -4.707572089301215,
+      "compression_ratio": 0.4666666666666667,
+      "no_speech_prob": 0.5621122717857361
+    },
+    {
+      "id": 15,
+      "seek": 15988,
+      "start": 159.88,
+      "end": 171.48,
+      "text": " Fantastic and Harsh",
+      "tokens": [
+        50364,
+        21320,
+        293,
+        48914,
+        50944
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -6.027504512241909,
+      "compression_ratio": 0.8913043478260869,
+      "no_speech_prob": 0.4966456890106201
+    },
+    {
+      "id": 16,
+      "seek": 15988,
+      "start": 171.48,
+      "end": 174.42,
+      "text": " Kirst neither",
+      "tokens": [
+        50944,
+        591,
+        653,
+        9662,
+        51091
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -6.027504512241909,
+      "compression_ratio": 0.8913043478260869,
+      "no_speech_prob": 0.4966456890106201
+    },
+    {
+      "id": 17,
+      "seek": 15988,
+      "start": 174.42,
+      "end": 178.62,
+      "text": "standing",
+      "tokens": [
+        51091,
+        8618,
+        51301
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -6.027504512241909,
+      "compression_ratio": 0.8913043478260869,
+      "no_speech_prob": 0.4966456890106201
+    }
+  ],
+  "language": "en"
+}

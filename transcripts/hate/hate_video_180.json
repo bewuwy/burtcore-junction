@@ -1,0 +1,62 @@
+{
+  "text": " Yeah, but it's not illegal to say the end words. No, but you can nigger See it's the first amendment",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 4.2,
+      "text": " Yeah, but it's not illegal to say the end words. No, but you can nigger",
+      "tokens": [
+        50364,
+        865,
+        11,
+        457,
+        309,
+        311,
+        406,
+        11905,
+        281,
+        584,
+        264,
+        917,
+        2283,
+        13,
+        883,
+        11,
+        457,
+        291,
+        393,
+        297,
+        6812,
+        50574
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.5153524029639459,
+      "compression_ratio": 1.1235955056179776,
+      "no_speech_prob": 0.2924911081790924
+    },
+    {
+      "id": 1,
+      "seek": 0,
+      "start": 5.28,
+      "end": 7.28,
+      "text": " See it's the first amendment",
+      "tokens": [
+        50628,
+        3008,
+        309,
+        311,
+        264,
+        700,
+        17920,
+        50728
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.5153524029639459,
+      "compression_ratio": 1.1235955056179776,
+      "no_speech_prob": 0.2924911081790924
+    }
+  ],
+  "language": "en"
+}

@@ -1,0 +1,80 @@
+{
+  "text": " Say nigger. No, no make it do the note make it do the mouth Say say nigger bear All right, why power bear?",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 4.0200000000000005,
+      "text": " Say nigger. No, no make it do the note make it do the mouth",
+      "tokens": [
+        50364,
+        6463,
+        297,
+        6812,
+        13,
+        883,
+        11,
+        572,
+        652,
+        309,
+        360,
+        264,
+        3637,
+        652,
+        309,
+        360,
+        264,
+        4525,
+        50565
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.7196603880988227,
+      "compression_ratio": 1.2470588235294118,
+      "no_speech_prob": 0.11248058080673218
+    },
+    {
+      "id": 1,
+      "seek": 0,
+      "start": 8.22,
+      "end": 11.22,
+      "text": " Say say nigger bear",
+      "tokens": [
+        50775,
+        6463,
+        584,
+        297,
+        6812,
+        6155,
+        50925
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.7196603880988227,
+      "compression_ratio": 1.2470588235294118,
+      "no_speech_prob": 0.11248058080673218
+    },
+    {
+      "id": 2,
+      "seek": 0,
+      "start": 16.32,
+      "end": 18.32,
+      "text": " All right, why power bear?",
+      "tokens": [
+        51180,
+        1057,
+        558,
+        11,
+        983,
+        1347,
+        6155,
+        30,
+        51280
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.7196603880988227,
+      "compression_ratio": 1.2470588235294118,
+      "no_speech_prob": 0.11248058080673218
+    }
+  ],
+  "language": "en"
+}

@@ -1,0 +1,47 @@
+{
+  "text": " Kick- doo, kick- doo! IT<|bs|>L",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 8.06,
+      "text": " Kick- doo, kick- doo!",
+      "tokens": [
+        50364,
+        20886,
+        12,
+        27572,
+        11,
+        4437,
+        12,
+        27572,
+        0,
+        50767
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -4.140885353088379,
+      "compression_ratio": 0.96875,
+      "no_speech_prob": 0.49254658818244934
+    },
+    {
+      "id": 1,
+      "seek": 0,
+      "start": 13.82,
+      "end": 22.54,
+      "text": " ITL",
+      "tokens": [
+        51055,
+        6783,
+        50315,
+        43,
+        51491
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -4.140885353088379,
+      "compression_ratio": 0.96875,
+      "no_speech_prob": 0.49254658818244934
+    }
+  ],
+  "language": "en"
+}

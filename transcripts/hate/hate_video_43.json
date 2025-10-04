@@ -1,0 +1,139 @@
+{
+  "text": " Oh What is it 4 4 4 4 5 jk 4 4 4 4 4 4 4 5 jk I Just got hit by one of them and I didn't do anything Mother to the wall That's a good",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 2.0,
+      "text": " Oh",
+      "tokens": [
+        50364,
+        876,
+        50464
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.5754581231337327,
+      "compression_ratio": 1.40625,
+      "no_speech_prob": 0.37908515334129333
+    },
+    {
+      "id": 1,
+      "seek": 0,
+      "start": 10.200000000000001,
+      "end": 17.96,
+      "text": " What is it 4 4 4 4 5 jk 4 4 4 4 4 4 4 5 jk",
+      "tokens": [
+        50874,
+        708,
+        307,
+        309,
+        1017,
+        1017,
+        1017,
+        1017,
+        1025,
+        361,
+        74,
+        1017,
+        1017,
+        1017,
+        1017,
+        1017,
+        1017,
+        1017,
+        1025,
+        361,
+        74,
+        51262
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.5754581231337327,
+      "compression_ratio": 1.40625,
+      "no_speech_prob": 0.37908515334129333
+    },
+    {
+      "id": 2,
+      "seek": 3000,
+      "start": 30.0,
+      "end": 32.0,
+      "text": " I",
+      "tokens": [
+        50364,
+        286,
+        50464
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.9634622143160912,
+      "compression_ratio": 1.0740740740740742,
+      "no_speech_prob": 0.185774028301239
+    },
+    {
+      "id": 3,
+      "seek": 3000,
+      "start": 36.2,
+      "end": 38.24,
+      "text": " Just got hit by one of them and I didn't do anything",
+      "tokens": [
+        50674,
+        1449,
+        658,
+        2045,
+        538,
+        472,
+        295,
+        552,
+        293,
+        286,
+        994,
+        380,
+        360,
+        1340,
+        50776
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.9634622143160912,
+      "compression_ratio": 1.0740740740740742,
+      "no_speech_prob": 0.185774028301239
+    },
+    {
+      "id": 4,
+      "seek": 3000,
+      "start": 45.0,
+      "end": 47.0,
+      "text": " Mother to the wall",
+      "tokens": [
+        51114,
+        8931,
+        281,
+        264,
+        2929,
+        51214
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.9634622143160912,
+      "compression_ratio": 1.0740740740740742,
+      "no_speech_prob": 0.185774028301239
+    },
+    {
+      "id": 5,
+      "seek": 3000,
+      "start": 53.400000000000006,
+      "end": 55.400000000000006,
+      "text": " That's a good",
+      "tokens": [
+        51534,
+        663,
+        311,
+        257,
+        665,
+        51634
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.9634622143160912,
+      "compression_ratio": 1.0740740740740742,
+      "no_speech_prob": 0.185774028301239
+    }
+  ],
+  "language": "en"
+}

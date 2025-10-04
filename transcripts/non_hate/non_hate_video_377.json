@@ -1,0 +1,153 @@
+{
+  "text": " Hey, Gracie. You know how our family has daddy and mommy? And me? Yeah, that's right. Pretty soon, you're going to have a baby brother. And a puppy. Deal.",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 3.0,
+      "text": " Hey, Gracie.",
+      "tokens": [
+        50364,
+        1911,
+        11,
+        20586,
+        414,
+        13,
+        50514
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.540735545911287,
+      "compression_ratio": 1.193798449612403,
+      "no_speech_prob": 0.010363176465034485
+    },
+    {
+      "id": 1,
+      "seek": 0,
+      "start": 3.0,
+      "end": 8.44,
+      "text": " You know how our family has daddy and mommy?",
+      "tokens": [
+        50514,
+        509,
+        458,
+        577,
+        527,
+        1605,
+        575,
+        16785,
+        293,
+        25606,
+        30,
+        50786
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.540735545911287,
+      "compression_ratio": 1.193798449612403,
+      "no_speech_prob": 0.010363176465034485
+    },
+    {
+      "id": 2,
+      "seek": 0,
+      "start": 8.44,
+      "end": 9.44,
+      "text": " And me?",
+      "tokens": [
+        50786,
+        400,
+        385,
+        30,
+        50836
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.540735545911287,
+      "compression_ratio": 1.193798449612403,
+      "no_speech_prob": 0.010363176465034485
+    },
+    {
+      "id": 3,
+      "seek": 0,
+      "start": 9.44,
+      "end": 10.68,
+      "text": " Yeah, that's right.",
+      "tokens": [
+        50836,
+        865,
+        11,
+        300,
+        311,
+        558,
+        13,
+        50898
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.540735545911287,
+      "compression_ratio": 1.193798449612403,
+      "no_speech_prob": 0.010363176465034485
+    },
+    {
+      "id": 4,
+      "seek": 0,
+      "start": 10.68,
+      "end": 13.68,
+      "text": " Pretty soon, you're going to have a baby brother.",
+      "tokens": [
+        50898,
+        10693,
+        2321,
+        11,
+        291,
+        434,
+        516,
+        281,
+        362,
+        257,
+        3186,
+        3708,
+        13,
+        51048
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.540735545911287,
+      "compression_ratio": 1.193798449612403,
+      "no_speech_prob": 0.010363176465034485
+    },
+    {
+      "id": 5,
+      "seek": 0,
+      "start": 17.68,
+      "end": 20.18,
+      "text": " And a puppy.",
+      "tokens": [
+        51248,
+        400,
+        257,
+        18196,
+        13,
+        51373
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.540735545911287,
+      "compression_ratio": 1.193798449612403,
+      "no_speech_prob": 0.010363176465034485
+    },
+    {
+      "id": 6,
+      "seek": 0,
+      "start": 24.48,
+      "end": 25.16,
+      "text": " Deal.",
+      "tokens": [
+        51588,
+        27227,
+        13,
+        51622
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.540735545911287,
+      "compression_ratio": 1.193798449612403,
+      "no_speech_prob": 0.010363176465034485
+    }
+  ],
+  "language": "en"
+}

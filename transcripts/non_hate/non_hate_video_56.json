@@ -1,0 +1,46 @@
+{
+  "text": " Beast jump Out of the fuck out of here bro",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 9.120000000000001,
+      "text": " Beast jump Out of",
+      "tokens": [
+        50364,
+        24100,
+        3012,
+        5925,
+        295,
+        50820
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -3.483012390136719,
+      "compression_ratio": 0.9333333333333333,
+      "no_speech_prob": 0.4273306429386139
+    },
+    {
+      "id": 1,
+      "seek": 0,
+      "start": 9.120000000000001,
+      "end": 15.200000000000001,
+      "text": " the fuck out of here bro",
+      "tokens": [
+        50820,
+        264,
+        3275,
+        484,
+        295,
+        510,
+        2006,
+        51124
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -3.483012390136719,
+      "compression_ratio": 0.9333333333333333,
+      "no_speech_prob": 0.4273306429386139
+    }
+  ],
+  "language": "en"
+}

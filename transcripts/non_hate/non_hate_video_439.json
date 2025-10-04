@@ -1,0 +1,127 @@
+{
+  "text": " Whoa! Whoa! Die! Whoa! Whoa! I got it! Whoa!",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 2.0,
+      "text": " Whoa!",
+      "tokens": [
+        50364,
+        7521,
+        0,
+        50464
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.6008542004753562,
+      "compression_ratio": 1.0476190476190477,
+      "no_speech_prob": 0.237362802028656
+    },
+    {
+      "id": 1,
+      "seek": 0,
+      "start": 7.0,
+      "end": 8.0,
+      "text": " Whoa!",
+      "tokens": [
+        50714,
+        7521,
+        0,
+        50764
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.6008542004753562,
+      "compression_ratio": 1.0476190476190477,
+      "no_speech_prob": 0.237362802028656
+    },
+    {
+      "id": 2,
+      "seek": 0,
+      "start": 14.0,
+      "end": 15.0,
+      "text": " Die!",
+      "tokens": [
+        51064,
+        3229,
+        0,
+        51114
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.6008542004753562,
+      "compression_ratio": 1.0476190476190477,
+      "no_speech_prob": 0.237362802028656
+    },
+    {
+      "id": 3,
+      "seek": 0,
+      "start": 23.0,
+      "end": 24.0,
+      "text": " Whoa!",
+      "tokens": [
+        51514,
+        7521,
+        0,
+        51564
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.6008542004753562,
+      "compression_ratio": 1.0476190476190477,
+      "no_speech_prob": 0.237362802028656
+    },
+    {
+      "id": 4,
+      "seek": 3000,
+      "start": 31.0,
+      "end": 32.0,
+      "text": " Whoa!",
+      "tokens": [
+        50414,
+        7521,
+        0,
+        50464
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.3267541249593099,
+      "compression_ratio": 0.8076923076923077,
+      "no_speech_prob": 0.03304464370012283
+    },
+    {
+      "id": 5,
+      "seek": 3000,
+      "start": 35.0,
+      "end": 36.0,
+      "text": " I got it!",
+      "tokens": [
+        50614,
+        286,
+        658,
+        309,
+        0,
+        50664
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.3267541249593099,
+      "compression_ratio": 0.8076923076923077,
+      "no_speech_prob": 0.03304464370012283
+    },
+    {
+      "id": 6,
+      "seek": 3000,
+      "start": 43.0,
+      "end": 44.0,
+      "text": " Whoa!",
+      "tokens": [
+        51014,
+        7521,
+        0,
+        51064
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.3267541249593099,
+      "compression_ratio": 0.8076923076923077,
+      "no_speech_prob": 0.03304464370012283
+    }
+  ],
+  "language": "en"
+}

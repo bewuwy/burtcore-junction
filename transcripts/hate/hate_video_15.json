@@ -1,0 +1,389 @@
+{
+  "text": " Do black lives matter to you? Do black lives matter to you? Do black lives matter to you? Do black lives matter, I carein'? Fucking white piece of shit you little fucking pussy ass bitch! Oh yeah, you wanna fucking go, Karen? No! No! Until black lives matter? Until black lives matter? No black lives matter! That is not our fight! Until black lives need something to this country! No! No! Until black! What are you gonna do? You have one no where! Black lives matter! Black lives matter!",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 2.0,
+      "text": " Do black lives matter to you?",
+      "tokens": [
+        50364,
+        1144,
+        2211,
+        2909,
+        1871,
+        281,
+        291,
+        30,
+        50464
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.35052962350373223,
+      "compression_ratio": 2.0949367088607596,
+      "no_speech_prob": 0.31174740195274353
+    },
+    {
+      "id": 1,
+      "seek": 0,
+      "start": 2.0,
+      "end": 4.0,
+      "text": " Do black lives matter to you?",
+      "tokens": [
+        50464,
+        1144,
+        2211,
+        2909,
+        1871,
+        281,
+        291,
+        30,
+        50564
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.35052962350373223,
+      "compression_ratio": 2.0949367088607596,
+      "no_speech_prob": 0.31174740195274353
+    },
+    {
+      "id": 2,
+      "seek": 0,
+      "start": 4.0,
+      "end": 6.0,
+      "text": " Do black lives matter to you?",
+      "tokens": [
+        50564,
+        1144,
+        2211,
+        2909,
+        1871,
+        281,
+        291,
+        30,
+        50664
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.35052962350373223,
+      "compression_ratio": 2.0949367088607596,
+      "no_speech_prob": 0.31174740195274353
+    },
+    {
+      "id": 3,
+      "seek": 0,
+      "start": 6.0,
+      "end": 8.0,
+      "text": " Do black lives matter, I carein'?",
+      "tokens": [
+        50664,
+        1144,
+        2211,
+        2909,
+        1871,
+        11,
+        286,
+        1127,
+        259,
+        16265,
+        50764
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.35052962350373223,
+      "compression_ratio": 2.0949367088607596,
+      "no_speech_prob": 0.31174740195274353
+    },
+    {
+      "id": 4,
+      "seek": 0,
+      "start": 8.0,
+      "end": 10.0,
+      "text": " Fucking white piece of shit you little fucking pussy ass bitch!",
+      "tokens": [
+        50764,
+        33342,
+        2418,
+        2522,
+        295,
+        4611,
+        291,
+        707,
+        5546,
+        40169,
+        1256,
+        11960,
+        0,
+        50864
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.35052962350373223,
+      "compression_ratio": 2.0949367088607596,
+      "no_speech_prob": 0.31174740195274353
+    },
+    {
+      "id": 5,
+      "seek": 0,
+      "start": 10.0,
+      "end": 12.0,
+      "text": " Oh yeah, you wanna fucking go, Karen?",
+      "tokens": [
+        50864,
+        876,
+        1338,
+        11,
+        291,
+        1948,
+        5546,
+        352,
+        11,
+        14834,
+        30,
+        50964
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.35052962350373223,
+      "compression_ratio": 2.0949367088607596,
+      "no_speech_prob": 0.31174740195274353
+    },
+    {
+      "id": 6,
+      "seek": 0,
+      "start": 18.0,
+      "end": 20.0,
+      "text": " No! No!",
+      "tokens": [
+        51264,
+        883,
+        0,
+        883,
+        0,
+        51364
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.35052962350373223,
+      "compression_ratio": 2.0949367088607596,
+      "no_speech_prob": 0.31174740195274353
+    },
+    {
+      "id": 7,
+      "seek": 0,
+      "start": 20.0,
+      "end": 22.0,
+      "text": " Until black lives matter?",
+      "tokens": [
+        51364,
+        9088,
+        2211,
+        2909,
+        1871,
+        30,
+        51464
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.35052962350373223,
+      "compression_ratio": 2.0949367088607596,
+      "no_speech_prob": 0.31174740195274353
+    },
+    {
+      "id": 8,
+      "seek": 0,
+      "start": 22.0,
+      "end": 24.0,
+      "text": " Until black lives matter?",
+      "tokens": [
+        51464,
+        9088,
+        2211,
+        2909,
+        1871,
+        30,
+        51564
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.35052962350373223,
+      "compression_ratio": 2.0949367088607596,
+      "no_speech_prob": 0.31174740195274353
+    },
+    {
+      "id": 9,
+      "seek": 0,
+      "start": 24.0,
+      "end": 26.0,
+      "text": " No black lives matter!",
+      "tokens": [
+        51564,
+        883,
+        2211,
+        2909,
+        1871,
+        0,
+        51664
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.35052962350373223,
+      "compression_ratio": 2.0949367088607596,
+      "no_speech_prob": 0.31174740195274353
+    },
+    {
+      "id": 10,
+      "seek": 0,
+      "start": 26.0,
+      "end": 28.0,
+      "text": " That is not our fight!",
+      "tokens": [
+        51664,
+        663,
+        307,
+        406,
+        527,
+        2092,
+        0,
+        51764
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.35052962350373223,
+      "compression_ratio": 2.0949367088607596,
+      "no_speech_prob": 0.31174740195274353
+    },
+    {
+      "id": 11,
+      "seek": 2800,
+      "start": 28.0,
+      "end": 32.0,
+      "text": " Until black lives need something to this country!",
+      "tokens": [
+        50364,
+        9088,
+        2211,
+        2909,
+        643,
+        746,
+        281,
+        341,
+        1941,
+        0,
+        50564
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.3352523504518995,
+      "compression_ratio": 1.4181818181818182,
+      "no_speech_prob": 0.0020722979679703712
+    },
+    {
+      "id": 12,
+      "seek": 2800,
+      "start": 32.0,
+      "end": 34.0,
+      "text": " No! No!",
+      "tokens": [
+        50564,
+        883,
+        0,
+        883,
+        0,
+        50664
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.3352523504518995,
+      "compression_ratio": 1.4181818181818182,
+      "no_speech_prob": 0.0020722979679703712
+    },
+    {
+      "id": 13,
+      "seek": 2800,
+      "start": 34.0,
+      "end": 44.0,
+      "text": " Until black!",
+      "tokens": [
+        50664,
+        9088,
+        2211,
+        0,
+        51164
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.3352523504518995,
+      "compression_ratio": 1.4181818181818182,
+      "no_speech_prob": 0.0020722979679703712
+    },
+    {
+      "id": 14,
+      "seek": 2800,
+      "start": 44.0,
+      "end": 46.0,
+      "text": " What are you gonna do?",
+      "tokens": [
+        51164,
+        708,
+        366,
+        291,
+        799,
+        360,
+        30,
+        51264
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.3352523504518995,
+      "compression_ratio": 1.4181818181818182,
+      "no_speech_prob": 0.0020722979679703712
+    },
+    {
+      "id": 15,
+      "seek": 2800,
+      "start": 46.0,
+      "end": 48.0,
+      "text": " You have one no where!",
+      "tokens": [
+        51264,
+        509,
+        362,
+        472,
+        572,
+        689,
+        0,
+        51364
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.3352523504518995,
+      "compression_ratio": 1.4181818181818182,
+      "no_speech_prob": 0.0020722979679703712
+    },
+    {
+      "id": 16,
+      "seek": 2800,
+      "start": 48.0,
+      "end": 50.0,
+      "text": " Black lives matter!",
+      "tokens": [
+        51364,
+        4076,
+        2909,
+        1871,
+        0,
+        51464
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.3352523504518995,
+      "compression_ratio": 1.4181818181818182,
+      "no_speech_prob": 0.0020722979679703712
+    },
+    {
+      "id": 17,
+      "seek": 2800,
+      "start": 50.0,
+      "end": 52.0,
+      "text": " Black lives matter!",
+      "tokens": [
+        51464,
+        4076,
+        2909,
+        1871,
+        0,
+        51564
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.3352523504518995,
+      "compression_ratio": 1.4181818181818182,
+      "no_speech_prob": 0.0020722979679703712
+    }
+  ],
+  "language": "en"
+}
