@@ -28,7 +28,7 @@ def load_audio_from_mp4(filepath, sr=16000):
     return audio
 
 
-def transcribe_single_file(input_file, output_file, model, device="cuda"):
+def transcribe_single_file(input_file, output_file, model=whisper.load_model("tiny", device="cpu"), device="cuda"):
     """
     Transcribe a single MP4 file.
 

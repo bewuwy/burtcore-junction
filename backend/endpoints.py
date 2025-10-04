@@ -67,7 +67,7 @@ async def evaluate_video(
         return JSONResponse(content={
             "success": True,
             "result": "success",
-            "segments": []
+            "segments": res["segments"],
         })
     
     except httpx.HTTPError as e:
