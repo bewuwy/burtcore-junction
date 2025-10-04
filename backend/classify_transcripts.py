@@ -1,4 +1,4 @@
-#!/home/olafim/PycharmProjects/junction-extreme/backend/testing/transcript-proccessing/.my-env/bin/python3
+#!/usr/bin/env python3
 """
 Classify transcripts using hate-measure-roberta-large model.
 Processes Whisper JSON transcripts and outputs hate speech classification scores.
@@ -9,7 +9,7 @@ import os
 from pathlib import Path
 from typing import Dict, List, Any
 import torch
-from transformers import AutoTokenizer, AutoModelForSequenceClassification, pipeline
+from transformers import AutoTokenizer, AutoModelForSequenceClassification
 import pandas as pd
 from tqdm import tqdm
 
@@ -17,7 +17,7 @@ from tqdm import tqdm
 class HateSpeechClassifier:
     """Classifier for hate speech using RoBERTa model."""
     
-    def __init__(self, model_name="unitary/toxic-bert", device=None):
+    def __init__(self, model_name="ucberkeley-dlab/hate-measure-roberta-large", device=None):
         """
         Initialize the hate speech classifier.
         
@@ -33,38 +33,27 @@ class HateSpeechClassifier:
         print(f"Loading model: {model_name}")
         print(f"Using device: {self.device}")
         
-        # Load model and tokenizer directly
         self.tokenizer = AutoTokenizer.from_pretrained(model_name)
         self.model = AutoModelForSequenceClassification.from_pretrained(model_name)
         self.model.to(self.device)
         self.model.eval()
 
-        # Get label mapping
-        self.id2label = self.model.config.id2label if hasattr(self.model.config, 'id2label') else {}
-        print(f"Model labels: {self.id2label}")
-        print(f"Number of labels: {len(self.id2label)}")
         print("Model loaded successfully!")
 
     def classify_text(self, text: str) -> Dict[str, float]:
         """
-        Classify a single text for hate speech with multiple categories.
+        Classify a single text for hate speech.
 
         Args:
             text: Text to classify
         
         Returns:
-            Dictionary with all classification scores
+            Dictionary with hate_score (probability of hate speech)
         """
         if not text or not text.strip():
-            return {
-                "hate_score": 0.0,
-                "hate_label": "non-hate",
-                "confidence": 0.0,
-                "all_scores": {},
-                "detected_categories": []
-            }
+            return {"hate_score": 0.0, "hate_label": "non-hate", "confidence": 0.0}
 
-        # Use direct model inference
+        # Tokenize and prepare input
         inputs = self.tokenizer(
             text,
             return_tensors="pt",
@@ -73,41 +62,20 @@ class HateSpeechClassifier:
             padding=True
         ).to(self.device)
 
+        # Get prediction
         with torch.no_grad():
             outputs = self.model(**inputs)
             logits = outputs.logits
-            # Use sigmoid for multilabel classification
-            probs = torch.sigmoid(logits)
+            probs = torch.softmax(logits, dim=-1)
 
-        # Build all scores dictionary
-        all_scores = {self.id2label[i]: float(probs[0][i].item()) for i in range(len(self.id2label))}
-
-        # Detect categories above threshold
-        threshold = 0.5
-        detected_categories = []
-        for label, score in all_scores.items():
-            if score > threshold:
-                detected_categories.append(f"{label}:{score:.3f}")
-
-        # Calculate overall hate score (max across all toxic categories)
-        hate_categories = ['toxic', 'severe_toxic', 'obscene', 'threat', 'insult', 'identity_hate',
-                          'hate', 'offensive', 'racism', 'sexism']
-        hate_score = 0.0
-        for label, score in all_scores.items():
-            if any(cat in label.lower() for cat in hate_categories):
-                hate_score = max(hate_score, score)
-
-        # Get predicted label (highest score)
-        predicted_idx = probs[0].argmax().item()
-        predicted_label = self.id2label.get(predicted_idx, "unknown")
+        # Extract hate speech probability (assuming binary classification)
+        # Model output: [non-hate, hate] or similar
+        hate_prob = probs[0][1].item()  # Probability of hate speech class
 
         return {
-            "hate_score": float(hate_score),
-            "hate_label": "hate" if hate_score > 0.5 else "non-hate",
-            "predicted_label": predicted_label,
-            "confidence": float(probs[0][predicted_idx]),
-            "detected_categories": detected_categories,
-            "all_scores": all_scores
+            "hate_score": float(hate_prob),
+            "hate_label": "hate" if hate_prob > 0.5 else "non-hate",
+            "confidence": float(max(probs[0]))
         }
 
     def classify_transcript(self, transcript_path: str) -> Dict[str, Any]:
@@ -289,8 +257,8 @@ def main():
     )
     parser.add_argument(
         "--model",
-        default="facebook/roberta-hate-speech-dynabench-r4-target",
-        help="HuggingFace model name (default: facebook/roberta-hate-speech-dynabench-r4-target)"
+        default="ucberkeley-dlab/hate-measure-roberta-large",
+        help="HuggingFace model name (default: ucberkeley-dlab/hate-measure-roberta-large)"
     )
     parser.add_argument(
         "--device",
@@ -344,3 +312,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
