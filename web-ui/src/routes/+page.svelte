@@ -1,2 +1,19 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to read the documentation</p>
+<h1>Welcome to ExtremeDetector5000(TM)</h1>
+
+<form>
+  <fieldset>
+    <label>
+      File URL
+      <input
+        name="file_url"
+        placeholder="hate_speech.mp4"
+      />
+    </label>
+  </fieldset>
+
+  <input
+    type="submit"
+    value="Evaluate"
+  />
+</form>
+
