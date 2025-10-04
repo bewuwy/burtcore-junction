@@ -3,6 +3,7 @@
 from fastapi import FastAPI, File, UploadFile, HTTPException
 from fastapi.responses import JSONResponse
 import os
+import uuid
 
 app = FastAPI()
 
@@ -14,15 +15,21 @@ os.makedirs(UPLOAD_DIR, exist_ok=True)
 def read_root():
     return {"message": "ping"}
 
-@app.post("/upload-video/")
+@app.post("/evaluate/")
 async def upload_video(file: UploadFile = File(...)):
     try:
-        file_path = os.path.join(UPLOAD_DIR, file.filename)
+        # Generate a random UUID for the filename
+        file_extension = os.path.splitext(file.filename)[1]  # Get the file extension
+        unique_filename = f"{uuid.uuid4()}{file_extension}"
+        file_path = os.path.join(UPLOAD_DIR, unique_filename)
+        
         file_content = await file.read()  # Read the file content
         with open(file_path, "wb") as f:
-            print(file_content)
             f.write(file_content)  # Write the content to the file
-        return JSONResponse(content={"file_path": file_path})
+        
+        return JSONResponse(content={
+            "filename": unique_filename,
+        })
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"An error occurred: {str(e)}")
 
