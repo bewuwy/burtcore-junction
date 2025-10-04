@@ -90,8 +90,8 @@ desktop.ini
 # Folders often used to store downloads, datasets, checkpoints, or outputs
 /data/
 /datasets/
-/outputs/
 /models/
+/outputs/
 /checkpoints/
 /runs/
 mlruns/
