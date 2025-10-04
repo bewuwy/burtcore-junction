@@ -21,7 +21,7 @@ export const actions = {
 			classifierFormData.append('file', file);
 		} else if (fileUrl) {
 			// If file URL is provided, send the URL
-			classifierFormData.append('file_url', fileUrl as string);
+			classifierFormData.append('fileURL', fileUrl as string);
 		}
 
 		try {
@@ -42,10 +42,7 @@ export const actions = {
 			const result = await response.json();
 			console.log('Classifier result:', result);
 
-			return {
-				success: true,
-				result
-			};
+			return result;
 		} catch (err) {
 
 			// testing

@@ -4,3 +4,4 @@ whisper
 fastapi
 uvicorn
 multipart
+httpx

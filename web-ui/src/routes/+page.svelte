@@ -108,7 +108,7 @@
 
     <hgroup>
       <h4>Transcript</h4>
-      <o>Hover a segment to see its timestamp and probability of it being extremist. Suspicious segments are colored red.</o>
+      <p>Hover a segment to see its timestamp and probability of it being extremist. Suspicious segments are colored red.</p>
     </hgroup>
 
     <div>
@@ -118,6 +118,9 @@
           style={segment.extreme > 0.5 ? `background-color: rgba(255, 0, 0, ${segment.extreme * 0.5})` : ''}
         >{segment.text}</span>{' '}
       {/each}
+      {#if form?.segments.length === 0}
+      <em>No text found in the recording</em>
+      {/if}
     </div>
     </article>
 {/if}
