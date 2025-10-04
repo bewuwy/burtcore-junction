@@ -28,40 +28,51 @@ def load_audio_from_mp4(filepath, sr=16000):
     return audio
 
 
-def transcribe_single_file(input_file, output_file, model=whisper.load_model("tiny", device="cpu"), device="cuda"):
+def transcribe_single_file(input_file, output_file=None, model=whisper.load_model("tiny", device="cuda"), device="cuda"):
     """
-    Transcribe a single MP4 file.
+    Transcribe a single MP4 file with shorter segments for better classification.
 
     Args:
         input_file: Path to MP4 file
-        output_file: Path to save transcription JSON file
+        output_file: Optional path to save transcription JSON file (if None, doesn't save)
         model: Loaded Whisper model (or model name string)
         device: Device to use (cuda or cpu)
 
     Returns:
-        dict: Transcription result from Whisper
+        tuple: (Transcription result from Whisper, audio array)
     """
     # Load model if string is passed
     if isinstance(model, str):
         print(f"Loading Whisper model: {model}")
         model = whisper.load_model(model, device=device)
 
-    # Create output directory if it doesn't exist
-    Path(output_file).parent.mkdir(parents=True, exist_ok=True)
-
     print(f"Transcribing {input_file}...")
 
     # Load audio from MP4 using librosa
     audio = load_audio_from_mp4(input_file)
 
-    # Transcribe using Whisper
-    result = model.transcribe(audio)
+    # Transcribe using Whisper with parameters for shorter, more precise segments
+    result = model.transcribe(
+        audio,
+        word_timestamps=True,          # Enable word-level timestamps
+        prepend_punctuations="\"'([{-",
+        append_punctuations="\"'.。,!?:)]}、",
+        # These parameters help create natural, shorter segments:
+        # - word_timestamps: Enables precise word-level timing
+        # - condition_on_previous_text: Uses context from previous segments
+        # - temperature: Lower temperature for more consistent output
+        temperature=0.0,               # Deterministic output
+        compression_ratio_threshold=2.4,  # Reject segments with low compression
+        logprob_threshold=-1.0,        # Reject low probability segments
+        no_speech_threshold=0.6,       # Detect silence/no speech
+    )
 
-    # Save transcription to JSON
-    with open(output_file, 'w', encoding='utf-8') as f:
-        json.dump(result, f, ensure_ascii=False, indent=2)
-
-    print(f"✓ Saved to {output_file}")
+    # Optionally save transcription to JSON
+    if output_file is not None:
+        Path(output_file).parent.mkdir(parents=True, exist_ok=True)
+        with open(output_file, 'w', encoding='utf-8') as f:
+            json.dump(result, f, ensure_ascii=False, indent=2)
+        print(f"✓ Saved to {output_file}")
 
     return result, audio
 

@@ -19,8 +19,9 @@ def extract_pitch_features(y, sr, fmin=50.0, fmax=400.0):
     f0 = np.array(f0, dtype=float)
     vmask = ~np.isnan(f0)
     if np.sum(vmask) == 0:
-        return dict(f0_mean=np.nan, f0_std=np.nan, f0_min=np.nan, f0_max=np.nan,
-                    f0_range=np.nan, f0_slope=np.nan, f0_final=np.nan)
+        # No pitch detected - return 0.0 instead of NaN for JSON compatibility
+        return dict(f0_mean=0.0, f0_std=0.0, f0_min=0.0, f0_max=0.0,
+                    f0_range=0.0, f0_slope=0.0, f0_final=0.0)
     v = f0[vmask]
     f0_mean, f0_std = np.mean(v), np.std(v)
     f0_min, f0_max = np.min(v), np.max(v)
@@ -50,6 +51,91 @@ def ensure_wav_mono_16k(input_audio):
     norm_path.parent.mkdir(exist_ok=True)
     sf.write(norm_path, y, 16000)
     return str(norm_path), y, 16000
+
+def process_segments(y_all, sr, segments, model="superb/wav2vec2-base-superb-er", device=None, fmin=50.0, fmax=400.0, batch_size=8):
+    """
+    Process audio segments and extract intonation and emotion features using batch processing.
+    
+    Args:
+        y_all: Audio array (numpy array)
+        sr: Sample rate (should be 16000)
+        segments: List of segment dicts with 'start', 'end', 'text' keys
+        model: Wav2Vec2 model for emotion classification
+        device: Device to use (None for auto-detect, "cuda" or "cpu")
+        fmin: Minimum frequency for pitch extraction
+        fmax: Maximum frequency for pitch extraction
+        batch_size: Batch size for emotion classification (default: 8)
+    
+    Returns:
+        List of dicts with emotion and intonation features for each segment
+    """
+    if not segments:
+        return []
+    
+    # Determine device
+    device_id = 0 if (device == "cuda" or (device is None and torch.cuda.is_available())) else -1
+    emo_pipe = pipeline("audio-classification", model=model, device=device_id, batch_size=batch_size)
+    
+    # Prepare cache directory
+    cache_dir = Path(".cache_intonation")
+    cache_dir.mkdir(exist_ok=True)
+    
+    # Step 1: Extract all audio segments and save them
+    audio_files = []
+    segment_data = []
+    
+    for idx, seg in enumerate(segments):
+        start, end = float(seg["start"]), float(seg["end"])
+        text = seg.get("text", "").strip()
+        y_seg = slice_audio(y_all, sr, start, end)
+        
+        # Save segment to temporary file
+        seg_path = cache_dir / f"seg_{idx}.wav"
+        sf.write(seg_path, y_seg, sr)
+        audio_files.append(str(seg_path))
+        
+        segment_data.append({
+            "index": idx,
+            "start": start,
+            "end": end,
+            "text": text,
+            "y_seg": y_seg
+        })
+    
+    # Step 2: Batch process all segments for emotion classification
+    # The pipeline will automatically batch these efficiently on GPU
+    emotion_predictions = emo_pipe(audio_files)
+    
+    # Step 3: Combine results with pitch/energy features
+    results = []
+    for seg_data, emotion_preds in zip(segment_data, emotion_predictions):
+        # Get top emotion prediction
+        top = emotion_preds[0] if emotion_preds else {"label": "unknown", "score": 0.0}
+        
+        # Extract pitch and energy features (CPU-bound, can't batch easily)
+        f0_feats = extract_pitch_features(seg_data["y_seg"], sr, fmin=fmin, fmax=fmax)
+        en_feats = extract_energy_features(seg_data["y_seg"], sr)
+        
+        row = {
+            "start": seg_data["start"],
+            "end": seg_data["end"],
+            "duration": seg_data["end"] - seg_data["start"],
+            "text": seg_data["text"],
+            "emotion": top["label"],
+            "emotion_score": float(top["score"]),
+            **f0_feats,
+            **en_feats
+        }
+        results.append(row)
+    
+    # Clean up temporary files
+    for audio_file in audio_files:
+        try:
+            Path(audio_file).unlink()
+        except:
+            pass
+    
+    return results
 
 def main():
     parser = argparse.ArgumentParser(description="Intonation + Emotion (Wav2Vec2) per Whisper segment")

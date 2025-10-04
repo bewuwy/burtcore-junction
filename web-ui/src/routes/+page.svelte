@@ -8,6 +8,8 @@
     endTime: TimeStamp;
     text: string;
     extreme: number; // [0,1]
+    hateTarget?: string;
+    hateTargetConfidence?: number;
   };
 
   type FormResult = {
@@ -108,13 +110,20 @@
 
     <hgroup>
       <h4>Transcript</h4>
-      <p>Hover a segment to see its timestamp and probability of it being extremist. Suspicious segments are colored red.</p>
+      <p>Hover a segment to see its timestamp and probability of it being extremist. Suspicious segments are colored red. Hate targets are shown when detected.</p>
     </hgroup>
+
+    <style>
+      span:hover {
+        border-bottom: 2px dotted !important;
+      }
+    </style>
 
     <div>
       {#each form?.segments as segment, i (i)}
+        {@const tooltipText = `${timestampToString(segment.startTime)}-${timestampToString(segment.endTime)}: ${(segment.extreme*100).toFixed(1)}%${segment.hateTarget ? `\nTarget: ${segment.hateTarget} (${((segment.hateTargetConfidence || 0)*100).toFixed(1)}%)` : ''}`}
         <span 
-          data-tooltip={timestampToString(segment.startTime)+"-"+timestampToString(segment.endTime)+": "+segment.extreme*100+"%"}
+          data-tooltip={tooltipText}
           style={(segment.extreme > 0.5 ? `background-color: rgba(255, 0, 0, ${segment.extreme * 0.5})` : '') + "; border-bottom: 0px;"}
         >{segment.text}</span>{' '}
       {/each}

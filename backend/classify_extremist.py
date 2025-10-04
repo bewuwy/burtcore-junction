@@ -19,13 +19,14 @@ from sklearn.model_selection import train_test_split, cross_val_score
 from sklearn.metrics import classification_report, confusion_matrix, roc_auc_score
 import pickle
 import warnings
+from backend.config import Config
 warnings.filterwarnings("ignore")
 
 
 class ExtremistClassifier:
     """Binary classifier for extremist content using multimodal features."""
 
-    def __init__(self, model_type='random_forest'):
+    def __init__(self, model_type=Config.EXTREMIST_CLASSIFIER_TYPE):
         """
         Initialize the classifier.
 
@@ -35,26 +36,29 @@ class ExtremistClassifier:
         self.model_type = model_type
         self.scaler = StandardScaler()
 
-        if model_type == 'random_forest':
+        if self.model_type == 'random_forest':
             self.classifier = RandomForestClassifier(
-                n_estimators=100,
-                max_depth=10,
-                min_samples_split=5,
-                min_samples_leaf=2,
-                random_state=42,
+                n_estimators=Config.RF_N_ESTIMATORS,
+                max_depth=Config.RF_MAX_DEPTH,
+                min_samples_split=Config.RF_MIN_SAMPLES_SPLIT,
+                min_samples_leaf=Config.RF_MIN_SAMPLES_LEAF,
+                max_features=Config.RF_MAX_FEATURES,
+                random_state=Config.RANDOM_STATE,
                 class_weight='balanced'
             )
-        elif model_type == 'gradient_boosting':
+        elif self.model_type == 'gradient_boosting':
             self.classifier = GradientBoostingClassifier(
-                n_estimators=100,
-                learning_rate=0.1,
-                max_depth=5,
-                random_state=42
+                n_estimators=Config.GB_N_ESTIMATORS,
+                max_depth=Config.GB_MAX_DEPTH,
+                learning_rate=Config.GB_LEARNING_RATE,
+                subsample=Config.GB_SUBSAMPLE,
+                random_state=Config.RANDOM_STATE
             )
         elif model_type == 'logistic':
             self.classifier = LogisticRegression(
-                max_iter=1000,
-                random_state=42,
+                max_iter=Config.LR_MAX_ITER,
+                C=Config.LR_C,
+                random_state=Config.RANDOM_STATE,
                 class_weight='balanced'
             )
         else:
@@ -197,7 +201,7 @@ class ExtremistClassifier:
         self,
         multimodel_segments: List[Dict[str, Any]],
         intonation_segments: List[Dict[str, Any]],
-        time_tolerance: float = 0.5
+        time_tolerance: float = None
     ) -> List[Tuple[Dict[str, Any], Dict[str, Any]]]:
         """
         Align segments from multi-model classifier and intonation pipeline by timestamp.
@@ -206,10 +210,14 @@ class ExtremistClassifier:
             multimodel_segments: List of segments from multi-model classifier
             intonation_segments: List of segments from intonation pipeline
             time_tolerance: Maximum time difference (seconds) to consider segments aligned
+                          If None, uses Config.TIME_TOLERANCE
 
         Returns:
             List of (multimodel_segment, intonation_segment) pairs
         """
+        if time_tolerance is None:
+            time_tolerance = Config.TIME_TOLERANCE
+        
         aligned = []
 
         for mm_seg in multimodel_segments:
@@ -283,7 +291,7 @@ class ExtremistClassifier:
 
         return np.array(X), np.array(y)
 
-    def train(self, X: np.ndarray, y: np.ndarray, validation_split: float = 0.2):
+    def train(self, X: np.ndarray, y: np.ndarray, validation_split: float = None):
         """
         Train the extremist classifier.
 
@@ -291,13 +299,17 @@ class ExtremistClassifier:
             X: Feature matrix
             y: Labels (1 for extremist, 0 for non-extremist)
             validation_split: Fraction of data to use for validation
+                            If None, uses Config.VALIDATION_SPLIT
         """
+        if validation_split is None:
+            validation_split = Config.VALIDATION_SPLIT
+        
         if len(X) == 0:
             raise ValueError("Cannot train with empty dataset")
 
         # Split data
         X_train, X_val, y_train, y_val = train_test_split(
-            X, y, test_size=validation_split, random_state=42, stratify=y
+            X, y, test_size=validation_split, random_state=Config.RANDOM_STATE, stratify=y
         )
 
         # Scale features
@@ -322,8 +334,8 @@ class ExtremistClassifier:
 
         # Cross-validation
         X_all_scaled = self.scaler.transform(X)
-        cv_scores = cross_val_score(self.classifier, X_all_scaled, y, cv=5)
-        print(f"\n5-Fold CV Accuracy: {cv_scores.mean():.4f} (+/- {cv_scores.std():.4f})")
+        cv_scores = cross_val_score(self.classifier, X_all_scaled, y, cv=Config.CROSS_VALIDATION_FOLDS)
+        print(f"\n{Config.CROSS_VALIDATION_FOLDS}-Fold CV Accuracy: {cv_scores.mean():.4f} (+/- {cv_scores.std():.4f})")
 
         # Feature importance (for tree-based models)
         if hasattr(self.classifier, 'feature_importances_'):

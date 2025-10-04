@@ -63,30 +63,47 @@ async def evaluate_video(
             raise HTTPException(status_code=400, detail="Either file or fileURL must be provided")
         
         # Evaluate the file
-        res_tuple = evaluate(file_path)
-        res = res_tuple[0]  # whisper result (dict with 'segments')
-        audio = res_tuple[1]  # path to normalized audio
-
-        # Load audio as mono 16kHz
-        import librosa
-        y_all, sr = librosa.load(audio, sr=16000, mono=True)
-
-        # Get segments from whisper result
-        segments = res["segments"]
-
-        # Import the intonation module
-        from backend.testing.transcript_proccessing.intonation_wav2vec2_module import process_segments
-
-        # Run intonation/emotion extraction
-        results = process_segments(y_all, sr, segments)
-
-        print(results)
+        result = evaluate(file_path)
+        
+        # Create summary string from statistics
+        stats = result.get("statistics", {})
+        toxic_count = stats.get('toxic_segments', 0)
+        total_count = stats.get('total_segments', 1)  # Avoid division by zero
+        toxic_percentage = (toxic_count / total_count * 100) if total_count > 0 else 0
+        
+        # Check if extremist classification is available
+        is_extremist_content = stats.get('is_extremist_content')
+        extremist_count = stats.get('extremist_segments', 0)
+        extremist_ratio = stats.get('extremist_ratio', 0)
+        
+        # Check if heuristic was used
+        segments = result.get("segments", [])
+        heuristic_used = any(seg.get("heuristicUsed", False) for seg in segments)
+        heuristic_note = " (heuristic-based)" if heuristic_used else ""
+        
+        if is_extremist_content is not None:
+            # Extremist classifier is available (or heuristic was used)
+            if is_extremist_content:
+                summary = f"EXTREMIST CONTENT DETECTED{heuristic_note}: {extremist_count}/{total_count} segments ({extremist_ratio*100:.1f}%). Avg probability: {stats.get('avg_extremist_probability', 0)*100:.1f}%"
+            else:
+                summary = f"Non-extremist content{heuristic_note}. {extremist_count}/{total_count} extremist segments detected ({extremist_ratio*100:.1f}%)."
+        else:
+            # Fallback to toxicity-based summary
+            if toxic_count == 0:
+                summary = "No toxic content detected."
+            elif toxic_count == 1:
+                summary = f"1 toxic segment detected ({toxic_percentage:.1f}% of content). Max toxicity: {stats.get('max_toxicity', 0)*100:.1f}%"
+            else:
+                summary = f"{toxic_count} toxic segments detected ({toxic_percentage:.1f}% of content). Average toxicity: {stats.get('avg_toxicity', 0)*100:.1f}%, Max: {stats.get('max_toxicity', 0)*100:.1f}%"
 
         return JSONResponse(content={
             "success": True,
-            "result": "success",
-            "segments": segments,
-            "intonation_results": results,
+            "result": summary,
+            "isExtremist": is_extremist_content,
+            "heuristicUsed": heuristic_used,
+            "segments": result["segments"],
+            "full_text_classification": result.get("full_text_classification"),
+            "statistics": result.get("statistics"),
         })
     
     except httpx.HTTPError as e:

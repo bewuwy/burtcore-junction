@@ -13,6 +13,7 @@ from transformers import AutoTokenizer, AutoModelForSequenceClassification, pipe
 import pandas as pd
 from tqdm import tqdm
 import warnings
+from backend.config import Config
 warnings.filterwarnings("ignore")
 
 
@@ -22,50 +23,62 @@ class MultiModelClassifier:
     def __init__(self, device=None):
         """Initialize all classification models."""
         if device is None:
-            self.device = "cuda" if torch.cuda.is_available() else "cpu"
+            self.device = Config.get_device()
         else:
             self.device = device
         
         print(f"Using device: {self.device}")
-        device_id = 0 if self.device == "cuda" else -1
+        device_id = Config.get_device_id() if device is None else (0 if self.device == "cuda" else -1)
         
         # Model 1: Toxic-BERT (6 toxicity categories)
-        print("Loading unitary/toxic-bert...")
-        self.toxic_tokenizer = AutoTokenizer.from_pretrained("unitary/toxic-bert")
-        self.toxic_model = AutoModelForSequenceClassification.from_pretrained("unitary/toxic-bert")
+        print(f"Loading {Config.TOXIC_BERT_MODEL}...")
+        self.toxic_tokenizer = AutoTokenizer.from_pretrained(Config.TOXIC_BERT_MODEL)
+        self.toxic_model = AutoModelForSequenceClassification.from_pretrained(Config.TOXIC_BERT_MODEL)
         self.toxic_model.to(self.device)
         self.toxic_model.eval()
         self.toxic_labels = self.toxic_model.config.id2label
         
         # Model 2: Hate speech binary classifier
-        print("Loading cardiffnlp/twitter-roberta-base-hate-latest...")
+        print(f"Loading {Config.HATE_DETECTION_MODEL}...")
         self.hate_pipe = pipeline(
             "text-classification",
-            model="cardiffnlp/twitter-roberta-base-hate-latest",
+            model=Config.HATE_DETECTION_MODEL,
             device=device_id,
-            top_k=None
+            top_k=None,
+            truncation=True,
+            max_length=Config.MAX_TOKEN_LENGTH
         )
         
         # Model 3: Offensive language classifier
-        print("Loading cardiffnlp/twitter-roberta-base-offensive...")
+        print(f"Loading {Config.OFFENSIVE_DETECTION_MODEL}...")
         self.offensive_pipe = pipeline(
             "text-classification",
-            model="cardiffnlp/twitter-roberta-base-offensive",
+            model=Config.OFFENSIVE_DETECTION_MODEL,
             device=device_id,
-            top_k=None
+            top_k=None,
+            truncation=True,
+            max_length=Config.MAX_TOKEN_LENGTH
         )
         
         # Model 4: Sentiment analysis (for emotional tone)
-        print("Loading cardiffnlp/twitter-roberta-base-sentiment-latest...")
+        print(f"Loading {Config.SENTIMENT_MODEL}...")
         self.sentiment_pipe = pipeline(
             "text-classification",
-            model="cardiffnlp/twitter-roberta-base-sentiment-latest",
+            model=Config.SENTIMENT_MODEL,
             device=device_id,
-            top_k=None
+            top_k=None,
+            truncation=True,
+            max_length=Config.MAX_TOKEN_LENGTH
         )
 
         # Model 5: Target analysis
-        self.target_pipeline = pipeline("text-classification", model="wesleyacheng/hate-speech-multilabel-classification-with-bert")
+        print(f"Loading {Config.TARGET_ANALYSIS_MODEL}...")
+        self.target_pipeline = pipeline(
+            "text-classification",
+            model=Config.TARGET_ANALYSIS_MODEL,
+            truncation=True,
+            max_length=Config.MAX_TOKEN_LENGTH
+        )
         
         print("All models loaded successfully!\n")
     
@@ -75,7 +88,7 @@ class MultiModelClassifier:
             text,
             return_tensors="pt",
             truncation=True,
-            max_length=512,
+            max_length=Config.MAX_TOKEN_LENGTH,
             padding=True
         ).to(self.device)
         
@@ -90,6 +103,8 @@ class MultiModelClassifier:
     
     def classify_hate(self, text: str) -> Dict[str, float]:
         """Classify using hate speech detector."""
+        # Truncate text if too long (safety measure)
+        text = text[:Config.MAX_TEXT_LENGTH] if len(text) > Config.MAX_TEXT_LENGTH else text
         results = self.hate_pipe(text)
         if isinstance(results, list) and len(results) > 0:
             if isinstance(results[0], list):
@@ -98,6 +113,8 @@ class MultiModelClassifier:
     
     def classify_offensive(self, text: str) -> Dict[str, float]:
         """Classify using offensive language detector."""
+        # Truncate text if too long (safety measure)
+        text = text[:Config.MAX_TEXT_LENGTH] if len(text) > Config.MAX_TEXT_LENGTH else text
         results = self.offensive_pipe(text)
         if isinstance(results, list) and len(results) > 0:
             if isinstance(results[0], list):
@@ -106,6 +123,8 @@ class MultiModelClassifier:
     
     def classify_sentiment(self, text: str) -> Dict[str, float]:
         """Classify sentiment/emotional tone."""
+        # Truncate text if too long (safety measure)
+        text = text[:Config.MAX_TEXT_LENGTH] if len(text) > Config.MAX_TEXT_LENGTH else text
         results = self.sentiment_pipe(text)
         if isinstance(results, list) and len(results) > 0:
             if isinstance(results[0], list):
@@ -113,7 +132,9 @@ class MultiModelClassifier:
         return {item['label']: float(item['score']) for item in results}
 
     def classify_target(self, text: str) -> Dict[str, float]:
-        """Classify using offensive language detector."""
+        """Classify hate speech target."""
+        # Truncate text if too long (safety measure)
+        text = text[:Config.MAX_TEXT_LENGTH] if len(text) > Config.MAX_TEXT_LENGTH else text
         results = self.target_pipeline(text)
         if isinstance(results, list) and len(results) > 0:
             if isinstance(results[0], list):
@@ -151,7 +172,7 @@ class MultiModelClassifier:
         }
         
         # Detect issues (categories above threshold)
-        threshold = 0.5
+        threshold = Config.TOXICITY_THRESHOLD
         detected_issues = []
         
         for category, score in all_categories.items():
@@ -162,14 +183,56 @@ class MultiModelClassifier:
             if score > threshold:
                 detected_issues.append(f"{category}:{score:.3f}")
         
-        # Calculate overall toxicity (max of all toxic/hate/offensive scores)
-        toxic_keys = [k for k in all_categories.keys() 
-                     if any(term in k.lower() for term in ['toxic', 'hate', 'offensive', 'threat', 'insult', 'obscene'])]
-        overall_toxicity = max([all_categories[k] for k in toxic_keys], default=0.0)
+        # Calculate overall toxicity - only consider POSITIVE toxic indicators
+        # Exclude negative labels like "NOT-HATE", "not-offensive", etc.
+        toxic_scores_list = []
+        
+        # From toxic-bert: toxic, severe_toxic, obscene, threat, insult, identity_hate
+        for key in ['toxic', 'severe_toxic', 'obscene', 'threat', 'insult', 'identity_hate']:
+            if f"toxic_{key}" in all_categories:
+                toxic_scores_list.append(all_categories[f"toxic_{key}"])
+        
+        # From hate detection: only HATE label (not NOT-HATE)
+        if "hate_HATE" in all_categories:
+            toxic_scores_list.append(all_categories["hate_HATE"])
+        
+        # From offensive detection: only offensive label (not not-offensive)
+        if "offensive_offensive" in all_categories:
+            toxic_scores_list.append(all_categories["offensive_offensive"])
+        
+        # Calculate overall toxicity as weighted average of top scores
+        # Using max gives too much weight to a single model
+        if toxic_scores_list:
+            # Sort and take average of top 3 scores for more robust estimate
+            sorted_scores = sorted(toxic_scores_list, reverse=True)
+            top_scores = sorted_scores[:min(3, len(sorted_scores))]
+            overall_toxicity = sum(top_scores) / len(top_scores)
+        else:
+            overall_toxicity = 0.0
+        
+        # Extract hate target if content is hateful
+        hate_target = None
+        hate_target_confidence = 0.0
+        
+        if overall_toxicity > threshold and target_scores:
+            # Find the target with highest confidence
+            # Filter out "not_cyberbullying" and similar negative labels
+            positive_targets = {k: v for k, v in target_scores.items() 
+                              if 'not' not in k.lower() and v > 0.3}
+            
+            if positive_targets:
+                hate_target = max(positive_targets, key=positive_targets.get)
+                hate_target_confidence = positive_targets[hate_target]
+                
+                # Clean up the target label for display
+                # e.g., "religion_based" -> "Religion"
+                hate_target = hate_target.replace('_', ' ').replace('-', ' ').title()
         
         return {
             "overall_toxicity": float(overall_toxicity),
             "is_toxic": overall_toxicity > threshold,
+            "hate_target": hate_target,
+            "hate_target_confidence": float(hate_target_confidence),
             "categories": all_categories,
             "detected_issues": detected_issues,
             "model_outputs": {
