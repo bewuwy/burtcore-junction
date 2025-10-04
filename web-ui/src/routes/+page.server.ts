@@ -15,7 +15,7 @@ export const actions = {
 
 		// Prepare data to send to classifier server
 		const classifierFormData = new FormData();
-		
+
 		if (file && file instanceof File && file.size > 0) {
 			// If file is uploaded, send the file
 			classifierFormData.append('file', file);
@@ -47,6 +47,51 @@ export const actions = {
 				result
 			};
 		} catch (err) {
+
+			// testing
+			return {
+				success: true,
+				result: "success",
+				segments: [
+					{
+						startTime: {
+							minute: 0,
+							second: 0
+						},
+						endTime: {
+							minute: 0,
+							second: 30
+						},
+						text: "I hate black people.",
+						extreme: 0.99
+					},
+					{
+						startTime: {
+							minute: 1,
+							second: 0
+						},
+						endTime: {
+							minute: 1,
+							second: 4
+						},
+						text: "I am cool,",
+						extreme: 0.01
+					},
+										{
+						startTime: {
+							minute: 1,
+							second: 30
+						},
+						endTime: {
+							minute: 1,
+							second: 40
+						},
+						text: "I kinda hate others.",
+						extreme: 0.61
+					}
+				]
+			}
+
 			console.error('Failed to connect to classifier server:', err);
 			return fail(500, {
 				error: 'Failed to connect to classifier server'

@@ -1,10 +1,19 @@
 <script lang="ts">
   import { enhance } from "$app/forms";
-  import { validateUrl } from "$lib/utils";
+  import { validateUrl, timestampToString } from "$lib/utils";
+  import type { TimeStamp } from "$lib/utils";
+
+  type Segment = {
+    startTime: TimeStamp;
+    endTime: TimeStamp;
+    text: string;
+    extreme: number; // [0,1]
+  };
 
   type FormResult = {
     success?: boolean;
-    result?: any;
+    result?: string;
+    segments?: Segment[];
     error?: string;
   };
 
@@ -92,9 +101,23 @@
   </article>
 {/if}
 
-{#if form?.success && form?.result}
+{#if form?.success && form?.segments}
   <article>
     <h2>Classification Result</h2>
     <pre>{JSON.stringify(form.result, null, 2)}</pre>
-  </article>
+
+    <hgroup>
+      <h4>Transcript</h4>
+      <o>Hover a segment to see its timestamp and probability of it being extremist. Suspicious segments are colored red.</o>
+    </hgroup>
+
+    <div>
+      {#each form?.segments as segment, i (i)}
+        <span 
+          data-tooltip={timestampToString(segment.startTime)+"-"+timestampToString(segment.endTime)+": "+segment.extreme*100+"%"}
+          style={segment.extreme > 0.5 ? `background-color: rgba(255, 0, 0, ${segment.extreme * 0.5})` : ''}
+        >{segment.text}</span>{' '}
+      {/each}
+    </div>
+    </article>
 {/if}

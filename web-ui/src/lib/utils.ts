@@ -31,3 +31,11 @@ export function validateUrl(url: string, allowEmpty: boolean = false): { valid: 
 		};
 	}
 }
+
+export type TimeStamp = {
+	minute: number;
+	second: number;
+}
+export function timestampToString(ts: TimeStamp) {
+	return ts.minute + ":" + ts.second.toString().padStart(2, '0');
+}
