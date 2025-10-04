@@ -19,29 +19,26 @@ def read_root():
 async def upload_video(file: UploadFile = File(...)):
     try:
         # Generate a random UUID for the filename
-        file_extension = os.path.splitext(file.filename)[1]  # Get the file extension
+        file_extension = os.path.splitext(file.filename)[1]
         unique_filename = f"{uuid.uuid4()}{file_extension}"
         file_path = os.path.join(UPLOAD_DIR, unique_filename)
         
-        file_content = await file.read()  # Read the file content
+        file_content = await file.read()
         with open(file_path, "wb") as f:
-            f.write(file_content)  # Write the content to the file
+            f.write(file_content)
         
+
+        # TODO: DO SOME PROCESSING HERE
+
+        # segments = whisper(file_path)
+        # for s in segments:
+        #    analyze(s)
+        # result = ....
+
         return JSONResponse(content={
-            "filename": unique_filename,
+            "hate": True,
+            "result": {}
         })
     except Exception as e:
+        print("Error: " + e)
         raise HTTPException(status_code=500, detail=f"An error occurred: {str(e)}")
-
-# TODO: Replace with actual ML model processing
-
-@app.post("/process/")
-async def process_video(file_path: str):
-    # PIPELINE
-    # transcript            : Map<Timestamp, String> (per sentence, process foreach from this point)
-    # hate speech detection : Map<Timestamp, Float> (per sentence, per model)
-    # OUTPUT
-    # return : Map<Timestamp, 2Tuple<String, Map<String, Float>>>
-    #          (map sentence -> (transcript, map model -> sentiment score))
-
-    return {"message": "Processing not yet implemented."}
