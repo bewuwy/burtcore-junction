@@ -1,6 +1,6 @@
 transformers
 torch
-whisper
+openai-whisper
 fastapi
 uvicorn
 multipart
