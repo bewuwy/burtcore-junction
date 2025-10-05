@@ -8,6 +8,8 @@ import torch
 from transformers import pipeline
 import warnings
 import whisper
+from multiprocessing import Pool, cpu_count
+from functools import partial
 from backend.config import Config
 warnings.filterwarnings("ignore", category=UserWarning)
 
@@ -44,6 +46,22 @@ def extract_energy_features(y, sr):
     frame_length, hop_length = int(0.025 * sr), int(0.01 * sr)
     rms = librosa.feature.rms(y=y, frame_length=frame_length, hop_length=hop_length)[0]
     return dict(rms_mean=float(np.mean(rms)), rms_max=float(np.max(rms)))
+
+def extract_acoustic_features_single(args):
+    """
+    Extract pitch and energy features for a single audio segment.
+    Used for parallel processing.
+
+    Args:
+        args: Tuple of (y_seg, sr, fmin, fmax)
+
+    Returns:
+        Tuple of (pitch_features, energy_features)
+    """
+    y_seg, sr, fmin, fmax = args
+    pitch_feats = extract_pitch_features(y_seg, sr, fmin=fmin, fmax=fmax)
+    energy_feats = extract_energy_features(y_seg, sr)
+    return pitch_feats, energy_feats
 
 def slice_audio(y, sr, start, end):
     i0 = max(0, int(start * sr))
@@ -156,26 +174,36 @@ def process_segments(y_all, sr, segments, model="superb/wav2vec2-base-superb-er"
     # Step 2: Batch process all segments for emotion classification
     # The pipeline will automatically batch these efficiently on GPU
     print(f"[Intonation] Processing {len(audio_files)} segments in batches of {batch_size}...")
-    emotion_predictions = emo_pipe(audio_files)
-    print(f"[Intonation] ✓ Emotion classification complete")
 
     try:
         emotion_predictions = emo_pipe(audio_files)
-    except (ValueError, Exception) as e:
-        # If emotion classification fails, fall back to processing without emotion labels
-        print(f"Warning: Emotion classification failed ({str(e)}). Continuing without emotion labels.")
-        emotion_predictions = [[] for _ in audio_files]  # Empty predictions for each file
+        print(f"[Intonation] ✓ Emotion classification complete")
+    except Exception as e:
+        print(f"[Intonation] Warning: Emotion classification failed ({str(e)}). Continuing without emotion labels.")
+        emotion_predictions = [[] for _ in audio_files]
 
-    # Step 3: Combine results with pitch/energy features
-    print(f"[Intonation] Extracting pitch and energy features...")
+    # Step 3: Batch extract pitch/energy features using multiprocessing
+    print(f"[Intonation] Extracting pitch and energy features in parallel...")
+
+    # Prepare arguments for parallel processing
+    num_workers = min(cpu_count(), len(segment_data))
+    acoustic_args = [(seg_data["y_seg"], sr, fmin, fmax) for seg_data in segment_data]
+
+    # Extract features in parallel
+    try:
+        with Pool(processes=num_workers) as pool:
+            acoustic_features = pool.map(extract_acoustic_features_single, acoustic_args)
+        print(f"[Intonation] ✓ Acoustic features extracted using {num_workers} workers")
+    except Exception as e:
+        print(f"[Intonation] Warning: Parallel processing failed ({str(e)}). Using sequential processing.")
+        # Fallback to sequential processing
+        acoustic_features = [extract_acoustic_features_single(args) for args in acoustic_args]
+
+    # Step 4: Combine all results
     results = []
-    for seg_data, emotion_preds in zip(segment_data, emotion_predictions):
+    for seg_data, emotion_preds, (f0_feats, en_feats) in zip(segment_data, emotion_predictions, acoustic_features):
         # Get top emotion prediction
         top = emotion_preds[0] if emotion_preds else {"label": "unknown", "score": 0.0}
-        
-        # Extract pitch and energy features (CPU-bound, can't batch easily)
-        f0_feats = extract_pitch_features(seg_data["y_seg"], sr, fmin=fmin, fmax=fmax)
-        en_feats = extract_energy_features(seg_data["y_seg"], sr)
         
         row = {
             "start": seg_data["start"],
