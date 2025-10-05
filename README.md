@@ -117,11 +117,6 @@ python backend/batch_process_videos.py -i ./media -o ./results -v
 - Video: `.mp4`, `.avi`, `.mov`, `.mkv`, `.webm`, `.flv`, `.wmv`, `.m4v`, `.mpeg`, `.mpg`
 - Audio: `.mp3`, `.wav`, `.ogg`, `.m4a`, `.flac`, `.aac`, `.wma`, `.opus`
 
-
-**Requirements:**
-- Each directory should contain paired files: `filename_multimodel.json` and `filename_intonation.json`
-- Use `batch_process_videos.py` to generate these files
-
 ### Mode 4: Train Custom Classifier
 
 Train your own extremist classifier on labeled data:
@@ -129,30 +124,30 @@ Train your own extremist classifier on labeled data:
 ```bash
 python backend/train_extremist_from_dataset
 ```
-### CLI Arguments
+#### CLI Arguments
 
-#### `--csv`
+##### `--csv`
 Path to dataset CSV file
 
-#### `--n_rows`
+##### `--n_rows`
 Number of labeled rows to use from top
 
-#### `--text_column`
+##### `--text_column`
 Text column name (auto-detect if omitted)
 
-#### `--label_column`
+##### `--label_column`
 Label column name (auto-detect if omitted)
 
-#### `--model_type`
+##### `--model_type`
 Classifier type (random_forest/gradient_boosting/logistic)
 
-#### `--save_model_path`
+##### `--save_model_path`
 Where to save trained model
 
-#### `--save_features`
+##### `--save_features`
 Optional CSV to dump engineered features
 
-#### `--no_hf`
+##### `--no_hf`
 Skip HuggingFace multi-model features (VADER-only)
 
 
