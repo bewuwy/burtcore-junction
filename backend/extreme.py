@@ -426,8 +426,12 @@ def evaluate(file_path: str, output_file: str = "test.json"):
     max_extremist_prob = max(extremist_probabilities, default=0.0)
     extremist_ratio = extremist_segments_count / len(segments_response) if len(segments_response) > 0 else 0.0
     
-    # Determine if content is extremist overall (using threshold from config)
-    is_extremist_content = extremist_ratio > Config.EXTREMIST_RATIO_THRESHOLD if extremist_probabilities else None
+    # Calculate weighted extremist score (multiply ratio by average probability)
+    # This gives a score that considers both the percentage of extremist segments AND their confidence
+    weighted_extremist_score = sum(extremist_probabilities) / len(segments_response) if len(segments_response) > 0 else 0.0
+    
+    # Determine if content is extremist overall (using weighted score with threshold from config)
+    is_extremist_content = weighted_extremist_score > Config.EXTREMIST_RATIO_THRESHOLD if extremist_probabilities else None
 
     # Prepare combined results
     combined_results = {
@@ -443,6 +447,7 @@ def evaluate(file_path: str, output_file: str = "test.json"):
             "avg_extremist_probability": float(avg_extremist_prob),
             "max_extremist_probability": float(max_extremist_prob),
             "extremist_ratio": float(extremist_ratio),
+            "weighted_extremist_score": float(weighted_extremist_score),
             "is_extremist_content": is_extremist_content,
             "language": whisper_result.get("language", "unknown"),
         }
@@ -468,6 +473,8 @@ def evaluate(file_path: str, output_file: str = "test.json"):
         print(f"  Extremist segments: {extremist_segments_count}")
         print(f"  Average extremist probability: {avg_extremist_prob:.3f}")
         print(f"  Max extremist probability: {max_extremist_prob:.3f}")
+        print(f"  Extremist ratio (count-based): {extremist_ratio:.3f}")
+        print(f"  Weighted extremist score (probability-weighted): {weighted_extremist_score:.3f}")
         print(f"  Overall classification: {'EXTREMIST' if is_extremist_content else 'NON-EXTREMIST'}")
 
     return {

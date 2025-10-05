@@ -77,6 +77,7 @@ async def evaluate_video(
         is_extremist_content = stats.get('is_extremist_content')
         extremist_count = stats.get('extremist_segments', 0)
         extremist_ratio = stats.get('extremist_ratio', 0)
+        weighted_score = stats.get('weighted_extremist_score', 0)
         
         # Check if heuristic was used
         segments = result.get("segments", [])
@@ -84,9 +85,9 @@ async def evaluate_video(
         if is_extremist_content is not None:
             # Extremist classifier is available (or heuristic was used)
             if is_extremist_content:
-                summary = f"EXTREMIST CONTENT DETECTED: {extremist_count}/{total_count} segments ({extremist_ratio*100:.1f}%). Avg probability: {stats.get('avg_extremist_probability', 0)*100:.1f}%"
+                summary = f"EXTREMIST CONTENT DETECTED: {extremist_count}/{total_count} segments ({extremist_ratio*100:.1f}%). Weighted score: {weighted_score*100:.1f}%, Avg probability: {stats.get('avg_extremist_probability', 0)*100:.1f}%"
             else:
-                summary = f"Non-extremist content. {extremist_count}/{total_count} extremist segments detected ({extremist_ratio*100:.1f}%)."
+                summary = f"Non-extremist content. {extremist_count}/{total_count} extremist segments detected ({extremist_ratio*100:.1f}%). Weighted score: {weighted_score*100:.1f}%"
         else:
             # Fallback to toxicity-based summary
             if toxic_count == 0:
