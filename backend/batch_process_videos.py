@@ -59,12 +59,13 @@ def transform_to_web_ui_format(result: dict, filename: str) -> dict:
     # Build summary message similar to endpoints.py
     if is_extremist_content is not None:
         extremist_ratio = stats.get("extremist_ratio", 0)
+        weighted_score = stats.get("weighted_extremist_score", 0)
         avg_extremist_prob = stats.get("avg_extremist_probability", 0)
         
         if is_extremist_content:
-            summary = f"⚠️ EXTREMIST CONTENT DETECTED: {extremist_count}/{total_count} segments ({extremist_ratio*100:.1f}%). Avg probability: {avg_extremist_prob*100:.1f}%"
+            summary = f"EXTREMIST CONTENT DETECTED: {extremist_count}/{total_count} segments ({extremist_ratio*100:.1f}%). Weighted score: {weighted_score*100:.1f}%, Avg probability: {avg_extremist_prob*100:.1f}%"
         else:
-            summary = f"✓ Non-extremist content. {extremist_count}/{total_count} extremist segments detected ({extremist_ratio*100:.1f}%)."
+            summary = f"Non-extremist content. {extremist_count}/{total_count} extremist segments detected ({extremist_ratio*100:.1f}%). Weighted score: {weighted_score*100:.1f}%"
     else:
         # Fallback to toxicity-based summary
         avg_toxicity = stats.get("avg_toxicity", 0)

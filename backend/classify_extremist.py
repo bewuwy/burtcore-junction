@@ -432,6 +432,11 @@ class ExtremistClassifier:
         total_segments = len(predictions)
         extremist_ratio = extremist_count / total_segments if total_segments > 0 else 0.0
         avg_probability = np.mean([p['extremist_probability'] for p in predictions]) if predictions else 0.0
+        
+        # Calculate weighted extremist score (sum of extremist segment probabilities / total segments)
+        # This gives a score that considers both the percentage of extremist segments AND their confidence
+        # Only extremist segments contribute to the score, weighted by their probability
+        weighted_extremist_score = sum(p['extremist_probability'] for p in predictions if p['is_extremist']) / total_segments if total_segments > 0 else 0.0
 
         result = {
             'file': Path(multimodel_file).name,
@@ -440,7 +445,8 @@ class ExtremistClassifier:
             'non_extremist_segments': total_segments - extremist_count,
             'extremist_ratio': extremist_ratio,
             'avg_extremist_probability': avg_probability,
-            'is_extremist_content': extremist_ratio > Config.EXTREMIST_RATIO_THRESHOLD,  # Overall classification threshold
+            'weighted_extremist_score': weighted_extremist_score,
+            'is_extremist_content': weighted_extremist_score > Config.EXTREMIST_RATIO_THRESHOLD,  # Overall classification threshold
             'predictions': predictions
         }
 
@@ -591,8 +597,9 @@ def main():
         print(f"Total segments: {result['total_segments']}")
         print(f"Extremist segments: {result['extremist_segments']}")
         print(f"Non-extremist segments: {result['non_extremist_segments']}")
-        print(f"Extremist ratio: {result['extremist_ratio']:.2%}")
+        print(f"Extremist ratio (count-based): {result['extremist_ratio']:.2%}")
         print(f"Average extremist probability: {result['avg_extremist_probability']:.4f}")
+        print(f"Weighted extremist score (probability-weighted): {result['weighted_extremist_score']:.4f}")
         print(f"Overall classification: {'EXTREMIST' if result['is_extremist_content'] else 'NON-EXTREMIST'}")
 
 
