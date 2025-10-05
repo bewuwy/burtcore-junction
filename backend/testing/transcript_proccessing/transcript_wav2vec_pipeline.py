@@ -10,41 +10,51 @@ import torch
 import whisper
 import librosa
 from pathlib import Path
+from backend.config import Config
 
 
-def load_audio_from_mp4(filepath, sr=16000):
+def load_audio_from_mp4(filepath, sr=None):
     """
     Load audio from MP4 file using librosa (which uses ffmpeg backend).
     Returns audio array compatible with Whisper.
 
     Args:
         filepath: Path to MP4 file
-        sr: Sample rate (Whisper expects 16kHz)
+        sr: Sample rate (default: from Config.SAMPLE_RATE, Whisper expects 16kHz)
 
     Returns:
         Audio array as numpy array
     """
+    if sr is None:
+        sr = Config.SAMPLE_RATE
     audio, _ = librosa.load(filepath, sr=sr, mono=True)
     return audio
 
 
-def transcribe_single_file(input_file, output_file=None, model=whisper.load_model("tiny"), device=None):
+def transcribe_single_file(input_file, output_file=None, model=None, device=None):
     """
     Transcribe a single MP4 file with shorter segments for better classification.
 
     Args:
         input_file: Path to MP4 file
         output_file: Optional path to save transcription JSON file (if None, doesn't save)
-        model: Loaded Whisper model (or model name string)
-        device: Device to use (cuda or cpu)
+        model: Loaded Whisper model (or model name string, default: from Config)
+        device: Device to use (default: auto-detect from Config)
 
     Returns:
         tuple: (Transcription result from Whisper, audio array)
     """
-    # Load model if string is passed
-    if isinstance(model, str):
+    # Determine device
+    if device is None:
+        device = Config.get_device()
+    
+    # Load model if not provided or if string is passed
+    if model is None:
+        print(f"Loading Whisper model: {Config.WHISPER_MODEL_SIZE}")
+        model = whisper.load_model(Config.WHISPER_MODEL_SIZE, device=device)
+    elif isinstance(model, str):
         print(f"Loading Whisper model: {model}")
-        model = whisper.load_model(model, device=("cuda" if torch.cuda.is_available() else "cpu") if device is None else device)
+        model = whisper.load_model(model, device=device)
 
     print(f"Transcribing {input_file}...")
 
@@ -54,6 +64,9 @@ def transcribe_single_file(input_file, output_file=None, model=whisper.load_mode
     # Transcribe using Whisper with parameters for shorter, more precise segments
     result = model.transcribe(
         audio,
+        language=Config.WHISPER_LANGUAGE,
+        beam_size=Config.WHISPER_BEAM_SIZE,
+        best_of=Config.WHISPER_BEST_OF,
         word_timestamps=False,
         prepend_punctuations="\"'([{-",
         append_punctuations="\"'.。,!?:)]}、",
@@ -73,7 +86,7 @@ def transcribe_single_file(input_file, output_file=None, model=whisper.load_mode
     return result, audio
 
 
-def transcribe_directory(input_dir, output_dir, model, device="cuda"):
+def transcribe_directory(input_dir, output_dir, model, device=None):
     """
     Transcribe all MP4 files in a directory.
 
@@ -81,8 +94,10 @@ def transcribe_directory(input_dir, output_dir, model, device="cuda"):
         input_dir: Directory containing MP4 files
         output_dir: Directory to save transcription JSON files
         model: Loaded Whisper model
-        device: Device to use (cuda or cpu)
+        device: Device to use (default: auto-detect from Config)
     """
+    if device is None:
+        device = Config.get_device()
     # Create output directory if it doesn't exist
     Path(output_dir).mkdir(parents=True, exist_ok=True)
 
@@ -153,15 +168,15 @@ def main():
     )
     parser.add_argument(
         "--model",
-        default="base",
+        default=None,
         choices=["tiny", "base", "small", "medium", "large"],
-        help="Whisper model size (default: base)"
+        help=f"Whisper model size (default: {Config.WHISPER_MODEL_SIZE})"
     )
     parser.add_argument(
         "--device",
         default=None,
         choices=["cuda", "cpu"],
-        help="Device to use (default: auto-detect)"
+        help=f"Device to use (default: auto-detect, currently {Config.get_device()})"
     )
     parser.add_argument(
         "--batch",
@@ -179,16 +194,19 @@ def main():
 
     # Determine device
     if args.device is None:
-        device = "cuda" if torch.cuda.is_available() else "cpu"
+        device = Config.get_device()
     else:
         device = args.device
 
     print(f"Using device: {device}")
     print(f"CUDA available: {torch.cuda.is_available()}")
 
+    # Determine model
+    model_size = args.model if args.model is not None else Config.WHISPER_MODEL_SIZE
+
     # Load Whisper model
-    print(f"Loading Whisper model: {args.model}")
-    model = whisper.load_model(args.model, device=device)
+    print(f"Loading Whisper model: {model_size}")
+    model = whisper.load_model(model_size, device=device)
     print("Model loaded successfully!")
 
     # Single file mode

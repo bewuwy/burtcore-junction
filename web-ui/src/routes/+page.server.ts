@@ -26,7 +26,7 @@ export const actions = {
 
 		try {
 			// Send to classifier server
-			const response = await fetch(`http://127.0.0.1:8000/evaluate/`, {
+			const response = await fetch( CLASSIFIER_SERVER + `/evaluate/`, {
 				method: 'POST',
 				body: classifierFormData
 			});

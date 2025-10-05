@@ -8,9 +8,14 @@ import torch
 from transformers import pipeline
 import warnings
 import whisper
+from backend.config import Config
 warnings.filterwarnings("ignore", category=UserWarning)
 
-def extract_pitch_features(y, sr, fmin=50.0, fmax=400.0):
+def extract_pitch_features(y, sr, fmin=None, fmax=None):
+    if fmin is None:
+        fmin = Config.F0_MIN
+    if fmax is None:
+        fmax = Config.F0_MAX
     hop_length = int(0.01 * sr)
     f0, voiced_flag, _ = librosa.pyin(
         y, fmin=fmin, fmax=fmax, sr=sr,
@@ -46,13 +51,13 @@ def slice_audio(y, sr, start, end):
     return y[i0:i1]
 
 def ensure_wav_mono_16k(input_audio):
-    y, sr = librosa.load(input_audio, sr=16000, mono=True)
+    y, sr = librosa.load(input_audio, sr=Config.SAMPLE_RATE, mono=True)
     norm_path = Path(".cache_intonation") / "audio_16k_mono.wav"
     norm_path.parent.mkdir(exist_ok=True)
-    sf.write(norm_path, y, 16000)
-    return str(norm_path), y, 16000
+    sf.write(norm_path, y, Config.SAMPLE_RATE)
+    return str(norm_path), y, Config.SAMPLE_RATE
 
-def process_segments(y_all, sr, segments, model="superb/wav2vec2-base-superb-er", device=None, fmin=50.0, fmax=400.0, batch_size=8):
+def process_segments(y_all, sr, segments, model=None, device=None, fmin=None, fmax=None, batch_size=None):
     """
     Process audio segments and extract intonation and emotion features using batch processing.
     
@@ -60,17 +65,27 @@ def process_segments(y_all, sr, segments, model="superb/wav2vec2-base-superb-er"
         y_all: Audio array (numpy array)
         sr: Sample rate (should be 16000)
         segments: List of segment dicts with 'start', 'end', 'text' keys
-        model: Wav2Vec2 model for emotion classification
-        device: Device to use (None for auto-detect, "cuda" or "cpu")
-        fmin: Minimum frequency for pitch extraction
-        fmax: Maximum frequency for pitch extraction
-        batch_size: Batch size for emotion classification (default: 8)
+        model: Wav2Vec2 model for emotion classification (default: from Config)
+        device: Device to use (None for auto-detect from Config, "cuda" or "cpu")
+        fmin: Minimum frequency for pitch extraction (default: from Config)
+        fmax: Maximum frequency for pitch extraction (default: from Config)
+        batch_size: Batch size for emotion classification (default: from Config)
     
     Returns:
         List of dicts with emotion and intonation features for each segment
     """
     if not segments:
         return []
+    
+    # Use config defaults
+    if model is None:
+        model = Config.EMOTION_MODEL
+    if fmin is None:
+        fmin = Config.F0_MIN
+    if fmax is None:
+        fmax = Config.F0_MAX
+    if batch_size is None:
+        batch_size = Config.BATCH_SIZE
     
     # Determine device
     device_id = 0 if (device == "cuda" or (device is None and torch.cuda.is_available())) else -1
@@ -87,11 +102,28 @@ def process_segments(y_all, sr, segments, model="superb/wav2vec2-base-superb-er"
     for idx, seg in enumerate(segments):
         start, end = float(seg["start"]), float(seg["end"])
         text = seg.get("text", "").strip()
+        
+        # Skip invalid segments (zero or negative duration, or too short)
+        if end <= start or (end - start) < 0.1:
+            continue
+            
         y_seg = slice_audio(y_all, sr, start, end)
+        
+        # Skip empty audio segments
+        if len(y_seg) == 0:
+            continue
         
         # Save segment to temporary file
         seg_path = cache_dir / f"seg_{idx}.wav"
-        sf.write(seg_path, y_seg, sr)
+        try:
+            sf.write(seg_path, y_seg, sr)
+            # Verify the file was written correctly
+            if not seg_path.exists() or seg_path.stat().st_size == 0:
+                continue
+        except Exception as e:
+            print(f"Warning: Failed to write audio segment {idx}: {str(e)}")
+            continue
+            
         audio_files.append(str(seg_path))
         
         segment_data.append({
@@ -102,9 +134,18 @@ def process_segments(y_all, sr, segments, model="superb/wav2vec2-base-superb-er"
             "y_seg": y_seg
         })
     
+    # If no valid segments were found, return empty list
+    if not audio_files:
+        return []
+    
     # Step 2: Batch process all segments for emotion classification
     # The pipeline will automatically batch these efficiently on GPU
-    emotion_predictions = emo_pipe(audio_files)
+    try:
+        emotion_predictions = emo_pipe(audio_files)
+    except (ValueError, Exception) as e:
+        # If emotion classification fails, fall back to processing without emotion labels
+        print(f"Warning: Emotion classification failed ({str(e)}). Continuing without emotion labels.")
+        emotion_predictions = [[] for _ in audio_files]  # Empty predictions for each file
     
     # Step 3: Combine results with pitch/energy features
     results = []
@@ -143,11 +184,19 @@ def main():
     parser.add_argument("--whisper_json", required=True)
     parser.add_argument("--out_csv", default="emotion_intonation_timeline.csv")
     parser.add_argument("--out_json", default="emotion_intonation_timeline.json")
-    parser.add_argument("--model", default="superb/wav2vec2-base-superb-er")
-    parser.add_argument("--device", default=None)
-    parser.add_argument("--fmin", type=float, default=50.0)
-    parser.add_argument("--fmax", type=float, default=400.0)
+    parser.add_argument("--model", default=None, help=f"Emotion model (default: {Config.EMOTION_MODEL})")
+    parser.add_argument("--device", default=None, help=f"Device to use (default: auto-detect, currently {Config.get_device()})")
+    parser.add_argument("--fmin", type=float, default=None, help=f"Min frequency for pitch (default: {Config.F0_MIN})")
+    parser.add_argument("--fmax", type=float, default=None, help=f"Max frequency for pitch (default: {Config.F0_MAX})")
     args = parser.parse_args()
+    
+    # Use config defaults if not specified
+    if args.model is None:
+        args.model = Config.EMOTION_MODEL
+    if args.fmin is None:
+        args.fmin = Config.F0_MIN
+    if args.fmax is None:
+        args.fmax = Config.F0_MAX
 
     norm_wav_path, y_all, sr = ensure_wav_mono_16k(args.audio)
     segments = json.loads(Path(args.whisper_json).read_text()).get("segments", [])
