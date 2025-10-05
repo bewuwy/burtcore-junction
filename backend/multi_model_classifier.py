@@ -27,19 +27,21 @@ class MultiModelClassifier:
         else:
             self.device = device
         
-        print(f"Using device: {self.device}")
+        print(f"[Classifier] Using device: {self.device}")
         device_id = Config.get_device_id() if device is None else (0 if self.device == "cuda" else -1)
-        
+        print(f"[Classifier] Device ID for pipelines: {device_id} ({'GPU' if device_id == 0 else 'CPU'})")
+
         # Model 1: Toxic-BERT (6 toxicity categories)
-        print(f"Loading {Config.TOXIC_BERT_MODEL}...")
+        print(f"[Classifier] Loading {Config.TOXIC_BERT_MODEL}...")
         self.toxic_tokenizer = AutoTokenizer.from_pretrained(Config.TOXIC_BERT_MODEL)
         self.toxic_model = AutoModelForSequenceClassification.from_pretrained(Config.TOXIC_BERT_MODEL)
         self.toxic_model.to(self.device)
         self.toxic_model.eval()
         self.toxic_labels = self.toxic_model.config.id2label
-        
+        print(f"[Classifier] ✓ Toxic-BERT loaded on {self.device}")
+
         # Model 2: Hate speech binary classifier
-        print(f"Loading {Config.HATE_DETECTION_MODEL}...")
+        print(f"[Classifier] Loading {Config.HATE_DETECTION_MODEL}...")
         self.hate_pipe = pipeline(
             "text-classification",
             model=Config.HATE_DETECTION_MODEL,
@@ -48,9 +50,10 @@ class MultiModelClassifier:
             truncation=True,
             max_length=Config.MAX_TOKEN_LENGTH
         )
-        
+        print(f"[Classifier] ✓ Hate detection loaded")
+
         # Model 3: Offensive language classifier
-        print(f"Loading {Config.OFFENSIVE_DETECTION_MODEL}...")
+        print(f"[Classifier] Loading {Config.OFFENSIVE_DETECTION_MODEL}...")
         self.offensive_pipe = pipeline(
             "text-classification",
             model=Config.OFFENSIVE_DETECTION_MODEL,
@@ -59,9 +62,10 @@ class MultiModelClassifier:
             truncation=True,
             max_length=Config.MAX_TOKEN_LENGTH
         )
-        
+        print(f"[Classifier] ✓ Offensive detection loaded")
+
         # Model 4: Sentiment analysis (for emotional tone)
-        print(f"Loading {Config.SENTIMENT_MODEL}...")
+        print(f"[Classifier] Loading {Config.SENTIMENT_MODEL}...")
         self.sentiment_pipe = pipeline(
             "text-classification",
             model=Config.SENTIMENT_MODEL,
@@ -70,18 +74,22 @@ class MultiModelClassifier:
             truncation=True,
             max_length=Config.MAX_TOKEN_LENGTH
         )
+        print(f"[Classifier] ✓ Sentiment analysis loaded")
 
         # Model 5: Target analysis
-        print(f"Loading {Config.TARGET_ANALYSIS_MODEL}...")
+        print(f"[Classifier] Loading {Config.TARGET_ANALYSIS_MODEL}...")
         self.target_pipeline = pipeline(
             "text-classification",
             model=Config.TARGET_ANALYSIS_MODEL,
+            device=device_id,
+            top_k=None,
             truncation=True,
             max_length=Config.MAX_TOKEN_LENGTH
         )
-        
-        print("All models loaded successfully!\n")
-    
+        print(f"[Classifier] ✓ Target analysis loaded")
+
+        print(f"[Classifier] All models loaded successfully on {'GPU' if device_id == 0 else 'CPU'}!\n")
+
     def classify_toxic(self, text: str) -> Dict[str, float]:
         """Classify using toxic-bert (6 categories)."""
         inputs = self.toxic_tokenizer(
@@ -141,6 +149,159 @@ class MultiModelClassifier:
                 results = results[0]
         return {item['label']: float(item['score']) for item in results}
     
+    def classify_text_batch(self, texts: List[str], batch_size: int = 8) -> List[Dict[str, Any]]:
+        """
+        Classify multiple texts in batches for GPU efficiency.
+
+        Args:
+            texts: List of text strings to classify
+            batch_size: Number of texts to process in parallel
+
+        Returns:
+            List of classification results for each text
+        """
+        if not texts:
+            return []
+
+        results = []
+
+        # Process in batches
+        for i in range(0, len(texts), batch_size):
+            batch = texts[i:i + batch_size]
+            batch_results = []
+
+            # Batch process through toxic-bert
+            toxic_inputs = self.toxic_tokenizer(
+                batch,
+                return_tensors="pt",
+                truncation=True,
+                max_length=Config.MAX_TOKEN_LENGTH,
+                padding=True
+            ).to(self.device)
+
+            with torch.no_grad():
+                toxic_outputs = self.toxic_model(**toxic_inputs)
+                toxic_probs = torch.sigmoid(toxic_outputs.logits)
+
+            toxic_batch_results = [
+                {self.toxic_labels[j]: float(toxic_probs[idx][j].item())
+                 for j in range(len(self.toxic_labels))}
+                for idx in range(len(batch))
+            ]
+
+            # Truncate texts for pipeline models
+            truncated_batch = [text[:Config.MAX_TEXT_LENGTH] if len(text) > Config.MAX_TEXT_LENGTH else text
+                              for text in batch]
+
+            # Batch process through pipelines
+            hate_batch_results = self.hate_pipe(truncated_batch, batch_size=batch_size)
+            offensive_batch_results = self.offensive_pipe(truncated_batch, batch_size=batch_size)
+            sentiment_batch_results = self.sentiment_pipe(truncated_batch, batch_size=batch_size)
+            target_batch_results = self.target_pipeline(truncated_batch, batch_size=batch_size)
+
+            # Convert pipeline results to dicts
+            def convert_pipeline_result(result):
+                if isinstance(result, list):
+                    return {item['label']: float(item['score']) for item in result}
+                return {}
+
+            hate_batch_dicts = [convert_pipeline_result(r) for r in hate_batch_results]
+            offensive_batch_dicts = [convert_pipeline_result(r) for r in offensive_batch_results]
+            sentiment_batch_dicts = [convert_pipeline_result(r) for r in sentiment_batch_results]
+            target_batch_dicts = [convert_pipeline_result(r) for r in target_batch_results]
+
+            # Combine results for each text in batch
+            for idx in range(len(batch)):
+                text = batch[idx]
+
+                if not text or not text.strip():
+                    batch_results.append({
+                        "overall_toxicity": 0.0,
+                        "is_toxic": False,
+                        "hate_target": None,
+                        "hate_target_confidence": 0.0,
+                        "categories": {},
+                        "detected_issues": []
+                    })
+                    continue
+
+                toxic_scores = toxic_batch_results[idx]
+                hate_scores = hate_batch_dicts[idx]
+                offensive_scores = offensive_batch_dicts[idx]
+                sentiment_scores = sentiment_batch_dicts[idx]
+                target_scores = target_batch_dicts[idx]
+
+                # Combine all scores
+                all_categories = {
+                    **{f"toxic_{k}": v for k, v in toxic_scores.items()},
+                    **{f"hate_{k}": v for k, v in hate_scores.items()},
+                    **{f"offensive_{k}": v for k, v in offensive_scores.items()},
+                    **{f"sentiment_{k}": v for k, v in sentiment_scores.items()},
+                    **{f"target_{k}": v for k, v in target_scores.items()}
+                }
+
+                # Detect issues
+                threshold = Config.TOXICITY_THRESHOLD
+                detected_issues = []
+
+                for category, score in all_categories.items():
+                    if any(skip in category.lower() for skip in ['nothate', 'not-offensive', 'neutral', 'positive']):
+                        continue
+                    if score > threshold:
+                        detected_issues.append(f"{category}:{score:.3f}")
+
+                # Calculate overall toxicity
+                toxic_scores_list = []
+                for key in ['toxic', 'severe_toxic', 'obscene', 'threat', 'insult', 'identity_hate']:
+                    if f"toxic_{key}" in all_categories:
+                        toxic_scores_list.append(all_categories[f"toxic_{key}"])
+
+                if "hate_HATE" in all_categories:
+                    toxic_scores_list.append(all_categories["hate_HATE"])
+
+                if "offensive_offensive" in all_categories:
+                    toxic_scores_list.append(all_categories["offensive_offensive"])
+
+                if toxic_scores_list:
+                    sorted_scores = sorted(toxic_scores_list, reverse=True)
+                    top_scores = sorted_scores[:min(3, len(sorted_scores))]
+                    overall_toxicity = sum(top_scores) / len(top_scores)
+                else:
+                    overall_toxicity = 0.0
+
+                # Extract hate target
+                hate_target = None
+                hate_target_confidence = 0.0
+
+                if overall_toxicity > threshold and target_scores:
+                    positive_targets = {k: v for k, v in target_scores.items()
+                                      if 'not' not in k.lower() and v > 0.3}
+
+                    if positive_targets:
+                        hate_target = max(positive_targets, key=positive_targets.get)
+                        hate_target_confidence = positive_targets[hate_target]
+                        hate_target = hate_target.replace('_', ' ').replace('-', ' ').title()
+
+                batch_results.append({
+                    "overall_toxicity": float(overall_toxicity),
+                    "is_toxic": overall_toxicity > threshold,
+                    "hate_target": hate_target,
+                    "hate_target_confidence": float(hate_target_confidence),
+                    "categories": all_categories,
+                    "detected_issues": detected_issues,
+                    "model_outputs": {
+                        "toxic_bert": toxic_scores,
+                        "hate_detection": hate_scores,
+                        "offensive_detection": offensive_scores,
+                        "sentiment": sentiment_scores,
+                        "target_analysis": target_scores
+                    }
+                })
+
+            results.extend(batch_results)
+
+        return results
+
     def classify_text(self, text: str) -> Dict[str, Any]:
         """
         Classify text using all models and combine results.
@@ -244,13 +405,14 @@ class MultiModelClassifier:
             }
         }
     
-    def classify_transcript(self, transcript_path: str) -> Dict[str, Any]:
+    def classify_transcript(self, transcript_path: str, batch_size: int = 16) -> Dict[str, Any]:
         """
         Classify a full transcript JSON file using all models.
         
         Args:
             transcript_path: Path to Whisper JSON transcript
-        
+            batch_size: Batch size for parallel GPU processing of segments
+
         Returns:
             Dictionary with comprehensive classification results
         """
@@ -264,18 +426,32 @@ class MultiModelClassifier:
         print(f"Classifying full transcript...")
         full_classification = self.classify_text(full_text)
         
-        # Classify individual segments
+        # Classify individual segments in batches (GPU parallel)
         segment_classifications = []
-        print(f"Classifying {len(segments)} segments...")
-        for seg in tqdm(segments, desc="Segments"):
+        print(f"Classifying {len(segments)} segments in batches of {batch_size}...")
+
+        # Extract segment texts and metadata
+        segment_texts = []
+        segment_metadata = []
+        for seg in segments:
             seg_text = seg.get("text", "").strip()
             if seg_text:
-                seg_class = self.classify_text(seg_text)
-                segment_classifications.append({
+                segment_texts.append(seg_text)
+                segment_metadata.append({
                     "start": seg.get("start"),
                     "end": seg.get("end"),
-                    "text": seg_text,
-                    **seg_class
+                    "text": seg_text
+                })
+
+        # Batch classify all segments
+        if segment_texts:
+            batch_results = self.classify_text_batch(segment_texts, batch_size=batch_size)
+
+            # Combine with metadata
+            for metadata, classification in zip(segment_metadata, batch_results):
+                segment_classifications.append({
+                    **metadata,
+                    **classification
                 })
         
         # Calculate aggregate statistics
@@ -309,6 +485,7 @@ class MultiModelClassifier:
                 "issue_frequency": all_issues
             }
         }
+
 
 
 def classify_single_file(input_file: str, output_file: str, classifier: MultiModelClassifier):
@@ -465,4 +642,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-

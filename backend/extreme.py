@@ -267,9 +267,15 @@ def evaluate(file_path: str, output_file: str = "test.json"):
     # Get original segments from whisper result for processing
     original_segments = whisper_result["segments"]
 
-    # Run intonation/emotion extraction on original segments
+    # Run intonation/emotion extraction on original segments with GPU batch processing
     print("Extracting intonation and emotion features...")
-    intonation_results = process_segments(y_all, sr, original_segments)
+    device = "cuda" if Config.get_device() == "cuda" else "cpu"
+    print(f"[Evaluate] Using device: {device} for intonation pipeline")
+    intonation_results = process_segments(
+        y_all, sr, original_segments,
+        device=device,
+        batch_size=16  # Use batch processing for GPU efficiency
+    )
 
     # Get classifier and classify segments
     print("Classifying content for hate speech and toxicity...")
@@ -279,16 +285,24 @@ def evaluate(file_path: str, output_file: str = "test.json"):
     full_text = whisper_result.get("text", "").strip()
     full_classification = classifier.classify_text(full_text) if full_text else None
     
-    # Classify individual segments (batch processing)
+    # Classify individual segments using batch processing (GPU parallel)
+    print(f"[Evaluate] Batch classifying {len(original_segments)} text segments...")
     segment_texts = [seg.get("text", "").strip() for seg in original_segments]
-    segment_classifications = []
-    
+    segment_classifications = classifier.classify_text_batch(
+        [text for text in segment_texts if text],  # Filter out empty texts
+        batch_size=16  # Use batch processing for GPU efficiency
+    )
+    print(f"[Evaluate] ✓ Batch classification complete")
+
+    # Map results back (handle empty segments)
+    segment_classifications_full = []
+    batch_idx = 0
     for text in segment_texts:
         if text:
-            seg_class = classifier.classify_text(text)
-            segment_classifications.append(seg_class)
+            segment_classifications_full.append(segment_classifications[batch_idx])
+            batch_idx += 1
         else:
-            segment_classifications.append(None)
+            segment_classifications_full.append(None)
 
     # Get extremist classifier
     extremist_classifier = get_extremist_classifier()
@@ -316,8 +330,8 @@ def evaluate(file_path: str, output_file: str = "test.json"):
             seg_data["intonation"] = intonation_results[idx]
         
         # Add classification results if available
-        if idx < len(segment_classifications) and segment_classifications[idx]:
-            classification = segment_classifications[idx]
+        if idx < len(segment_classifications_full) and segment_classifications_full[idx]:
+            classification = segment_classifications_full[idx]
             seg_data["classification"] = classification
             
             # Add simplified toxicity score for easy access
@@ -403,10 +417,10 @@ def evaluate(file_path: str, output_file: str = "test.json"):
         segments_response.append(seg_data)
 
     # Calculate aggregate statistics
-    toxic_segments_count = sum(1 for c in segment_classifications if c and c["is_toxic"])
-    avg_toxicity = sum(c["overall_toxicity"] for c in segment_classifications if c) / len(segment_classifications) if segment_classifications else 0.0
-    max_toxicity = max((c["overall_toxicity"] for c in segment_classifications if c), default=0.0)
-    
+    toxic_segments_count = sum(1 for c in segment_classifications_full if c and c["is_toxic"])
+    avg_toxicity = sum(c["overall_toxicity"] for c in segment_classifications_full if c) / len(segment_classifications_full) if segment_classifications_full else 0.0
+    max_toxicity = max((c["overall_toxicity"] for c in segment_classifications_full if c), default=0.0)
+
     # Calculate extremist statistics
     avg_extremist_prob = sum(extremist_probabilities) / len(extremist_probabilities) if extremist_probabilities else 0.0
     max_extremist_prob = max(extremist_probabilities, default=0.0)

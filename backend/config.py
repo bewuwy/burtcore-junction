@@ -18,16 +18,38 @@ class Config:
     
     # Device selection: 'auto', 'cuda', 'cpu'
     # 'auto' will use CUDA if available, otherwise CPU
-    DEVICE: Literal['auto', 'cuda', 'cpu'] = 'auto'
-    
+    # Note: Set to 'auto' if you get CUDA initialization errors
+    DEVICE: Literal['auto', 'cuda', 'cpu'] = 'auto'  # Changed from 'cuda' to 'auto' for stability
+
     @staticmethod
     def get_device() -> str:
         """Get the actual device to use based on configuration and availability."""
         if Config.DEVICE == 'auto':
-            return 'cuda' if torch.cuda.is_available() else 'cpu'
-        elif Config.DEVICE == 'cuda' and not torch.cuda.is_available():
-            print("Warning: CUDA requested but not available. Falling back to CPU.")
-            return 'cpu'
+            try:
+                # Force CUDA initialization if available
+                if torch.cuda.is_available():
+                    # Initialize CUDA context
+                    torch.cuda.init()
+                    return 'cuda'
+                else:
+                    return 'cpu'
+            except Exception as e:
+                print(f"Warning: CUDA initialization failed: {e}")
+                return 'cpu'
+        elif Config.DEVICE == 'cuda':
+            try:
+                if not torch.cuda.is_available():
+                    print("Warning: CUDA requested but not available. Falling back to CPU.")
+                    return 'cpu'
+                # Try to initialize CUDA context
+                torch.cuda.init()
+                # Verify we can actually use it
+                _ = torch.cuda.device_count()
+                return 'cuda'
+            except Exception as e:
+                print(f"Warning: CUDA requested but initialization failed: {e}")
+                print("Falling back to CPU.")
+                return 'cpu'
         return Config.DEVICE
     
     @staticmethod
