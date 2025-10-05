@@ -31,7 +31,7 @@ def load_audio_from_mp4(filepath, sr=None):
     return audio
 
 
-def transcribe_single_file(input_file, output_file=None, model=None, device=None):
+def transcribe_single_file(input_file, output_file=None, model=whisper.load_model("tiny"), device=None):
     """
     Transcribe a single MP4 file with shorter segments for better classification.
 
@@ -47,7 +47,7 @@ def transcribe_single_file(input_file, output_file=None, model=None, device=None
     # Determine device
     if device is None:
         device = Config.get_device()
-    
+
     # Load model if not provided or if string is passed
     if model is None:
         print(f"Loading Whisper model: {Config.WHISPER_MODEL_SIZE}")

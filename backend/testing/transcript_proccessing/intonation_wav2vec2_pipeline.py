@@ -57,7 +57,7 @@ def ensure_wav_mono_16k(input_audio):
     sf.write(norm_path, y, Config.SAMPLE_RATE)
     return str(norm_path), y, Config.SAMPLE_RATE
 
-def process_segments(y_all, sr, segments, model=None, device=None, fmin=None, fmax=None, batch_size=None):
+def process_segments(y_all, sr, segments, model="superb/wav2vec2-base-superb-er", device=None, fmin=50.0, fmax=400.0, batch_size=8):
     """
     Process audio segments and extract intonation and emotion features using batch processing.
     
@@ -77,42 +77,57 @@ def process_segments(y_all, sr, segments, model=None, device=None, fmin=None, fm
     if not segments:
         return []
     
-    # Use config defaults
-    if model is None:
-        model = Config.EMOTION_MODEL
-    if fmin is None:
-        fmin = Config.F0_MIN
-    if fmax is None:
-        fmax = Config.F0_MAX
-    if batch_size is None:
-        batch_size = Config.BATCH_SIZE
-    
-    # Determine device
-    device_id = 0 if (device == "cuda" or (device is None and torch.cuda.is_available())) else -1
-    emo_pipe = pipeline("audio-classification", model=model, device=device_id, batch_size=batch_size)
-    
+    # Determine device with better logging
+    if device == "cuda":
+        print(f"[Intonation] Device explicitly set to 'cuda'")
+        device_id = 0
+    elif device == "cpu":
+        print(f"[Intonation] Device explicitly set to 'cpu'")
+        device_id = -1
+    else:
+        # Auto-detect
+        cuda_available = torch.cuda.is_available()
+        print(f"[Intonation] Auto-detecting device... CUDA available: {cuda_available}")
+        device_id = 0 if cuda_available else -1
+
+    print(f"[Intonation] Initializing emotion pipeline on device: {'cuda:0' if device_id == 0 else 'cpu'} with batch_size={batch_size}")
+
+    try:
+        emo_pipe = pipeline("audio-classification", model=model, device=device_id, batch_size=batch_size)
+        print(f"[Intonation] ✓ Pipeline initialized successfully on {'GPU' if device_id == 0 else 'CPU'}")
+    except Exception as e:
+        print(f"[Intonation] ✗ Failed to initialize pipeline on device {device_id}: {e}")
+        if device_id == 0:
+            print("[Intonation] Falling back to CPU...")
+            device_id = -1
+            emo_pipe = pipeline("audio-classification", model=model, device=device_id, batch_size=batch_size)
+            print(f"[Intonation] ✓ Pipeline initialized on CPU (fallback)")
+        else:
+            raise
+
     # Prepare cache directory
     cache_dir = Path(".cache_intonation")
     cache_dir.mkdir(exist_ok=True)
     
     # Step 1: Extract all audio segments and save them
+    print(f"[Intonation] Extracting {len(segments)} audio segments...")
     audio_files = []
     segment_data = []
     
     for idx, seg in enumerate(segments):
         start, end = float(seg["start"]), float(seg["end"])
         text = seg.get("text", "").strip()
-        
+
         # Skip invalid segments (zero or negative duration, or too short)
         if end <= start or (end - start) < 0.1:
             continue
-            
+
         y_seg = slice_audio(y_all, sr, start, end)
         
         # Skip empty audio segments
         if len(y_seg) == 0:
             continue
-        
+
         # Save segment to temporary file
         seg_path = cache_dir / f"seg_{idx}.wav"
         try:
@@ -123,7 +138,7 @@ def process_segments(y_all, sr, segments, model=None, device=None, fmin=None, fm
         except Exception as e:
             print(f"Warning: Failed to write audio segment {idx}: {str(e)}")
             continue
-            
+
         audio_files.append(str(seg_path))
         
         segment_data.append({
@@ -137,17 +152,22 @@ def process_segments(y_all, sr, segments, model=None, device=None, fmin=None, fm
     # If no valid segments were found, return empty list
     if not audio_files:
         return []
-    
+
     # Step 2: Batch process all segments for emotion classification
     # The pipeline will automatically batch these efficiently on GPU
+    print(f"[Intonation] Processing {len(audio_files)} segments in batches of {batch_size}...")
+    emotion_predictions = emo_pipe(audio_files)
+    print(f"[Intonation] ✓ Emotion classification complete")
+
     try:
         emotion_predictions = emo_pipe(audio_files)
     except (ValueError, Exception) as e:
         # If emotion classification fails, fall back to processing without emotion labels
         print(f"Warning: Emotion classification failed ({str(e)}). Continuing without emotion labels.")
         emotion_predictions = [[] for _ in audio_files]  # Empty predictions for each file
-    
+
     # Step 3: Combine results with pitch/energy features
+    print(f"[Intonation] Extracting pitch and energy features...")
     results = []
     for seg_data, emotion_preds in zip(segment_data, emotion_predictions):
         # Get top emotion prediction
@@ -176,6 +196,7 @@ def process_segments(y_all, sr, segments, model=None, device=None, fmin=None, fm
         except:
             pass
     
+    print(f"[Intonation] ✓ Intonation processing complete for {len(results)} segments")
     return results
 
 def main():
@@ -184,12 +205,17 @@ def main():
     parser.add_argument("--whisper_json", required=True)
     parser.add_argument("--out_csv", default="emotion_intonation_timeline.csv")
     parser.add_argument("--out_json", default="emotion_intonation_timeline.json")
+    parser.add_argument("--model", default="superb/wav2vec2-base-superb-er")
+    parser.add_argument("--device", default=None, choices=["cuda", "cpu"], help="Device to use (default: auto-detect)")
+    parser.add_argument("--fmin", type=float, default=50.0)
+    parser.add_argument("--fmax", type=float, default=400.0)
+    parser.add_argument("--batch_size", type=int, default=8, help="Batch size for GPU processing (default: 8)")
     parser.add_argument("--model", default=None, help=f"Emotion model (default: {Config.EMOTION_MODEL})")
     parser.add_argument("--device", default=None, help=f"Device to use (default: auto-detect, currently {Config.get_device()})")
     parser.add_argument("--fmin", type=float, default=None, help=f"Min frequency for pitch (default: {Config.F0_MIN})")
     parser.add_argument("--fmax", type=float, default=None, help=f"Max frequency for pitch (default: {Config.F0_MAX})")
     args = parser.parse_args()
-    
+
     # Use config defaults if not specified
     if args.model is None:
         args.model = Config.EMOTION_MODEL
@@ -203,28 +229,16 @@ def main():
     if not segments:
         raise RuntimeError("No 'segments' found in Whisper JSON")
 
-    device = 0 if (args.device == "cuda" or (args.device is None and torch.cuda.is_available())) else -1
-    emo_pipe = pipeline("audio-classification", model=args.model, device=device)
-
-    results = []
-    for seg in segments:
-        start, end = float(seg["start"]), float(seg["end"])
-        text = seg.get("text", "").strip()
-        y_seg = slice_audio(y_all, sr, start, end)
-        tmp_wav = Path(".cache_intonation/tmp.wav")
-        sf.write(tmp_wav, y_seg, sr)
-
-        preds = emo_pipe(str(tmp_wav))
-        top = preds[0] if preds else {"label": "unknown", "score": 0.0}
-        f0_feats = extract_pitch_features(y_seg, sr, fmin=args.fmin, fmax=args.fmax)
-        en_feats = extract_energy_features(y_seg, sr)
-
-        row = {
-            "start": start, "end": end, "duration": end - start,
-            "text": text, "emotion": top["label"], "emotion_score": float(top["score"]),
-            **f0_feats, **en_feats
-        }
-        results.append(row)
+    # Use batched GPU processing
+    print(f"Processing {len(segments)} segments with batch_size={args.batch_size}...")
+    results = process_segments(
+        y_all, sr, segments,
+        model=args.model,
+        device=args.device,
+        fmin=args.fmin,
+        fmax=args.fmax,
+        batch_size=args.batch_size
+    )
 
     # Save as CSV
     pd.DataFrame(results).to_csv(args.out_csv, index=False)
