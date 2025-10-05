@@ -23,9 +23,33 @@
 
   let loading = false;
   let error = "";
+  let originalFileName = "";
+
+  function downloadResults() {
+    if (!form) return;
+    
+    // Create the filename based on original file name
+    const baseFileName = originalFileName.replace(/\.[^/.]+$/, "") || "result";
+    const fileName = `${baseFileName}-result.json`;
+    
+    // Create the JSON content
+    const jsonContent = JSON.stringify(form, null, 2);
+    
+    // Create blob and download
+    const blob = new Blob([jsonContent], { type: "application/json" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = fileName;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  }
 </script>
 
 <h1>Welcome to ExtremeDetector5000(TM)</h1>
+<p><a href="/view-results">View Previous Results →</a></p>
 <hr/>
 
 <form
@@ -49,6 +73,15 @@
       return async () => {}; // Cancel the submission
     }
     
+    // Store the original file name for later use
+    if (hasFile) {
+      originalFileName = file.name;
+    } else if (fileUrl) {
+      // Extract filename from URL
+      const urlPath = fileUrl.split('?')[0];
+      originalFileName = urlPath.split('/').pop() || "video";
+    }
+    
     console.log("Form submission started");
     loading = true;
     error = "";
@@ -69,7 +102,7 @@
   <fieldset class="grid">
     <label>
       File
-      <input type="file" name="file" />
+      <input type="file" name="file" accept="audio/*,video/*" />
     </label>
 
     <label>
@@ -107,6 +140,10 @@
   <article>
     <h2>Classification Result</h2>
     <pre>{JSON.stringify(form.result, null, 2)}</pre>
+
+    <a href={"#"} on:click={downloadResults}>
+      Download Results as JSON
+    </a>
 
     <hgroup>
       <h4>Transcript</h4>

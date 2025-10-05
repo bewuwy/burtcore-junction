@@ -8,9 +8,16 @@ import torch
 from transformers import pipeline
 import warnings
 import whisper
+from multiprocessing import Pool, cpu_count
+from functools import partial
+from backend.config import Config
 warnings.filterwarnings("ignore", category=UserWarning)
 
-def extract_pitch_features(y, sr, fmin=50.0, fmax=400.0):
+def extract_pitch_features(y, sr, fmin=None, fmax=None):
+    if fmin is None:
+        fmin = Config.F0_MIN
+    if fmax is None:
+        fmax = Config.F0_MAX
     hop_length = int(0.01 * sr)
     f0, voiced_flag, _ = librosa.pyin(
         y, fmin=fmin, fmax=fmax, sr=sr,
@@ -40,17 +47,33 @@ def extract_energy_features(y, sr):
     rms = librosa.feature.rms(y=y, frame_length=frame_length, hop_length=hop_length)[0]
     return dict(rms_mean=float(np.mean(rms)), rms_max=float(np.max(rms)))
 
+def extract_acoustic_features_single(args):
+    """
+    Extract pitch and energy features for a single audio segment.
+    Used for parallel processing.
+
+    Args:
+        args: Tuple of (y_seg, sr, fmin, fmax)
+
+    Returns:
+        Tuple of (pitch_features, energy_features)
+    """
+    y_seg, sr, fmin, fmax = args
+    pitch_feats = extract_pitch_features(y_seg, sr, fmin=fmin, fmax=fmax)
+    energy_feats = extract_energy_features(y_seg, sr)
+    return pitch_feats, energy_feats
+
 def slice_audio(y, sr, start, end):
     i0 = max(0, int(start * sr))
     i1 = min(len(y), int(end * sr))
     return y[i0:i1]
 
 def ensure_wav_mono_16k(input_audio):
-    y, sr = librosa.load(input_audio, sr=16000, mono=True)
+    y, sr = librosa.load(input_audio, sr=Config.SAMPLE_RATE, mono=True)
     norm_path = Path(".cache_intonation") / "audio_16k_mono.wav"
     norm_path.parent.mkdir(exist_ok=True)
-    sf.write(norm_path, y, 16000)
-    return str(norm_path), y, 16000
+    sf.write(norm_path, y, Config.SAMPLE_RATE)
+    return str(norm_path), y, Config.SAMPLE_RATE
 
 def process_segments(y_all, sr, segments, model="superb/wav2vec2-base-superb-er", device=None, fmin=50.0, fmax=400.0, batch_size=8):
     """
@@ -60,11 +83,11 @@ def process_segments(y_all, sr, segments, model="superb/wav2vec2-base-superb-er"
         y_all: Audio array (numpy array)
         sr: Sample rate (should be 16000)
         segments: List of segment dicts with 'start', 'end', 'text' keys
-        model: Wav2Vec2 model for emotion classification
-        device: Device to use (None for auto-detect, "cuda" or "cpu")
-        fmin: Minimum frequency for pitch extraction
-        fmax: Maximum frequency for pitch extraction
-        batch_size: Batch size for emotion classification (default: 8)
+        model: Wav2Vec2 model for emotion classification (default: from Config)
+        device: Device to use (None for auto-detect from Config, "cuda" or "cpu")
+        fmin: Minimum frequency for pitch extraction (default: from Config)
+        fmax: Maximum frequency for pitch extraction (default: from Config)
+        batch_size: Batch size for emotion classification (default: from Config)
     
     Returns:
         List of dicts with emotion and intonation features for each segment
@@ -72,26 +95,68 @@ def process_segments(y_all, sr, segments, model="superb/wav2vec2-base-superb-er"
     if not segments:
         return []
     
-    # Determine device
-    device_id = 0 if (device == "cuda" or (device is None and torch.cuda.is_available())) else -1
-    emo_pipe = pipeline("audio-classification", model=model, device=device_id, batch_size=batch_size)
-    
+    # Determine device with better logging
+    if device == "cuda":
+        print(f"[Intonation] Device explicitly set to 'cuda'")
+        device_id = 0
+    elif device == "cpu":
+        print(f"[Intonation] Device explicitly set to 'cpu'")
+        device_id = -1
+    else:
+        # Auto-detect
+        cuda_available = torch.cuda.is_available()
+        print(f"[Intonation] Auto-detecting device... CUDA available: {cuda_available}")
+        device_id = 0 if cuda_available else -1
+
+    print(f"[Intonation] Initializing emotion pipeline on device: {'cuda:0' if device_id == 0 else 'cpu'} with batch_size={batch_size}")
+
+    try:
+        emo_pipe = pipeline("audio-classification", model=model, device=device_id, batch_size=batch_size)
+        print(f"[Intonation] ✓ Pipeline initialized successfully on {'GPU' if device_id == 0 else 'CPU'}")
+    except Exception as e:
+        print(f"[Intonation] ✗ Failed to initialize pipeline on device {device_id}: {e}")
+        if device_id == 0:
+            print("[Intonation] Falling back to CPU...")
+            device_id = -1
+            emo_pipe = pipeline("audio-classification", model=model, device=device_id, batch_size=batch_size)
+            print(f"[Intonation] ✓ Pipeline initialized on CPU (fallback)")
+        else:
+            raise
+
     # Prepare cache directory
     cache_dir = Path(".cache_intonation")
     cache_dir.mkdir(exist_ok=True)
     
     # Step 1: Extract all audio segments and save them
+    print(f"[Intonation] Extracting {len(segments)} audio segments...")
     audio_files = []
     segment_data = []
     
     for idx, seg in enumerate(segments):
         start, end = float(seg["start"]), float(seg["end"])
         text = seg.get("text", "").strip()
+
+        # Skip invalid segments (zero or negative duration, or too short)
+        if end <= start or (end - start) < 0.1:
+            continue
+
         y_seg = slice_audio(y_all, sr, start, end)
         
+        # Skip empty audio segments
+        if len(y_seg) == 0:
+            continue
+
         # Save segment to temporary file
         seg_path = cache_dir / f"seg_{idx}.wav"
-        sf.write(seg_path, y_seg, sr)
+        try:
+            sf.write(seg_path, y_seg, sr)
+            # Verify the file was written correctly
+            if not seg_path.exists() or seg_path.stat().st_size == 0:
+                continue
+        except Exception as e:
+            print(f"Warning: Failed to write audio segment {idx}: {str(e)}")
+            continue
+
         audio_files.append(str(seg_path))
         
         segment_data.append({
@@ -102,19 +167,43 @@ def process_segments(y_all, sr, segments, model="superb/wav2vec2-base-superb-er"
             "y_seg": y_seg
         })
     
+    # If no valid segments were found, return empty list
+    if not audio_files:
+        return []
+
     # Step 2: Batch process all segments for emotion classification
     # The pipeline will automatically batch these efficiently on GPU
-    emotion_predictions = emo_pipe(audio_files)
-    
-    # Step 3: Combine results with pitch/energy features
+    print(f"[Intonation] Processing {len(audio_files)} segments in batches of {batch_size}...")
+
+    try:
+        emotion_predictions = emo_pipe(audio_files)
+        print(f"[Intonation] ✓ Emotion classification complete")
+    except Exception as e:
+        print(f"[Intonation] Warning: Emotion classification failed ({str(e)}). Continuing without emotion labels.")
+        emotion_predictions = [[] for _ in audio_files]
+
+    # Step 3: Batch extract pitch/energy features using multiprocessing
+    print(f"[Intonation] Extracting pitch and energy features in parallel...")
+
+    # Prepare arguments for parallel processing
+    num_workers = min(cpu_count(), len(segment_data))
+    acoustic_args = [(seg_data["y_seg"], sr, fmin, fmax) for seg_data in segment_data]
+
+    # Extract features in parallel
+    try:
+        with Pool(processes=num_workers) as pool:
+            acoustic_features = pool.map(extract_acoustic_features_single, acoustic_args)
+        print(f"[Intonation] ✓ Acoustic features extracted using {num_workers} workers")
+    except Exception as e:
+        print(f"[Intonation] Warning: Parallel processing failed ({str(e)}). Using sequential processing.")
+        # Fallback to sequential processing
+        acoustic_features = [extract_acoustic_features_single(args) for args in acoustic_args]
+
+    # Step 4: Combine all results
     results = []
-    for seg_data, emotion_preds in zip(segment_data, emotion_predictions):
+    for seg_data, emotion_preds, (f0_feats, en_feats) in zip(segment_data, emotion_predictions, acoustic_features):
         # Get top emotion prediction
         top = emotion_preds[0] if emotion_preds else {"label": "unknown", "score": 0.0}
-        
-        # Extract pitch and energy features (CPU-bound, can't batch easily)
-        f0_feats = extract_pitch_features(seg_data["y_seg"], sr, fmin=fmin, fmax=fmax)
-        en_feats = extract_energy_features(seg_data["y_seg"], sr)
         
         row = {
             "start": seg_data["start"],
@@ -135,6 +224,7 @@ def process_segments(y_all, sr, segments, model="superb/wav2vec2-base-superb-er"
         except:
             pass
     
+    print(f"[Intonation] ✓ Intonation processing complete for {len(results)} segments")
     return results
 
 def main():
@@ -144,38 +234,39 @@ def main():
     parser.add_argument("--out_csv", default="emotion_intonation_timeline.csv")
     parser.add_argument("--out_json", default="emotion_intonation_timeline.json")
     parser.add_argument("--model", default="superb/wav2vec2-base-superb-er")
-    parser.add_argument("--device", default=None)
+    parser.add_argument("--device", default=None, choices=["cuda", "cpu"], help="Device to use (default: auto-detect)")
     parser.add_argument("--fmin", type=float, default=50.0)
     parser.add_argument("--fmax", type=float, default=400.0)
+    parser.add_argument("--batch_size", type=int, default=8, help="Batch size for GPU processing (default: 8)")
+    parser.add_argument("--model", default=None, help=f"Emotion model (default: {Config.EMOTION_MODEL})")
+    parser.add_argument("--device", default=None, help=f"Device to use (default: auto-detect, currently {Config.get_device()})")
+    parser.add_argument("--fmin", type=float, default=None, help=f"Min frequency for pitch (default: {Config.F0_MIN})")
+    parser.add_argument("--fmax", type=float, default=None, help=f"Max frequency for pitch (default: {Config.F0_MAX})")
     args = parser.parse_args()
+
+    # Use config defaults if not specified
+    if args.model is None:
+        args.model = Config.EMOTION_MODEL
+    if args.fmin is None:
+        args.fmin = Config.F0_MIN
+    if args.fmax is None:
+        args.fmax = Config.F0_MAX
 
     norm_wav_path, y_all, sr = ensure_wav_mono_16k(args.audio)
     segments = json.loads(Path(args.whisper_json).read_text()).get("segments", [])
     if not segments:
         raise RuntimeError("No 'segments' found in Whisper JSON")
 
-    device = 0 if (args.device == "cuda" or (args.device is None and torch.cuda.is_available())) else -1
-    emo_pipe = pipeline("audio-classification", model=args.model, device=device)
-
-    results = []
-    for seg in segments:
-        start, end = float(seg["start"]), float(seg["end"])
-        text = seg.get("text", "").strip()
-        y_seg = slice_audio(y_all, sr, start, end)
-        tmp_wav = Path(".cache_intonation/tmp.wav")
-        sf.write(tmp_wav, y_seg, sr)
-
-        preds = emo_pipe(str(tmp_wav))
-        top = preds[0] if preds else {"label": "unknown", "score": 0.0}
-        f0_feats = extract_pitch_features(y_seg, sr, fmin=args.fmin, fmax=args.fmax)
-        en_feats = extract_energy_features(y_seg, sr)
-
-        row = {
-            "start": start, "end": end, "duration": end - start,
-            "text": text, "emotion": top["label"], "emotion_score": float(top["score"]),
-            **f0_feats, **en_feats
-        }
-        results.append(row)
+    # Use batched GPU processing
+    print(f"Processing {len(segments)} segments with batch_size={args.batch_size}...")
+    results = process_segments(
+        y_all, sr, segments,
+        model=args.model,
+        device=args.device,
+        fmin=args.fmin,
+        fmax=args.fmax,
+        batch_size=args.batch_size
+    )
 
     # Save as CSV
     pd.DataFrame(results).to_csv(args.out_csv, index=False)
