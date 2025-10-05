@@ -6,3 +6,4 @@ uvicorn
 multipart
 httpx
 librosa
+hf_xet

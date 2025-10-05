@@ -28,7 +28,7 @@ def load_audio_from_mp4(filepath, sr=16000):
     return audio
 
 
-def transcribe_single_file(input_file, output_file=None, model=whisper.load_model("tiny", device="cuda"), device="cuda"):
+def transcribe_single_file(input_file, output_file=None, model=whisper.load_model("tiny"), device=None):
     """
     Transcribe a single MP4 file with shorter segments for better classification.
 
@@ -44,7 +44,7 @@ def transcribe_single_file(input_file, output_file=None, model=whisper.load_mode
     # Load model if string is passed
     if isinstance(model, str):
         print(f"Loading Whisper model: {model}")
-        model = whisper.load_model(model, device=device)
+        model = whisper.load_model(model, device=("cuda" if torch.cuda.is_available() else "cpu") if device is None else device)
 
     print(f"Transcribing {input_file}...")
 

@@ -1,4 +1,4 @@
-# to run: uvicorn backend.endpoints:app --reload --host
+# to run: uvicorn backend.endpoints:app --reload
 
 from fastapi import FastAPI, File, UploadFile, HTTPException, Form
 from fastapi.responses import JSONResponse
@@ -8,6 +8,8 @@ import httpx
 from typing import Optional
 from backend.extreme import evaluate
 import traceback
+
+# os.system("pip install -r ./backend/requirements.txt")
 
 app = FastAPI()
 
