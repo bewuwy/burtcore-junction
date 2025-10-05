@@ -310,7 +310,8 @@ def evaluate(file_path: str, output_file: str = "test.json"):
     # Transform segments for response, merging all analysis results
     segments_response = []
     extremist_segments_count = 0
-    extremist_probabilities = []
+    extremist_probabilities = []  # All probabilities for averaging
+    extremist_weighted_sum = 0.0  # Sum of probabilities for extremist segments only
     
     for idx, segment in enumerate(original_segments):
         seg_data = {
@@ -368,6 +369,7 @@ def evaluate(file_path: str, output_file: str = "test.json"):
                     
                     if is_extremist:
                         extremist_segments_count += 1
+                        extremist_weighted_sum += extremist_prob
                     extremist_probabilities.append(extremist_prob)
                     
                 except Exception as e:
@@ -403,6 +405,7 @@ def evaluate(file_path: str, output_file: str = "test.json"):
                 
                 if is_extremist_heuristic:
                     extremist_segments_count += 1
+                    extremist_weighted_sum += modified_score
                 extremist_probabilities.append(modified_score)
             else:
                 seg_data["isExtremist"] = None
@@ -426,9 +429,10 @@ def evaluate(file_path: str, output_file: str = "test.json"):
     max_extremist_prob = max(extremist_probabilities, default=0.0)
     extremist_ratio = extremist_segments_count / len(segments_response) if len(segments_response) > 0 else 0.0
     
-    # Calculate weighted extremist score (multiply ratio by average probability)
+    # Calculate weighted extremist score (sum of extremist segment probabilities / total segments)
     # This gives a score that considers both the percentage of extremist segments AND their confidence
-    weighted_extremist_score = sum(extremist_probabilities) / len(segments_response) if len(segments_response) > 0 else 0.0
+    # Only extremist segments contribute to the score, weighted by their probability
+    weighted_extremist_score = extremist_weighted_sum / len(segments_response) if len(segments_response) > 0 else 0.0
     
     # Determine if content is extremist overall (using weighted score with threshold from config)
     is_extremist_content = weighted_extremist_score > Config.EXTREMIST_RATIO_THRESHOLD if extremist_probabilities else None

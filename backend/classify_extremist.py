@@ -433,9 +433,10 @@ class ExtremistClassifier:
         extremist_ratio = extremist_count / total_segments if total_segments > 0 else 0.0
         avg_probability = np.mean([p['extremist_probability'] for p in predictions]) if predictions else 0.0
         
-        # Calculate weighted extremist score (sum of all probabilities / total segments)
+        # Calculate weighted extremist score (sum of extremist segment probabilities / total segments)
         # This gives a score that considers both the percentage of extremist segments AND their confidence
-        weighted_extremist_score = sum(p['extremist_probability'] for p in predictions) / total_segments if total_segments > 0 else 0.0
+        # Only extremist segments contribute to the score, weighted by their probability
+        weighted_extremist_score = sum(p['extremist_probability'] for p in predictions if p['is_extremist']) / total_segments if total_segments > 0 else 0.0
 
         result = {
             'file': Path(multimodel_file).name,
