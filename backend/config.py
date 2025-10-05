@@ -82,7 +82,12 @@ class Config:
     
     # Classifier type: 'random_forest', 'gradient_boosting', 'logistic'
     EXTREMIST_CLASSIFIER_TYPE: Literal['random_forest', 'gradient_boosting', 'logistic'] = 'random_forest'
-    
+
+    # Decision threshold controls (bias toward recall / fewer false negatives)
+    BASE_DECISION_THRESHOLD: float = 0.5         # used if OPTIMIZE_DECISION_THRESHOLD=False
+    OPTIMIZE_DECISION_THRESHOLD: bool = True     # if True, choose threshold to maximize F-beta (beta>1 favors recall)
+    F_BETA_FOR_THRESHOLD: float = 2.0            # F2 emphasizes recall over precision
+
     # Random Forest parameters
     RF_N_ESTIMATORS = 200
     RF_MAX_DEPTH = 20

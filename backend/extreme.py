@@ -257,6 +257,10 @@ def evaluate(file_path: str, output_file: str = "test.json"):
     """
     print("evaluating file", file_path)
 
+    # Get classifier instances
+    classifier = get_classifier()
+    extremist_classifier = get_extremist_classifier()
+
     # Get raw transcription result and audio (without saving)
     whisper_result, audio = transcribe_single_file(file_path, output_file=None)
     
@@ -267,55 +271,34 @@ def evaluate(file_path: str, output_file: str = "test.json"):
     # Get original segments from whisper result for processing
     original_segments = whisper_result["segments"]
 
-    # Run intonation/emotion extraction on original segments with GPU batch processing
+    # Run intonation/emotion extraction on original segments
     print("Extracting intonation and emotion features...")
-    device = "cuda" if Config.get_device() == "cuda" else "cpu"
-    print(f"[Evaluate] Using device: {device} for intonation pipeline")
-    intonation_results = process_segments(
-        y_all, sr, original_segments,
-        device=device,
-        batch_size=16  # Use batch processing for GPU efficiency
-    )
-
-    # Get classifier and classify segments
-    print("Classifying content for hate speech and toxicity...")
-    classifier = get_classifier()
-    
-    # Classify full transcript text
+    intonation_results = process_segments(y_all, sr, original_segments)
     full_text = whisper_result.get("text", "").strip()
     full_classification = classifier.classify_text(full_text) if full_text else None
-    
-    # Classify individual segments using batch processing (GPU parallel)
-    print(f"[Evaluate] Batch classifying {len(original_segments)} text segments...")
-    segment_texts = [seg.get("text", "").strip() for seg in original_segments]
-    segment_classifications = classifier.classify_text_batch(
-        [text for text in segment_texts if text],  # Filter out empty texts
-        batch_size=16  # Use batch processing for GPU efficiency
-    )
-    print(f"[Evaluate] ✓ Batch classification complete")
 
-    # Map results back (handle empty segments)
-    segment_classifications_full = []
-    batch_idx = 0
+    # Classify individual segments (batch processing)
+    segment_texts = [seg.get("text", "").strip() for seg in original_segments]
+    segment_classifications = []
     for text in segment_texts:
         if text:
-            segment_classifications_full.append(segment_classifications[batch_idx])
-            batch_idx += 1
+            seg_class = classifier.classify_text(text)
+            segment_classifications.append(seg_class)
         else:
-            segment_classifications_full.append(None)
+            segment_classifications.append(None)
 
-    # Get extremist classifier
-    extremist_classifier = get_extremist_classifier()
-    
-    # Transform segments for response, merging all analysis results
     segments_response = []
+    extremist_probabilities = []
     extremist_segments_count = 0
     extremist_probabilities = []  # All probabilities for averaging
     extremist_weighted_sum = 0.0  # Sum of probabilities for extremist segments only
     
+
     for idx, segment in enumerate(original_segments):
         seg_data = {
-            "text": segment["text"],
+            "start": segment.get("start"),
+            "end": segment.get("end"),
+            "text": segment.get("text", ""),
             "startTime": {
                 "minute": int(segment["start"] / 60),
                 "second": int(segment["start"] % 60)
@@ -325,28 +308,20 @@ def evaluate(file_path: str, output_file: str = "test.json"):
                 "second": int(segment["end"] % 60)
             },
         }
-        
         # Add intonation results if available
         if idx < len(intonation_results):
             seg_data["intonation"] = intonation_results[idx]
-        
         # Add classification results if available
-        if idx < len(segment_classifications_full) and segment_classifications_full[idx]:
-            classification = segment_classifications_full[idx]
+        if idx < len(segment_classifications) and segment_classifications[idx]:
+            classification = segment_classifications[idx]
             seg_data["classification"] = classification
-            
-            # Add simplified toxicity score for easy access
             seg_data["extreme"] = classification["overall_toxicity"]
-            
-            # Add hate target information if available
             if classification.get("hate_target"):
                 seg_data["hateTarget"] = classification["hate_target"]
                 seg_data["hateTargetConfidence"] = classification["hate_target_confidence"]
-            
             # FINAL STEP: Use extremist classifier to combine features and intonation
-            if extremist_classifier and extremist_classifier.is_trained and idx < len(intonation_results):
+            if extremist_classifier and getattr(extremist_classifier, 'is_trained', False) and idx < len(intonation_results):
                 try:
-                    # Prepare multimodel segment for extremist classifier
                     mm_segment = {
                         'start': segment.get('start'),
                         'end': segment.get('end'),
@@ -355,23 +330,15 @@ def evaluate(file_path: str, output_file: str = "test.json"):
                         'model_outputs': classification.get('model_outputs', {}),
                         'detected_issues': classification.get('detected_issues', [])
                     }
-                    
-                    # Prepare intonation segment for extremist classifier
                     inton_segment = intonation_results[idx]
-                    
-                    # Get extremist prediction
                     is_extremist, extremist_prob = extremist_classifier.predict(mm_segment, inton_segment)
-                    
-                    # Add extremist classification to segment data
                     seg_data["isExtremist"] = bool(is_extremist)
                     seg_data["extremistProbability"] = float(extremist_prob)
                     seg_data["heuristicUsed"] = False
-                    
                     if is_extremist:
                         extremist_segments_count += 1
                         extremist_weighted_sum += extremist_prob
                     extremist_probabilities.append(extremist_prob)
-                    
                 except Exception as e:
                     print(f"Warning: Could not apply extremist classifier to segment {idx}: {e}")
                     seg_data["isExtremist"] = None
@@ -386,23 +353,14 @@ def evaluate(file_path: str, output_file: str = "test.json"):
                     inton_data,
                     seg_text
                 )
-                
-                # Update the extreme score with modified value
                 seg_data["extreme"] = modified_score
-                
-                # Add sarcasm detection info
                 seg_data["sarcasm"] = sarcasm_info
-                
-                # Use a threshold to determine extremist classification
-                # Threshold adjusted based on heuristic confidence
                 threshold = Config.TOXICITY_THRESHOLD - (0.1 * heuristic_confidence)
                 is_extremist_heuristic = modified_score > threshold
-                
                 seg_data["isExtremist"] = is_extremist_heuristic
                 seg_data["extremistProbability"] = float(modified_score)
                 seg_data["heuristicUsed"] = True
                 seg_data["heuristicConfidence"] = float(heuristic_confidence)
-                
                 if is_extremist_heuristic:
                     extremist_segments_count += 1
                     extremist_weighted_sum += modified_score
@@ -416,15 +374,12 @@ def evaluate(file_path: str, output_file: str = "test.json"):
             seg_data["isExtremist"] = None
             seg_data["extremistProbability"] = None
             seg_data["heuristicUsed"] = False
-        
         segments_response.append(seg_data)
 
     # Calculate aggregate statistics
-    toxic_segments_count = sum(1 for c in segment_classifications_full if c and c["is_toxic"])
-    avg_toxicity = sum(c["overall_toxicity"] for c in segment_classifications_full if c) / len(segment_classifications_full) if segment_classifications_full else 0.0
-    max_toxicity = max((c["overall_toxicity"] for c in segment_classifications_full if c), default=0.0)
-
-    # Calculate extremist statistics
+    toxic_segments_count = sum(1 for c in segment_classifications if c and c.get("is_toxic"))
+    avg_toxicity = sum(c["overall_toxicity"] for c in segment_classifications if c) / len(segment_classifications) if segment_classifications else 0.0
+    max_toxicity = max((c["overall_toxicity"] for c in segment_classifications if c), default=0.0)
     avg_extremist_prob = sum(extremist_probabilities) / len(extremist_probabilities) if extremist_probabilities else 0.0
     max_extremist_prob = max(extremist_probabilities, default=0.0)
     extremist_ratio = extremist_segments_count / len(segments_response) if len(segments_response) > 0 else 0.0
@@ -433,15 +388,14 @@ def evaluate(file_path: str, output_file: str = "test.json"):
     # This gives a score that considers both the percentage of extremist segments AND their confidence
     # Only extremist segments contribute to the score, weighted by their probability
     weighted_extremist_score = extremist_weighted_sum / len(segments_response) if len(segments_response) > 0 else 0.0
-    
+
     # Determine if content is extremist overall (using weighted score with threshold from config)
     is_extremist_content = weighted_extremist_score > Config.EXTREMIST_RATIO_THRESHOLD if extremist_probabilities else None
 
     # Prepare combined results
     combined_results = {
-        "whisper": whisper_result,  # Full whisper output
-        "segments": segments_response,  # Formatted segments with all analysis
-        "full_text_classification": full_classification,  # Overall text classification
+        "segments": segments_response,
+        "classification": full_classification,
         "statistics": {
             "total_segments": len(segments_response),
             "toxic_segments": toxic_segments_count,
@@ -470,7 +424,6 @@ def evaluate(file_path: str, output_file: str = "test.json"):
     print(f"  Average toxicity: {avg_toxicity:.3f}")
     print(f"  Max toxicity: {max_toxicity:.3f}")
     if extremist_probabilities:
-        # Check if heuristic was used
         heuristic_used = any(seg.get("heuristicUsed", False) for seg in segments_response)
         if heuristic_used:
             print(f"  [Using intonation-based heuristic - no trained extremist classifier]")

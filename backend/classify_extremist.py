@@ -16,7 +16,7 @@ from sklearn.ensemble import RandomForestClassifier, GradientBoostingClassifier
 from sklearn.linear_model import LogisticRegression
 from sklearn.preprocessing import StandardScaler
 from sklearn.model_selection import train_test_split, cross_val_score
-from sklearn.metrics import classification_report, confusion_matrix, roc_auc_score
+from sklearn.metrics import classification_report, confusion_matrix, roc_auc_score, fbeta_score
 import pickle
 import warnings
 from backend.config import Config
@@ -66,59 +66,77 @@ class ExtremistClassifier:
 
         self.feature_names = []
         self.is_trained = False
+        self.decision_threshold = float(Config.BASE_DECISION_THRESHOLD)
 
     def extract_multimodel_features(self, segment: Dict[str, Any]) -> Dict[str, float]:
         """
         Extract numerical features from multi-model classifier output.
-        Does NOT include the text itself.
-
-        Args:
-            segment: Segment classification from multi-model classifier
-
-        Returns:
-            Dictionary of numerical features
+        Includes all available scores and summary attributes.
         """
-        features = {}
+        features: Dict[str, float] = {}
 
-        # Overall toxicity score
-        features['overall_toxicity'] = segment.get('overall_toxicity', 0.0)
+        # Overall summary fields
+        features['overall_toxicity'] = float(segment.get('overall_toxicity', 0.0) or 0.0)
+        features['is_toxic'] = 1.0 if segment.get('is_toxic', False) else 0.0
+        features['hate_target_confidence'] = float(segment.get('hate_target_confidence', 0.0) or 0.0)
+
+        # One-hot for hate_target label if present
+        hate_target = segment.get('hate_target')
+        if isinstance(hate_target, str) and hate_target.strip():
+            key = f"hate_target_is_{hate_target.strip().lower().replace(' ', '_')}"
+            features[key] = 1.0
 
         # Extract all model output scores
-        model_outputs = segment.get('model_outputs', {})
+        model_outputs = segment.get('model_outputs', {}) or {}
 
         # Toxic-BERT scores (6 categories)
-        toxic_bert = model_outputs.get('toxic_bert', {})
-        for key, value in toxic_bert.items():
-            features[f'toxic_{key}'] = value
+        for key, value in (model_outputs.get('toxic_bert', {}) or {}).items():
+            features[f'toxic_{key}'] = float(value)
 
         # Hate detection scores
-        hate_det = model_outputs.get('hate_detection', {})
-        features['hate_score'] = hate_det.get('HATE', 0.0)
-        features['not_hate_score'] = hate_det.get('NOT-HATE', 0.0)
+        hate_det = model_outputs.get('hate_detection', {}) or {}
+        for key, value in hate_det.items():
+            features[f'hate_{key}'] = float(value)
 
         # Offensive detection scores
-        offensive_det = model_outputs.get('offensive_detection', {})
-        features['offensive_score'] = offensive_det.get('offensive', 0.0)
-        features['non_offensive_score'] = offensive_det.get('non-offensive', 0.0)
+        offensive_det = (model_outputs.get('offensive_detection', {}) or {})
+        for key, value in offensive_det.items():
+            features[f'offensive_{key}'] = float(value)
 
         # Sentiment scores (emotional tone)
-        sentiment = model_outputs.get('sentiment', {})
-        features['sentiment_negative'] = sentiment.get('negative', 0.0)
-        features['sentiment_neutral'] = sentiment.get('neutral', 0.0)
-        features['sentiment_positive'] = sentiment.get('positive', 0.0)
+        sentiment = (model_outputs.get('sentiment', {}) or {})
+        for key, value in sentiment.items():
+            features[f'sentiment_{key}'] = float(value)
 
-        # Target analysis - get max target score
-        target = model_outputs.get('target_analysis', {})
+        # Target analysis - include all raw target scores and a max summary
+        target = (model_outputs.get('target_analysis', {}) or {})
         if target:
-            features['max_target_score'] = max(target.values())
-            # Individual target categories
+            try:
+                features['target_max_score'] = float(max(target.values()))
+            except Exception:
+                features['target_max_score'] = 0.0
             for key, value in target.items():
-                features[f'target_{key}'] = value
+                features[f'target_{key}'] = float(value)
         else:
-            features['max_target_score'] = 0.0
+            features['target_max_score'] = 0.0
 
         # Number of detected issues
-        features['num_detected_issues'] = len(segment.get('detected_issues', []))
+        features['num_detected_issues'] = float(len(segment.get('detected_issues', []) or []))
+
+        # Additionally, if a flat categories dict exists, include any missing keys (without duplication)
+        categories = segment.get('categories', {}) or {}
+        for cat_key, score in categories.items():
+            # Only add if not already covered above
+            if cat_key not in features:
+                try:
+                    features[cat_key] = float(score)
+                except Exception:
+                    continue
+
+        # Ensure finite values
+        for k, v in list(features.items()):
+            if v is None or (isinstance(v, float) and (np.isnan(v) or not np.isfinite(v))):
+                features[k] = 0.0
 
         return features
 
@@ -167,34 +185,27 @@ class ExtremistClassifier:
 
         return features
 
+    def build_feature_dict(self, multimodel_segment: Dict[str, Any], intonation_segment: Dict[str, Any]) -> Dict[str, float]:
+        """Return a flat dict of all features from multi-model and intonation segments."""
+        mm_features = self.extract_multimodel_features(multimodel_segment)
+        intonation_features = self.extract_intonation_features(intonation_segment)
+        return {**mm_features, **intonation_features}
+
     def combine_features(
         self,
         multimodel_segment: Dict[str, Any],
         intonation_segment: Dict[str, Any]
     ) -> np.ndarray:
         """
-        Combine features from both models into a single feature vector.
-
-        Args:
-            multimodel_segment: Segment from multi-model classifier
-            intonation_segment: Segment from intonation pipeline
-
-        Returns:
-            Feature vector as numpy array
+        Combine features into a vector in consistent order using self.feature_names.
+        If feature_names is empty, initialize from current dict; otherwise ignore new keys.
+        Note: For full inclusion across a dataset, prefer build_feature_dict and construct
+        a global union externally (as done in the dataset trainer).
         """
-        mm_features = self.extract_multimodel_features(multimodel_segment)
-        intonation_features = self.extract_intonation_features(intonation_segment)
-
-        # Combine all features
-        all_features = {**mm_features, **intonation_features}
-
-        # Store feature names if not already stored
+        all_features = self.build_feature_dict(multimodel_segment, intonation_segment)
         if not self.feature_names:
             self.feature_names = sorted(all_features.keys())
-
-        # Create feature vector in consistent order
         feature_vector = np.array([all_features.get(name, 0.0) for name in self.feature_names])
-
         return feature_vector
 
     def align_segments(
@@ -291,57 +302,117 @@ class ExtremistClassifier:
 
         return np.array(X), np.array(y)
 
+    def _optimize_threshold(self, y_true: np.ndarray, y_proba: np.ndarray) -> float:
+        """Pick a probability threshold maximizing F-beta (recall-focused) over candidate grid."""
+        beta = float(Config.F_BETA_FOR_THRESHOLD)
+        # Use unique probabilities plus a small grid for stability
+        uniq = np.unique(y_proba)
+        grid = np.linspace(0.05, 0.95, 19)
+        cands = np.unique(np.concatenate([uniq, grid]))
+        best_thr, best_score = 0.5, -1.0
+        for thr in cands:
+            y_pred = (y_proba >= thr).astype(int)
+            try:
+                score = fbeta_score(y_true, y_pred, beta=beta, zero_division=0)
+            except Exception:
+                score = -1.0
+            if score > best_score:
+                best_score, best_thr = score, float(thr)
+        return float(best_thr)
+
     def train(self, X: np.ndarray, y: np.ndarray, validation_split: float = None):
         """
-        Train the extremist classifier.
-
-        Args:
-            X: Feature matrix
-            y: Labels (1 for extremist, 0 for non-extremist)
-            validation_split: Fraction of data to use for validation
-                            If None, uses Config.VALIDATION_SPLIT
+        Train the extremist classifier with safeguards for tiny/imbalanced datasets.
         """
         if validation_split is None:
             validation_split = Config.VALIDATION_SPLIT
-        
         if len(X) == 0:
             raise ValueError("Cannot train with empty dataset")
 
-        # Split data
+        classes, counts = np.unique(y, return_counts=True)
+        # Tiny/imbalanced dataset path
+        if len(classes) < 2 or counts.min() < 2 or len(X) < 6:
+            print("\nNote: Insufficient class representation for stratified validation (class counts:",
+                  {int(c): int(n) for c, n in zip(classes, counts)}, ")")
+            print("Training on full dataset and skipping validation/CV.")
+            X_scaled = self.scaler.fit_transform(X)
+            self.classifier.fit(X_scaled, y)
+            # Determine threshold on training set if enabled
+            if hasattr(self.classifier, 'predict_proba') and Config.OPTIMIZE_DECISION_THRESHOLD:
+                y_proba = self.classifier.predict_proba(X_scaled)[:, 1]
+                self.decision_threshold = self._optimize_threshold(y, y_proba)
+            else:
+                self.decision_threshold = float(Config.BASE_DECISION_THRESHOLD)
+            print(f"Selected decision threshold (F{Config.F_BETA_FOR_THRESHOLD:.1f}-max): {self.decision_threshold:.3f}")
+            # Metrics (using decision_threshold)
+            try:
+                y_proba = self.classifier.predict_proba(X_scaled)[:, 1]
+                y_pred = (y_proba >= self.decision_threshold).astype(int)
+                print("\n" + "="*60)
+                print("TRAINING SET RESULTS (no hold-out, thresholded)")
+                print("="*60)
+                print(classification_report(y, y_pred, target_names=['Non-Extremist', 'Extremist']))
+                print("\nConfusion Matrix:")
+                print(confusion_matrix(y, y_pred))
+                try:
+                    print(f"\nROC-AUC (resubstitution): {roc_auc_score(y, y_proba):.4f}")
+                except Exception:
+                    pass
+            except Exception:
+                pass
+            # Feature importance (tree-based)
+            if hasattr(self.classifier, 'feature_importances_'):
+                importances = self.classifier.feature_importances_
+                indices = np.argsort(importances)[::-1]
+                print("\nTop 15 Most Important Features:")
+                for i in range(min(15, len(self.feature_names))):
+                    idx = indices[i]
+                    print(f"  {i+1}. {self.feature_names[idx]}: {importances[idx]:.4f}")
+            self.is_trained = True
+            return
+
+        # Standard split
         X_train, X_val, y_train, y_val = train_test_split(
             X, y, test_size=validation_split, random_state=Config.RANDOM_STATE, stratify=y
         )
-
-        # Scale features
         X_train_scaled = self.scaler.fit_transform(X_train)
         X_val_scaled = self.scaler.transform(X_val)
 
-        # Train classifier
         print(f"Training {self.model_type} classifier...")
         self.classifier.fit(X_train_scaled, y_train)
 
-        # Evaluate on validation set
-        y_pred = self.classifier.predict(X_val_scaled)
-        y_pred_proba = self.classifier.predict_proba(X_val_scaled)[:, 1]
+        # Threshold optimization on validation set
+        if hasattr(self.classifier, 'predict_proba') and Config.OPTIMIZE_DECISION_THRESHOLD:
+            y_val_proba = self.classifier.predict_proba(X_val_scaled)[:, 1]
+            self.decision_threshold = self._optimize_threshold(y_val, y_val_proba)
+        else:
+            self.decision_threshold = float(Config.BASE_DECISION_THRESHOLD)
+        print(f"Selected decision threshold (F{Config.F_BETA_FOR_THRESHOLD:.1f}-max): {self.decision_threshold:.3f}")
+
+        # Evaluate with chosen threshold
+        y_val_proba = self.classifier.predict_proba(X_val_scaled)[:, 1]
+        y_pred = (y_val_proba >= self.decision_threshold).astype(int)
 
         print("\n" + "="*60)
-        print("VALIDATION RESULTS")
+        print("VALIDATION RESULTS (thresholded)")
         print("="*60)
         print(classification_report(y_val, y_pred, target_names=['Non-Extremist', 'Extremist']))
         print("\nConfusion Matrix:")
         print(confusion_matrix(y_val, y_pred))
-        print(f"\nROC-AUC Score: {roc_auc_score(y_val, y_pred_proba):.4f}")
+        print(f"\nROC-AUC Score: {roc_auc_score(y_val, y_val_proba):.4f}")
 
-        # Cross-validation
+        # Cross-validation bounded by min class count
         X_all_scaled = self.scaler.transform(X)
-        cv_scores = cross_val_score(self.classifier, X_all_scaled, y, cv=Config.CROSS_VALIDATION_FOLDS)
-        print(f"\n{Config.CROSS_VALIDATION_FOLDS}-Fold CV Accuracy: {cv_scores.mean():.4f} (+/- {cv_scores.std():.4f})")
+        cv_max = int(min(Config.CROSS_VALIDATION_FOLDS, counts.min()))
+        if cv_max >= 2:
+            cv_scores = cross_val_score(self.classifier, X_all_scaled, y, cv=cv_max)
+            print(f"\n{cv_max}-Fold CV Accuracy: {cv_scores.mean():.4f} (+/- {cv_scores.std():.4f})")
+        else:
+            print("\nSkipping cross-validation due to insufficient samples per class.")
 
-        # Feature importance (for tree-based models)
         if hasattr(self.classifier, 'feature_importances_'):
             importances = self.classifier.feature_importances_
             indices = np.argsort(importances)[::-1]
-
             print("\nTop 15 Most Important Features:")
             for i in range(min(15, len(self.feature_names))):
                 idx = indices[i]
@@ -366,15 +437,11 @@ class ExtremistClassifier:
         """
         if not self.is_trained:
             raise ValueError("Classifier must be trained before prediction")
-
-        feature_vec = self.combine_features(multimodel_segment, intonation_segment)
-        feature_vec = feature_vec.reshape(1, -1)
+        feature_vec = self.combine_features(multimodel_segment, intonation_segment).reshape(1, -1)
         feature_vec_scaled = self.scaler.transform(feature_vec)
-
-        prediction = self.classifier.predict(feature_vec_scaled)[0]
-        probability = self.classifier.predict_proba(feature_vec_scaled)[0, 1]
-
-        return int(prediction), float(probability)
+        proba = self.classifier.predict_proba(feature_vec_scaled)[0, 1]
+        pred = 1 if proba >= self.decision_threshold else 0
+        return int(pred), float(proba)
 
     def predict_file(
         self,
@@ -468,7 +535,8 @@ class ExtremistClassifier:
             'classifier': self.classifier,
             'scaler': self.scaler,
             'feature_names': self.feature_names,
-            'model_type': self.model_type
+            'model_type': self.model_type,
+            'decision_threshold': self.decision_threshold,
         }
 
         with open(filepath, 'wb') as f:
@@ -485,9 +553,10 @@ class ExtremistClassifier:
         self.scaler = model_data['scaler']
         self.feature_names = model_data['feature_names']
         self.model_type = model_data['model_type']
+        self.decision_threshold = float(model_data.get('decision_threshold', Config.BASE_DECISION_THRESHOLD))
         self.is_trained = True
 
-        print(f"Model loaded from {filepath}")
+        print(f"Model loaded from {filepath} (threshold={self.decision_threshold:.3f})")
 
 
 def main():
@@ -605,4 +674,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-

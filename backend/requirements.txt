@@ -7,3 +7,8 @@ multipart
 httpx
 librosa
 hf_xet
+nltk
+pandas
+numpy
+scikit-learn
+tqdm
