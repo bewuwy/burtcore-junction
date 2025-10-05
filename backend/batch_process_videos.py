@@ -62,9 +62,9 @@ def transform_to_web_ui_format(result: dict, filename: str) -> dict:
         avg_extremist_prob = stats.get("avg_extremist_probability", 0)
         
         if is_extremist_content:
-            summary = f"⚠️ EXTREMIST CONTENT DETECTED: {extremist_count}/{total_count} segments ({extremist_ratio*100:.1f}%). Avg probability: {avg_extremist_prob*100:.1f}%"
+            summary = f"EXTREMIST CONTENT DETECTED: {extremist_count}/{total_count} segments ({extremist_ratio*100:.1f}%). Avg probability: {avg_extremist_prob*100:.1f}%"
         else:
-            summary = f"✓ Non-extremist content. {extremist_count}/{total_count} extremist segments detected ({extremist_ratio*100:.1f}%)."
+            summary = f"Non-extremist content. {extremist_count}/{total_count} extremist segments detected ({extremist_ratio*100:.1f}%)."
     else:
         # Fallback to toxicity-based summary
         avg_toxicity = stats.get("avg_toxicity", 0)
