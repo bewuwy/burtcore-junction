@@ -47,6 +47,8 @@ pip install -r backend/requirements.txt
 uvicorn backend.endpoints:app --reload
 ```
 
+The first run will take extra time, since the models have to be downloaded.
+
 The API will be available at `http://localhost:8000`
 
 ### 2. Web UI Setup
@@ -57,6 +59,9 @@ cd web-ui
 
 # Install dependencies
 pnpm install
+
+# Copy example env file
+cp .env.example .env
 
 # Start development server
 pnpm dev
