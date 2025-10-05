@@ -6,6 +6,10 @@ Train extremist classifier from labeling/dataset.csv using:
 
 The first N rows are assumed to be labeled; we use their label to train a supervised model.
 """
+import sys
+import os
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+
 import argparse
 from pathlib import Path
 from typing import Dict, Any, Tuple, Optional
