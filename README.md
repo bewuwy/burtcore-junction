@@ -15,6 +15,7 @@ This repository contains our submission for the **Junction X Delft Extreme Chall
 - **Batch Processing**: Process multiple files at once via CLI
 
 ## Results Visualization
+we trained our classifier on a hand labeled dataset of 265 samples (111 non-extremist, 154 extremist) and achieved the following results:
 ```============================================================
 VALIDATION RESULTS (thresholded)
 ============================================================
