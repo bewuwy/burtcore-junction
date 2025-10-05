@@ -6,14 +6,28 @@ This repository contains our submission for the **Junction X Delft Extreme Chall
 
 ## Features
 
-- **Multimodal Analysis**: Combines text (toxicity, hate speech, sentiment) with audio features (emotion, pitch, energy)
+- **Multimodal Analysis**: Combines text (toxicity, hate speech, sentiment extracted by other open source models) with audio features (emotion, pitch, energy)
 - **Sarcasm Detection**: Automatically detects and reduces scores for sarcastic content
-- **Hate Target Detection**: Identifies specific targets of hate speech (religion, race, gender, etc.)
-- **Intelligent Fallback**: Uses heuristic-based classification when trained model is unavailable
+- **Hate Target Detection**: Identifies specific targets of hate speech using external models (religion, race, gender, etc.)
+- **Intelligent Fallback**: Uses heuristic-based classification when trained distilled classifier model is unavailable
 - **Segment-Level Detection**: Identifies specific time segments containing extremist content
 - **Web UI & API**: User-friendly interface and RESTful API for integration
 - **Batch Processing**: Process multiple files at once via CLI
 
+## Results Visualization
+we trained our classifier on a hand labeled dataset of 265 samples (111 non-extremist, 154 extremist) and achieved the following results:
+```============================================================
+VALIDATION RESULTS (thresholded)
+============================================================
+               precision    recall  f1-score   support
+
+Non-Extremist       0.96      0.74      0.84        31
+    Extremist       0.72      0.95      0.82        22
+
+     accuracy                           0.83        53
+    macro avg       0.84      0.85      0.83        53
+ weighted avg       0.86      0.83      0.83        53
+```
 ## Prerequisites
 
 - Python 3.8+
@@ -98,22 +112,44 @@ python backend/batch_process_videos.py -i ./media -o ./results -v
 - Video: `.mp4`, `.avi`, `.mov`, `.mkv`, `.webm`, `.flv`, `.wmv`, `.m4v`, `.mpeg`, `.mpg`
 - Audio: `.mp3`, `.wav`, `.ogg`, `.m4a`, `.flac`, `.aac`, `.wma`, `.opus`
 
+
+**Requirements:**
+- Each directory should contain paired files: `filename_multimodel.json` and `filename_intonation.json`
+- Use `batch_process_videos.py` to generate these files
+
 ### Mode 4: Train Custom Classifier
 
 Train your own extremist classifier on labeled data:
 
 ```bash
-python backend/classify_extremist.py \
-  --mode train \
-  --extremist_dir ./transcripts/hate \
-  --non_extremist_dir ./transcripts/non_hate \
-  --model_type random_forest \
-  --model_path models/extremist_classifier.pkl
+python backend/train_extremist_from_dataset
 ```
+### CLI Arguments
 
-**Requirements:**
-- Each directory should contain paired files: `filename_multimodel.json` and `filename_intonation.json`
-- Use `batch_process_videos.py` to generate these files
+#### `--csv`
+Path to dataset CSV file
+
+#### `--n_rows`
+Number of labeled rows to use from top
+
+#### `--text_column`
+Text column name (auto-detect if omitted)
+
+#### `--label_column`
+Label column name (auto-detect if omitted)
+
+#### `--model_type`
+Classifier type (random_forest/gradient_boosting/logistic)
+
+#### `--save_model_path`
+Where to save trained model
+
+#### `--save_features`
+Optional CSV to dump engineered features
+
+#### `--no_hf`
+Skip HuggingFace multi-model features (VADER-only)
+
 
 ## How It Works
 
@@ -254,7 +290,6 @@ Key settings in `backend/config.py`:
   }
 }
 ```
-
 ## Acknowledgments
 
 - **TU Delft** for organizing the Junction X Delft Extreme Challenge

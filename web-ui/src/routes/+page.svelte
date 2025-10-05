@@ -66,7 +66,7 @@
   }
 </script>
 
-<h1>Welcome to ExtremeDetector5000(TM)</h1>
+<h1>BurtCore Extremist Speech detector</h1>
 <p><a href="/view-results">View Previous Results →</a></p>
 <hr/>
 
