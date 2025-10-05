@@ -138,6 +138,13 @@ class Config:
     WHISPER_BEAM_SIZE = 5
     WHISPER_BEST_OF = 5
     
+    # Anti-hallucination parameters
+    WHISPER_CONDITION_ON_PREVIOUS_TEXT = False  # Prevents repetitions
+    WHISPER_COMPRESSION_RATIO_THRESHOLD = 2.4
+    WHISPER_LOGPROB_THRESHOLD = -1.0
+    WHISPER_NO_SPEECH_THRESHOLD = 0.6
+    WHISPER_TEMPERATURE = (0.0, 0.2, 0.4, 0.6, 0.8, 1.0)  # Fallback temperatures
+    
     # ============================================================================
     # INTONATION & EMOTION CONFIGURATION
     # ============================================================================
