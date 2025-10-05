@@ -34,6 +34,62 @@ AUDIO_EXTENSIONS = {'.mp3', '.wav', '.ogg', '.m4a', '.flac', '.aac', '.wma', '.o
 SUPPORTED_EXTENSIONS = VIDEO_EXTENSIONS | AUDIO_EXTENSIONS
 
 
+def transform_to_web_ui_format(result: dict, filename: str) -> dict:
+    """
+    Transform the evaluate() result to match the web-ui expected format.
+    
+    Args:
+        result: The result dict from evaluate() function
+        filename: The original filename
+        
+    Returns:
+        Dict formatted for web-ui consumption
+    """
+    stats = result.get("statistics", {})
+    segments = result.get("segments", [])
+    
+    # Calculate counts for summary
+    total_count = stats.get("total_segments", 0)
+    extremist_count = stats.get("extremist_segments", 0)
+    toxic_count = stats.get("toxic_segments", 0)
+    
+    # Determine if content is extremist
+    is_extremist_content = stats.get("is_extremist_content", False)
+    
+    # Build summary message similar to endpoints.py
+    if is_extremist_content is not None:
+        extremist_ratio = stats.get("extremist_ratio", 0)
+        avg_extremist_prob = stats.get("avg_extremist_probability", 0)
+        
+        if is_extremist_content:
+            summary = f"⚠️ EXTREMIST CONTENT DETECTED: {extremist_count}/{total_count} segments ({extremist_ratio*100:.1f}%). Avg probability: {avg_extremist_prob*100:.1f}%"
+        else:
+            summary = f"✓ Non-extremist content. {extremist_count}/{total_count} extremist segments detected ({extremist_ratio*100:.1f}%)."
+    else:
+        # Fallback to toxicity-based summary
+        avg_toxicity = stats.get("avg_toxicity", 0)
+        max_toxicity = stats.get("max_toxicity", 0)
+        toxic_percentage = (toxic_count / total_count * 100) if total_count > 0 else 0
+        
+        if toxic_count == 0:
+            summary = "No toxic content detected."
+        elif toxic_count == 1:
+            summary = f"1 toxic segment detected ({toxic_percentage:.1f}% of content). Max toxicity: {max_toxicity*100:.1f}%"
+        else:
+            summary = f"{toxic_count} toxic segments detected ({toxic_percentage:.1f}% of content). Average toxicity: {avg_toxicity*100:.1f}%, Max: {max_toxicity*100:.1f}%"
+    
+    # Return format matching web-ui expectations
+    return {
+        "success": True,
+        "result": summary,
+        "isExtremist": is_extremist_content,
+        "segments": segments,
+        "full_text_classification": result.get("classification"),
+        "statistics": stats,
+        "filename": filename
+    }
+
+
 def find_media_files(input_dir: str) -> List[Path]:
     """
     Find all video and audio files in the input directory.
@@ -121,6 +177,13 @@ def process_videos_batch(input_dir: str, output_dir: str = "./results", skip_exi
             
             # Call the evaluate function
             result = evaluate(str(media_path), output_file=str(output_file))
+            
+            # Transform result to match web-ui expected format
+            web_ui_result = transform_to_web_ui_format(result, media_path.name)
+            
+            # Save in web-ui compatible format
+            with open(output_file, 'w', encoding='utf-8') as f:
+                json.dump(web_ui_result, f, ensure_ascii=False, indent=2)
             
             print(f"  Success! Results saved to: {output_file}")
             stats["processed"] += 1
