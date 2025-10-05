@@ -10,6 +10,10 @@
     extreme: number; // [0,1]
     hateTarget?: string;
     hateTargetConfidence?: number;
+    intonation?: {
+      emotion: string;
+      emotion_score: number;
+    }
   };
 
   type FormResult = {
@@ -45,6 +49,20 @@
     a.click();
     document.body.removeChild(a);
     URL.revokeObjectURL(url);
+  }
+
+  const emotionMap: { [key: string]: string } = {
+    hap: 'Happy',
+    ang: 'Angry',
+    neu: 'Neutral',
+    sad: 'Sad',
+    dis: 'Disgust',
+    fea: 'Fear',
+    sur: 'Surprise',
+  };
+
+  function getFullEmotionName(shortName: string): string {
+    return emotionMap[shortName.toLowerCase()] || shortName;
   }
 </script>
 
@@ -158,7 +176,9 @@
 
     <div>
       {#each form?.segments as segment, i (i)}
-        {@const tooltipText = `${timestampToString(segment.startTime)}-${timestampToString(segment.endTime)}: ${(segment.extreme*100).toFixed(1)}%${segment.hateTarget ? `\nTarget: ${segment.hateTarget} (${((segment.hateTargetConfidence || 0)*100).toFixed(1)}%)` : ''}`}
+        {@const intonation = segment.intonation}
+        {@const fullEmotion = intonation ? getFullEmotionName(intonation.emotion) : ''}
+        {@const tooltipText = `${timestampToString(segment.startTime)}-${timestampToString(segment.endTime)}: ${(segment.extreme*100).toFixed(1)}%${segment.hateTarget ? `\nTarget: ${segment.hateTarget} (${((segment.hateTargetConfidence || 0)*100).toFixed(1)}%)` : ''}${intonation ? `\nEmotion: ${fullEmotion} (${(intonation.emotion_score*100).toFixed(1)}%)` : ''}`}
         <span 
           data-tooltip={tooltipText}
           style={(segment.extreme > 0.5 ? `background-color: rgba(255, 0, 0, ${segment.extreme * 0.5})` : '') + "; border-bottom: 0px;"}
