@@ -62,6 +62,12 @@ def transcribe_single_file(input_file, output_file=None, model=whisper.load_mode
     audio = load_audio_from_mp4(input_file)
 
     # Transcribe using Whisper with parameters for shorter, more precise segments
+    # Anti-hallucination configuration:
+    # - condition_on_previous_text=False: Prevents repetitions (CRITICAL)
+    # - temperature: Tuple allows fallback if initial attempt fails
+    # - compression_ratio_threshold: Rejects segments with suspicious compression
+    # - logprob_threshold: Rejects low confidence segments
+    # - no_speech_threshold: Detects silence
     result = model.transcribe(
         audio,
         language=Config.WHISPER_LANGUAGE,
@@ -70,10 +76,11 @@ def transcribe_single_file(input_file, output_file=None, model=whisper.load_mode
         word_timestamps=False,
         prepend_punctuations="\"'([{-",
         append_punctuations="\"'.。,!?:)]}、",
-        temperature=0.0,               # Deterministic output
-        compression_ratio_threshold=2.4,  # Reject segments with low compression
-        logprob_threshold=-1.0,        # Reject low probability segments
-        no_speech_threshold=0.6,       # Detect silence/no speech
+        temperature=Config.WHISPER_TEMPERATURE,
+        compression_ratio_threshold=Config.WHISPER_COMPRESSION_RATIO_THRESHOLD,
+        logprob_threshold=Config.WHISPER_LOGPROB_THRESHOLD,
+        no_speech_threshold=Config.WHISPER_NO_SPEECH_THRESHOLD,
+        condition_on_previous_text=Config.WHISPER_CONDITION_ON_PREVIOUS_TEXT,
     )
 
     # Optionally save transcription to JSON
