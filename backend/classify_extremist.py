@@ -19,7 +19,7 @@ from sklearn.model_selection import train_test_split, cross_val_score
 from sklearn.metrics import classification_report, confusion_matrix, roc_auc_score, fbeta_score
 import pickle
 import warnings
-from config import Config
+from backend.config import Config
 warnings.filterwarnings("ignore")
 
 
