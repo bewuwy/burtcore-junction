@@ -1,4 +1,4 @@
-# Extremist Speech Recognition in Recordings
+# BurtCore - Extremist Speech Recognition in Recordings
 
 > A multimodal system for detecting extremist content in audio/video recordings using AI
 
