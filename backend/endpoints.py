@@ -112,3 +112,12 @@ async def evaluate_video(
         print("Error: " + str(e))
         traceback.print_exc()
         raise HTTPException(status_code=500, detail=f"An error occurred: {str(e)}")
+    
+    finally:
+        # Clean up the temporary file after processing
+        if file_path and os.path.exists(file_path):
+            try:
+                os.remove(file_path)
+                print(f"Cleaned up temporary file: {file_path}")
+            except Exception as e:
+                print(f"Warning: Failed to delete temporary file {file_path}: {e}")
