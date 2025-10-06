@@ -15,7 +15,9 @@ This repository contains our submission for the **Junction X Delft Extreme Chall
 - **Batch Processing**: Process multiple files at once via CLI
 
 ## Results Visualization
-we trained our classifier on a hand labeled dataset of 265 samples (111 non-extremist, 154 extremist) and achieved the following results:
+
+We trained our classifier on a hand labeled dataset of 265 samples (111 non-extremist, 154 extremist) and achieved the following results:
+
 ```============================================================
 VALIDATION RESULTS (thresholded)
 ============================================================
@@ -28,6 +30,22 @@ Non-Extremist       0.96      0.74      0.84        31
     macro avg       0.84      0.85      0.83        53
  weighted avg       0.86      0.83      0.83        53
 ```
+
+## Screenshots
+
+Screenshots of results visibile in the web UI:
+
+![Screenshot of the web UI](images/full_UI.png)
+
+![Sample result](images/reagan_result.png)
+
+Examples of text classified as extremist in the web UI:
+
+![Classified text](images/classified_text1.png)
+
+![Even worse text](images/very_bad.png)
+
+
 ## Prerequisites
 
 - Python 3.8+
